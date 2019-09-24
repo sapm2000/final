@@ -1,0 +1,18 @@
+Este ejemplo no trabaja con mysql o con mysqli, sino con PDO
+(PHP Data Objects) implementado desde la versión 5.algo de PHP.
+Las versiones viejas de PHP trabajan con mysql (msql_connect(), mysql_select_db())
+pero se han mejorado esas funciones (en mysqli) y desde la versión 7.1, los mysql 
+pasaron a ser no solo obsoletos, sino que también no funcionales.
+Trabajar con PDO es alternativo y es inmune a la transición antes mencionada.
+
+Debe crearse una BD llamada "ejemplomvc" y dentro de ella una tabla llamada "persona".
+
+En el ejemplo se implementa herencia, lo que implica que todos los modelos deben
+heredar de la "ClaseBase", para aprovechar el código en la misma. Esa ClaseBase contiene 
+los métodos de búsqueda y eliminación (general y por id), por lo cual todas las tablas 
+creadas deben tener un campo "id". De alguna manera implementa ideas muy generales y muy 
+por encima de como trabajan los framworks.
+
+Por último, en la vista se busca separar el diseño del contenido. Es por eso que todo lo
+que tiene que ver con diseño están en el archivo "plantilla.html" y el resto en los
+directorios creados, donde se escribirá el contenido de las vistas

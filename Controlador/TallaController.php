@@ -1,0 +1,54 @@
+<?php
+session_start();
+require_once("../Modelo/talla.php");
+$talla = new Talla();
+$talla->setTabla("tallas");
+switch($_REQUEST['accion'])
+{
+	case "buscatodos":
+	{
+		$todos = $talla->getAll($tab);
+		$_SESSION['cataale'] = $todos;
+		header("Location: ../Vista/talla/talla.php?accion=actual");
+		break;
+	}
+	case "registrar":
+	{
+		if(isset($_REQUEST['BtRegistrar']))
+		{
+			$stdo = strtoupper($_POST['tal']);
+			$talla->setTalla($stdo);
+			$talla->guardarPersona();
+			header("Location: ../Vista/talla/talla.php?accion=actualizar");			
+		}
+		break;
+	}
+	case "eliminar":
+	{
+		$talla->setId($_GET['id']);
+		$talla->deleteById($id);
+		header("Location: ../Vista/talla/talla.php?accion=actualizar");		
+		break;	
+	}
+	case 'seleccionar':
+	{
+		$talla->setId($_GET['id']);
+		$datos = $talla->getById($id);
+		$_SESSION['moditalla'] = $datos;
+		header("Location: ../Vista/talla/talla.php?accion=ver_detalles&id=".$id);	
+		break;	
+	}
+	case 'modificar':
+	{
+		if(isset($_REQUEST['BtModificar']))
+		{
+			$talla->setId($_GET['id']);
+			$stdo = strtoupper($_POST['talla']);
+			$talla->setTalla($stdo);
+			$talla->modificarPersona($id);
+			header("Location: ../Vista/talla/talla.php?accion=actualizar");
+		}
+		break;
+	}
+}
+?>
