@@ -18,7 +18,7 @@ class Banco extends ClaseBase
 
 
 	
-	public function guardarPersona()
+	public function guardarBanco()
 	{
 		$con = Conexion::getInstance();
 		$sql = "INSERT INTO $this->tabla (banco) VALUES ('$this->banco')";
@@ -27,7 +27,7 @@ class Banco extends ClaseBase
 		return $insert;
 	}
 
-	public function modificarPersona()
+	public function modificarBanco()
 	{
 		$con = Conexion::getInstance();
 		$sql = "UPDATE $this->tabla SET banco='$this->banco' WHERE id=$this->id";

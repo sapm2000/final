@@ -17,7 +17,7 @@ class Parentezco extends ClaseBase
 
 
 	
-	public function guardarPersona()
+	public function guardarParentezco()
 	{
 		$con = Conexion::getInstance();
 		$sql = "INSERT INTO $this->tabla (parentezco) VALUES ('$this->parentezco')";
@@ -26,7 +26,7 @@ class Parentezco extends ClaseBase
 		return $insert;
 	}
 
-	public function modificarPersona()
+	public function modificarParentezco()
 	{
 		$con = Conexion::getInstance();
 		$sql = "UPDATE $this->tabla SET parentezco='$this->parentezco' WHERE id=$this->id";

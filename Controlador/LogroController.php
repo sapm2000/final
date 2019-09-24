@@ -59,7 +59,7 @@ switch($_REQUEST['accion'])
 
 
 
-			$logro->guardarPersona();
+			$logro->guardarLogro();
 			header("Location: ../Vista/logro/consultalogro.php?accion=actualizar");			
 		}
 		break;
@@ -127,7 +127,7 @@ switch($_REQUEST['accion'])
 			$logro->setObservacion($_POST['observacion']);
 
 		
-			$logro->modificarPersona();
+			$logro->modificarLogro();
 			header("Location: ../Vista/logro/consultalogro.php?accion=actualizar");
 		}
 		break;

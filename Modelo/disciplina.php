@@ -17,7 +17,7 @@ class Disciplina extends ClaseBase
 
 
 	
-	public function guardarPersona()
+	public function guardarDisciplina()
 	{
 		$con = Conexion::getInstance();
 		$sql = "INSERT INTO $this->tabla (disciplina) VALUES ('$this->disciplina')";
@@ -26,7 +26,7 @@ class Disciplina extends ClaseBase
 		return $insert;
 	}
 
-	public function modificarPersona()
+	public function modificarDisciplina()
 	{
 		$con = Conexion::getInstance();
 		$sql = "UPDATE  $this->tabla SET disciplina='$this->disciplina' WHERE id=$this->id";

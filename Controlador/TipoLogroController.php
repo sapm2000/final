@@ -18,7 +18,7 @@ switch($_REQUEST['accion'])
 		{
 			$stdo = strtoupper($_POST['tipo_logro']);
 			$tipo_logro->setTipo_logro($stdo);
-			$tipo_logro->guardarPersona();
+			$tipo_logro->guardarTipoLogro();
 			header("Location: ../Vista/tipo_logro/tipo_logro.php?accion=actualizar");			
 		}
 		break;
@@ -45,7 +45,7 @@ switch($_REQUEST['accion'])
 			$tipo_logro->setId($_GET['id']);
 			$stdo = strtoupper($_POST['tipo_logro']);
 			$tipo_logro->setTipo_logro($stdo);
-			$tipo_logro->modificarPersona($id);
+			$tipo_logro->modificarTipoLogro($id);
 			header("Location: ../Vista/tipo_logro/tipo_logro.php?accion=actualizar");
 		}
 		break;

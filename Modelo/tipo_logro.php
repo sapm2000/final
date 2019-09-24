@@ -17,7 +17,7 @@ class Tipo_logro extends ClaseBase
 
 
 	
-	public function guardarPersona()
+	public function guardarTipoLogro()
 	{
 		$con = Conexion::getInstance();
 		$sql = "INSERT INTO $this->tabla (tipo_logro) VALUES ('$this->tipo_logro')";
@@ -26,7 +26,7 @@ class Tipo_logro extends ClaseBase
 		return $insert;
 	}
 
-	public function modificarPersona()
+	public function modificarTipoLogro()
 	{
 		$con = Conexion::getInstance();
 		$sql = "UPDATE $this->tabla SET tipo_logro='$this->tipo_logro' WHERE id=$this->id";

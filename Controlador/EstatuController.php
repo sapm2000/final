@@ -18,7 +18,7 @@ switch($_REQUEST['accion'])
 		{
 			$stdo = strtoupper($_POST['estatu']);
 			$estatu->setEstatu($stdo);
-			$estatu->guardarPersona();
+			$estatu->guardarEstatus();
 			header("Location: ../Vista/estatu/estatu.php?accion=actualizar");			
 		}
 		break;
@@ -45,7 +45,7 @@ switch($_REQUEST['accion'])
 			$estatu->setId($_GET['id']);
 			$stdo = strtoupper($_POST['estatu']);
 			$estatu->setEstatu($stdo);
-			$estatu->modificarPersona($id);
+			$estatu->modificarEstatus($id);
 			header("Location: ../Vista/estatu/estatu.php?accion=actualizar");
 		}
 		break;

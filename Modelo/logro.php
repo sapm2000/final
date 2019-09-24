@@ -117,7 +117,7 @@ class Logro extends ClaseBase
 
 
 	
-	public function guardarPersona()
+	public function guardarLogro()
 	{
 		$con = Conexion::getInstance();
 		$sql = "INSERT INTO $this->tabla (tipo,pais,estado,ciudad,disciplina,descripcion,resultado,observacion,id_atleta,modi,id_evento) VALUES ('$this->tipo','$this->pais','$this->estado','$this->ciudad','$this->disciplina','$this->descripcion','$this->resultado','$this->observacion','$this->id_atleta','$this->modi','$this->id_evento')";
@@ -126,7 +126,7 @@ class Logro extends ClaseBase
 		return $insert;
 	}
 
-	public function modificarPersona()
+	public function modificarLogro()
 		{
 			$con = Conexion::getInstance();
 			$sql = "UPDATE logros SET tipo='$this->tipo', pais='$this->pais', estado='$this->estado', ciudad='$this->ciudad', disciplina='$this->disciplina', descripcion='$this->descripcion', resultado='$this->resultado', observacion='$this->observacion' WHERE id=$this->id";

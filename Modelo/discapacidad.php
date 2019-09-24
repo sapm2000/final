@@ -17,7 +17,7 @@ class Discapacidad extends ClaseBase
 
 
 	
-	public function guardarPersona()
+	public function guardarDiscapacidad()
 	{
 		$con = Conexion::getInstance();
 		$sql = "INSERT INTO $this->tabla (discapacidad) VALUES ('$this->discapacidad')";
@@ -26,7 +26,7 @@ class Discapacidad extends ClaseBase
 		return $insert;
 	}
 
-	public function modificarPersona()
+	public function modificarDiscapacidad()
 	{
 		$con = Conexion::getInstance();
 		$sql = "UPDATE $this->tabla SET discapacidad='$this->discapacidad' WHERE id=$this->id";

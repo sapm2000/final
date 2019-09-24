@@ -166,7 +166,7 @@ class Evento extends ClaseBase
 
 
 	
-	public function guardarPersona()
+	public function guardarLogro()
 	{
 		$con = Conexion::getInstance();
 		$sql = "INSERT INTO $this->tabla (nombre,fecha_inicio,fecha_cierre,descripcion,id_disciplina,id_municipio,id_parroquia,maxpo,parti,canti,actual) VALUES ('$this->nombre','$this->fecha_inicio','$this->fecha_cierre','$this->descripcion','$this->id_disciplina','$this->id_municipio','$this->id_parroquia','$this->maxpo','$this->parti','$this->canti','$this->actual')";
@@ -195,7 +195,7 @@ class Evento extends ClaseBase
 			return ($trae);
 		}
 
-		public function modificarPersona()
+		public function modificarEvento()
 		{
 			$con = Conexion::getInstance();
 			$sql = "UPDATE $this->tabla SET nombre='$this->nombre', fecha_inicio='$this->fecha_inicio', fecha_cierre='$this->fecha_cierre', descripcion='$this->descripcion', id_disciplina='$this->id_disciplina', id_municipio='$this->id_municipio', id_parroquia='$this->id_parroquia', maxpo='$this->maxpo', canti='$this->canti', parti='$this->parti' WHERE id=$this->id";

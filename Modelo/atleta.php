@@ -259,7 +259,7 @@ class Atleta extends ClaseBase
 
 	
 
-	public function guardarPersona()
+	public function guardarAtleta()
 	{
 		$con = Conexion::getInstance();
 		$sql = "INSERT INTO $this->tabla (cedula,nombre,apellido,f_nac,tipos,estadoc,sexo,id_nivel,correo,n_tel,n_eme,id_municipio,id_parroquia,direccion) VALUES ('$this->cedula','$this->nombre','$this->apellido','$this->f_nac','$this->tipos','$this->estadoc','$this->sexo','$this->id_nivel','$this->correo','$this->n_tel','$this->n_eme','$this->id_municipio','$this->id_parroquia','$this->direccion')";

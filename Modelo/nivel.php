@@ -17,7 +17,7 @@ class Nivel extends ClaseBase
 
 
 	
-	public function guardarPersona()
+	public function guardarNivel()
 	{
 		$con = Conexion::getInstance();
 		$sql = "INSERT INTO $this->tabla (nivel) VALUES ('$this->nivel')";
@@ -26,7 +26,7 @@ class Nivel extends ClaseBase
 		return $insert;
 	}
 
-	public function modificarPersona()
+	public function modificarNivel()
 	{
 		$con = Conexion::getInstance();
 		$sql = "UPDATE $this->tabla SET nivel='$this->nivel' WHERE id=$this->id";

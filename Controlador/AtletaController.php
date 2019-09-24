@@ -131,7 +131,7 @@ switch($_REQUEST['accion'])
 
 
 
-			$atleta->guardarPersona();
+			$atleta->guardarAtleta();
 
 
 			$s=$datosl->selecmax();

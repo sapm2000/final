@@ -17,7 +17,7 @@ class Estatu extends ClaseBase
 
 
 	
-	public function guardarPersona()
+	public function guardarEstatus()
 	{
 		$con = Conexion::getInstance();
 		$sql = "INSERT INTO $this->tabla (estatu) VALUES ('$this->estatu')";
@@ -26,7 +26,7 @@ class Estatu extends ClaseBase
 		return $insert;
 	}
 
-	public function modificarPersona()
+	public function modificarEstatus()
 	{
 		$con = Conexion::getInstance();
 		$sql = "UPDATE $this->tabla SET estatu='$this->estatu' WHERE id=$this->id";

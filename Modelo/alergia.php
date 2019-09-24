@@ -17,7 +17,7 @@ class Alergia extends ClaseBase
 
 
 	
-	public function guardarPersona()
+	public function guardarAlergia()
 	{
 		$con = Conexion::getInstance();
 		$sql = "INSERT INTO $this->tabla (alergia) VALUES ('$this->alergia')";
@@ -26,7 +26,7 @@ class Alergia extends ClaseBase
 		return $insert;
 	}
 
-	public function modificarPersona()
+	public function modificarAlergia()
 	{
 		$con = Conexion::getInstance();
 		$sql = "UPDATE $this->tabla SET alergia='$this->alergia' WHERE id=$this->id";

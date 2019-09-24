@@ -18,7 +18,7 @@ switch($_REQUEST['accion'])
 		{
 			$stdo = strtoupper($_POST['cal']);
 			$calzado->setCalzado($stdo);
-			$calzado->guardarPersona();
+			$calzado->guardarCalzado();
 			header("Location: ../Vista/calzado/calzado.php?accion=actualizar");			
 		}
 		break;
@@ -45,7 +45,7 @@ switch($_REQUEST['accion'])
 			$calzado->setId($_GET['id']);
 			$stdo = strtoupper($_POST['calzado']);
 			$calzado->setCalzado($stdo);
-			$calzado->modificarPersona($id);
+			$calzado->modificarCalzado($id);
 			header("Location: ../Vista/calzado/calzado.php?accion=actualizar");
 		}
 		break;
