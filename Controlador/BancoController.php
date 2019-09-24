@@ -18,7 +18,7 @@ switch($_REQUEST['accion'])
 		{
 			$ban = strtoupper($_POST['banco']);
 			$banco->setBanco($ban);
-			$banco->guardarPersona();
+			$banco->guardarBanco();
 			header("Location: ../Vista/banco/banco.php?accion=actualizar");			
 		}
 		break;
@@ -45,7 +45,7 @@ switch($_REQUEST['accion'])
 			$banco->setId($_GET['id']);
 			$ban = strtoupper($_POST['banco']);
 			$banco->setBanco($ban);
-			$banco->modificarPersona($id);
+			$banco->modificarBanco($id);
 			header("Location: ../Vista/banco/banco.php?accion=actualizar");
 		}
 		break;

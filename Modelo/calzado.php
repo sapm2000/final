@@ -17,7 +17,7 @@ class Calzado extends ClaseBase
 
 
 	
-	public function guardarPersona()
+	public function guardarCalzado()
 	{
 		$con = Conexion::getInstance();
 		$sql = "INSERT INTO $this->tabla (calzado) VALUES ('$this->calzado')";
@@ -26,7 +26,7 @@ class Calzado extends ClaseBase
 		return $insert;
 	}
 
-	public function modificarPersona()
+	public function modificarCalzado()
 	{
 		$con = Conexion::getInstance();
 		$sql = "UPDATE $this->tabla SET calzado='$this->calzado' WHERE id=$this->id";

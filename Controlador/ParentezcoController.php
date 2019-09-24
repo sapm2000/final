@@ -18,7 +18,7 @@ switch($_REQUEST['accion'])
 		{
 			$stdo = strtoupper($_POST['parentezco']);
 			$parentezco->setParentezco($stdo);
-			$parentezco->guardarPersona();
+			$parentezco->guardarParentezco();
 			header("Location: ../Vista/parentesco/parentezco.php?accion=actualizar");			
 		}
 		break;
@@ -45,7 +45,7 @@ switch($_REQUEST['accion'])
 			$parentezco->setId($_GET['id']);
 			$stdo = strtoupper($_POST['parentezco']);
 			$parentezco->setParentezco($stdo);
-			$parentezco->modificarPersona($id);
+			$parentezco->modificarParentezco($id);
 			header("Location: ../Vista/parentesco/parentezco.php?accion=actualizar");
 		}
 		break;

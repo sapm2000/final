@@ -17,7 +17,7 @@ class Talla extends ClaseBase
 
 
 	
-	public function guardarPersona()
+	public function guardarTalla()
 	{
 		$con = Conexion::getInstance();
 		$sql = "INSERT INTO $this->tabla (talla) VALUES ('$this->talla')";
@@ -26,7 +26,7 @@ class Talla extends ClaseBase
 		return $insert;
 	}
 
-	public function modificarPersona()
+	public function modificarTalla()
 	{
 		$con = Conexion::getInstance();
 		$sql = "UPDATE $this->tabla SET talla='$this->talla' WHERE id=$this->id";

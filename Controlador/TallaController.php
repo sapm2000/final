@@ -18,7 +18,7 @@ switch($_REQUEST['accion'])
 		{
 			$stdo = strtoupper($_POST['tal']);
 			$talla->setTalla($stdo);
-			$talla->guardarPersona();
+			$talla->guardarTalla();
 			header("Location: ../Vista/talla/talla.php?accion=actualizar");			
 		}
 		break;
@@ -45,7 +45,7 @@ switch($_REQUEST['accion'])
 			$talla->setId($_GET['id']);
 			$stdo = strtoupper($_POST['talla']);
 			$talla->setTalla($stdo);
-			$talla->modificarPersona($id);
+			$talla->modificarTalla($id);
 			header("Location: ../Vista/talla/talla.php?accion=actualizar");
 		}
 		break;

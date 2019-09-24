@@ -18,7 +18,7 @@ switch($_REQUEST['accion'])
 		{
 			$stdo = strtoupper($_POST['nivel']);
 			$nivel->setNivel($stdo);
-			$nivel->guardarPersona();
+			$nivel->guardarNivel();
 			header("Location: ../Vista/nivel/nivel.php?accion=actualizar");			
 		}
 		break;
@@ -45,7 +45,7 @@ switch($_REQUEST['accion'])
 			$nivel->setId($_GET['id']);
 			$stdo = strtoupper($_POST['nivel']);
 			$nivel->setNivel($stdo);
-			$nivel->modificarPersona($id);
+			$nivel->modificarNivel($id);
 			header("Location: ../Vista/nivel/nivel.php?accion=actualizar");
 		}
 		break;

@@ -45,7 +45,7 @@ switch($_REQUEST['accion'])
 			$alergia->setId($_GET['id']);
 			$stdo = strtoupper($_POST['alergia']);
 			$alergia->setAlergia($stdo);
-			$alergia->modificarPersona($id);
+			$alergia->modificarAlergia($id);
 			header("Location: ../Vista/alergia/alergia.php?accion=actualizar");
 		}
 		break;

@@ -71,7 +71,7 @@ switch($_REQUEST['accion'])
 
 
 
-			$evento->guardarPersona();
+			$evento->guardarEvento();
 
 			$hola=$evento->selecmax();
 			$_SESSION['evento']=$hola[0][0];
@@ -176,7 +176,7 @@ switch($_REQUEST['accion'])
 
 				$evento->guargarPuente();
 				$evento->guardarA();
-				$logro->guardarPersona();
+				$logro->guardarLogro();
 				$_SESSION['catapart'] = $evento->consdetparticipante();
 				header("Location: ../Vista/evento/evento3.php?accion=ver_detalles&id=".$id);
 
@@ -297,7 +297,7 @@ switch($_REQUEST['accion'])
 				}
 
 
-				$evento->modificarPersona($id);
+				$evento->modificarEvento($id);
 				header("Location: ../Vista/evento/evento2.php?accion=actualizar");
 
 			}

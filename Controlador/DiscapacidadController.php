@@ -18,7 +18,7 @@ switch($_REQUEST['accion'])
 		{
 			$stdo = strtoupper($_POST['discapacidad']);
 			$discapacidad->setDiscapacidad($stdo);
-			$discapacidad->guardarPersona();
+			$discapacidad->guardarDiscapacidad();
 			header("Location: ../Vista/discapacidad/discapacidad.php?accion=actualizar");			
 		}
 		break;
@@ -45,7 +45,7 @@ switch($_REQUEST['accion'])
 			$discapacidad->setId($_GET['id']);
 			$stdo = strtoupper($_POST['discapacidad']);
 			$discapacidad->setDiscapacidad($stdo);
-			$discapacidad->modificarPersona($id);
+			$discapacidad->modificarDiscapacidad($id);
 			header("Location: ../Vista/discapacidad/discapacidad.php?accion=actualizar");
 		}
 		break;

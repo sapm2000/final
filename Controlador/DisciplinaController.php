@@ -18,7 +18,7 @@ switch($_REQUEST['accion'])
 		{
 			$stdo = strtoupper($_POST['disciplina']);
 			$disciplina->setDisciplina($stdo);
-			$disciplina->guardarPersona();
+			$disciplina->guardarDisciplina();
 			header("Location: ../Vista/disciplina/disciplina.php?accion=actualizar");			
 		}
 		break;
