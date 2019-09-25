@@ -48,7 +48,7 @@ switch($_REQUEST['accion'])
 					$cont=$cont+1;
 					$temp=$beca->getMonto();
 					$total=$total+$temp;
-					$beca->guardarPersona();
+					$beca->guardarBeca();
 					$beca->guardarRegistro();
 				}
 			}
@@ -88,7 +88,7 @@ switch($_REQUEST['accion'])
 			$beca->setId($_GET['id']);
 			$stdo = strtoupper($_POST['beca']);
 			$beca->setBeca($stdo);
-			$beca->modificarPersona($id);
+			$beca->modificarBeca($id);
 			header("Location: ../Vista/beca/beca.php?accion=actualizar");
 		}
 		break;

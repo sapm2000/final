@@ -97,7 +97,7 @@ class Beca extends ClaseBase
 		return ($trae);
 	}
 
-	public function guardarPersona()
+	public function guardarBeca()
 	{
 		$con = Conexion::getInstance();
 		$sql = "INSERT INTO $this->tabla (id_atleta,monto) VALUES ('$this->id_atleta','$this->monto')";
@@ -133,7 +133,7 @@ class Beca extends ClaseBase
 		return $insert;
 	}
 
-	public function modificarPersona()
+	public function modificarBeca()
 	{
 		$con = Conexion::getInstance();
 		$sql = "UPDATE $this->tabla SET beca='$this->beca' WHERE id=$this->id";
