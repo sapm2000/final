@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title> jquery</title>
+        <script language="javascript" src="jqueryV331.js"></script>
+        <script language="javascript" src="../js/validaciones.js"></script>
+        <script language="javascript" src="../js/js.js"></script>
+    </head>
+
+    <body>
+        <div id="estilo">
+            <form action="post">
+                <div id="parte1">
+                    <table>
+                        <thead>
+                            <tr>
+                            
+                                <th colspan="2"> estudiante  </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>cedula:</td>
+                                <td> <input type="text" name="" id=""></td>
+                            </tr>
+                            <tr>
+                                <td>nombre:</td>
+                                <td><input type="text" name="" id=""></td>
+                            </tr>
+                            <tr>
+                                <td>apellido</td>
+                                <td> <input type="text" name="" id=""></td>
+                            </tr>
+                            <tr>
+                                <td> correo electronico</td>
+                                <td><input type="text" name="" id=""></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <select name="" id="">
+                                        <option value="1" id="1"> 1 </option>
+                                        <option value="2" id="2" selected> 2</option>
+                                    </select>
+                                </td>                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="parte2" style="display: none">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="2"> datos socioeconimicos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>tipo vivienda:</td>
+                                <td><select name="" id="">
+                                    <option value=""> rancho</option> 
+                                    <option value=""> apartamento</option>
+                                    <option value=""> casa</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td>estado vivienda</td>
+                                <td> <select name="" id="">
+                                    <option value=""> buena</option>
+                                    <option value=""> regular</option>
+                                    <option value=""> mala</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td> condicion</td>
+                                <td> <select name="" id="">
+                                    <option value=""> propia</option>
+                                    <option value=""> alquilado</option>
+                                    <option value=""> arrimado</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td> servicio aguas</td>
+                                <td> <select name="" id="">
+                                    <option value=""> aguas servidas</option>
+                                    <option value=""> pozo septico</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <select name="" id="">
+                                        <option value="1" id="1"> 1 </option>
+                                        <option value="2" id="2"> 2</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </body>
+    <script language="javascript">
+        $(document).ready(function() {
+            $('#1').click(function() {
+                $('#parte1').hide(1000);
+                $('#parte2').show(1000);
+            });
+            $('#2').click(function() {
+                $('#parte2').hide(1000);
+                $('#parte1').show(1000);
+            });
+        });
+    
+    </script>
+</html>

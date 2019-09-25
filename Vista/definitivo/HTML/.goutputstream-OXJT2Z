@@ -1,0 +1,399 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Atleta</title>
+	<link rel="stylesheet" href="../CSS/menuestilovertical.css" type="text/css">
+	<link rel="stylesheet" href="../CSS/estilomodal.css" >
+	<script language="javascript" src="../js/validaciones.js"></script>
+	<script language="javascript" src="../js/js.js"></script>
+	<script language="javascript" src="../js/busqueda.js"></script>
+ 
+	
+
+
+</head>
+<body >
+			<div id="encabezado">
+				
+			</div>
+		<div id="barra">
+			<div id="idsis">
+			<a href="#"><img src="../imagenes1/sistema.png" width="250px" height="50px"><img src="../imagenes1/baloncesto.png" width="50px" height="45px"></a>
+			</div>
+			
+			<div id="menusu">
+			<div class="navigation">
+			<ul class="mainmenu">
+				<li><img src="../imagenes1/usuario1.png" height="28px" width="28px"> <font color="white">Usuario</font>
+                    <ul class="submenu1"><!-- Segundo nivel desplegable -->
+                        <li>
+                            <a href="#" id="bordederecha"><img src="../imagenes1/ver1.png" height="15px" width="15px">
+                                Ver Perfil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="../imagenes1/contrasenna1.png" height="15px" width="15px">
+                                Cambiar Contraseña
+							</a>
+                        </li>
+                        <li>
+							<a href="iniciodesesion.html" id="bordeabajo"><img src="../imagenes1/salir1.png" height="15px" width="15px">
+                              Cerrar Sesión
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+			</ul>
+			</div>
+		</div>
+	</div>
+	<div class="barravertical1" id="hola" onclick="mostrar('2')" style="">
+		<a href="#">
+				 <center><img src="../imagenes1/menu.png" height="50%" width="55%" class="img" > </center>  
+		</a>
+		
+</div>
+
+	<div style="display:none" class="barraverticaldesplegada"  id="2" onclick="ocultar('2')">
+		<div class="navigation">
+			<ul class="mainmenu">
+				<li><a href="menuv.html">
+						<br><img src="../imagenes1/menu.png" height="10%" width="15%" >  Cerrar Menú
+				</a></li>
+				<li><a href="#" onclick="mostrar('3')">
+					<img src="../imagenes1/config1.png" height="40px" width="40px" >  Archivos
+					</a>
+					
+				</li>
+				<li><a href="#" onclick="mostrar('4')">
+					<img src="../imagenes1/procesos1.png" height="40px" width="40px" >  Procesos
+					</a>
+					
+				</li>
+				<li><a href="#" onclick="mostrar('5')">
+					<img src="../imagenes1/descargas1.png" height="40px" width="40px" > Reportes
+					</a>
+					
+				</li>
+				<li><a href="#" onclick="mostrar('6')">
+					<img src="../imagenes1/ayuda1.png" height="40px" width="40px" >  Ayuda
+					</a>
+					
+				</li>
+				<li><a href="iniciodesesion.html">
+					<img src="../imagenes1/salir1.png" height="40px" width="40px" >  Cerrar Sesión</li>
+					</a>
+				</li>
+				<li>
+					<i class="editararchivos"></i>
+				</li>
+			</ul>
+		</div>
+	</div>
+	</div>
+	<div style="display:none" class="barraverticaldesplegada"  id="3" onclick="ocultar('3')">
+		<div class="navigation">
+			<ul class="mainmenu">
+				<li><a href="menuv.html" onclick="mostrar('2')">
+						<br><img src="../imagenes1/menu.png" height="10%" width="15%" >  Cerrar Menú
+				</a></li>
+				<li><a href="#"  >
+					<img src="../imagenes1/config1.png" height="40px" width="40px" >  Archivos
+					</a>
+					<ul class="submenu"><!-- Segundo nivel desplegable -->
+						<li><a href="consultaatleta.html"><b>Atleta</b></a></li>
+						<li><a href="consultaevento.html"><b>Eventos</b></a></li>
+						<li><a href="consultalogro.html"><b>Logros</b></a></li>
+						<li><a href="maestro_alergias.html">Alergias</a></li>
+						<li><a href="maestro_bancos.html">Bancos</a></li>
+						<li><a href="maestro_disciplina.html">Disciplinas</a></li>
+						<li><a href="maestro_discapacidad.html">Discapacidades</a></li>
+						<li><a href="maestro_estatus.html">Estatus</a></li>
+						<li><a href="maestro_subdisciplina.html">Modalidades</a></li>
+						<li><a href="maestro_municipios.html">Municipios</a></li>
+						<li><a href="maestro_nivel_academico.html">Nivel Académico</a></li>
+						<li><a href="maestro_parentesco.html">Parentesco</a></li>
+						<li><a href="maestro_parroquias.html">Parroquias</a></li>
+						<li><a href="buscardorrepresentante.html">Representante</a></li>
+						<li><a href="maestro_usuario.html">Usuario</a></li>
+					</ul>
+				</li>
+				<li><a href="#" onclick="mostrar('4')">
+					<img src="../imagenes1/procesos1.png" height="40px" width="40px" >  Procesos
+					</a>
+					<ul class="submenu"><!-- Segundo nivel desplegable -->
+					
+					</ul>
+				</li>
+				<li><a href="#" onclick="mostrar('5')">
+					<img src="../imagenes1/descargas1.png" height="40px" width="40px" > Reportes
+					</a>
+					<ul class="submenu"><!-- Segundo nivel desplegable -->
+					
+					</ul>
+				</li>
+				<li><a href="#" onclick="mostrar('6')">
+					<img src="../imagenes1/ayuda1.png" height="40px" width="40px" >  Ayuda
+					</a>
+					<ul class="submenu"><!-- Segundo nivel desplegable -->
+					
+					</ul>
+				</li>
+				<li><a href="iniciodesesion.html">
+					<img src="../imagenes1/salir1.png" height="40px" width="40px" >  Cerrar Sesión</li>
+					</a>
+				</li>
+				<li>
+					<i class="editararchivos"></i>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div style="display:none" class="barraverticaldesplegada"  id="4" onclick="ocultar('4')">
+		<div class="navigation">
+			<ul class="mainmenu">
+				<li><a href="menuv.html" onclick="mostrar('2')">
+						<br><img src="../imagenes1/menu.png" height="10%" width="15%" >  Cerrar Menú
+				</a></li>
+				<li><a href="#" onclick="mostrar('3')">
+					<img src="../imagenes1/config1.png" height="40px" width="40px" >  Archivos
+					</a>
+					<ul class="submenu"><!-- Segundo nivel desplegable -->
+						
+					</ul>
+				</li>
+				<li><a href="#" >
+					<img src="../imagenes1/procesos1.png" height="40px" width="40px" >  Procesos
+					</a>
+					<ul class="submenu"><!-- Segundo nivel desplegable -->
+						<li><a href="#">Proceso 1</a></li>
+						<li><a href="#">Proceso 2</a></li>
+						<li><a href="#">Proceso 3</a></li>
+					</ul>
+				</li>
+				<li><a href="#" onclick="mostrar('5')">
+					<img src="../imagenes1/descargas1.png" height="40px" width="40px" > Reportes
+					</a>
+					<ul class="submenu"><!-- Segundo nivel desplegable -->
+					
+					</ul>
+				</li>
+				<li><a href="#" onclick="mostrar('6')">
+					<img src="../imagenes1/ayuda1.png" height="40px" width="40px" >  Ayuda
+					</a>
+					<ul class="submenu"><!-- Segundo nivel desplegable -->
+					
+					</ul>
+				</li>
+				<li><a href="iniciodesesion.html">
+					<img src="../imagenes1/salir1.png" height="40px" width="40px" >  Cerrar Sesión</li>
+					</a>
+				</li>
+				<li>
+					<i class="editararchivos"></i>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div style="display:none" class="barraverticaldesplegada"  id="5"  onclick="ocultar('5')">
+		<div class="navigation">
+			<ul class="mainmenu">
+				<li><a href="menuv.html" onclick="mostrar('2')">
+						<br><img src="../imagenes1/menu.png" height="10%" width="15%" >  Cerrar Menú
+				</a></li>
+				<li><a href="#" onclick="mostrar('3')">
+					<img src="../imagenes1/config1.png" height="40px" width="40px" >  Archivos
+					</a>
+					<ul class="submenu"><!-- Segundo nivel desplegable -->
+						
+					</ul>
+				</li>
+				<li><a href="#" onclick="mostrar('4')">
+					<img src="../imagenes1/procesos1.png" height="40px" width="40px" >  Procesos
+					</a>
+					<ul class="submenu"><!-- Segundo nivel desplegable -->
+					
+					</ul>
+				</li>
+				<li><a href="#" >
+					<img src="../imagenes1/descargas1.png" height="40px" width="40px" > Reportes
+					</a>
+					<ul class="submenu"><!-- Segundo nivel desplegable -->
+						<li><a href="#">Reporte 1</a></li>
+						<li><a href="#">Reporte 2</a></li>
+						<li><a href="#">Reporte 3</a></li>
+					</ul>
+				</li>
+				<li><a href="#" onclick="mostrar('6')">
+					<img src="../imagenes1/ayuda1.png" height="40px" width="40px" >  Ayuda
+					</a>
+					<ul class="submenu"><!-- Segundo nivel desplegable -->
+					
+					</ul>
+				</li>
+				<li><a href="iniciodesesion.html">
+					<img src="../imagenes1/salir1.png" height="40px" width="40px" >  Cerrar Sesión</li>
+					</a>
+				</li>
+				<li>
+					<i class="editararchivos"></i>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div style="display:none" class="barraverticaldesplegada"  id="6" onclick="ocultar('6')">
+		<div class="navigation">
+			<ul class="mainmenu">
+				<li><a href="menuv.html" onclick="mostrar('2')">
+						<br><img src="../imagenes1/menu.png" height="10%" width="15%" >  Cerrar Menú
+				</a></li>
+				<li><a href="#" onclick="mostrar('3')">
+					<img src="../imagenes1/config1.png" height="40px" width="40px" >  Archivos
+					</a>
+					<ul class="submenu"><!-- Segundo nivel desplegable -->
+						
+					</ul>
+				</li>
+				<li><a href="#" onclick="mostrar('4')">
+					<img src="../imagenes1/procesos1.png" height="40px" width="40px" >  Procesos
+					</a>
+					<ul class="submenu"><!-- Segundo nivel desplegable -->
+					
+					</ul>
+				</li>
+				<li><a href="#" onclick="mostrar('5')">
+					<img src="../imagenes1/descargas1.png" height="40px" width="40px" > Reportes
+					</a>
+					<ul class="submenu"><!-- Segundo nivel desplegable -->
+						
+					
+					</ul>
+				</li>
+				<li><a href="#" >
+					<img src="../imagenes1/ayuda1.png" height="40px" width="40px" >  Ayuda
+					</a>
+					<ul class="submenu"><!-- Segundo nivel desplegable -->
+						<li><a href="#">Manual de Usuarios</a></li>
+						<li><a href="#">Manual de Sistema</a></li>
+					</ul>
+				</li>
+				<li><a href="iniciodesesion.html">
+					<img src="../imagenes1/salir1.png" height="40px" width="40px" >  Cerrar Sesión</li>
+					</a>
+				</li>
+				<li>
+					<i class="editararchivos"></i>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="openModal" class="modalDialog">
+		<div>
+				<table align="right">
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><a href="registroatleta1.html"><input type="button" class="botonmodal" value="+ Atleta" title="Registrar Atleta"></a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							</td>
+						</tr>
+					</table>
+			<center><h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consulta de Atleta.</h2></center>
+
+	
+		<form method="post" action="#" name="fconsult">
+			
+			<table align="center">
+				<tr>
+					<td>
+						<input id="searchTerm" type="text" onkeyup="doSearch()" class="cajasdetexto" size="15" placeholder="letras, núm, etc." id="cedula" maxlength="30">
+					</td>
+				</tr>
+			</table>
+			<br>
+			<table name="" align="center"class="tabla-cat" id="tabla">
+				<tr>
+					<th width="10%">Cédula</th>
+					<th width="10%">Nombre</th>
+					<th width="10%">Apellido</th>
+					<th width="10%">Sexo</th>
+					<th width="10%">Número de Télefono</th>
+					<th width="10%">Alergias</th>
+					<th width="10%">Disciplina</th>
+					<th width="10%">Modalidad</th>
+					<th width="10%">Categoría</th>
+					<th width="10%">Opción</th>
+				</tr>
+				<tr>
+					<td>22311090</td>
+					<td>Victor</td>
+					<td>Sevilla</td>
+					<td>M</td>
+					<td>123456789</td>
+					<td>No</td>
+					<td>Bolas Criollas</td>
+					<td>Bochas</td>
+					<td>S E Juvenil</td>
+					<td>
+						<img src="../imagenes1/editar.png" width="15px" height="13px" title="Editar">
+						<img src="../imagenes1/eliminar.png" width="15px" height="13px" title="Eliminar">
+					</td>
+				</tr>
+				<tr>
+					<td>27699978</td>
+					<td>Luisa</td>
+					<td>Garcia</td>
+					<td>F</td>
+					<td>123456789</td>
+					<td>Asma Alergico</td>
+					<td>Esgrima</td>
+					<td>Florete</td>
+					<td>S E Juvenil</td>
+					<td>
+						<img src="../imagenes1/editar.png" width="15px" height="13px" title="Editar">
+						<img src="../imagenes1/eliminar.png" width="15px" height="13px" title="Eliminar">
+					</td>
+				</tr>
+				<tr>
+					<td>18552829</td>
+					<td>Santiago</td>
+					<td>Marcano</td>
+					<td>M</td>
+					<td>123456789</td>
+					<td>No</td>
+					<td>Gimnasia</td>
+					<td>Artistica</td>
+					<td>s n (Ciclo Olimpico)</td>
+					<td>
+						<img src="../imagenes1/editar.png" width="15px" height="13px" title="Editar">
+						<img src="../imagenes1/eliminar.png" width="15px" height="13px" title="Eliminar">
+					</td>
+				</tr>
+				<tr>
+					<td>32373483</td>
+					<td>Fernanda</td>
+					<td>Matrundola</td>
+					<td>F</td>
+					<td>123456789</td>
+					<td>No</td>
+					<td>Gimnasia</td>
+					<td>Ritmica</td>
+					<td>S E Infantil</td>
+					<td>
+						<img src="../imagenes1/editar.png" width="15px" height="13px" title="Editar">
+						<img src="../imagenes1/eliminar.png" width="15px" height="13px" title="Eliminar">
+					</td>
+				</tr>
+			</table>
+		</form>
+	
+		</div>
+	</div>
+</body>
+</html>
+

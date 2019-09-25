@@ -1,0 +1,119 @@
+#barra
+{
+    position: fixed;
+    left:0px; /*A la derecha deje un espacio de 0px*/
+    right:0px; /*A la izquierda deje un espacio de 0px*/
+    top:10%; /*Abajo deje un espacio de 0px*/
+    height:10%; /*alto del div*/
+    z-index:10;
+    bottom: 20%;
+}
+#encabezado
+{
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 90%;
+  position: absolute;
+  background-color: white;
+}
+
+#idcomunidad
+{
+    width:30%;
+    height: 100%;
+    position:absolute;
+    margin-left: 35%;
+    border-right-style: none;
+}
+
+#idsis
+{
+    margin: 0 auto;
+    width:30%;
+    height: 100%;
+    position:absolute;
+    border-right-style: none;
+}
+
+html, body {
+    font-family: cursive;
+}
+#inicio
+{
+   position: fixed;
+   height: 10%;
+   
+    top: 30%;
+    height: 40%;
+    left: 40%;
+    right: 40%;
+    background-color: #000080;
+    z-index: 100;
+    border-radius: 25px 25px 25px 25px;
+    box-shadow: 10px 10px 5px #C0C0C0;
+    opacity: 0.9;
+}
+.boton
+{
+    font-weight: 900;
+    text-decoration-color: black;
+    cursor: pointer;
+    padding: 5px;
+    margin:0px 0px 0px 0;
+    border: 3px solid #FFFFFF;
+    background: #000080;
+    border-radius: 8px;
+    color:white;
+    width: 50%;
+    height: 30%;
+    text-align: center;
+}
+ 
+.container {
+    background-color: #000080;
+    padding: 5px;
+    border-radius: 25px 25px 0px 0px; 
+    position: absolute;
+    top: 30%;
+    height: 40%;
+    left: 40%;
+    right: 40%;
+
+}
+ 
+.text {
+    width: 200px;
+    height: 100px;
+    background-color: transparent;
+    padding: 10px;
+    color: #FFFFFF;
+    position: absolute;
+    z-index: 1;
+}
+ 
+.background {
+    padding: 0px;
+    margin: auto;
+}
+ 
+.trans {
+    opacity: 1;
+}
+
+.cajasdetexto
+{
+
+    box-sizing: border-box;
+    border: 2px solid #4682B4;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    height: 25;
+}
+
+.cajasdetexto:focus 
+{
+  border: 2px solid #00008B;
+}
