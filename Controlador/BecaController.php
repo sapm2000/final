@@ -28,6 +28,27 @@ switch($_REQUEST['accion'])
 			$cont=0;
 			$z=$beca->selexmax();
 			$x=$z[0][0];
+			$beca->setMes($_POST['mes']);
+			$beca->setAnio($_POST['anio']);
+			$mesactu=$beca->getMes();
+			$anioactu=$beca->getAnio();
+			$mes=$beca->traemes();
+			$anio=$beca->traeanio();
+
+			$k=count($mes);
+			$c=count($anio);
+
+			for ($i=0;$i<=$k;$i++) {
+				if ($mes[$i][0]==$mesactu) {
+					for ($o=0;$o<=$c;$o++) {
+						if ($anio[$o][0]==$anioactu) {
+							$beca->borronycuentanueva(); 
+							$beca->borronycuentanueva1(); 
+							break 2;
+						}
+					}
+				}
+			}
 			$beca->truncar();
 			for ($i=0;$i<=$x;$i++) {
 				$beca->setId_atleta($i);
@@ -48,7 +69,7 @@ switch($_REQUEST['accion'])
 					$cont=$cont+1;
 					$temp=$beca->getMonto();
 					$total=$total+$temp;
-					$beca->guardarBeca();
+					$beca->guardarPersona();
 					$beca->guardarRegistro();
 				}
 			}
