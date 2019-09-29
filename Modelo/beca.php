@@ -97,7 +97,7 @@ class Beca extends ClaseBase
 		return ($trae);
 	}
 
-	public function guardarBeca()
+	public function guardarPersona()
 	{
 		$con = Conexion::getInstance();
 		$sql = "INSERT INTO $this->tabla (id_atleta,monto) VALUES ('$this->id_atleta','$this->monto')";
@@ -133,7 +133,7 @@ class Beca extends ClaseBase
 		return $insert;
 	}
 
-	public function modificarBeca()
+	public function modificarPersona()
 	{
 		$con = Conexion::getInstance();
 		$sql = "UPDATE $this->tabla SET beca='$this->beca' WHERE id=$this->id";
@@ -143,16 +143,55 @@ class Beca extends ClaseBase
 	}
 
 	public function selexmax()
-		{
-			$cc = Conexion::getInstance();
-			$sql = "SELECT MAX(id) FROM atleta";
-			$result = $cc->db->prepare($sql);
-			$result->execute();
-			$trae = $result->fetchAll();
-			return ($trae);
-		}
+	{
+		$cc = Conexion::getInstance();
+		$sql = "SELECT MAX(id) FROM atleta";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
 
-	//SELECT becas.id_atleta, becas.monto, atleta.cedula, atleta.nombre, atleta.apellido FROM becas INNER JOIN atleta ON becas.id_atleta=atleta.id
+	public function traemes()
+	{
+		$cc = Conexion::getInstance();
+		$sql = "SELECT mes FROM becas_mes";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
+
+	public function traeanio()
+	{
+		$cc = Conexion::getInstance();
+		$sql = "SELECT anio FROM becas_mes";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
+
+	public function borronycuentanueva()
+	{
+		$cc = Conexion::getInstance();
+		$sql = "DELETE FROM becas_total WHERE mes='$this->mes' AND anio='$this->anio'";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
+
+	public function borronycuentanueva1()
+	{
+		$cc = Conexion::getInstance();
+		$sql = "DELETE FROM becas_mes WHERE mes='$this->mes' AND anio='$this->anio'";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
+
 }
 
 ?>
