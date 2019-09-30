@@ -49,7 +49,34 @@ switch($_REQUEST['accion'])
 					}
 				}
 			}
+
+			$q=$beca->selecid();
+			$w=$q[0][0];
+			
+
+			$ladilla=0;
+
+			for ($i=0;$i<$w;$i++) {
+				$beca->setMonto($_POST['pago'.$i]);
+				$comprobador=$beca->getMonto();
+
+
+				if (empty($comprobador)) {
+					$ladilla=$ladilla+1;
+				}
+				else  {
+
+				}
+			}
+
+			if ($w==$ladilla) {
+					echo "<script>alert('no puedes dejar todos los campos vacios')</script>";//Mensaje de Sesión no válida
+					echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/beca/becanueva.php?accion=actual'>"; 
+				break;
+			}
+
 			$beca->truncar();
+
 			for ($i=0;$i<=$x;$i++) {
 				$beca->setId_atleta($i);
 				$beca->setMonto($_POST['pago'.$i]);

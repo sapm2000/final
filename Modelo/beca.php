@@ -152,6 +152,16 @@ class Beca extends ClaseBase
 		return ($trae);
 	}
 
+	public function selecid()
+	{
+		$cc = Conexion::getInstance();
+		$sql = "SELECT count(*) FROM atleta";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
+
 	public function traemes()
 	{
 		$cc = Conexion::getInstance();
