@@ -45,7 +45,7 @@ if($_GET['accion']=="actual" && !empty($_SESSION['detallebeca']))
 		
 		$cata.="</tr>";	
 	}
-	$cata.='<input type="submit" value="Pagar" id="submit" name="BtRegistrar">';
+	$cata.='<br>';
 	$cata.="</table><br>";
 	$cata.="</form>";
 

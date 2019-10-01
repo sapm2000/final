@@ -6,7 +6,7 @@ if(empty($_SESSION['nombre']))
 	}
 if($_GET['accion']=="actualizar"||empty($_REQUEST['accion']))
 {
-	header("Location: ../../Controlador/BecaController.php?accion=buscatodos");
+	header("Location: ../../Controlador/BecaController.php?accion=buscatodos1");
 }
 
 
@@ -78,6 +78,11 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabeca']))
 	}
 	$cata.='<input type="submit" value="Pagar" id="submit" name="BtRegistrar">';
 	$cata.="</table><br>";
+	$form.='<table>';
+	$form.='<tr>';
+	$form.='<td><a href="../beca/beca.php?accion=actualizar"><input type="button" class="botonmodal" value="Cargar Beca Anterior"></a></td>';
+	$form.='</tr>';
+	$form.='</table>';
 	$cata.="</form>";
 
 }
