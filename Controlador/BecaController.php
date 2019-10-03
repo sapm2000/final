@@ -13,6 +13,14 @@ switch($_REQUEST['accion'])
 		break;
 	}
 
+	case "buscatodos1":
+	{
+		$todos = $beca->todosBecas($tab);
+		$_SESSION['catabeca'] = $todos;
+		header("Location: ../Vista/beca/becanueva.php?accion=actual");
+		break;
+	}
+
 	case "buscaGlobal":
 	{
 		$todos = $beca->todosTotal($tab);
