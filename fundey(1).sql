@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-08-2019 a las 00:52:40
+-- Tiempo de generación: 11-10-2019 a las 01:32:41
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.4
 
@@ -56,6 +56,7 @@ INSERT INTO `alergias` (`id`, `alergia`) VALUES
 
 CREATE TABLE `atleta` (
   `id` int(11) NOT NULL,
+  `nac` varchar(1) NOT NULL,
   `cedula` varchar(9) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `apellido` varchar(50) NOT NULL,
@@ -82,11 +83,12 @@ CREATE TABLE `atleta` (
 -- Volcado de datos para la tabla `atleta`
 --
 
-INSERT INTO `atleta` (`id`, `cedula`, `nombre`, `apellido`, `f_nac`, `tipos`, `estadoc`, `sexo`, `id_nivel`, `correo`, `n_tel`, `n_eme`, `id_municipio`, `id_parroquia`, `direccion`, `activo`, `id_talla`, `id_calzado`, `altura`, `peso`, `mano`) VALUES
-(1, '30426947', 'FREDDERICK', 'HERNANDEZ', '2004-07-06', 'O+', 'SOLTERO/A', 'M', 1, 'DASDAD@ASDS.COM', '12345678900', '00987654321', 13, 19, 'ASDA', 0, 8, 7, '1,10', '90.0', 'DIESTRO'),
-(2, '27328852', 'MARYORITH', 'SINGER', '2000-05-05', 'O+', 'SOLTERO/A', 'F', 3, 'MARYORITHSINGER05@GMAIL.COM', '04125084544', '04245222312', 1, 1, 'FINAL CALLE 28 CON 14 AV.', 0, 0, 0, '', '', ''),
-(3, '26943430', 'SAMUEL', 'PEREZ', '2000-01-06', 'O+', 'SOLTERO/A', 'F', 3, '8@SADSA.COM', '04245222312', '04125084544', 11, 17, '2 AV.', 0, 0, 0, '', '', ''),
-(4, '1234567', 'FSDFS', 'SDFDSFS', '2000-06-12', 'O-', 'SOLTERO/A', 'M', 2, '', '', '', 0, 0, '', 1, 8, 5, '123', '12', '');
+INSERT INTO `atleta` (`id`, `nac`, `cedula`, `nombre`, `apellido`, `f_nac`, `tipos`, `estadoc`, `sexo`, `id_nivel`, `correo`, `n_tel`, `n_eme`, `id_municipio`, `id_parroquia`, `direccion`, `activo`, `id_talla`, `id_calzado`, `altura`, `peso`, `mano`) VALUES
+(1, 'V', '30426947', 'FREDDERICK', 'HERNANDEZ', '2004-07-06', 'O+', 'SOLTERO/A', 'M', 1, 'DASDAD@ASDS.COM', '12345678900', '00987654321', 13, 19, 'ASDA', 0, 8, 7, '1,10', '90.0', 'DIESTRO'),
+(2, '', '27328852', 'MARYORITH', 'SINGER', '2000-05-05', 'O+', 'SOLTERO/A', 'F', 3, 'MARYORITHSINGER05@GMAIL.COM', '04125084544', '04245222312', 1, 1, 'FINAL CALLE 28 CON 14 AV.', 0, 0, 0, '', '', ''),
+(3, '', '26943430', 'SAMUEL', 'PEREZ', '2000-01-06', 'O+', 'SOLTERO/A', 'F', 3, '8@SADSA.COM', '04245222312', '04125084544', 11, 17, '2 AV.', 0, 0, 0, '', '', ''),
+(4, '', '1234567', 'FSDFS', 'SDFDSFS', '2000-06-12', 'O-', 'SOLTERO/A', 'M', 2, '', '', '', 0, 0, '', 1, 8, 5, '123', '12', ''),
+(5, 'E', '7590456', 'ADSAD', 'ASDADAS', '2000-06-01', 'O-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 0, 0, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -146,8 +148,7 @@ CREATE TABLE `becas` (
 --
 
 INSERT INTO `becas` (`id`, `id_atleta`, `monto`) VALUES
-(1, 1, 2.5453434),
-(2, 2, 100);
+(1, 1, 10);
 
 -- --------------------------------------------------------
 
@@ -168,11 +169,11 @@ CREATE TABLE `becas_mes` (
 --
 
 INSERT INTO `becas_mes` (`id`, `mes`, `anio`, `montoT`, `becados`) VALUES
-(1, 'Enero', '2020', 143, 0),
-(2, 'Febrero', '2020', 143.5, 0),
-(3, 'Marzo', '2019', 143.545, 0),
-(4, 'Enero', '2021', 143.545, 4),
-(5, 'Febrero', '2134', 102.545, 2);
+(2, 'Febrero', '2018', 10322, 4),
+(3, 'Marzo', '2021', 10301.8, 3),
+(4, 'Enero', '2028', 700, 2),
+(6, 'Febrero', '2012', 800, 3),
+(15, 'Febrero', '2020', 10, 1);
 
 -- --------------------------------------------------------
 
@@ -193,44 +194,19 @@ CREATE TABLE `becas_total` (
 --
 
 INSERT INTO `becas_total` (`id`, `id_atleta`, `monto`, `mes`, `anio`) VALUES
-(1, 1, 2, 'Enero', ''),
-(2, 2, 100, 'Enero', ''),
-(3, 3, 1, 'Enero', ''),
-(4, 4, 40, 'Enero', ''),
-(5, 1, 2, 'Febrero', ''),
-(6, 2, 100, 'Febrero', ''),
-(7, 3, 1, 'Febrero', ''),
-(8, 4, 40, 'Febrero', ''),
-(9, 1, 2, 'Enero', '1234'),
-(10, 2, 100, 'Enero', '1234'),
-(11, 3, 1, 'Enero', '1234'),
-(12, 4, 40, 'Enero', '1234'),
-(13, 1, 2, 'Enero', '2020'),
-(14, 2, 100, 'Enero', '2020'),
-(15, 3, 1, 'Enero', '2020'),
-(16, 4, 40, 'Enero', '2020'),
-(17, 1, 2, 'Enero', '2122'),
-(18, 2, 100, 'Enero', '2122'),
-(19, 3, 1, 'Enero', '2122'),
-(20, 4, 40, 'Enero', '2122'),
-(21, 1, 2, 'Enero', '2020'),
-(22, 2, 100, 'Enero', '2020'),
-(23, 3, 1, 'Enero', '2020'),
-(24, 4, 40, 'Enero', '2020'),
-(25, 1, 2.5, 'Febrero', '2020'),
-(26, 2, 100, 'Febrero', '2020'),
-(27, 3, 1, 'Febrero', '2020'),
-(28, 4, 40, 'Febrero', '2020'),
-(29, 1, 2.54534, 'Marzo', '2019'),
-(30, 2, 100, 'Marzo', '2019'),
-(31, 3, 1, 'Marzo', '2019'),
-(32, 4, 40, 'Marzo', '2019'),
-(33, 1, 2.54534, 'Enero', '2021'),
-(34, 2, 100, 'Enero', '2021'),
-(35, 3, 1, 'Enero', '2021'),
-(36, 4, 40, 'Enero', '2021'),
-(37, 1, 2.54534, 'Febrero', '2134'),
-(38, 2, 100, 'Febrero', '2134');
+(4, 1, 100.5, 'Febrero', '2018'),
+(5, 2, 200.8, 'Febrero', '2018'),
+(6, 3, 10000.5, 'Febrero', '2018'),
+(7, 4, 20.2, 'Febrero', '2018'),
+(8, 1, 100.5, 'Marzo', '2021'),
+(9, 2, 200.8, 'Marzo', '2021'),
+(10, 3, 10000.5, 'Marzo', '2021'),
+(11, 1, 200, 'Enero', '2028'),
+(12, 2, 500, 'Enero', '2028'),
+(16, 1, 200, 'Febrero', '2012'),
+(17, 2, 500, 'Febrero', '2012'),
+(18, 3, 100, 'Febrero', '2012'),
+(29, 1, 10, 'Febrero', '2020');
 
 -- --------------------------------------------------------
 
@@ -262,6 +238,7 @@ INSERT INTO `calzados` (`id`, `calzado`) VALUES
 
 CREATE TABLE `cuenta` (
   `id` int(11) NOT NULL,
+  `nac` varchar(1) NOT NULL,
   `cedula` varchar(9) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `apellido` varchar(50) NOT NULL,
@@ -275,11 +252,12 @@ CREATE TABLE `cuenta` (
 -- Volcado de datos para la tabla `cuenta`
 --
 
-INSERT INTO `cuenta` (`id`, `cedula`, `nombre`, `apellido`, `id_banco`, `numeroc`, `tipo`, `id_atleta`) VALUES
-(1, '1234567', 'MARITZA', 'HERNANDEZ', 14, '12345678900876541111', '', 1),
-(2, '27328852', 'MARYORITH', 'SINGER', 6, '12345678900876541111', '', 2),
-(3, '1234567', 'ASDADSADS', 'PEREZ', 9, '12345678900876541111', '', 3),
-(4, '', '', '', 0, '', '', 4);
+INSERT INTO `cuenta` (`id`, `nac`, `cedula`, `nombre`, `apellido`, `id_banco`, `numeroc`, `tipo`, `id_atleta`) VALUES
+(1, 'E', '1234567', 'MARITZA', 'HERNANDEZ', 14, '12345678900876541111', '', 1),
+(2, '', '27328852', 'MARYORITH', 'SINGER', 6, '12345678900876541111', '', 2),
+(3, '', '1234567', 'ASDADSADS', 'PEREZ', 9, '12345678900876541111', '', 3),
+(4, '', '', '', '', 0, '', '', 4),
+(5, '', '', '', '', 0, '', '', 5);
 
 -- --------------------------------------------------------
 
@@ -305,7 +283,8 @@ INSERT INTO `datoll` (`id`, `correol`, `empresa`, `id_municipio1`, `id_parroquia
 (1, '', '', 0, 0, '', 1),
 (2, '', '', 0, 0, '', 2),
 (3, '', '', 0, 0, '', 3),
-(4, '', '', 0, 0, '', 4);
+(4, '', '', 0, 0, '', 4),
+(5, '', '', 0, 0, '', 5);
 
 -- --------------------------------------------------------
 
@@ -373,7 +352,7 @@ CREATE TABLE `estatus` (
 --
 
 INSERT INTO `estatus` (`id`, `estatu`) VALUES
-(3, 'S E ADULTO'),
+(8, 'S E ADULTO'),
 (1, 'S E JUVENIL'),
 (2, 'S E PRE JUVENIL'),
 (6, 'S N ADULTO'),
@@ -950,7 +929,7 @@ ALTER TABLE `alergias`
 -- AUTO_INCREMENT de la tabla `atleta`
 --
 ALTER TABLE `atleta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `atleta_representante`
@@ -968,19 +947,19 @@ ALTER TABLE `bancos`
 -- AUTO_INCREMENT de la tabla `becas`
 --
 ALTER TABLE `becas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `becas_mes`
 --
 ALTER TABLE `becas_mes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `becas_total`
 --
 ALTER TABLE `becas_total`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de la tabla `calzados`
@@ -992,13 +971,13 @@ ALTER TABLE `calzados`
 -- AUTO_INCREMENT de la tabla `cuenta`
 --
 ALTER TABLE `cuenta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `datoll`
 --
 ALTER TABLE `datoll`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `discapacidades`
@@ -1016,7 +995,7 @@ ALTER TABLE `disciplinas`
 -- AUTO_INCREMENT de la tabla `estatus`
 --
 ALTER TABLE `estatus`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `eventos`
