@@ -107,6 +107,7 @@ switch($_REQUEST['accion'])
 			$nom = strtoupper($_POST['nombre']);
 			$ape = strtoupper($_POST['apellido']);
 			$atleta->setCedula($_POST['cedula']);
+			$atleta->setNac($_POST['nacio']);
 			$atleta->setNombre($nom);
 			$atleta->setApellido($ape);
 			$atleta->setF_nac($_POST['f_nac']);
@@ -231,6 +232,7 @@ switch($_REQUEST['accion'])
 			$atleta->setId($_GET['id']);
 			$nom = strtoupper($_POST['nombre']);
 			$ape = strtoupper($_POST['apellido']);
+			$atleta->setNac($_POST['nacio']);
 			$atleta->setCedula($_POST['cedula']);
 			$atleta->setNombre($nom);
 			$atleta->setApellido($ape);

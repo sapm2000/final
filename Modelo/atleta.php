@@ -257,12 +257,23 @@ class Atleta extends ClaseBase
 
 	}
 
+	public function setNac($nac)
+	{
+		$this->nac = $nac;
+	}
+
+	public function getNac()
+	{
+		return $this->nac;
+
+	}
+
 	
 
 	public function guardarAtleta()
 	{
 		$con = Conexion::getInstance();
-		$sql = "INSERT INTO $this->tabla (cedula,nombre,apellido,f_nac,tipos,estadoc,sexo,id_nivel,correo,n_tel,n_eme,id_municipio,id_parroquia,direccion) VALUES ('$this->cedula','$this->nombre','$this->apellido','$this->f_nac','$this->tipos','$this->estadoc','$this->sexo','$this->id_nivel','$this->correo','$this->n_tel','$this->n_eme','$this->id_municipio','$this->id_parroquia','$this->direccion')";
+		$sql = "INSERT INTO $this->tabla (nac,cedula,nombre,apellido,f_nac,tipos,estadoc,sexo,id_nivel,correo,n_tel,n_eme,id_municipio,id_parroquia,direccion) VALUES ('$this->nac','$this->cedula','$this->nombre','$this->apellido','$this->f_nac','$this->tipos','$this->estadoc','$this->sexo','$this->id_nivel','$this->correo','$this->n_tel','$this->n_eme','$this->id_municipio','$this->id_parroquia','$this->direccion')";
 		$result = $con->db->prepare($sql);
 		$insert = $result->execute();
 		return $insert;
@@ -300,7 +311,7 @@ class Atleta extends ClaseBase
 		public function modificarDatosp()
 		{
 			$con = Conexion::getInstance();
-			$sql = "UPDATE $this->tabla SET cedula='$this->cedula', nombre='$this->nombre', apellido='$this->apellido', f_nac='$this->f_nac', tipos='$this->tipos', estadoc='$this->estadoc', sexo='$this->sexo', id_nivel='$this->id_nivel' WHERE id=$this->id";
+			$sql = "UPDATE $this->tabla SET nac='$this->nac', cedula='$this->cedula', nombre='$this->nombre', apellido='$this->apellido', f_nac='$this->f_nac', tipos='$this->tipos', estadoc='$this->estadoc', sexo='$this->sexo', id_nivel='$this->id_nivel' WHERE id=$this->id";
 			$result = $con->db->prepare($sql);
 			$cambio = $result->execute();
 			return $cambio;
