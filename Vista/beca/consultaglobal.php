@@ -37,13 +37,15 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabeca1']))
 {
 	$catalogo = $_SESSION['catabeca1'];
 	$cata.="<table class=tabla-cat id=tabla>";
-	$cata.="<tr><th>fecha</th><th>Monto Pagado</th><th>Becados</th><th>Acción</th></tr>";
+	$cata.="<tr><th>nombre</th><th>fecha</th><th>Monto Pagado</th><th>Becados</th><th>Acción</th></tr>";
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
+		$cata.="<td>".$cat['nombre']."</td>";	
 		$cata.="<td>".$cat['fecha']."</td>";	
 		$cata.="<td>".$cat['montoT']."</td>";	
 		$cata.="<td>".$cat['becados']."</td>";	
+		
 		$cata.="<td><a href='../../Controlador/BecaController.php?accion=seleccionar&fecha=".$cat['fecha']."'>";	
 		$cata.="<img src='../imagenes1/editar.png' width='15px' height='15px' title='Editar'></a></td>";
 		

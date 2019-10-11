@@ -93,6 +93,7 @@ switch($_REQUEST['accion'])
 				}
 			}
 			$beca->setFecha($_POST['fecha']);
+			$beca->setNombre($_POST['nombre']);
 			$beca->setMontoT($total);
 			$beca->setBecados($cont);
 			$beca->guardarDefinitivo();
