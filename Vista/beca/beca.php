@@ -23,8 +23,8 @@ $form.='<td>Buscador:</td>';
 $form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" id="letra" name="Beca" maxlenght="9" pattern="[a-z A-Z 0-9 ñÑ\s]{2,25}" title="máximo de 25 caracteres" ></td>';
 $form.='</tr>';
 $form.='<tr>';
-$form.='<td>fecha a pagar:</td>';
-$form.='<td><input type="date" name="fecha"></td>';
+$form.='<td>Fecha a Pagar:</td>';
+$form.='<td><input type="date" name="fecha" class="cajasdetexto" required></td>';
 $form.='</tr>';
 $form.='</table>';
 
@@ -52,10 +52,10 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabeca']))
 		}
 
 		if (empty($cat['monto'])) {
-			$cata.="<td> <input type='text' id='b".$cat['id']."' name='pago".$cat['id']."' style='display:none' value='".$cat['monto']."' onkeypress='return solonumerosypuntos(event)' pattern='([1-9]{1})([0-9]{1,})([.]{1})([0-9]{2})' title='ej: 2500.50 el punto indica los decimales' class='cajasdetexto' onpaste='return false'></td>";	
+			$cata.="<td> <input type='text' id='b".$cat['id']."' name='pago".$cat['id']."' style='display:none' value='".$cat['monto']."' onkeypress='return solonumeros(event)' pattern='([1-9]{1})([0-9]{3,})' title='ej: 25000' class='cajasdetexto' onpaste='return false'></td>";	
 		}
 		else {
-			$cata.="<td> <input type='number' step='0.1' id='b".$cat['id']."' name='pago".$cat['id']."' value='".$cat['monto']."' onkeypress='return solonumerosypuntos(event)'  pattern='([1-9]{1})([0-9]{1,})([.]{1})([0-9]{2})' title='ej: 2500.50 el punto indica los decimales' class='cajasdetexto' onpaste='return false'></td>";	
+			$cata.="<td> <input type='text' id='b".$cat['id']."' name='pago".$cat['id']."' value='".$cat['monto']."' onkeypress='return solonumeros(event)' pattern='([1-9]{1})([0-9]{3,})' title='ej: 25000' class='cajasdetexto' onpaste='return false'></td>";	
 		}
 
 
