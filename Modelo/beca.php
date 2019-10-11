@@ -25,25 +25,17 @@ class Beca extends ClaseBase
 		return $this->monto;
 	}
 
-	public function setMes($mes)
+	public function setFecha($fecha)
 	{
-		$this->mes = $mes;
+		$this->fecha = $fecha;
 	}
 
-	public function getMes()
+	public function getFecha()
 	{
-		return $this->mes;
+		return $this->fecha;
 	}
 
-	public function setAnio($anio)
-	{
-		$this->anio = $anio;
-	}
-
-	public function getAnio()
-	{
-		return $this->anio;
-	}
+	
 
 	public function setMontoT($montoT)
 	{
@@ -80,7 +72,7 @@ class Beca extends ClaseBase
 	public function getDetalles()
 	{
 		$cc = Conexion::getInstance();
-		$sql = "SELECT atleta.*, becas_total.monto FROM atleta INNER JOIN becas_total ON becas_total.id_atleta=atleta.id WHERE mes='$this->mes' AND anio='$this->anio'";
+		$sql = "SELECT atleta.*, becas_total.monto FROM atleta INNER JOIN becas_total ON becas_total.id_atleta=atleta.id WHERE fecha='$this->fecha'";
 		$result = $cc->db->prepare($sql);
 		$result->execute();
 		$trae = $result->fetchAll();
@@ -109,7 +101,7 @@ class Beca extends ClaseBase
 	public function guardarRegistro()
 	{
 		$con = Conexion::getInstance();
-		$sql = "INSERT INTO becas_total (id_atleta,monto,mes,anio) VALUES ('$this->id_atleta','$this->monto','$this->mes','$this->anio')";
+		$sql = "INSERT INTO becas_total (id_atleta,monto,fecha) VALUES ('$this->id_atleta','$this->monto','$this->fecha')";
 		$result = $con->db->prepare($sql);
 		$insert = $result->execute();
 		return $insert;
@@ -118,7 +110,7 @@ class Beca extends ClaseBase
 	public function guardarDefinitivo()
 	{
 		$con = Conexion::getInstance();
-		$sql = "INSERT INTO becas_mes (mes,anio,montoT,Becados) VALUES ('$this->mes','$this->anio','$this->montoT','$this->becados')";
+		$sql = "INSERT INTO becas_mes (fecha,montoT,Becados) VALUES ('$this->fecha','$this->montoT','$this->becados')";
 		$result = $con->db->prepare($sql);
 		$insert = $result->execute();
 		return $insert;
@@ -182,25 +174,6 @@ class Beca extends ClaseBase
 		return ($trae);
 	}
 
-	public function borronycuentanueva()
-	{
-		$cc = Conexion::getInstance();
-		$sql = "DELETE FROM becas_total WHERE mes='$this->mes' AND anio='$this->anio'";
-		$result = $cc->db->prepare($sql);
-		$result->execute();
-		$trae = $result->fetchAll();
-		return ($trae);
-	}
-
-	public function borronycuentanueva1()
-	{
-		$cc = Conexion::getInstance();
-		$sql = "DELETE FROM becas_mes WHERE mes='$this->mes' AND anio='$this->anio'";
-		$result = $cc->db->prepare($sql);
-		$result->execute();
-		$trae = $result->fetchAll();
-		return ($trae);
-	}
 
 }
 

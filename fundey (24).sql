@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-10-2019 a las 01:32:41
+-- Tiempo de generación: 11-10-2019 a las 02:08:10
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.4
 
@@ -148,7 +148,9 @@ CREATE TABLE `becas` (
 --
 
 INSERT INTO `becas` (`id`, `id_atleta`, `monto`) VALUES
-(1, 1, 10);
+(1, 1, 100),
+(2, 2, 100),
+(3, 3, 122);
 
 -- --------------------------------------------------------
 
@@ -158,8 +160,7 @@ INSERT INTO `becas` (`id`, `id_atleta`, `monto`) VALUES
 
 CREATE TABLE `becas_mes` (
   `id` int(11) NOT NULL,
-  `mes` varchar(50) NOT NULL,
-  `anio` varchar(4) NOT NULL,
+  `fecha` varchar(50) NOT NULL,
   `montoT` float NOT NULL,
   `becados` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -168,12 +169,14 @@ CREATE TABLE `becas_mes` (
 -- Volcado de datos para la tabla `becas_mes`
 --
 
-INSERT INTO `becas_mes` (`id`, `mes`, `anio`, `montoT`, `becados`) VALUES
-(2, 'Febrero', '2018', 10322, 4),
-(3, 'Marzo', '2021', 10301.8, 3),
-(4, 'Enero', '2028', 700, 2),
-(6, 'Febrero', '2012', 800, 3),
-(15, 'Febrero', '2020', 10, 1);
+INSERT INTO `becas_mes` (`id`, `fecha`, `montoT`, `becados`) VALUES
+(2, 'Febrero', 10322, 4),
+(3, 'Marzo', 10301.8, 3),
+(4, 'Enero', 700, 2),
+(6, 'Febrero', 800, 3),
+(15, 'Febrero', 10, 1),
+(16, '2019-10-09', 200, 2),
+(17, '2019-10-15', 322, 3);
 
 -- --------------------------------------------------------
 
@@ -185,28 +188,32 @@ CREATE TABLE `becas_total` (
   `id` int(11) NOT NULL,
   `id_atleta` int(11) NOT NULL,
   `monto` float NOT NULL,
-  `mes` varchar(50) NOT NULL,
-  `anio` varchar(4) NOT NULL
+  `fecha` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `becas_total`
 --
 
-INSERT INTO `becas_total` (`id`, `id_atleta`, `monto`, `mes`, `anio`) VALUES
-(4, 1, 100.5, 'Febrero', '2018'),
-(5, 2, 200.8, 'Febrero', '2018'),
-(6, 3, 10000.5, 'Febrero', '2018'),
-(7, 4, 20.2, 'Febrero', '2018'),
-(8, 1, 100.5, 'Marzo', '2021'),
-(9, 2, 200.8, 'Marzo', '2021'),
-(10, 3, 10000.5, 'Marzo', '2021'),
-(11, 1, 200, 'Enero', '2028'),
-(12, 2, 500, 'Enero', '2028'),
-(16, 1, 200, 'Febrero', '2012'),
-(17, 2, 500, 'Febrero', '2012'),
-(18, 3, 100, 'Febrero', '2012'),
-(29, 1, 10, 'Febrero', '2020');
+INSERT INTO `becas_total` (`id`, `id_atleta`, `monto`, `fecha`) VALUES
+(4, 1, 100.5, 'Febrero'),
+(5, 2, 200.8, 'Febrero'),
+(6, 3, 10000.5, 'Febrero'),
+(7, 4, 20.2, 'Febrero'),
+(8, 1, 100.5, 'Marzo'),
+(9, 2, 200.8, 'Marzo'),
+(10, 3, 10000.5, 'Marzo'),
+(11, 1, 200, 'Enero'),
+(12, 2, 500, 'Enero'),
+(16, 1, 200, 'Febrero'),
+(17, 2, 500, 'Febrero'),
+(18, 3, 100, 'Febrero'),
+(29, 1, 10, 'Febrero'),
+(30, 1, 100, '2019-10-09'),
+(31, 2, 100, '2019-10-09'),
+(32, 1, 100, '2019-10-15'),
+(33, 2, 100, '2019-10-15'),
+(34, 3, 122, '2019-10-15');
 
 -- --------------------------------------------------------
 
@@ -947,19 +954,19 @@ ALTER TABLE `bancos`
 -- AUTO_INCREMENT de la tabla `becas`
 --
 ALTER TABLE `becas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `becas_mes`
 --
 ALTER TABLE `becas_mes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `becas_total`
 --
 ALTER TABLE `becas_total`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `calzados`

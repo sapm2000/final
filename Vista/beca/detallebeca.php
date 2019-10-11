@@ -25,7 +25,7 @@ $form.='</table>';
 
 
 
-if($_GET['accion']=="actual" && !empty($_SESSION['detallebeca']))
+if($_GET['accion']=="actual")
 {
 	$catalogo = $_SESSION['detallebeca'];
 	$cata.="<table class=tabla-cat id=tabla>";
