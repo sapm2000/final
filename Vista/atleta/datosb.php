@@ -25,6 +25,7 @@ if($_GET['accion']=='ver_detalles') {
 	foreach($datos as $d)
 	{
 		$id=$d['id'];
+		$na=$d['nac'];
 		$ced=$d['cedula'];
 		$nom=$d['nombre'];
 		$ape=$d['apellido'];
@@ -61,6 +62,27 @@ if($_GET['accion']=='ver_detalles') {
 	}
 	
 	$tipo1.= "</select>";
+
+	$nac.="<select name='nacio'  style='width:40px' required>";
+	if ($na=='V' || $na=='') {
+		$nac.= "<option selected>V</option>";
+		$nac.= "<option>E</option>";
+		$nac.= "<option>P</option>";
+	}
+
+	if ($na=='E') {
+		$nac.= "<option>V</option>";
+		$nac.= "<option selected>E</option>";
+		$nac.= "<option>P</option>";
+	} 
+
+	if ($na=='P') {
+		$nac.= "<option>V</option>";
+		$nac.= "<option>E</option>";
+		$nac.= "<option selected>P</option>";
+	}
+
+	$nac.= "</select>";
 	
 
 
@@ -80,7 +102,7 @@ if($_GET['accion']=='ver_detalles') {
 	$form.='</tr>';
 	$form.="<tr>";
 	$form.='<td>Cédula:</td>';
-	$form.='<td><input id="" type="text" name="cedula" value="'.$ced.'" class="cajasdetexto" onkeypress="return solonumeros(event)" pattern="[0-9]{7,8}" title="Solo 7 u 8 digitos" onpaste="return false" required></td>';
+	$form.='<td>'.$nac.'<input id="" type="text" name="cedula" value="'.$ced.'" class="cajasdetexto" onkeypress="return solonumeros(event)" pattern="[0-9]{7,8}" title="Solo 7 u 8 digitos" onpaste="return false" required></td>';
 	$form.='</tr>';
 	$form.="<tr>";
 	$form.='<td>Nombre:</td>';

@@ -51,6 +51,13 @@ foreach($todos as $td)
 }
 $nivel.= "</select>";
 
+$nac.="<select name='nacio'  style='width:40px' required>";
+$nac.= "<option>V</option>";
+$nac.= "<option>E</option>";
+$nac.= "<option>P</option>";
+$nac.= "</select>";
+
+
 
 
 
@@ -71,7 +78,7 @@ $form.='<td>&nbsp;</td>';
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Cédula:</td>';
-$form.='<td><input id="" type="text" name="cedula" class="cajasdetexto" maxlenght="9" onkeypress="return solonumeros(event)" onpaste="return false" pattern="[0-9]{7,8}" title="Solo 7 u 8 digitos" required></td>';
+$form.='<td>'.$nac.'<input id="" type="text" name="cedula" class="cajasdetexto" maxlenght="9" onkeypress="return solonumeros(event)" onpaste="return false" pattern="[0-9]{7,8}" title="Solo 7 u 8 digitos" required></td>';
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Nombres:</td>';
@@ -122,6 +129,7 @@ if($_GET['accion']=='ver_detalles') {
 	foreach($datos as $d)
 	{
 		$id=$d['id'];
+		$na=$d['nac'];
 		$ced=$d['cedula'];
 		$nom=$d['nombre'];
 		$ape=$d['apellido'];
@@ -256,6 +264,29 @@ foreach($todosni as $td)
 $nivel1.= "</select>";
 
 
+$nac.="<select name='nacio'  style='width:40px' required>";
+if ($na=='V' || $na=='') {
+	$nac.= "<option selected>V</option>";
+	$nac.= "<option>E</option>";
+	$nac.= "<option>P</option>";
+}
+
+if ($na=='E') {
+	$nac.= "<option>V</option>";
+	$nac.= "<option selected>E</option>";
+	$nac.= "<option>P</option>";
+} 
+
+if ($na=='P') {
+	$nac.= "<option>V</option>";
+	$nac.= "<option>E</option>";
+	$nac.= "<option selected>P</option>";
+}
+
+$nac.= "</select>";
+
+
+
 
 
 
@@ -279,7 +310,7 @@ $nivel1.= "</select>";
 	$form.='</tr>';
 	$form.="<tr>";
 	$form.='<td>Cédula:</td>';
-	$form.='<td><input id="" type="text" name="cedula" value="'.$ced.'" class="cajasdetexto" maxlenght="9" onkeypress="return solonumeros(event)" onpaste="return false" pattern="[0-9]{7,8}" title="Solo 7 u 8 digitos" required></td>';
+	$form.='<td>'.$nac.'<input id="" type="text" name="cedula" value="'.$ced.'" class="cajasdetexto" maxlenght="9" onkeypress="return solonumeros(event)" onpaste="return false" pattern="[0-9]{7,8}" title="Solo 7 u 8 digitos" required></td>';
 	$form.='</tr>';
 	$form.='<tr>';
 	$form.='<td>Nombres:</td>';

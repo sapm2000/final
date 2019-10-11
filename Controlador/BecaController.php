@@ -36,27 +36,12 @@ switch($_REQUEST['accion'])
 			$cont=0;
 			$z=$beca->selexmax();
 			$x=$z[0][0];
-			$beca->setMes($_POST['mes']);
-			$beca->setAnio($_POST['anio']);
-			$mesactu=$beca->getMes();
-			$anioactu=$beca->getAnio();
-			$mes=$beca->traemes();
-			$anio=$beca->traeanio();
+		
+			
 
-			$k=count($mes);
-			$c=count($anio);
+			
 
-			for ($i=0;$i<=$k;$i++) {
-				if ($mes[$i][0]==$mesactu) {
-					for ($o=0;$o<=$c;$o++) {
-						if ($anio[$o][0]==$anioactu) {
-							$beca->borronycuentanueva(); 
-							$beca->borronycuentanueva1(); 
-							break 2;
-						}
-					}
-				}
-			}
+			
 
 			$q=$beca->selecid();
 			$w=$q[0][0];
@@ -88,8 +73,7 @@ switch($_REQUEST['accion'])
 			for ($i=0;$i<=$x;$i++) {
 				$beca->setId_atleta($i);
 				$beca->setMonto($_POST['pago'.$i]);
-				$beca->setMes($_POST['mes']);
-				$beca->setAnio($_POST['anio']);
+				$beca->setFecha($_POST['fecha']);
 				
 				$comprobador=$beca->getMonto();
 			
@@ -108,8 +92,7 @@ switch($_REQUEST['accion'])
 					$beca->guardarRegistro();
 				}
 			}
-			$beca->setMes($_POST['mes']);
-			$beca->setAnio($_POST['anio']);
+			$beca->setFecha($_POST['fecha']);
 			$beca->setMontoT($total);
 			$beca->setBecados($cont);
 			$beca->guardarDefinitivo();
@@ -119,21 +102,15 @@ switch($_REQUEST['accion'])
 		}
 		break;
 	}
-	case "eliminar":
-	{
-		$beca->setId($_GET['id']);
-		$beca->deleteById($id);
-		header("Location: ../Vista/beca/beca.php?accion=actualizar");		
-		break;	
-	}
+	
 	case 'seleccionar':
 	{
-		$beca->setMes($_GET['mes']);
-		$beca->setAnio($_GET['anio']);
+		$beca->setFecha($_GET['fecha']);
 		$datos = $beca->getDetalles();
 		$_SESSION['detallebeca'] = $datos;
 
 		header("Location: ../Vista/beca/detallebeca.php?accion=actual&id=".$id);	
+
 
 		break;	
 	}

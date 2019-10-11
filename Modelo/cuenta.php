@@ -87,6 +87,18 @@ class Cuenta extends ClaseBase
 		return $this->cod_banco;
 	}
 
+	public function setNac($nac)
+	{
+		$this->nac = $nac;
+	}
+
+	public function getNac()
+	{
+		return $this->nac;
+
+	}
+
+
 
 
 	public function buscaid()
@@ -123,7 +135,7 @@ class Cuenta extends ClaseBase
 		public function modificarCuenta()
 		{
 			$con = Conexion::getInstance();
-			$sql = "UPDATE $this->tabla SET cedula='$this->cedulat', nombre='$this->nombret', apellido='$this->apellidot', id_banco='$this->id_banco', numeroc='$this->numeroc', tipo='$this->tipo' WHERE id_atleta=$this->id_atleta";
+			$sql = "UPDATE $this->tabla SET nac='$this->nac', cedula='$this->cedulat', nombre='$this->nombret', apellido='$this->apellidot', id_banco='$this->id_banco', numeroc='$this->numeroc', tipo='$this->tipo' WHERE id_atleta=$this->id_atleta";
 			$result = $con->db->prepare($sql);
 			$cambio = $result->execute();
 			return $cambio;

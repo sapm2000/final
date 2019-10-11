@@ -118,6 +118,7 @@ switch($_REQUEST['accion'])
 	{
 			$nomt = strtoupper($_POST['nombre']);
 			$apet = strtoupper($_POST['apellido']);
+			$cuenta->setNac($_POST['nacio']);
 			$cuenta->setCedulat($_POST['cedula']);
 			$cuenta->setNombret($nomt);
 			$cuenta->setApellidot($apet);
