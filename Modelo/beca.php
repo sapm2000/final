@@ -73,7 +73,7 @@ class Beca extends ClaseBase
 	public function todosBecas()
 	{
 		$cc = Conexion::getInstance();
-		$sql = "SELECT atleta.*, becas.monto FROM atleta LEFT OUTER JOIN becas ON atleta.id=becas.id_atleta";
+		$sql = "SELECT atleta.nombre, atleta.id, atleta.apellido, atleta.cedula, becas.monto,cuenta.nac,cuenta.cedula AS ced , cuenta.numeroc FROM atleta INNER JOIN becas ON atleta.id=becas.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id";
 		$result = $cc->db->prepare($sql);
 		$result->execute();
 		$trae = $result->fetchAll();
