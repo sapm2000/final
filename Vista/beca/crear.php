@@ -31,7 +31,9 @@
             
             
             $cata.="<td> <input type='text' id='b".$cat['id']."' name='pago".$cat['id']."' value='".$cat['monto']."' onkeypress='return solonumeros(event)' pattern='([1-9]{1})([0-9]{3,})' title='ej: 25000' class='cajasdetexto' onpaste='return false'></td>";            
-            $data.= $cat['monto'];
+            $numeroConCeros1 = str_pad($cat['monto'], 8, "0", STR_PAD_LEFT);
+            $data.= $numeroConCeros1;
+
             $data.= '00'."\n";
 
 

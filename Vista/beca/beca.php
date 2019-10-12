@@ -6,7 +6,7 @@ if(empty($_SESSION['nombre']))
 	}
 if($_GET['accion']=="actualizar"||empty($_REQUEST['accion']))
 {
-	header("Location: ../../Controlador/BecaController.php?accion=buscatodos2");
+	header("Location: ../../Controlador/BecaController.php?accion=buscatodos");
 }
 
 

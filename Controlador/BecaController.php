@@ -7,7 +7,7 @@ switch($_REQUEST['accion'])
 {
 	case "buscatodos":
 	{
-		$todos = $beca->todosBecas($tab);
+		$todos = $beca->todosatletas($tab);
 		$_SESSION['catabeca'] = $todos;
 		header("Location: ../Vista/beca/beca.php?accion=actual");
 		break;
@@ -15,7 +15,7 @@ switch($_REQUEST['accion'])
 
 	case "buscatodos1":
 	{
-		$todos = $beca->todosBecas($tab);
+		$todos = $beca->todosatletas($tab);
 		$_SESSION['catabeca'] = $todos;
 		header("Location: ../Vista/beca/becanueva.php?accion=actual");
 		break;
@@ -82,6 +82,9 @@ switch($_REQUEST['accion'])
 				$beca->setId_atleta($i);
 				$beca->setMonto($_POST['pago'.$i]);
 				$beca->setFecha($_POST['fecha']);
+				$originalDate = $beca->getFecha();
+				$newDate = date("Ymd", strtotime($originalDate));
+				$_SESSION['fechas']=$newDate;
 				
 				$comprobador=$beca->getMonto();
 			
@@ -102,10 +105,20 @@ switch($_REQUEST['accion'])
 			}
 			$beca->setFecha($_POST['fecha']);
 			$beca->setNombre($_POST['nombre']);
+			$_SESSION['nombre']=$beca->getNombre();
+
 			$beca->setMontoT($total);
+			$mont=$beca->getMontoT();
+			$numeroConCeros4 = str_pad($mont, 11, "0", STR_PAD_LEFT);
+            $_SESSION['total']= $numeroConCeros4;
+
 			$beca->setBecados($cont);
+			$canti=$beca->getBecados();
+			$numeroConCeros3 = str_pad($canti, 6, "0", STR_PAD_LEFT);
+            $_SESSION['cantidad']= $numeroConCeros3;
+
 			$beca->guardarDefinitivo();
-			header("Location: ../Vista/beca/beca.php?accion=actualizar");		
+			header("Location: ../Vista/beca/crear.php?accion=actualizar");		
 
 			
 		}
