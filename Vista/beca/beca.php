@@ -6,7 +6,7 @@ if(empty($_SESSION['nombre']))
 	}
 if($_GET['accion']=="actualizar"||empty($_REQUEST['accion']))
 {
-	header("Location: ../../Controlador/BecaController.php?accion=buscatodos");
+	header("Location: ../../Controlador/BecaController.php?accion=buscatodos2");
 }
 
 
@@ -21,6 +21,10 @@ $form.='<tr>';
 $form.='<td>Buscador:</td>';
 
 $form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" id="letra" name="Beca" maxlenght="9" pattern="[a-z A-Z 0-9 ñÑ\s]{2,25}" title="máximo de 25 caracteres" ></td>';
+$form.='</tr>';
+$form.='<tr>';
+$form.='<td>Nombre de la beca</td>';
+$form.='<td><input type="text" name="nombre" class="cajasdetexto" required></td>';
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Fecha a Pagar:</td>';

@@ -21,6 +21,14 @@ switch($_REQUEST['accion'])
 		break;
 	}
 
+	case "buscatodos2":
+	{
+		$todos = $beca->todosBecas($tab);
+		$_SESSION['catabeca5'] = $todos;
+		header("Location: ../Vista/beca/crear.php?accion=actual");
+		break;
+	}
+
 	case "buscaGlobal":
 	{
 		$todos = $beca->todosTotal($tab);
@@ -93,6 +101,7 @@ switch($_REQUEST['accion'])
 				}
 			}
 			$beca->setFecha($_POST['fecha']);
+			$beca->setNombre($_POST['nombre']);
 			$beca->setMontoT($total);
 			$beca->setBecados($cont);
 			$beca->guardarDefinitivo();

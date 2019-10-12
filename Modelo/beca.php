@@ -57,13 +57,23 @@ class Beca extends ClaseBase
 		return $this->becados;
 	}
 
+	public function setNombre($nombre)
+	{
+		$this->nombre = $nombre;
+	}
+
+	public function getNombre()
+	{
+		return $this->nombre;
+	}
+
 
 
 
 	public function todosBecas()
 	{
 		$cc = Conexion::getInstance();
-		$sql = "SELECT atleta.*, becas.monto FROM atleta LEFT OUTER JOIN becas ON atleta.id=becas.id_atleta";
+		$sql = "SELECT atleta.nombre, atleta.id, atleta.apellido, atleta.cedula, becas.monto,cuenta.nac,cuenta.cedula AS ced , cuenta.numeroc FROM atleta INNER JOIN becas ON atleta.id=becas.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id";
 		$result = $cc->db->prepare($sql);
 		$result->execute();
 		$trae = $result->fetchAll();
@@ -110,7 +120,7 @@ class Beca extends ClaseBase
 	public function guardarDefinitivo()
 	{
 		$con = Conexion::getInstance();
-		$sql = "INSERT INTO becas_mes (fecha,montoT,Becados) VALUES ('$this->fecha','$this->montoT','$this->becados')";
+		$sql = "INSERT INTO becas_mes (fecha,montoT,Becados,nombre) VALUES ('$this->fecha','$this->montoT','$this->becados','$this->nombre')";
 		$result = $con->db->prepare($sql);
 		$insert = $result->execute();
 		return $insert;
