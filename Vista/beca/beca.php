@@ -48,6 +48,7 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabeca']))
 		$cata.="<td>".$cat['cedula']."</td>";	
 		$cata.="<td>".$cat['nombre']."</td>";	
 		$cata.="<td>".$cat['apellido']."</td>";	
+
 		if (empty($cat['monto'])) {
 			$cata.="<td> <input  type='checkbox' class='a' id=".$cat['id']."> </td>";	
 		}
@@ -55,12 +56,16 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabeca']))
 			$cata.="<td> <input  type='checkbox' class='a' id=".$cat['id']."  checked> </td>";	
 		}
 
+
+
 		if (empty($cat['monto'])) {
 			$cata.="<td> <input type='text' id='b".$cat['id']."' name='pago".$cat['id']."' style='display:none' value='".$cat['monto']."' onkeypress='return solonumeros(event)' pattern='([1-9]{1})([0-9]{3,})' title='ej: 25000' class='cajasdetexto' onpaste='return false'></td>";	
 		}
 		else {
 			$cata.="<td> <input type='text' id='b".$cat['id']."' name='pago".$cat['id']."' value='".$cat['monto']."' onkeypress='return solonumeros(event)' pattern='([1-9]{1})([0-9]{3,})' title='ej: 25000' class='cajasdetexto' onpaste='return false'></td>";	
 		}
+		$cata.="<td> <input type='hidden' name='cuenta".$cat['id']."' value=".$cat['numeroc']."></td>";	
+
 
 
 

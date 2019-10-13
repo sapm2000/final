@@ -77,6 +77,10 @@ switch($_REQUEST['accion'])
 			}
 
 			$beca->truncar();
+			$contbice=0;
+			$contgeneral=0;
+			$totalgeneral=0;
+			$totalbice=0;
 
 			for ($i=0;$i<=$x;$i++) {
 				$beca->setId_atleta($i);
@@ -96,6 +100,20 @@ switch($_REQUEST['accion'])
 				}
 
 				elseif ($comprobador>0) {
+					if (strncmp($_POST['cuenta'.$i],'0175',4)===0) {
+						$contbice=$contbice+1;
+						$bice=$beca->getMonto();
+
+						$totalbice=$totalbice+$bice;
+
+					}
+					else {
+						$contgeneral=$contgeneral+1;
+						$gene=$beca->getMonto();
+
+						$totalgeneral=$totalgeneral+$gene;
+
+					}
 					$cont=$cont+1;
 					$temp=$beca->getMonto();
 					$total=$total+$temp;
@@ -108,17 +126,22 @@ switch($_REQUEST['accion'])
 			$_SESSION['nombre']=$beca->getNombre();
 
 			$beca->setMontoT($total);
-			$mont=$beca->getMontoT();
-			$numeroConCeros4 = str_pad($mont, 11, "0", STR_PAD_LEFT);
-            $_SESSION['total']= $numeroConCeros4;
+			$numeroConCeros5 = str_pad($totalgeneral, 11, "0", STR_PAD_LEFT);
+			$_SESSION['total']= $numeroConCeros5;
+			$numeroConCeros6 = str_pad($totalbice, 11, "0", STR_PAD_LEFT);
+            $_SESSION['totalbice']= $numeroConCeros6;
 
 			$beca->setBecados($cont);
-			$canti=$beca->getBecados();
-			$numeroConCeros3 = str_pad($canti, 6, "0", STR_PAD_LEFT);
-            $_SESSION['cantidad']= $numeroConCeros3;
+			
+			$numeroConCeros3 = str_pad($contgeneral, 6, "0", STR_PAD_LEFT);
+			$_SESSION['cantidad']= $numeroConCeros3;
+			$numeroConCeros4 = str_pad($contbice, 6, "0", STR_PAD_LEFT);
+			$_SESSION['cantidadbice']= $numeroConCeros4;
 
 			$beca->guardarDefinitivo();
-			header("Location: ../Vista/beca/crear.php?accion=actualizar");		
+			header("Location: ../Vista/beca/crear.php?accion=actual");
+
+			
 
 			
 		}
