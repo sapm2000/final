@@ -48,12 +48,14 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabeca']))
 		$cata.="<td>".$cat['cedula']."</td>";	
 		$cata.="<td>".$cat['nombre']."</td>";	
 		$cata.="<td>".$cat['apellido']."</td>";	
+
 		
 		$cata.="<td> <input  type='checkbox' class='a' id=".$cat['id']."> </td>";	
 		
 		
 		$cata.="<td> <input type='text' id='b".$cat['id']."' name='pago".$cat['id']."' style='display:none' onkeypress='return solonumeros(event)' pattern='([1-9]{1})([0-9]{3,})' title='ej: 2500' class='cajasdetexto' onpaste='return false'></td>";	
-		
+		$cata.="<td> <input type='hidden' name='cuenta".$cat['id']."' value=".$cat['numeroc']."></td>";	
+
 		
 
 
