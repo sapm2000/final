@@ -80,6 +80,19 @@ class Beca extends ClaseBase
 		return ($trae);
 	}
 
+	public function todosBecas1()
+	{
+		$cc = Conexion::getInstance();
+		$sql = "SELECT * FROM becas_mes";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
+
+
+	//
+
 	public function todosatletas()
 	{
 		$cc = Conexion::getInstance();
@@ -146,6 +159,15 @@ class Beca extends ClaseBase
 		return $insert;
 	}
 
+	public function borron()
+	{
+		$con = Conexion::getInstance();
+		$sql = "DELETE FROM becas_mes WHERE nombre='$this->nombre'";
+		$result = $con->db->prepare($sql);
+		$insert = $result->execute();
+		return $insert;
+	}
+
 	public function modificarPersona()
 	{
 		$con = Conexion::getInstance();
@@ -159,6 +181,16 @@ class Beca extends ClaseBase
 	{
 		$cc = Conexion::getInstance();
 		$sql = "SELECT MAX(id) FROM atleta";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
+
+	public function selexmaxbeca()
+	{
+		$cc = Conexion::getInstance();
+		$sql = "SELECT MAX(id) FROM becas_mes";
 		$result = $cc->db->prepare($sql);
 		$result->execute();
 		$trae = $result->fetchAll();
