@@ -92,15 +92,6 @@ switch($_REQUEST['accion'])
 			$m=$beca->todosBecas1();
 
 
-			for ($h=0;$h<=$l;$h++) {
-				if ($_SESSION['nombre']==$m[$h][4]) {
-					echo "<script>alert('esta beca tiene el mismo nombre que una beca anterior, se sustituira automaticamente los datos de esa beca por esta')</script>";//Mensaje de Sesión no válida
-					echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL= ../Vista/beca/crear.php?accion=actualizar&id=".$id."'>";
-					$beca->borron();
-					break 2;
-				}
-
-			}
 
 			for ($i=0;$i<=$x;$i++) {
 				$beca->setId_atleta($i);
@@ -158,6 +149,17 @@ switch($_REQUEST['accion'])
 			$_SESSION['cantidadbice']= $numeroConCeros4;
 
 			$beca->guardarDefinitivo();
+
+			
+			for ($h=0;$h<=$l;$h++) {
+				if ($_SESSION['nombre']==$m[$h][4]) {
+					echo "<script>alert('esta beca tiene el mismo nombre que una beca anterior, se sustituira automaticamente los datos de esa beca por esta')</script>";//Mensaje de Sesión no válida
+					echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL= ../Vista/beca/crear.php?accion=actualizar&id=".$id."'>";
+					$beca->borron();
+					break 2;
+				}
+
+			}
 
 			header("Location: ../Vista/beca/crear.php?accion=actualizar&id=".$id);	
 
