@@ -20,7 +20,8 @@ $form.='<table>';
 $form.='<tr>';
 $form.='<td>Buscador:</td>';
 $form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()"></td>';
-$form.='<td> <a href="../../Controlador/LogroController.php?accion=buscacosas"><input type="button" class="botonmodal" value="+ Logro" title="Agregar un atleta"> </a></td>';
+$form.='<td> <a href="../../Controlador/LogroController.php?accion=buscacosas"><input type="button" class="botonmodal" value="+ Logro" title="Agregar un logro"> </a></td>';
+$form.='<td> <a href="../atleta/consultaatleta.php?accion=actualizar"><input type="button" class="botonmodal" value="Volver" title="Volver a consulta atleta"> </a></td>';
 $form.='</tr>';
 $form.='</table>';
 

@@ -129,7 +129,8 @@ table.tabla-cat tr:hover td
 {
     background: #ddd;
     color:black;
-    font-family: fantasy;
+    border: 3px solid #00008B;
+
 }
 
 /*ventana menor a 980 píxeles*/

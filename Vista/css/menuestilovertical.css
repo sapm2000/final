@@ -318,7 +318,12 @@ transition: opacity 400ms ease-in;
     height: 10%;
     text-align: center;
 }
-
+.botonmodal:hover 
+{
+    background: #ddd;
+    color:black;
+    border: 3px solid #00008B;
+}
 .botonmodalmuni
 {
     font-weight: 900;
@@ -334,7 +339,12 @@ transition: opacity 400ms ease-in;
     height: 10%;
     text-align: center;
 }
-
+.botonmodalmuni:hover 
+{
+    background: #ddd;
+    color:black;
+    border: 3px solid #00008B;
+}
 .cajasdetexto
 {
 

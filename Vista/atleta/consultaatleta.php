@@ -24,7 +24,12 @@ $form.='<tr>';
 $form.='<td>Buscador:</td>';
 $form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()"></td>';
 $form.='<td> <a href="datosp.php?accion=registrar"><input type="button" class="botonmodal" value="+ Atleta" title="Agregar un atleta"> </a></td>';
-$form.='<td> <a href="consultaatleta1.php?accion=actualizar"><input type="button" class="botonmodal" value="Atletas Inactivos" title="Atletas inactivos"> </a></td>';
+$form.='</tr>';
+$form.='</table>';
+$form.='<table>';
+$form.='<tr>';
+$form.='<td> <a href="consultaatleta1.php?accion=actualizar"><input type="button" class="botonmodal" value="Atletas Inactivos" title="Atletas Inactivos"> </a></td>';
+$form.='<td> <a href="consultaatleta2.php?accion=actualizar"><input type="button" class="botonmodal" value="Atletas Gloriosos" title="Atletas Gloriosos"> </a></td>';
 $form.='</tr>';
 $form.='</table>';
 
@@ -33,7 +38,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['cataatle']))
 	$catalogo = $_SESSION['cataatle'];
 	$cata.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrar' method='post'>";
 	$cata.="<table class=tabla-cat id=tabla>";
-	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th><th colspan='3'>Acción</th></tr>";
+	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th><th colspan='4'>Acción</th></tr>";
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
@@ -55,7 +60,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['cataatle']))
 		$cata.="<td><a href='../../Controlador/AtletaController.php?accion=seleccionar&id=".$cat['id']."'>";	
 		$cata.="<img src='../imagenes1/editar.png' width='15px' height='15px' title='Editar'></a></td>";
 		$cata.="<td><a href='../../Controlador/AtletaController.php?accion=eliminar1&id=".$cat['id']."'>";	
-		$cata.="<img src='../imagenes1/editar.png' width='15px' height='15px' title='Editar'></a></td>";
+		$cata.="<img src='../imagenes1/glorioso.png' width='18px' height='18px' title='Gloriosos'></a></td>";
 		$cata.="<td><a href='../../Controlador/AtletaController.php?accion=eliminar&id=".$cat['id']."'>";	
 		$cata.="<img src='../imagenes1/eliminar.png' width='15px' height='15px' title='Inhabilitar'></a></td>";	
 		$cata.="</tr>";	

@@ -74,7 +74,7 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catarepre']))
 
 else
 {
-	$cata.= "Aún no se han registrado usuarios.";
+	$cata.= "Aún no se han registrado representantes.";
 	$cata.='<br>';
 	$cata.='<br>';
 }
@@ -82,7 +82,7 @@ else
 $diccionario = array 
 (
 	'PERFIL' => $perfil,
-	'TITULO'=>'Representates.',
+	'TITULO'=>'Representantes.',
 	'CATALOGO'=>'',
 	'BOTONREG'=>$boton,
 	'FORMULARIO'=>$form,
