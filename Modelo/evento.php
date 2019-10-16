@@ -166,7 +166,7 @@ class Evento extends ClaseBase
 
 
 	
-	public function guardarLogro()
+	public function guardarEvento()
 	{
 		$con = Conexion::getInstance();
 		$sql = "INSERT INTO $this->tabla (nombre,fecha_inicio,fecha_cierre,descripcion,id_disciplina,id_municipio,id_parroquia,maxpo,parti,canti,actual) VALUES ('$this->nombre','$this->fecha_inicio','$this->fecha_cierre','$this->descripcion','$this->id_disciplina','$this->id_municipio','$this->id_parroquia','$this->maxpo','$this->parti','$this->canti','$this->actual')";

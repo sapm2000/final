@@ -37,7 +37,7 @@
                 $bice.= '00000';
                 $numeroConCeros1 = str_pad($cat['monto'], 8, "0", STR_PAD_LEFT);
                 $bice.= $numeroConCeros1;
-                $bice.= '00'."\n";
+                $bice.= '00'."\r\n";
 
 
 
@@ -52,7 +52,7 @@
                 $numeroConCeros1 = str_pad($cat['monto'], 8, "0", STR_PAD_LEFT);
                 $data.= $numeroConCeros1;
     
-                $data.= '00'."\n";
+                $data.= '00'."\r\n";
 
 
             }

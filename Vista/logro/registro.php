@@ -10,7 +10,6 @@ $select='';
 $estadocivil='';
 $sexo='';
 $tipo='';
-if($_GET['accion']!='ver_detalles') {
 
 $todos = $_SESSION['tipologro'];
 $tipo = "<select name='tipo' required>";
@@ -79,7 +78,7 @@ $form.='</tr>';
 $form.='</table>';
 $form.="</form>";
 $form.="</div>";
-}
+
 
 
 
