@@ -63,8 +63,10 @@ switch($_REQUEST['accion'])
 			$evento->setId_parroquia($_POST['id_parroquia']);
 			$evento->setParti($_POST['parti']);
 			$equipos=$evento->getParti();
+			$_SESSION['parti']=$evento->getParti();
 			$evento->setCanti($_POST['canti']);
 			$cantidad=$evento->getCanti();
+			$_SESSION['canti']=$evento->getCanti();
 
 			$_SESSION['total']=$cantidad/$equipos;
 			$evento->setMaxpo($_SESSION['total']);
