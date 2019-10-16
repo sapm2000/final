@@ -54,6 +54,8 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['cataatle']))
 		$cata.="<img src='../imagenes1/logro1.png' width='15px' height='15px' title='Logros'></a></td>";
 		$cata.="<td><a href='../../Controlador/AtletaController.php?accion=seleccionar&id=".$cat['id']."'>";	
 		$cata.="<img src='../imagenes1/editar.png' width='15px' height='15px' title='Editar'></a></td>";
+		$cata.="<td><a href='../../Controlador/AtletaController.php?accion=eliminar1&id=".$cat['id']."'>";	
+		$cata.="<img src='../imagenes1/editar.png' width='15px' height='15px' title='Editar'></a></td>";
 		$cata.="<td><a href='../../Controlador/AtletaController.php?accion=eliminar&id=".$cat['id']."'>";	
 		$cata.="<img src='../imagenes1/eliminar.png' width='15px' height='15px' title='Inhabilitar'></a></td>";	
 		$cata.="</tr>";	
