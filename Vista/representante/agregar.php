@@ -38,17 +38,22 @@ if($_GET['accion']=="actual")
 	$form.='<tr>';
 	$form.='<td>Cédula:</td>';
 	$form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" name="cedula_a" maxlenght="9" pattern="[0-9]{7,8}" title="Debe tener de 7 u 8 digitos" required></td>';
-	$form.='<tr>';
-	$form.='<tr>';
-
 	$form.='<td><input id="searchTerm" type="hidden" class="cajasdetexto" onkeyup="doSearch()" value="'.$id.'" name="cedula" maxlenght="9" pattern="[0-9]{7,8}" title="Debe tener de 7 u 8 digitos" required></td>';
 	$form.='<tr>';
-	$form.='<td>Parentezco con el Representado:</td>';
+	$form.='<td>Parentesco con el Representado:</td>';
 	$form.='<td>'.$select.'</td>';
 	$form.='</tr>';
+	$form.='</table>';
+	$form.='<table>';
+	$form.='<tr>';
+	$form.='<td><input type="submit" value="Registrar" id="submit" name="BtRegistrar"></td';
+	$form.='</tr>';
+	$form.='<tr>';
+	$form.='<td><a href="evento2.php?accion=actualizar"><input type="button" class="botonmodal" value="Volver" title="Volver a la consulta de eventos"></td>';
 	$form.='</tr>';
 	$form.='</table>';
-	$form.=' <input type="submit" value="Registrar" id="submit" name="BtRegistrar">';
+	
+
 	$form.='</form>';
 	$cata.="<table class=tabla-cat id=tabla1>";
 	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Correo Electrónico</th><th>Número de Teléfono</th></tr>";

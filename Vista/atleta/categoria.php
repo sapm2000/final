@@ -48,7 +48,7 @@ if ($_GET['accion']=='ver_detalles')
 $diccionario = array 
 (
 	'PERFIL' => $perfil,
-	'TITULO'=>'Alergias',
+	'TITULO'=>'Atleta',
 	'CATALOGO'=>$cata,
 	'BOTONREG'=>$boton,
 	'FORMULARIO'=>$form

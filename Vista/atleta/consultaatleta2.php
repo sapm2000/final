@@ -30,7 +30,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['cataatle2']))
 	$catalogo = $_SESSION['cataatle2'];
 	$cata.="<form name='catalog' action='../../Controlador/AtletaconsultaController.php?accion=registrar' method='post'>";
 	$cata.="<table class=tabla-cat id=tabla>";
-	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th><th colspan='3'>Acción</th></tr>";
+	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th><th colspan='1'>Acción</th></tr>";
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
@@ -56,14 +56,14 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['cataatle2']))
 	$cata.="</table><br>";
 }
 if (empty($_SESSION['cataatle2'])) {
-	$cata.="Aún no hay atletas jubilados.";
+	$cata.="Aún no hay atletas gloriosos.";
 }
 
 
 $diccionario = array 
 (
 	'PERFIL' => $perfil,
-	'TITULO'=>'Atletas Inactivos',
+	'TITULO'=>'Atletas Gloriosos',
 	'CATALOGO'=>$cata,
 	'BOTONREG'=>$boton,
 	'FORMULARIO'=>$form, 	
