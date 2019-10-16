@@ -98,6 +98,17 @@ switch($_REQUEST['accion'])
 		break;
 	}
 
+	case "buscatodos3":
+	{
+		
+		$todos = $atleta->getAllAtletaglorioso($tab);
+		$_SESSION['cataatle2'] = $todos;
+
+		
+		header("Location: ../Vista/atleta/consultaatleta2.php?accion=actual");
+		break;
+	}
+
 	
 
 	case "registrar":
@@ -158,6 +169,14 @@ switch($_REQUEST['accion'])
 	{
 		$atleta->setId($_GET['id']);
 		$atleta->updateestado();
+		header("Location: ../Vista/atleta/consultaatleta.php?accion=actualizar");		
+		break;	
+	}
+
+	case "eliminar1":
+	{
+		$atleta->setId($_GET['id']);
+		$atleta->updateestado2();
 		header("Location: ../Vista/atleta/consultaatleta.php?accion=actualizar");		
 		break;	
 	}

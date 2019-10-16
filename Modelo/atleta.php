@@ -326,6 +326,15 @@ class Atleta extends ClaseBase
 			return $cambio;
 		}
 
+		public function updateestado2()
+		{
+			$con = Conexion::getInstance();
+			$sql = "UPDATE atleta SET activo=2 WHERE id=$this->id";
+			$result = $con->db->prepare($sql);
+			$cambio = $result->execute();
+			return $cambio;
+		}
+
 		public function updateestado1()
 		{
 			$con = Conexion::getInstance();
@@ -353,6 +362,17 @@ class Atleta extends ClaseBase
 			$trae = $result->fetchAll();
 			return ($trae);
 		}
+
+		public function getAllAtletaglorioso()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT atleta.*, tallas.talla, calzados.calzado FROM atleta LEFT OUTER JOIN tallas ON atleta.id_talla=tallas.id LEFT OUTER JOIN calzados ON atleta.id_calzado=calzados.id WHERE activo=2";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
 
 		public function todoslosatletas()
 		{
