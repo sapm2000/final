@@ -86,8 +86,10 @@ switch($_REQUEST['accion'])
 			$totalgeneral=0;
 			$totalbice=0;
 
-			$beca->setNombre($_POST['nombre']);
-			$_SESSION['nombre']=$beca->getNombre();
+			$bec = strtoupper($_POST['nombre']);
+			$beca->setNombre($bec);
+
+			$_SESSION['nombres']=$beca->getNombre();
 
 			$m=$beca->todosBecas1();
 

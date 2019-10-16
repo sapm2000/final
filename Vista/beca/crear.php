@@ -9,9 +9,17 @@
 
         $cata = '';
         $catalogo = $_SESSION['catabeca5'];
-		$cata.= 'Buscar: <input type="text" name="buscar" id="buscar" class="input"> ';
-        $cata.= '<a href="generar.php" target="_blank"><button id="descargar" class="bt-nuevo">Generar TXT general</button></a><br><br>';
-        $cata.= '<a href="generarbice.php" target="_blank"><button id="descargar" class="bt-nuevo">Generar TXT bicentenario</button></a><br><br>';
+        $cata.= '<table>';
+        $cata.= '<tr>';
+        $cata.= '<td>Buscar: <input type="text" name="buscar" id="buscar" class="cajasdetexto"></td>';
+        $cata.= '</tr>';
+        $cata.= '<tr>';
+        $cata.= '<td><a href="generar.php" target="_blank"><button id="descargar" class="botonmodal">Generar TXT general</button></a></td>';
+        $cata.= '</tr>';
+        $cata.= '<tr>';
+        $cata.= '<td><a href="generarbice.php" target="_blank"><button id="descargar" class="botonmodal">Generar TXT bicentenario</button></a></td>';
+        $cata.= '</tr>';
+        $cata.= '</table>';
 
 		$cata.="<table class=tabla-cat id=tabla>";
         $cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Monto</th></tr>";
