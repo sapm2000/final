@@ -86,14 +86,16 @@ switch($_REQUEST['accion'])
 			$totalgeneral=0;
 			$totalbice=0;
 
-			$beca->setNombre($_POST['nombre']);
-			$_SESSION['nombre']=$beca->getNombre();
+			$bec = strtoupper($_POST['nombre']);
+			$beca->setNombre($bec);
+
+			$_SESSION['nombres']=$beca->getNombre();
 
 			$m=$beca->todosBecas1();
 
 
 			for ($h=0;$h<=$l;$h++) {
-				if ($_SESSION['nombre']==$m[$h][4]) {
+				if ($_SESSION['nombres']==$m[$h][4]) {
 					echo "<script>alert('esta beca tiene el mismo nombre que una beca anterior, se sustituira automaticamente los datos de esa beca por esta')</script>";//Mensaje de Sesión no válida
 					echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL= ../Vista/beca/crear.php?accion=actualizar&id=".$id."'>";
 					$beca->borron();
