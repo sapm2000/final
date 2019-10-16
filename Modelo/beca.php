@@ -144,7 +144,7 @@ class Beca extends ClaseBase
 	public function guardarDefinitivo()
 	{
 		$con = Conexion::getInstance();
-		$sql = "INSERT INTO becas_mes (fecha,montoT,Becados,nombre) VALUES ('$this->fecha','$this->montoT','$this->becados','$this->nombre')";
+		$sql = "INSERT INTO becas_mes (fecha,montoT,becados,nombre) VALUES ('$this->fecha','$this->montoT','$this->becados','$this->nombre')";
 		$result = $con->db->prepare($sql);
 		$insert = $result->execute();
 		return $insert;
