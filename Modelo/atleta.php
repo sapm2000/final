@@ -164,14 +164,14 @@ class Atleta extends ClaseBase
 		return $this->id_discapacidad;
 	}
 
-	public function setId_alergia($id_alergia)
+	public function setId_registro_medico($id_registro_medico)
 	{
-		$this->id_alergia = $id_alergia;
+		$this->id_registro_medico = $id_registro_medico;
 	}
 
-	public function getId_alergia()
+	public function getId_registro_medico()
 	{
-		return $this->id_alergia;
+		return $this->id_registro_medico;
 	}
 
 	public function setId_disciplina($id_disciplina)
@@ -267,7 +267,16 @@ class Atleta extends ClaseBase
 		return $this->nac;
 
 	}
+	public function setFecha_medica($fecha_medica)
+	{
+		$this->fecha_medica = $fecha_medica;
+	}
 
+	public function getFecha_medica()
+	{
+		return $this->fecha_medica;
+
+	}
 	
 
 	public function guardarAtleta()
@@ -425,22 +434,22 @@ class Atleta extends ClaseBase
 			return ($result);
 		}
 
-		public function detalergias()
+		public function detregistro_medicos()
 		{
 			$cc=Conexion::getInstance();
 			//$sql="SELECT a.*, b.descrip AS std FROM parroquia AS a INNER JOIN municipio AS b ON b.id=a.id_municipio ORDER BY std";
-			$sql="SELECT id_alergia FROM puente_alergia WHERE id_atleta=$this->id_atleta";
+			$sql="SELECT id_registro_medico FROM puente_registro_medico WHERE id_atleta=$this->id_atleta";
 			$result=$cc->db->prepare($sql);
 			$result->execute();
 			$trae=$result->fetchAll();
 			return ($trae);
 		}
 
-		public function consdetAlergia()
+		public function consdetRegistro_medico()
 		{
 			$cc=Conexion::getInstance();
 			//$sql="SELECT a.*, b.descrip AS std FROM parroquia AS a INNER JOIN municipio AS b ON b.id=a.id_municipio ORDER BY std";
-			$sql="SELECT puente_alergia.id AS idal, alergias.alergia, atleta.id FROM puente_alergia INNER JOIN alergias ON puente_alergia.id_alergia=alergias.id INNER JOIN atleta ON puente_alergia.id_atleta=atleta.id WHERE atleta.id=$this->id_atleta";
+			$sql="SELECT puente_registro_medico.id AS idal, puente_registro_medico.fecha_medica, registro_medicos.registro_medico, atleta.id FROM puente_registro_medico INNER JOIN registro_medicos ON puente_registro_medico.id_registro_medico=registro_medicos.id INNER JOIN atleta ON puente_registro_medico.id_atleta=atleta.id WHERE atleta.id=$this->id_atleta";
 			$result=$cc->db->prepare($sql);
 			$result->execute();
 			$trae=$result->fetchAll();
@@ -450,16 +459,16 @@ class Atleta extends ClaseBase
 		public function guardarPuente()
 		{
 			$con = Conexion::getInstance();
-			$sql = "INSERT INTO puente_alergia (id_atleta,id_alergia) VALUES ('$this->id_atleta',$this->id_alergia)";
+			$sql = "INSERT INTO puente_registro_medico (id_atleta,id_registro_medico,fecha_medica) VALUES ('$this->id_atleta','$this->id_registro_medico','$this->fecha_medica')";
 			$result = $con->db->prepare($sql);
 			$insert = $result->execute();
 			return $insert;
 		}
 
-		public function deleteAlergia()
+		public function deleteRegistro_medico()
 		{
 			$cc = Conexion::getInstance();
-			$sql = "DELETE FROM puente_alergia WHERE id = $this->id";
+			$sql = "DELETE FROM puente_registro_medico WHERE id = $this->id";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			return ($result);

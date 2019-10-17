@@ -95,7 +95,7 @@ if($_GET['accion']=='ver_detalles') {
 	$form.='<input type="submit" value="Datos Bancarios" id="datosb" name="DatosB" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Disciplinas" name="Disciplinas" id="d" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Datos Laborales" id="siguiente11" name="BtModificar" class="botonmodalsuperior">';
-	$form.='<input type="submit" value="Alergias" id="a" name="Alergias" class="botonmodalsuperior">';
+	$form.='<input type="submit" value="Registro_medicos" id="a" name="Registro_medicos" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Discapacidades" name="Discapacidades" id="d" class="botonmodalsuperior">';
 
 
