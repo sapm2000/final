@@ -7,7 +7,7 @@ require_once("../Modelo/parroquia.php");
 require_once("../Modelo/banco.php");
 require_once("../Modelo/datosl.php");
 require_once("../Modelo/cuenta.php");
-require_once("../Modelo/alergia.php");
+require_once("../Modelo/registro_medico.php");
 require_once("../Modelo/discapacidad.php");
 require_once("../Modelo/disciplina.php");
 require_once("../Modelo/modalidades.php");
@@ -30,7 +30,7 @@ $parroquia = new Parroquia();
 $datosl = new Datosl();
 $cuenta= new Cuenta();
 $banco= new Banco();
-$alergia= new Alergia();
+$registro_medico= new Registro_medico();
 $discapacidad= new Discapacidad();
 $modalidad= new Modalidad();
 $disciplina= new Disciplina();
@@ -52,7 +52,7 @@ $parroquia->setTabla("parroquia");
 $datosl->setTabla("datoll");
 $cuenta->setTabla("cuenta");
 $banco->setTabla("bancos");
-$alergia->setTabla("alergias");
+$registro_medico->setTabla("registro_medicos");
 $discapacidad->setTabla("discapacidades");
 $disciplina->setTabla("disciplinas");
 $modalidad->setTabla("modalidades");
@@ -199,14 +199,14 @@ switch($_REQUEST['accion'])
 		break;	
 	}
 
-	case "eliminarAlergia":
+	case "eliminarRegistro_medico":
 	{
 		
 		$atleta->setId($_GET['id']);
-		$atleta->deleteAlergia($id);
+		$atleta->deleteRegistro_medico($id);
 		$atleta->setId_atleta($_GET['atleta']);
-		$_SESSION['catalergia1'] = $atleta->consdetAlergia();
-		header("Location: ../Vista/atleta/datosalergia.php?accion=ver_detalles");		
+		$_SESSION['catregistro_medico1'] = $atleta->consdetRegistro_medico();
+		header("Location: ../Vista/atleta/datosregistro_medico.php?accion=ver_detalles");		
 		break;	
 	}
 
@@ -296,19 +296,19 @@ switch($_REQUEST['accion'])
 			header("Location: ../Vista/atleta/datosb.php?accion=ver_detalles&id_atleta=".$id_atleta);
 			}
 
-			if(isset($_REQUEST['Alergias']))
+			if(isset($_REQUEST['Registro_medicos']))
 			{
-				$ale = $alergia->getAll($tab);
-				$_SESSION['alergia1'] = $ale;
+				$ale = $registro_medico->getAll($tab);
+				$_SESSION['registro_medico1'] = $ale;
 				
 				$atleta->setId_atleta($_GET['id']);
 				
-				$_SESSION['catalergia1'] = $atleta->consdetAlergia();
+				$_SESSION['catregistro_medico1'] = $atleta->consdetRegistro_medico();
 				$atleta->setId($_GET['id']);
 				$datos = $atleta->getById($id);
 				$_SESSION['id_atleta'] = $datos;
 				
-			header("Location: ../Vista/atleta/datosalergia.php?accion=ver_detalles&id=".$id);
+			header("Location: ../Vista/atleta/datosregistro_medico.php?accion=ver_detalles&id=".$id);
 			}
 
 			if(isset($_REQUEST['Discapacidades']))
@@ -443,19 +443,19 @@ switch($_REQUEST['accion'])
 				header("Location: ../Vista/atleta/datosb.php?accion=ver_detalles&id_atleta=".$id_atleta);
 			}
 
-			if(isset($_REQUEST['Alergias']))
+			if(isset($_REQUEST['Registro_medicos']))
 			{
-				$ale = $alergia->getAll($tab);
-				$_SESSION['alergia1'] = $ale;
+				$ale = $registro_medico->getAll($tab);
+				$_SESSION['registro_medico1'] = $ale;
 				
 				$atleta->setId_atleta($_POST['id_atleta']);
 				
-				$_SESSION['catalergia1'] = $atleta->consdetAlergia();
+				$_SESSION['catregistro_medico1'] = $atleta->consdetRegistro_medico();
 				$atleta->setId($_POST['id_atleta']);
 				$datos = $atleta->getById($id);
 				$_SESSION['id_atleta'] = $datos;
 				
-			header("Location: ../Vista/atleta/datosalergia.php?accion=ver_detalles&id=".$id);
+			header("Location: ../Vista/atleta/datosregistro_medico.php?accion=ver_detalles&id=".$id);
 			}
 			if(isset($_REQUEST['Discapacidades']))
 			{
@@ -514,7 +514,7 @@ switch($_REQUEST['accion'])
 		break;
 }
 
-case "registrarAlergia":
+case "registrarRegistro_medico":
 	{
 		
 		if(isset($_REQUEST['BtRegistrar1']))
@@ -523,17 +523,19 @@ case "registrarAlergia":
 		
 
 			$atleta->setId_atleta($_POST['id_atleta']);
-			$atleta->setId_alergia($_POST['id_alergia']);
+			$atleta->setId_registro_medico($_POST['id_registro_medico']);
+			$atleta->setFecha_medica($_POST['fecha_medica']);
 
-			$asd=$atleta->detalergias();
+
+			$asd=$atleta->detregistro_medicos();
 			$t= count($asd);
-			$ida=$atleta->getId_alergia();
+			$ida=$atleta->getId_registro_medico();
 
 			for ($i=0;$i<=$t;$i++) {
 				if ($ida==$asd[$i][0]) {
-					$_SESSION['catalergia1'] = $atleta->consdetAlergia();
-					echo "<script>alert('este atleta ya tiene registrada esta alergia')</script>";//Mensaje de Sesión no válida
-					echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/atleta/datosalergia.php?accion=ver_detalles'>"; 
+					$_SESSION['catregistro_medico1'] = $atleta->consdetRegistro_medico();
+					echo "<script>alert('este atleta ya tiene registrada este registro_medico')</script>";//Mensaje de Sesión no válida
+					echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/atleta/datosregistro_medico.php?accion=ver_detalles'>"; 
 
 					break 2;
 
@@ -546,12 +548,12 @@ case "registrarAlergia":
 
 
 			$atleta->guardarPuente();
-			$_SESSION['catalergia1'] = $atleta->consdetAlergia();
+			$_SESSION['catregistro_medico1'] = $atleta->consdetRegistro_medico();
 
 			
 
 			
-			header("Location: ../Vista/atleta/datosalergia.php?accion=ver_detalles");			
+			header("Location: ../Vista/atleta/datosregistro_medico.php?accion=ver_detalles");			
 		}
 		if(isset($_REQUEST['BtModificar']))
 			{
@@ -601,19 +603,19 @@ case "registrarAlergia":
 			header("Location: ../Vista/atleta/datosb.php?accion=ver_detalles&id_atleta=".$id_atleta);
 			}
 
-			if(isset($_REQUEST['Alergias']))
+			if(isset($_REQUEST['Registro_medicos']))
 			{
-				$ale = $alergia->getAll($tab);
-				$_SESSION['alergia1'] = $ale;
+				$ale = $registro_medico->getAll($tab);
+				$_SESSION['registro_medico1'] = $ale;
 				
 				$atleta->setId_atleta($_POST['id_atleta']);
 				
-				$_SESSION['catalergia1'] = $atleta->consdetAlergia();
+				$_SESSION['catregistro_medico1'] = $atleta->consdetRegistro_medico();
 				$atleta->setId($_POST['id_atleta']);
 				$datos = $atleta->getById($id);
 				$_SESSION['id_atleta'] = $datos;
 				
-			header("Location: ../Vista/atleta/datosalergia.php?accion=ver_detalles&id=".$id);
+			header("Location: ../Vista/atleta/datosregistro_medico.php?accion=ver_detalles&id=".$id);
 			}
 			if(isset($_REQUEST['Discapacidades']))
 			{
@@ -753,19 +755,19 @@ case "registrarAlergia":
 			header("Location: ../Vista/atleta/datosb.php?accion=ver_detalles&id_atleta=".$id_atleta);
 			}
 
-			if(isset($_REQUEST['Alergias']))
+			if(isset($_REQUEST['Registro_medicos']))
 			{
-				$ale = $alergia->getAll($tab);
-				$_SESSION['alergia1'] = $ale;
+				$ale = $registro_medico->getAll($tab);
+				$_SESSION['registro_medico1'] = $ale;
 				
 				$atleta->setId_atleta($_POST['id_atleta']);
 				
-				$_SESSION['catalergia1'] = $atleta->consdetAlergia();
+				$_SESSION['catregistro_medico1'] = $atleta->consdetRegistro_medico();
 				$atleta->setId($_POST['id_atleta']);
 				$datos = $atleta->getById($id);
 				$_SESSION['id_atleta'] = $datos;
 				
-			header("Location: ../Vista/atleta/datosalergia.php?accion=ver_detalles&id=".$id);
+			header("Location: ../Vista/atleta/datosregistro_medico.php?accion=ver_detalles&id=".$id);
 			}
 			if(isset($_REQUEST['Discapacidades']))
 			{
@@ -884,19 +886,19 @@ case "registrarAlergia":
 				header("Location: ../Vista/atleta/datosb.php?accion=ver_detalles&id_atleta=".$id_atleta);
 				}
 	
-				if(isset($_REQUEST['Alergias']))
+				if(isset($_REQUEST['Registro_medicos']))
 				{
-					$ale = $alergia->getAll($tab);
-					$_SESSION['alergia1'] = $ale;
+					$ale = $registro_medico->getAll($tab);
+					$_SESSION['registro_medico1'] = $ale;
 					
 					$atleta->setId_atleta($_GET['id']);
 					
-					$_SESSION['catalergia1'] = $atleta->consdetAlergia();
+					$_SESSION['catregistro_medico1'] = $atleta->consdetRegistro_medico();
 					$atleta->setId($_GET['id']);
 					$datos = $atleta->getById($id);
 					$_SESSION['id_atleta'] = $datos;
 					
-				header("Location: ../Vista/atleta/datosalergia.php?accion=ver_detalles&id=".$id);
+				header("Location: ../Vista/atleta/datosregistro_medico.php?accion=ver_detalles&id=".$id);
 				}
 				if(isset($_REQUEST['Discapacidades']))
 				{
@@ -990,19 +992,19 @@ case "registrarAlergia":
 					header("Location: ../Vista/atleta/datosb.php?accion=ver_detalles&id_atleta=".$id_atleta);
 				}
 	
-				if(isset($_REQUEST['Alergias']))
+				if(isset($_REQUEST['Registro_medicos']))
 				{
-					$ale = $alergia->getAll($tab);
-					$_SESSION['alergia1'] = $ale;
+					$ale = $registro_medico->getAll($tab);
+					$_SESSION['registro_medico1'] = $ale;
 					
 					$atleta->setId_atleta($_GET['id']);
 					
-					$_SESSION['catalergia1'] = $atleta->consdetAlergia();
+					$_SESSION['catregistro_medico1'] = $atleta->consdetRegistro_medico();
 					$atleta->setId($_GET['id']);
 					$datos = $atleta->getById($id);
 					$_SESSION['id_atleta'] = $datos;
 					
-				header("Location: ../Vista/atleta/datosalergia.php?accion=ver_detalles&id=".$id);
+				header("Location: ../Vista/atleta/datosregistro_medico.php?accion=ver_detalles&id=".$id);
 				}
 				if(isset($_REQUEST['Discapacidades']))
 				{

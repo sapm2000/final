@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-10-2019 a las 01:40:32
+-- Tiempo de generación: 17-10-2019 a las 02:59:09
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.4
 
@@ -21,32 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `fundey`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `alergias`
---
-
-CREATE TABLE `alergias` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `alergia` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `alergias`
---
-
-INSERT INTO `alergias` (`id`, `alergia`) VALUES
-(7, 'ALIMENTOS'),
-(10, 'ANAFILAXIA'),
-(1, 'ASMA'),
-(3, 'CONJUNTIVITIS'),
-(4, 'DERMATITIS'),
-(8, 'MEDICAMENTOS'),
-(9, 'PICADURAS DE INSECTOS'),
-(2, 'RINITIS'),
-(5, 'URTICARIA');
 
 -- --------------------------------------------------------
 
@@ -84,10 +58,10 @@ CREATE TABLE `atleta` (
 --
 
 INSERT INTO `atleta` (`id`, `nac`, `cedula`, `nombre`, `apellido`, `f_nac`, `tipos`, `estadoc`, `sexo`, `id_nivel`, `correo`, `n_tel`, `n_eme`, `id_municipio`, `id_parroquia`, `direccion`, `activo`, `id_talla`, `id_calzado`, `altura`, `peso`, `mano`) VALUES
-(1, 'V', '30426947', 'FREDDERICK', 'HERNANDEZ', '2004-07-06', 'O+', 'SOLTERO/A', 'M', 1, 'DASDAD@ASDS.COM', '12345678900', '00987654321', 13, 19, 'ASDA', 0, 8, 7, '1,10', '90.0', 'DIESTRO'),
-(2, '', '27328852', 'MARYORITH', 'SINGER', '2000-05-05', 'O+', 'SOLTERO/A', 'F', 3, 'MARYORITHSINGER05@GMAIL.COM', '04125084544', '04245222312', 1, 1, 'FINAL CALLE 28 CON 14 AV.', 0, 0, 0, '', '', ''),
-(3, '', '26943430', 'SAMUEL', 'PEREZ', '2000-01-06', 'O+', 'SOLTERO/A', 'F', 3, '8@SADSA.COM', '04245222312', '04125084544', 11, 17, '2 AV.', 0, 0, 0, '', '', ''),
-(4, '', '1234567', 'FSDFS', 'SDFDSFS', '2000-06-12', 'O-', 'SOLTERO/A', 'M', 2, '', '', '', 0, 0, '', 1, 8, 5, '123', '12', ''),
+(1, 'V', '30426947', 'FREDDERICK', 'HERNANDEZ', '2004-07-06', 'O+', 'SOLTERO/A', 'M', 1, 'DASDAD@ASDS.COM', '12345678900', '00987654321', 13, 19, 'ASDA', 2, 8, 7, '1,10', '90.0', 'DIESTRO'),
+(2, '', '27328852', 'MARYORITH', 'SINGER', '2000-05-05', 'O+', 'SOLTERO/A', 'F', 3, 'MARYORITHSINGER05@GMAIL.COM', '04125084544', '04245222312', 1, 1, 'FINAL CALLE 28 CON 14 AV.', 2, 0, 0, '', '', ''),
+(3, 'V', '26943430', 'SAMUEL', 'PEREZ', '2000-01-06', 'O+', 'SOLTERO/A', 'F', 3, '8@SADSA.COM', '04245222312', '04125084544', 11, 17, '2 AV.', 0, 0, 0, '', '', ''),
+(4, '', '1234567', 'FSDFS', 'SDFDSFS', '2000-06-12', 'O-', 'SOLTERO/A', 'M', 2, '', '', '', 0, 0, '', 0, 8, 5, '123', '12', ''),
 (5, 'E', '7590456', 'ADSAD', 'ASDADAS', '2000-06-01', 'O-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 0, 0, '', '', '');
 
 -- --------------------------------------------------------
@@ -148,10 +122,7 @@ CREATE TABLE `becas` (
 --
 
 INSERT INTO `becas` (`id`, `id_atleta`, `monto`) VALUES
-(1, 1, 1000),
-(2, 2, 2000),
-(3, 3, 500000),
-(4, 4, 5000);
+(1, 1, 1000);
 
 -- --------------------------------------------------------
 
@@ -172,15 +143,7 @@ CREATE TABLE `becas_mes` (
 --
 
 INSERT INTO `becas_mes` (`id`, `fecha`, `montoT`, `becados`, `nombre`) VALUES
-(2, 'Febrero', 10322, 4, ''),
-(3, 'Marzo', 10301.8, 3, ''),
-(4, 'Enero', 700, 2, ''),
-(6, 'Febrero', 800, 3, ''),
-(15, 'Febrero', 10, 1, ''),
-(16, '2019-10-09', 200, 2, ''),
-(17, '2019-10-15', 322, 3, ''),
-(18, '2019-10-12', 3000, 2, 'gloria'),
-(19, '2019-10-16', 508000, 4, 'hola');
+(1, '2019-10-23', 1000, 1, 'HOLA');
 
 -- --------------------------------------------------------
 
@@ -223,7 +186,151 @@ INSERT INTO `becas_total` (`id`, `id_atleta`, `monto`, `fecha`) VALUES
 (37, 1, 1000, '2019-10-16'),
 (38, 2, 2000, '2019-10-16'),
 (39, 3, 500000, '2019-10-16'),
-(40, 4, 5000, '2019-10-16');
+(40, 4, 5000, '2019-10-16'),
+(41, 1, 1000, '2019-10-24'),
+(42, 2, 10000, '2019-10-24'),
+(43, 3, 25000, '2019-10-24'),
+(44, 1, 1000, '2019-10-15'),
+(45, 2, 10000, '2019-10-15'),
+(46, 3, 25000, '2019-10-15'),
+(47, 4, 2333, '2019-10-15'),
+(48, 1, 1000, '2019-10-15'),
+(49, 2, 10000, '2019-10-15'),
+(50, 3, 25000, '2019-10-15'),
+(51, 4, 2333, '2019-10-15'),
+(52, 1, 1000, '2019-10-15'),
+(53, 2, 10000, '2019-10-15'),
+(54, 3, 25000, '2019-10-15'),
+(55, 4, 2333, '2019-10-15'),
+(56, 1, 1000, '2019-10-21'),
+(57, 2, 10000, '2019-10-21'),
+(58, 3, 25000, '2019-10-21'),
+(59, 4, 2333, '2019-10-21'),
+(60, 1, 1000, '2019-10-14'),
+(61, 2, 10000, '2019-10-14'),
+(62, 3, 25000, '2019-10-14'),
+(63, 4, 2333, '2019-10-14'),
+(64, 1, 1000, '2020-01-08'),
+(65, 2, 10000, '2020-01-08'),
+(66, 3, 25000, '2020-01-08'),
+(67, 4, 2333, '2020-01-08'),
+(68, 1, 1000, '2019-10-22'),
+(69, 2, 10000, '2019-10-22'),
+(70, 3, 25000, '2019-10-22'),
+(71, 4, 2333, '2019-10-22'),
+(72, 1, 150000, '2019-10-22'),
+(73, 2, 150000, '2019-10-22'),
+(74, 3, 150000, '2019-10-22'),
+(75, 4, 150000, '2019-10-22'),
+(76, 1, 150000, '2019-10-14'),
+(77, 2, 150000, '2019-10-14'),
+(78, 3, 150000, '2019-10-14'),
+(79, 4, 150000, '2019-10-14'),
+(80, 1, 150000, '2019-10-22'),
+(81, 2, 150000, '2019-10-22'),
+(82, 3, 150000, '2019-10-22'),
+(83, 4, 150000, '2019-10-22'),
+(84, 1, 150000, '2019-10-24'),
+(85, 2, 150000, '2019-10-24'),
+(86, 3, 150000, '2019-10-24'),
+(87, 4, 150000, '2019-10-24'),
+(88, 1, 150000, '2019-10-24'),
+(89, 2, 150000, '2019-10-24'),
+(90, 3, 150000, '2019-10-24'),
+(91, 4, 150000, '2019-10-24'),
+(92, 1, 150000, '2019-10-24'),
+(93, 2, 150000, '2019-10-24'),
+(94, 3, 150000, '2019-10-24'),
+(95, 4, 150000, '2019-10-24'),
+(96, 1, 150000, '2019-10-24'),
+(97, 2, 150000, '2019-10-24'),
+(98, 3, 150000, '2019-10-24'),
+(99, 4, 150000, '2019-10-24'),
+(100, 1, 150000, '2019-10-24'),
+(101, 2, 150000, '2019-10-24'),
+(102, 3, 150000, '2019-10-24'),
+(103, 4, 150000, '2019-10-24'),
+(104, 1, 150000, '2019-10-24'),
+(105, 2, 150000, '2019-10-24'),
+(106, 3, 150000, '2019-10-24'),
+(107, 4, 150000, '2019-10-24'),
+(108, 1, 150000, '2019-10-24'),
+(109, 2, 150000, '2019-10-24'),
+(110, 3, 150000, '2019-10-24'),
+(111, 4, 150000, '2019-10-24'),
+(112, 1, 150000, '2019-10-24'),
+(113, 2, 150000, '2019-10-24'),
+(114, 3, 150000, '2019-10-24'),
+(115, 4, 150000, '2019-10-24'),
+(116, 1, 150000, '2019-10-24'),
+(117, 2, 150000, '2019-10-24'),
+(118, 3, 150000, '2019-10-24'),
+(119, 4, 150000, '2019-10-24'),
+(120, 1, 150000, '2019-10-24'),
+(121, 2, 150000, '2019-10-24'),
+(122, 3, 150000, '2019-10-24'),
+(123, 4, 150000, '2019-10-24'),
+(124, 1, 150000, '2019-10-24'),
+(125, 2, 150000, '2019-10-24'),
+(126, 3, 150000, '2019-10-24'),
+(127, 4, 150000, '2019-10-24'),
+(128, 1, 150000, '2019-10-24'),
+(129, 2, 150000, '2019-10-24'),
+(130, 3, 150000, '2019-10-24'),
+(131, 4, 150000, '2019-10-24'),
+(132, 1, 150000, '2019-10-08'),
+(133, 2, 150000, '2019-10-08'),
+(134, 3, 150000, '2019-10-08'),
+(135, 4, 150000, '2019-10-08'),
+(136, 1, 150000, '2019-10-08'),
+(137, 2, 150000, '2019-10-08'),
+(138, 3, 150000, '2019-10-08'),
+(139, 4, 150000, '2019-10-08'),
+(140, 1, 150000, '2019-10-07'),
+(141, 2, 150000, '2019-10-07'),
+(142, 3, 150000, '2019-10-07'),
+(143, 4, 150000, '2019-10-07'),
+(144, 1, 150000, '2019-10-14'),
+(145, 2, 150000, '2019-10-14'),
+(146, 3, 150000, '2019-10-14'),
+(147, 4, 150000, '2019-10-14'),
+(148, 1, 150000, '2019-10-16'),
+(149, 2, 150000, '2019-10-16'),
+(150, 3, 150000, '2019-10-16'),
+(151, 4, 150000, '2019-10-16'),
+(152, 1, 150000, '2019-10-07'),
+(153, 2, 150000, '2019-10-07'),
+(154, 3, 150000, '2019-10-07'),
+(155, 4, 150000, '2019-10-07'),
+(156, 1, 150000, '2019-10-21'),
+(157, 2, 150000, '2019-10-21'),
+(158, 3, 150000, '2019-10-21'),
+(159, 4, 150000, '2019-10-21'),
+(160, 1, 10000, '2019-10-23'),
+(161, 1, 1234, '2019-10-22'),
+(162, 2, 1234, '2019-10-22'),
+(163, 3, 1234, '2019-10-22'),
+(164, 1, 1234, '2019-10-21'),
+(165, 2, 1234, '2019-10-21'),
+(166, 3, 1234, '2019-10-21'),
+(167, 1, 12312300, '2019-10-29'),
+(168, 2, 123123, '2019-10-29'),
+(169, 3, 312312000, '2019-10-29'),
+(170, 1, 10000, '2019-10-29'),
+(171, 2, 150000, '2019-10-29'),
+(172, 3, 1000, '2019-10-29'),
+(173, 1, 10000, '2019-10-29'),
+(174, 2, 150000, '2019-10-29'),
+(175, 3, 1000, '2019-10-29'),
+(176, 1, 1000, '2019-10-31'),
+(177, 1, 1000, '2019-10-08'),
+(178, 2, 100000, '2019-10-08'),
+(179, 3, 1000, '2019-10-08'),
+(180, 4, 1001, '2019-10-08'),
+(181, 5, 1010, '2019-10-08'),
+(182, 1, 12121, '2019-10-18'),
+(183, 1, 1111, '2019-10-08'),
+(184, 1, 1000, '2019-10-23');
 
 -- --------------------------------------------------------
 
@@ -273,8 +380,8 @@ INSERT INTO `cuenta` (`id`, `nac`, `cedula`, `nombre`, `apellido`, `id_banco`, `
 (1, 'E', '1234567', 'MARITZA', 'HERNANDEZ', 14, '12345678900876541111', '', 1),
 (2, 'V', '27328852', 'MARYORITH', 'SINGER', 6, '12345678900876541111', '', 2),
 (3, 'V', '1234567', 'ASDADSADS', 'PEREZ', 9, '12345678900876541111', '', 3),
-(4, '', '', '', '', 0, '', '', 4),
-(5, '', '', '', '', 0, '', '', 5);
+(4, '', '', '', '', 0, '12345678901234567890', '', 4),
+(5, 'V', '12345678', 'ASDSDA', 'SDADSADA', 14, '12345678998765432112', '', 5);
 
 -- --------------------------------------------------------
 
@@ -592,27 +699,6 @@ INSERT INTO `parroquia` (`id`, `descrip`, `id_municipio`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `puente_alergia`
---
-
-CREATE TABLE `puente_alergia` (
-  `id` int(11) NOT NULL,
-  `id_atleta` int(11) NOT NULL,
-  `id_alergia` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `puente_alergia`
---
-
-INSERT INTO `puente_alergia` (`id`, `id_atleta`, `id_alergia`) VALUES
-(1, 1, 1),
-(7, 2, 2),
-(9, 2, 5);
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `puente_discapacidad`
 --
 
@@ -656,6 +742,59 @@ INSERT INTO `puente_disciplina` (`id`, `id_atleta`, `id_disciplina`, `id_modalid
 (8, 2, 2, 0, 0),
 (9, 2, 0, 0, 6),
 (12, 2, 3, 6, 7);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `puente_registro_medico`
+--
+
+CREATE TABLE `puente_registro_medico` (
+  `id` int(11) NOT NULL,
+  `id_atleta` int(11) NOT NULL,
+  `id_registro_medico` int(11) NOT NULL,
+  `fecha_medica` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `puente_registro_medico`
+--
+
+INSERT INTO `puente_registro_medico` (`id`, `id_atleta`, `id_registro_medico`, `fecha_medica`) VALUES
+(1, 1, 1, '0000-00-00'),
+(7, 2, 2, '0000-00-00'),
+(9, 2, 5, '0000-00-00'),
+(11, 3, 3, '0000-00-00'),
+(12, 3, 9, '0000-00-00'),
+(13, 3, 10, '0000-00-00'),
+(14, 3, 1, '2019-10-14'),
+(15, 3, 2, '2019-10-15');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `registro_medicos`
+--
+
+CREATE TABLE `registro_medicos` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `registro_medico` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `registro_medicos`
+--
+
+INSERT INTO `registro_medicos` (`id`, `registro_medico`) VALUES
+(7, 'ALIMENTOS'),
+(10, 'ANAFILAXIA'),
+(1, 'ASMA'),
+(3, 'CONJUNTIVITIS'),
+(4, 'DERMATITIS'),
+(8, 'MEDICAMENTOS'),
+(9, 'PICADURAS DE INSECTOS'),
+(2, 'RINITIS'),
+(5, 'URTICARIA');
 
 -- --------------------------------------------------------
 
@@ -743,13 +882,6 @@ INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `usuario`, `clave`, `n_eme`,
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `alergias`
---
-ALTER TABLE `alergias`
-  ADD UNIQUE KEY `id` (`id`),
-  ADD UNIQUE KEY `alergia` (`alergia`);
 
 --
 -- Indices de la tabla `atleta`
@@ -888,12 +1020,6 @@ ALTER TABLE `parroquia`
   ADD KEY `fdgdf` (`id_municipio`);
 
 --
--- Indices de la tabla `puente_alergia`
---
-ALTER TABLE `puente_alergia`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indices de la tabla `puente_discapacidad`
 --
 ALTER TABLE `puente_discapacidad`
@@ -904,6 +1030,19 @@ ALTER TABLE `puente_discapacidad`
 --
 ALTER TABLE `puente_disciplina`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `puente_registro_medico`
+--
+ALTER TABLE `puente_registro_medico`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `registro_medicos`
+--
+ALTER TABLE `registro_medicos`
+  ADD UNIQUE KEY `id` (`id`),
+  ADD UNIQUE KEY `alergia` (`registro_medico`);
 
 --
 -- Indices de la tabla `representantes`
@@ -937,12 +1076,6 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de la tabla `alergias`
---
-ALTER TABLE `alergias`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
 -- AUTO_INCREMENT de la tabla `atleta`
 --
 ALTER TABLE `atleta`
@@ -964,19 +1097,19 @@ ALTER TABLE `bancos`
 -- AUTO_INCREMENT de la tabla `becas`
 --
 ALTER TABLE `becas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `becas_mes`
 --
 ALTER TABLE `becas_mes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `becas_total`
 --
 ALTER TABLE `becas_total`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=185;
 
 --
 -- AUTO_INCREMENT de la tabla `calzados`
@@ -1063,12 +1196,6 @@ ALTER TABLE `parroquia`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT de la tabla `puente_alergia`
---
-ALTER TABLE `puente_alergia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
 -- AUTO_INCREMENT de la tabla `puente_discapacidad`
 --
 ALTER TABLE `puente_discapacidad`
@@ -1079,6 +1206,18 @@ ALTER TABLE `puente_discapacidad`
 --
 ALTER TABLE `puente_disciplina`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT de la tabla `puente_registro_medico`
+--
+ALTER TABLE `puente_registro_medico`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT de la tabla `registro_medicos`
+--
+ALTER TABLE `registro_medicos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `representantes`
