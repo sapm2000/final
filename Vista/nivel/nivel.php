@@ -33,7 +33,7 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catanive']))
 	$catalogo = $_SESSION['catanive'];
 	$cata.="<form name='catalog' action='../../Controlador/NivelController.php?accion=registrar' method='post'>";
 	$cata.="<table class=tabla-cat id=tabla>";
-	$cata.="<tr><th>Nivel Académico</th><th colspan='2'>Opción</th></tr>";
+	$cata.="<tr><th>Nivel Académico</th><th colspan='2'>Acción</th></tr>";
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	

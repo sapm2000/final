@@ -37,7 +37,7 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabeca1']))
 {
 	$catalogo = $_SESSION['catabeca1'];
 	$cata.="<table class=tabla-cat id=tabla>";
-	$cata.="<tr><th>nombre</th><th>fecha</th><th>Monto Pagado</th><th>Becados</th><th>Acción</th></tr>";
+	$cata.="<tr><th>Nombre</th><th>Fecha</th><th>Monto Pagado</th><th>Becados</th><th>Acción</th></tr>";
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	

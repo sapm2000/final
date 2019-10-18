@@ -55,7 +55,7 @@ $estatus1.= "</select>";
 	$form.='<input type="submit" value="Datos Bancarios" id="datosb" name="DatosB" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Disciplinas" name="Disciplinas" id="d" class="botonmodalsuperioractual">';
 	$form.='<input type="submit" value="Datos Laborales" id="siguiente11" name="BtModificar" class="botonmodalsuperior">';
-	$form.='<input type="submit" value="Registro_medicos" id="a" name="Registro_medicos" class="botonmodalsuperior">';
+	$form.='<input type="submit" value="Registro Médico" id="a" name="Registro_medicos" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Discapacidades" name="Discapacidades" id="d" class="botonmodalsuperior">';
 
 
@@ -69,7 +69,10 @@ $estatus1.= "</select>";
 	$form.='<td>'.$disciplina1.'</td>';
 	$form.='<td>'.$modalidad1.'</td>';
 	$form.='<td>'.$estatus1.'</td>';
+	$form.='<tr>';
+	$form.='<td></td>';
 	$form.='<td> <input type="submit" value="Añadir Disciplina" id="submit" name="BtRegistrar1"> </td>';
+	$form.='</tr>';
 	$form.='</tr>';
 	$form.='</tr>';
 
@@ -93,7 +96,7 @@ $estatus1.= "</select>";
 
 
 		$form.="<td><a href='../../Controlador/AtletaController.php?accion=seleccionarEstatus&id=".$cat['iddis']."&atleta=".$cat['id']."'>";
-		$form.="<img src='../imagenes1/editar.png' width='15px' height='15px' title='Eliminar'></a></td>";
+		$form.="<img src='../imagenes1/editar.png' width='15px' height='15px' title='Editar'></a></td>";
 		$form.="<td><a href='../../Controlador/AtletaController.php?accion=eliminarDisciplina&id=".$cat['iddis']."&atleta=".$cat['id']."'>";
 		$form.="<img src='../imagenes1/eliminar.png' width='15px' height='15px' title='Eliminar'></a></td>";	
 	

@@ -90,7 +90,6 @@ switch ($_REQUEST['accion']) //Evaluo los vaores de 'accion' enviado por URL
 				$menu.=						'<li><a href="../evento/evento2.php?accion=actualizar"><b>Eventos</b></a></li>';
 				if ($_SESSION['tipo']=='ADMINISTRADOR') {
 
-				$menu.=						'<li><a href="../registro_medico/registro_medico.php?accion=actualizar">Alergias</a></li>';
 				$menu.=						'<li><a href="../banco/banco.php?accion=actualizar">Bancos</a></li>';
 				$menu.=						'<li><a href="../calzado/calzado.php?accion=actualizar">Calzado</a></li>';
 				$menu.=						'<li><a href="../discapacidad/discapacidad.php?accion=actualizar">Discapacidades</a></li>';
@@ -101,6 +100,7 @@ switch ($_REQUEST['accion']) //Evaluo los vaores de 'accion' enviado por URL
 				$menu.=						'<li><a href="../nivel/nivel.php?accion=actualizar">Nivel Académico</a></li>';
 				$menu.=						'<li><a href="../parentesco/parentezco.php?accion=actualizar">Parentesco</a></li>';
 				$menu.=						'<li><a href="../parroquia/ParroquiaView.php?accion=actualizar">Parroquias</a></li>';
+				$menu.=						'<li><a href="../registro_medico/registro_medico.php?accion=actualizar">Registros Medico</a></li>';
 				$menu.=						'<li><a href="../representante/representante2.php?accion=actualizar">Representante</a></li>';
 				$menu.=						'<li><a href="../talla/talla.php?accion=actualizar">Tallas</a></li>';
 				$menu.=						'<li><a href="../tipo_logro/tipo_logro.php?accion=actualizar">Tipos de Logros</a></li>';
