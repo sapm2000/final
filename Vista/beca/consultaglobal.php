@@ -25,6 +25,7 @@ $form.='</table>';
 $form.='<table>';
 $form.='<tr>';
 $form.='<td><a href="../beca/becanueva.php?accion=actualizar"><input type="button" class="botonmodal" value="Nueva Beca"></a></td>';
+$form.='<td><a href="../beca/becanuevagloria.php?accion=actualizar"><input type="button" class="botonmodal" value="Nueva Beca Gloriosa"></a></td>';
 $form.='</tr>';
 $form.='</table>';
 
