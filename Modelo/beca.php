@@ -73,7 +73,17 @@ class Beca extends ClaseBase
 	public function todosBecas()
 	{
 		$cc = Conexion::getInstance();
-		$sql = "SELECT atleta.nombre, atleta.id, atleta.apellido, atleta.cedula, becas.monto,cuenta.nac,cuenta.cedula AS ced , cuenta.numeroc FROM atleta INNER JOIN becas ON atleta.id=becas.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id WHERE NOT cuenta.numeroc=''";
+		$sql = "SELECT atleta.nombre, atleta.id, atleta.apellido, atleta.cedula, becas.monto,cuenta.nac,cuenta.cedula AS ced , cuenta.numeroc FROM atleta INNER JOIN becas ON atleta.id=becas.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id WHERE NOT cuenta.numeroc='' and atleta.activo='0'";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
+
+	public function todosBecasgloriosos()
+	{
+		$cc = Conexion::getInstance();
+		$sql = "SELECT atleta.nombre, atleta.id, atleta.apellido, atleta.cedula, becas_gloria.monto,cuenta.nac,cuenta.cedula AS ced , cuenta.numeroc FROM atleta INNER JOIN becas_gloria ON atleta.id=becas_gloria.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id WHERE NOT cuenta.numeroc='' and atleta.activo='2'";
 		$result = $cc->db->prepare($sql);
 		$result->execute();
 		$trae = $result->fetchAll();
@@ -96,7 +106,17 @@ class Beca extends ClaseBase
 	public function todosatletas()
 	{
 		$cc = Conexion::getInstance();
-		$sql = "SELECT atleta.nombre, atleta.id, atleta.apellido, atleta.cedula, becas.monto,cuenta.nac,cuenta.cedula AS ced , cuenta.numeroc FROM atleta LEFT OUTER JOIN becas ON atleta.id=becas.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id WHERE NOT cuenta.numeroc=''";
+		$sql = "SELECT atleta.nombre, atleta.id, atleta.apellido, atleta.cedula, becas.monto,cuenta.nac,cuenta.cedula AS ced , cuenta.numeroc FROM atleta LEFT OUTER JOIN becas ON atleta.id=becas.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id WHERE NOT cuenta.numeroc='' and atleta.activo='0'";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
+
+	public function todosatletasgloriosos()
+	{
+		$cc = Conexion::getInstance();
+		$sql = "SELECT atleta.nombre, atleta.id, atleta.apellido, atleta.cedula, becas_gloria.monto,cuenta.nac,cuenta.cedula AS ced , cuenta.numeroc FROM atleta LEFT OUTER JOIN becas_gloria ON atleta.id=becas_gloria.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id WHERE NOT cuenta.numeroc='' and atleta.activo='2'";
 		$result = $cc->db->prepare($sql);
 		$result->execute();
 		$trae = $result->fetchAll();
@@ -106,7 +126,7 @@ class Beca extends ClaseBase
 	public function getDetalles()
 	{
 		$cc = Conexion::getInstance();
-		$sql = "SELECT atleta.*, becas_total.monto FROM atleta INNER JOIN becas_total ON becas_total.id_atleta=atleta.id WHERE fecha='$this->fecha'";
+		$sql = "SELECT atleta.*, becas_total.monto FROM atleta INNER JOIN becas_total ON becas_total.id_atleta=atleta.id WHERE fecha='$this->fecha' and becas_total.nombre='$this->nombre'";
 		$result = $cc->db->prepare($sql);
 		$result->execute();
 		$trae = $result->fetchAll();
@@ -131,11 +151,19 @@ class Beca extends ClaseBase
 		$insert = $result->execute();
 		return $insert;
 	}
+	public function guardarPersonagloriosa()
+	{
+		$con = Conexion::getInstance();
+		$sql = "INSERT INTO becas_gloria (id_atleta,monto) VALUES ('$this->id_atleta','$this->monto')";
+		$result = $con->db->prepare($sql);
+		$insert = $result->execute();
+		return $insert;
+	}
 	
 	public function guardarRegistro()
 	{
 		$con = Conexion::getInstance();
-		$sql = "INSERT INTO becas_total (id_atleta,monto,fecha) VALUES ('$this->id_atleta','$this->monto','$this->fecha')";
+		$sql = "INSERT INTO becas_total (id_atleta,monto,fecha,nombre) VALUES ('$this->id_atleta','$this->monto','$this->fecha','$this->nombre')";
 		$result = $con->db->prepare($sql);
 		$insert = $result->execute();
 		return $insert;
@@ -154,6 +182,15 @@ class Beca extends ClaseBase
 	{
 		$con = Conexion::getInstance();
 		$sql = "TRUNCATE TABLE becas";
+		$result = $con->db->prepare($sql);
+		$insert = $result->execute();
+		return $insert;
+	}
+
+	public function truncar_gloria()
+	{
+		$con = Conexion::getInstance();
+		$sql = "TRUNCATE TABLE becas_gloria";
 		$result = $con->db->prepare($sql);
 		$insert = $result->execute();
 		return $insert;
