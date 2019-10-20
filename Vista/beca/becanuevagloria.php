@@ -67,7 +67,7 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabeca1']))
 	$cata.="</table><br>";
 	$form.='<table>';
 	$form.='<tr>';
-	$form.='<td><a href="../beca/beca.php?accion=actualizar"><input type="button" class="botonmodal" value="Cargar Beca Anterior"></a></td>';
+	$form.='<td><a href="../beca/becagloria.php?accion=actualizar"><input type="button" class="botonmodal" value="Cargar Beca Gloriosa Anterior"></a></td>';
 	$form.='</tr>';
 	$form.='</table>';
 	$cata.="</form>";
