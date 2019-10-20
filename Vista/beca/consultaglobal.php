@@ -46,7 +46,7 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabeca1']))
 		$cata.="<td>".$cat['montoT']."</td>";	
 		$cata.="<td>".$cat['becados']."</td>";	
 		
-		$cata.="<td><a href='../../Controlador/BecaController.php?accion=seleccionar&fecha=".$cat['fecha']."'>";	
+		$cata.="<td><a href='../../Controlador/BecaController.php?accion=seleccionar&fecha=".$cat['fecha']."&nombre=".$cat['nombre']."'>";	
 		$cata.="<img src='../imagenes1/editar.png' width='15px' height='15px' title='Editar'></a></td>";
 		
 		

@@ -5,6 +5,10 @@
     {
         header("Location: ../../Controlador/BecaController.php?accion=buscatodos2");
     }
+    if($_GET['accion']=="actualizar1")
+    {
+        header("Location: ../../Controlador/BecaController.php?accion=buscatodos22");
+    }
     $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
 
         $cata = '';
