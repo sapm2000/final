@@ -39,10 +39,13 @@ if($_GET['accion']=='ver_detalles') {
 	$form.='<td>&nbsp;</td>';
 	$form.='</tr>';
 	$form.='<tr>';
-	$form.="<td>Seleccione las registro_medicos </td>";
+	$form.="<td>Seleccione los registros médicos </td>";
 	$form.='<td>'.$registro_medico.'</td>';
-	$form.='<td> <input type="date"  name="fecha_medica"> </td>';
-	$form.='<td> <input type="submit" value="Añadir Registro_medico" id="submit" name="BtRegistrar1"> </td>';
+	$form.='<td> <input type="date"  name="fecha_medica" class="cajasdetexto"> </td>';
+	$form.='<tr>';
+	$form.='<td></td>';
+	$form.='<td><input type="submit" value="Añadir Registro Médico" id="submit" name="BtRegistrar1"></td>';
+	$form.='</tr>';
 	$datos = $_SESSION['id_atleta'];
 	foreach($datos as $d)
 	{
@@ -63,11 +66,11 @@ if($_GET['accion']=='ver_detalles') {
 	$form.='<input type="submit" value="Datos Bancarios" id="datosb" name="DatosB" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Disciplinas" name="Disciplinas" id="d" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Datos Laborales" id="siguiente11" name="BtModificar" class="botonmodalsuperior">';
-	$form.='<input type="submit" value="Registro_medicos" id="a" name="Registro_medicos" class="botonmodalsuperioractual">';
+	$form.='<input type="submit" value="Registro Médico" id="a" name="Registro_medicos" class="botonmodalsuperioractual">';
 	$form.='<input type="submit" value="Discapacidades" name="Discapacidades" id="d" class="botonmodalsuperior">';
 
 	$form.="<table class=tabla-cat id=tabla>";
-	$form.="<tr><th>Registro_medico</th><th>fecha de registro</th><th>Acción</th></tr>";
+	$form.="<tr><th>Registros Médico</th><th>Fecha de Registro</th><th>Acción</th></tr>";
 	foreach($catalogo as $cat)
 	{
 		$form.="<tr>";	

@@ -40,7 +40,10 @@ if($_GET['accion']=='ver_detalles') {
 	$discapacidad1.= "</select>";
 	$form.="<td>Discapacidades:</td>";
 	$form.='<td>'.$discapacidad1.'</td>';
+	$form.='<tr>';
+	$form.='<td></td>';
 	$form.='<td> <input type="submit" value="Añadir Discapacidad" id="submit" name="BtRegistrar1"> </td>';
+	$form.='</tr>';
 	$datoss = $_SESSION['modiusu'];
 	foreach($datoss as $d)
 	{
@@ -56,7 +59,7 @@ if($_GET['accion']=='ver_detalles') {
 	$form.='<input type="submit" value="Datos Bancarios" id="datosb" name="DatosB" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Disciplinas" name="Disciplinas" id="d" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Datos Laborales" id="siguiente11" name="BtModificar" class="botonmodalsuperior">';
-	$form.='<input type="submit" value="Registro_medicos" id="a" name="Registro_medicos" class="botonmodalsuperior">';
+	$form.='<input type="submit" value="Registro Médico" id="a" name="Registro_medicos" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Discapacidades" name="Discapacidades" id="d" class="botonmodalsuperioractual">';
 
 	$form.="<table class=tabla-cat id=tabla>";

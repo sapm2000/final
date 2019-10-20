@@ -35,7 +35,7 @@ if ($_GET['accion']=='ver_detalles')
 	$cata.="<form name='modiform' method='post' action='../../Controlador/AtletaController.php?accion=modificarEstatus&id=".$id."'>";
 	$cata.="<table>";
 	$cata.="<tr>";
-	$cata.="<td>estatus:</td>";
+	$cata.="<td>Estatus:</td>";
 	$cata.="<td>".$estatus."</td>";
 	$cata.="</tr>";
 	$cata.="</table>";

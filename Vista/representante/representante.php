@@ -44,7 +44,7 @@ $form.='<td><input id="letras" type="text" name="apellido" class="cajasdetexto" 
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Número de teléfono:</td>';
-$form.='<td><input id="key" type="text" name="n_tel" class="cajasdetexto" maxlenght="9" onkeypress="return solonumeros(event)" onpaste="return false" pattern="[0-9]{11,11}" title="Debe tener 11 digitos" required></td>';
+$form.='<td><input id="key" type="text" name="n_tel" class="cajasdetexto" maxlenght="9" onkeypress="return solonumeros(event)" onpaste="return false" pattern="([0]{1})([2,4]{1})([0-9]{9})*" title="Debe tener 11 digitos" required></td>';
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Correo Electrónico:</td>';
