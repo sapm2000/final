@@ -87,6 +87,18 @@ switch($_REQUEST['accion'])
 		break;
 	}
 
+	case "buscatodosreporte":
+	{
+		
+		$todos = $atleta->getAllAtleta($tab);
+		$_SESSION['cataatle'] = $todos;
+		$n = $nivel->getAll($tab);
+		$_SESSION['nivel'] = $n;
+		
+		header("Location: ../Vista/atleta/atletareporte.php?accion=actual");
+		break;
+	}
+
 	case "buscatodos2":
 	{
 		
