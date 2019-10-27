@@ -25,7 +25,7 @@ $canvas->page_text($w-80,$h-15,"Página {PAGE_NUM} de {PAGE_COUNT}", Font_Metric
 $canvas->page_text($w-450,$h-15,"Instituto Autónomo del Deporte FUNDEY", Font_Metrics::get_font('helvetica'),9);
 
 $pdf = $dompdf->output(); //extrae el contenido renderizado del PDF
-$filename= 'nombre.pdf';
+$filename= 'Reporte de Atletas.pdf';
 $dompdf->stream($filename,array("attachment"=>0));
 
 $html_para_pdf = ob_get_clean();
