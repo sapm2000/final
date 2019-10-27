@@ -23,7 +23,7 @@ $form.='</tr>';
 $form.='</table>';
 $form.='<table>';
 $form.='<tr>';
-$form.='<td> <a href="generarreporte.php?accion=actualizar"><input type="button" class="botonmodal" value="generar reporte" title="generar reporte"> </a></td>';
+$form.='<td> <a href="generarreporte.php?accion=actualizar"><input type="button" class="botonmodal" value="Generar Reporte" title="Generar Reporte"> </a></td>';
 $form.='</tr>';
 $form.='</table>';
 
@@ -33,7 +33,9 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['cataatle']))
 	$reporte='';
 	$cata.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrar' method='post'>";
 	$cata.="<table class=tabla-cat id=tabla>";
-	$reporte.="<table class='tabla-cat' id=tabla>";
+
+	$reporte.="<br><table class=tabla-cat id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla>";
     
 	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th></tr>";
 	$reporte.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th></tr>";
@@ -68,19 +70,29 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['cataatle']))
 		$reporte.="<td>".$cat['talla']."</td>";	
 		$reporte.="<td>".$cat['calzado']."</td>";	
 		$reporte.="<td>".$cat['n_tel']."</td>";	
-		$reporte.="</tr>";	
+		$reporte.="</tr>";
 
 		
 	}
 	$cata.="</table><br>";
+	
+	$reporte.="<table class=obser>";
+	$reporte.="<tr>";
+	$reporte.="<td>Observaciones:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>";
+	$reporte.="</tr>";
+	$reporte.="</table>";
+
+	$reporte.="</table>";
+	
 	$reporte.="</table><br>";
 
-	$_SESSION['reporte']=$reporte;
 
+	$_SESSION['reporte']=$reporte;
 }
 if (empty($_SESSION['cataatle'])) {
-	$cata.="no hay atletas registrados";
+	$cata.="No hay atletas registrados";
 }
+
 
 
 

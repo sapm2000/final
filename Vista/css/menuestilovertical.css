@@ -505,6 +505,8 @@ select:focus {
     text-align: center;
 }
 
+
+
 /*ventana menor a 980 píxeles*/
 @media screen and (max-width: 980px){
 
