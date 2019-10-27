@@ -117,7 +117,7 @@ html {
   margin: 0;
   }
   body {
-  margin: 1mm 8mm 2mm 8mm;
+  margin: 5mm 8mm 5mm 8mm;
 
   }
 
@@ -172,5 +172,5 @@ table.tabla-catb tr:hover td
 
 table.obser td 
 {
-  border: 1px solid #FFFFFF;
+  border: 0px solid #FFFFFF;
 }
