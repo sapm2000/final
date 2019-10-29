@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 require_once("../Modelo/beca.php");
 $beca = new Beca();
 $beca->setTabla("becas");
@@ -174,7 +175,7 @@ switch($_REQUEST['accion'])
 			$beca->guardarDefinitivo();
 
 			
-			header("Location: ../Vista/beca/crear.php?accion=actualizar&id=".$id);	
+			header("Location: ../Vista/beca/crear.php?accion=actualizar");
 
 
 			
@@ -333,4 +334,5 @@ switch($_REQUEST['accion'])
 		break;
 	}
 }
+ob_end_flush();
 ?>
