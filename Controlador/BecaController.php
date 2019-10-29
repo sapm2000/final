@@ -70,7 +70,28 @@ switch($_REQUEST['accion'])
 			$p=$beca->selexmaxbeca();
 			$l=$p[0][0];
 			
-		
+			$bec = strtoupper($_POST['nombre']);
+			$beca->setNombre($bec);
+			$temporal=$beca->getNombre();
+
+			$beca->setFecha($_POST['fecha']);
+			$fecha=$beca->getFecha();
+
+			$a=$beca->todosTotal();
+			$b=$beca->cuenta();
+
+
+			for ($t=0;$t<$b[0][0];$t++) {
+				if ($temporal==$a[$t][4]) {
+					if ($fecha==$a[$t][1]) {
+						$beca->borron();
+						$beca->borrontotal();
+					}
+					
+
+				}
+			}
+
 			
 
 			
@@ -174,6 +195,19 @@ switch($_REQUEST['accion'])
 
 			$beca->guardarDefinitivo();
 
+			for ($t=0;$t<$b[0][0];$t++) {
+				if ($temporal==$a[$t][4]) {
+					if ($fecha==$a[$t][1]) {
+						echo "<script>alert('ya existe una beca con el mismo nombre y fecha, los datos se sustituiran automaticamente')</script>";//Mensaje de Sesión no válida
+						echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/beca/crear.php?accion=actualizar'>"; 
+						break 2;
+					}
+					
+
+				}
+			}
+
+
 			
 			header("Location: ../Vista/beca/crear.php?accion=actualizar");
 
@@ -193,12 +227,29 @@ switch($_REQUEST['accion'])
 
 			$p=$beca->selexmaxbeca();
 			$l=$p[0][0];
-			
-		
-			
+			$bec = strtoupper($_POST['nombre']);
+			$beca->setNombre($bec);
+			$temporal=$beca->getNombre();
+
+			$beca->setFecha($_POST['fecha']);
+			$fecha=$beca->getFecha();
+
+			$a=$beca->todosTotal();
+			$b=$beca->cuenta();
+
+
+			for ($t=0;$t<$b[0][0];$t++) {
+				if ($temporal==$a[$t][4]) {
+					if ($fecha==$a[$t][1]) {
+						$beca->borron();
+						$beca->borrontotal();
+					}
+					
+
+				}
+			}
 
 			
-
 			
 
 			$q=$beca->selecid();
@@ -299,6 +350,19 @@ switch($_REQUEST['accion'])
 			$_SESSION['cantidadbice']= $numeroConCeros4;
 
 			$beca->guardarDefinitivo();
+
+			
+			for ($t=0;$t<$b[0][0];$t++) {
+				if ($temporal==$a[$t][4]) {
+					if ($fecha==$a[$t][1]) {
+						echo "<script>alert('ya existe una beca con el mismo nombre y fecha, los datos se sustituiran automaticamente')</script>";//Mensaje de Sesión no válida
+						echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/beca/crear.php?accion=actualizar'>"; 
+						break 2;
+					}
+					
+
+				}
+			}
 
 			
 			header("Location: ../Vista/beca/crear.php?accion=actualizar1&id=".$id);	

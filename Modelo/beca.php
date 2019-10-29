@@ -205,6 +205,15 @@ class Beca extends ClaseBase
 		return $insert;
 	}
 
+	public function borrontotal()
+	{
+		$con = Conexion::getInstance();
+		$sql = "DELETE FROM becas_total WHERE nombre='$this->nombre'";
+		$result = $con->db->prepare($sql);
+		$insert = $result->execute();
+		return $insert;
+	}
+
 	public function modificarPersona()
 	{
 		$con = Conexion::getInstance();
@@ -244,20 +253,12 @@ class Beca extends ClaseBase
 		return ($trae);
 	}
 
-	public function traemes()
-	{
-		$cc = Conexion::getInstance();
-		$sql = "SELECT mes FROM becas_mes";
-		$result = $cc->db->prepare($sql);
-		$result->execute();
-		$trae = $result->fetchAll();
-		return ($trae);
-	}
 
-	public function traeanio()
+
+	public function cuenta()
 	{
 		$cc = Conexion::getInstance();
-		$sql = "SELECT anio FROM becas_mes";
+		$sql = "SELECT COUNT(*) FROM becas_mes";
 		$result = $cc->db->prepare($sql);
 		$result->execute();
 		$trae = $result->fetchAll();
