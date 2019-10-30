@@ -199,6 +199,14 @@ switch($_REQUEST['accion'])
 		header("Location: ../Vista/atleta/consultaatleta1.php?accion=actualizar");		
 		break;	
 	}
+	case "reactivar1":
+	{
+		$atleta->setId($_GET['id']);
+		$atleta->updateestado1();
+		header("Location: ../Vista/atleta/consultaatleta2.php?accion=actualizar");		
+		break;	
+	}
+
 
 	case "eliminardisca":
 	{

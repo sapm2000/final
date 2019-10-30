@@ -62,7 +62,7 @@ if($_GET['accion']=='ver_detalles') {
 	}
 	
 	$tipo1.= "</select>";
-
+$nac='';
 	$nac.="<select name='nacio'  style='width:40px' required>";
 	if ($na=='V' || $na=='') {
 		$nac.= "<option selected>V</option>";

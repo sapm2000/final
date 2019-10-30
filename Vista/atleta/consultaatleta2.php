@@ -49,7 +49,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['cataatle2']))
 
 
 
-		$cata.="<td><a href='../../Controlador/AtletaController.php?accion=reactivar&id=".$cat['id']."'>";	
+		$cata.="<td><a href='../../Controlador/AtletaController.php?accion=reactivar1&id=".$cat['id']."'>";	
 		$cata.="<img src='../imagenes1/activo1.png' width='15px' height='15px' title='reactivar'></a></td>";	
 		$cata.="</tr>";	
 	}
