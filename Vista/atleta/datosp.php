@@ -50,7 +50,7 @@ foreach($todos as $td)
 	$nivel.= "<option value=".$td['id'].">".$td['nivel']."</option>";	
 }
 $nivel.= "</select>";
-
+$nac='';
 $nac.="<select name='nacio'  style='width:40px' required>";
 $nac.= "<option>V</option>";
 $nac.= "<option>E</option>";
@@ -263,7 +263,7 @@ foreach($todosni as $td)
 }
 $nivel1.= "</select>";
 
-
+$nac='';
 $nac.="<select name='nacio'  style='width:40px' required>";
 if ($na=='V' || $na=='') {
 	$nac.= "<option selected>V</option>";
