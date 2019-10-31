@@ -1,0 +1,87 @@
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  perspective: 1500px;
+  perspective-origin: top;
+  background-color: black
+}
+
+/* Elemento contenedor de las caras sobre el cual transformamos cada cara */
+
+.cubo {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotar 5s infinite linear;
+  
+}
+
+/* Caras que conforman el cubo posicionadas en el espacio 3D */
+
+#cara1 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: red;
+  transform: translateZ(-100px);
+}
+
+#cara2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: green;
+  transform: translateZ(100px);
+  
+}
+
+#cara3 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: blue;
+  transform: translateX(100px) rotateY(90deg);
+}
+
+#cara4 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: yellow;
+  transform: translateX(-100px) rotateY(90deg);
+}
+
+#cara5 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: pink;
+  transform: translateY(100px) rotateX(90deg);
+}
+
+#cara6 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: orange;
+  transform: translateY(-100px) rotateX(90deg);
+}
+
+/* Animacion para rotar el Cubo 3D */
+
+@keyframes rotar {
+  
+  from {
+    transform: rotateY(0deg);
+  }
+  
+  to {
+    transform: rotateY(360deg);
+  }
+  
+}
+
