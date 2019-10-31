@@ -174,3 +174,13 @@ table.obser td
 {
   border: 0px solid #FFFFFF;
 }
+
+.texto
+{
+   color: #000000;
+   size: 500px;
+   font-family: 'Times New Roman', Times, serif;
+   font-style: normal;
+   font-weight:bold;
+   text-align: center;
+}
