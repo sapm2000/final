@@ -20,7 +20,7 @@ $boton='';
 $form.='<table>';
 $form.='<tr>';
 $form.='<td>Buscador:</td>';
-$form.='<td> <a href="generarreporte.php?accion=actualizar"><input type="button" class="botonmodal" value="Generar Reporte" title="Generar Reporte"> </a></td>';
+$form.='<td> <a href="generarreporte.php?accion=gloria"><input type="button" class="botonmodal" value="Generar Reporte" title="Generar Reporte"> </a></td>';
 $form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()"></td>';
 $form.='<td> <a href="consultaatleta.php?accion=actualizar"><input type="button" class="botonmodal" value="Volver" title="Volver al maestro atleta"> </a></td>';
 $form.='</tr>';

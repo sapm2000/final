@@ -8,11 +8,11 @@ $code="<center><img src='../imagenes1/encabezado.jpg'></center>";
 if ($_REQUEST['accion']=="activos") {
     $code.="atletas activos";
 }
-if ($_REQUEST['accion']=="activos") {
-    $code.="atletas activos";
+if ($_REQUEST['accion']=="inactivos") {
+    $code.="atletas inactivos";
 }
-if ($_REQUEST['accion']=="activos") {
-    $code.="atletas activos";
+if ($_REQUEST['accion']=="gloria") {
+    $code.="atletas gloria";
 }
 $code.=$_SESSION['reporte'];
 $code.='<link rel="stylesheet" href="../css/pdfreporte.css" type="text/css">';

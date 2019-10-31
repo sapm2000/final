@@ -24,7 +24,7 @@ $form.='<table>';
 $form.='<tr>';
 $form.='<td>Buscador:</td>';
 $form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()"></td>';
-$form.='<td> <a href="generarreporte.php?accion=actualizar"><input type="button" name="inactivos" class="botonmodal" value="Generar Reporte" title="Generar Reporte"> </a></td>';
+$form.='<td> <a href="generarreporte.php?accion=inactivos"><input type="button" name="inactivos" class="botonmodal" value="Generar Reporte" title="Generar Reporte"> </a></td>';
 $form.='<td> <a href="consultaatleta.php?accion=actualizar"><input type="button" class="botonmodal" value="Volver" title="Volver al maestro atleta"> </a></td>';
 $form.='</tr>';
 $form.='</table>';
