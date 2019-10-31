@@ -9,8 +9,6 @@ $code.=$_SESSION['reporte'];
 $code.='<link rel="stylesheet" href="../css/pdfreporte.css" type="text/css">';
 
 
-$enca=$_SESSION['enca'];
-$enca.="<img src='../imagenes1/encabezado.jpg'>";
 
 $dompdf = new DOMPDF();
 $dompdf->load_html($code);
