@@ -28,6 +28,7 @@ $form.='</tr>';
 $form.='</table>';
 $form.='<table>';
 $form.='<tr>';
+$form.='<td> <a href="generarreporte.php?accion=actualizar"><input type="button" class="botonmodal" value="Generar Reporte" title="Generar Reporte"> </a></td>';
 $form.='<td> <a href="consultaatleta1.php?accion=actualizar"><input type="button" class="botonmodal" value="Atletas Inactivos" title="Atletas Inactivos"> </a></td>';
 $form.='<td> <a href="consultaatleta2.php?accion=actualizar"><input type="button" class="botonmodal" value="Atletas Gloriosos" title="Atletas Gloriosos"> </a></td>';
 $form.='</tr>';
@@ -36,9 +37,16 @@ $form.='</table>';
 if($_GET['accion']=="actual"&&!empty($_SESSION['cataatle']))
 {
 	$catalogo = $_SESSION['cataatle'];
+	$reporte='';
 	$cata.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrar' method='post'>";
 	$cata.="<table class=tabla-cat id=tabla>";
+
+	$reporte.="<br><table class=tabla-cat id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla>";
+	
 	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th><th colspan='4'>Acción</th></tr>";
+	$reporte.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th></tr>";
+
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
@@ -64,8 +72,36 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['cataatle']))
 		$cata.="<td><a href='../../Controlador/AtletaController.php?accion=eliminar&id=".$cat['id']."'>";	
 		$cata.="<img src='../imagenes1/eliminar.png' width='15px' height='15px' title='Inhabilitar'></a></td>";	
 		$cata.="</tr>";	
+
+		$reporte.="<tr>";	
+        $reporte.="<td>".$cat['cedula']."</td>";
+        $reporte.="<td>".$cat['nombre']."</td>";
+		$reporte.="<td>".$cat['apellido']."</td>";	
+        $reporte.="<td>".$cat['f_nac']."</td>";	
+        $reporte.="<td>".$cat['tipos']."</td>";	
+        $reporte.="<td>".$cat['mano']."</td>";	
+        $reporte.="<td>".$cat['sexo']."</td>";	
+		$reporte.="<td>".$cat['peso']."</td>";
+		$reporte.="<td>".$cat['altura']."</td>";	
+		$reporte.="<td>".$cat['talla']."</td>";	
+		$reporte.="<td>".$cat['calzado']."</td>";	
+		$reporte.="<td>".$cat['n_tel']."</td>";	
+		$reporte.="</tr>";
 	}
 	$cata.="</table><br>";
+
+	$reporte.="<table class=obser>";
+	$reporte.="<tr>";
+	$reporte.="<td>Observaciones:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>";
+	$reporte.="</tr>";
+	$reporte.="</table>";
+
+	$reporte.="</table>";
+	
+	$reporte.="</table><br>";
+
+	$_SESSION['reporte']=$reporte;
+
 }
 if (empty($_SESSION['cataatle'])) {
 	$cata.="no hay atletas registrados";
