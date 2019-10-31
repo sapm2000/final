@@ -28,7 +28,7 @@ $form.='</tr>';
 $form.='</table>';
 $form.='<table>';
 $form.='<tr>';
-$form.='<td> <a href="generarreporte.php?accion=actualizar"><input type="button" class="botonmodal" value="Generar Reporte" title="Generar Reporte"> </a></td>';
+$form.='<td> <a href="generarreporte.php?accion=activos"><input type="button" class="botonmodal" value="Generar Reporte" name="activos" title="Generar Reporte"> </a></td>';
 $form.='<td> <a href="consultaatleta1.php?accion=actualizar"><input type="button" class="botonmodal" value="Atletas Inactivos" title="Atletas Inactivos"> </a></td>';
 $form.='<td> <a href="consultaatleta2.php?accion=actualizar"><input type="button" class="botonmodal" value="Atletas Gloriosos" title="Atletas Gloriosos"> </a></td>';
 $form.='</tr>';

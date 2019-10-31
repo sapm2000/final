@@ -5,6 +5,15 @@ session_start();
 require_once("../dompdf/dompdf_config.inc.php");
 
 $code="<center><img src='../imagenes1/encabezado.jpg'></center>";
+if ($_REQUEST['accion']=="activos") {
+    $code.="atletas activos";
+}
+if ($_REQUEST['accion']=="activos") {
+    $code.="atletas activos";
+}
+if ($_REQUEST['accion']=="activos") {
+    $code.="atletas activos";
+}
 $code.=$_SESSION['reporte'];
 $code.='<link rel="stylesheet" href="../css/pdfreporte.css" type="text/css">';
 
