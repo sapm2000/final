@@ -31,7 +31,7 @@ if($_GET['accion']=="actual")
 	$encabezado = $_SESSION['encabezado'];
 	$cata.="<table class=tabla-cat id=tabla>";
 
-	$cata.="<tr><th>fecha</th><th>monto total</th><th>becados</th><th>nombre de la beca</th></tr>";
+	$cata.="<tr><th>Fecha</th><th>Monto Total</th><th>Becados</th><th>Nombre de la Beca</th></tr>";
 	foreach($encabezado as $enc)
 	{
 		$cata.="<tr>";	
