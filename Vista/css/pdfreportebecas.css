@@ -151,7 +151,7 @@ table.tabla-catb
 	text-align: center;
    font-size: 12;
    font-family: fantasy;
-   border: 3px solid #00008B;
+   border: 3px solid #1E90FF;
    border-radius: 8px 8px 8px 8px;
    position: absolute;
    left: 25%;
@@ -191,4 +191,67 @@ table.obser td
    font-style: normal;
    font-weight:bold;
    text-align: center;
+}
+
+
+/*Detalles de las Becas*/
+
+
+table.tabla-catdetalle
+{
+    text-align: center;
+   font-size: 15;
+   position: absolute;
+   left: 15%;
+   margin-left: 25px;
+   right: 10%;
+   margin-top: 7%;
+   font-family: fantasy;
+}
+
+table.tabla-catdetalle th
+{
+	background-color:#1E90FF;
+   color: white;
+   font-size: 16;
+   font-family: fantasy;
+}
+
+table.tabla-catdetalle tr:hover td
+{
+   background-color:#F1F1F1;
+   font-family: fantasy;
+}
+
+table.tabla-catdeta
+{
+	text-align: center;
+   font-size: 12;
+   font-family: fantasy;
+   border: 3px solid #00008B;
+   border-radius: 8px 8px 8px 8px;
+   position: absolute;
+   left: 18%;
+   margin-left: 0px;
+   margin-top: 7%;
+   right: 32%;
+}
+
+table.tabla-catdeta td 
+{
+  border: 1px solid #D3D3D3;
+}
+
+table.tabla-catdeta th
+{
+	background-color:#1E90FF;
+   color: white;
+   font-size: 13;
+   font-family: fantasy;
+}
+
+table.tabla-catdeta tr:hover td
+{
+   background-color:#F1F1F1;
+   font-family: fantasy;
 }
