@@ -27,6 +27,23 @@ $form.='</table>';
 
 if($_GET['accion']=="actual")
 {
+
+	$encabezado = $_SESSION['encabezado'];
+	$cata.="<table class=tabla-cat id=tabla>";
+
+	$cata.="<tr><th>fecha</th><th>monto total</th><th>becados</th><th>nombre de la beca</th></tr>";
+	foreach($encabezado as $enc)
+	{
+		$cata.="<tr>";	
+		$cata.="<td>".$enc['fecha']."</td>";	
+		$cata.="<td>".$enc['montoT']."</td>";	
+		$cata.="<td>".$enc['becados']."</td>";	
+		$cata.="<td>".$enc['nombre']."</td>";	
+		
+	}
+	$cata.="</table><br>";
+
+
 	$catalogo = $_SESSION['detallebeca'];
 	$cata.="<table class=tabla-cat id=tabla>";
 	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Monto</th></tr>";
