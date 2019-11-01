@@ -132,6 +132,15 @@ class Beca extends ClaseBase
 		$trae = $result->fetchAll();
 		return ($trae);
 	}
+	public function getDetallesenca()
+	{
+		$cc = Conexion::getInstance();
+		$sql = "SELECT * FROM becas_mes WHERE fecha='$this->fecha' and nombre='$this->nombre'";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
 	
 	public function todosTotal()
 	{

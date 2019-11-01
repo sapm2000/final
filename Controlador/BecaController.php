@@ -380,6 +380,9 @@ switch($_REQUEST['accion'])
 		$datos = $beca->getDetalles();
 		$_SESSION['detallebeca'] = $datos;
 
+		$encabezado = $beca->getDetallesenca();
+		$_SESSION['encabezado'] = $encabezado;
+
 		header("Location: ../Vista/beca/detallebeca.php?accion=actual&id=".$id);	
 
 
