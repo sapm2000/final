@@ -23,6 +23,8 @@ $form.='<tr>';
 $form.='<td>Buscador:</td>';
 $form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" name="nombre" maxlenght="9" ></td>';
 $form.='<td> <a href="../usuario/usuario.php?accion=actualizar"><input type="button" class="botonmodal" value="+ Usuario"> </a></td>';
+$form.='<td> <a href="generarreporte.php?"><input type="button" class="botonmodal" value="Generar Reporte" name="activos" title="Generar Reporte"> </a></td>';
+
 $form.='</tr>';
 $form.='</table>';
 $form.='</form>';
@@ -30,8 +32,13 @@ $form.='</form>';
 if($_GET['accion']=="actual" && !empty($_SESSION['catausu2']))
 {
 	$catalogo = $_SESSION['catausu2'];
+	$reporte='';
 	$cata.="<table class=tabla-cat id=tabla>";
+	$reporte.="<br><table class=tabla-cat id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla>";
 	$cata.="<tr><th>Nombre</th><th>Apellido</th><th>Usuario</th><th>Número de Teléfono</th><th>Número de Emergencia</th><th>Correo Electrónico</th><th>Tipo de Usuario</th><th colspan='2'>Acción</th></tr>";
+	$reporte.="<tr><th>Nombre</th><th>Apellido</th><th>Usuario</th><th>Número de Teléfono</th><th>Número de Emergencia</th><th>Correo Electrónico</th><th>Tipo de Usuario</th><th colspan='2'>Acción</th></tr>";
+
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
@@ -47,8 +54,26 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catausu2']))
 		$cata.="<td><a href='../../Controlador/UsuarioController.php?accion=eliminar&id=".$cat['id']."'>";	
 		$cata.="<img src='../imagenes1/eliminar.png' width='15px' height='15px' title='Eliminar'></a></td>";	
 		$cata.="</tr>";	
+
+		$reporte.="<tr>";	
+		$reporte.="<td>".$cat['nombre']."</td>";
+		$reporte.="<td>".$cat['apellido']."</td>";
+		$reporte.="<td>".$cat['usuario']."</td>";
+		$reporte.="<td>".$cat['n_tel']."</td>";
+		$reporte.="<td>".$cat['n_eme']."</td>";
+		$reporte.="<td>".$cat['correo']."</td>";
+		$reporte.="<td>".$cat['tipo']."</td>";
 	}
 	$cata.="</table><br>";
+
+	
+	
+
+	$reporte.="</table>";
+	
+	$reporte.="</table><br>";
+
+	$_SESSION['reporteusuario']=$reporte;
 }
 elseif ($_GET['accion']=='ver_detalles')
 {
