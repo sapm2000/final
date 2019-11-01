@@ -33,7 +33,8 @@ if($_GET['accion']=="actual")
 
 	$encabezado = $_SESSION['encabezado'];
 	$cata.="<table class=tabla-cat id=tabla>";
-	$reporte.="<table class=tabla-cat id=tabla>";
+	$reporte.="<br><table class=tabla-cat id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla>";
 
 
 	$cata.="<tr><th>Fecha</th><th>Monto Total</th><th>Becados</th><th>Nombre de la Beca</th></tr>";
@@ -56,12 +57,15 @@ if($_GET['accion']=="actual")
 	}
 	$cata.="</table><br>";
 	$reporte.="</table>";
-	$reporte.="<br><br>";
+	$reporte.="</table>";
+
 
 
 	$catalogo = $_SESSION['detallebeca'];
 	$cata.="<table class=tabla-cat id=tabla>";
-	$reporte.="<table class=tabla-cat id=tabla>";
+
+	$reporte.="<br><table class=tabla-catdetalle id=tabla align=center>";
+	$reporte.="<table class=tabla-catdeta id=tabla>";
 
 	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Monto</th></tr>";
 	$reporte.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Monto</th></tr>";
@@ -87,8 +91,12 @@ if($_GET['accion']=="actual")
 		$cata.="</tr>";	
 	}
 	$cata.='<br>';
+
 	$cata.="</table><br>";
+
 	$reporte.="</table>";
+	
+	$reporte.="</table><br>";
 	$cata.="</form>";
 
 	$_SESSION['reportebecadetalle']=$reporte;
