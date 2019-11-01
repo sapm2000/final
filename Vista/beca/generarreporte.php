@@ -6,7 +6,16 @@ require_once("../dompdf/dompdf_config.inc.php");
 
 $code="<center><img src='../imagenes1/encabezado.jpg'></center>";
 $code.="<h1 class=texto>Reporte Global de Becas.</h1>";
+
+if ($_REQUEST['accion']=="global") {
+
 $code.=$_SESSION['reportebeca'];
+}
+
+if ($_REQUEST['accion']=="detalle") {
+
+    $code.=$_SESSION['reportebecadetalle'];
+    }
 $code.='<link rel="stylesheet" href="../css/pdfreportebecas.css" type="text/css">';
 
 
