@@ -5,7 +5,7 @@ session_start();
 require_once("../dompdf/dompdf_config.inc.php");
 
 $code="<center><img src='../imagenes1/encabezado.jpg'></center>";
-$code.="<h1 class=texto>Reporte de Atletas Activos.</h1>";
+$code.="<h1 class=texto>Reporte de Usuarios del Sistema.</h1>";
 $code.=$_SESSION['reporteusuario'];
 $code.='<link rel="stylesheet" href="../css/pdfreporte.css" type="text/css">';
 
@@ -24,7 +24,7 @@ $canvas->page_text($w-80,$h-15,"Página {PAGE_NUM} de {PAGE_COUNT}", Font_Metric
 $canvas->page_text($w-450,$h-15,"Instituto Autónomo del Deporte FUNDEY", Font_Metrics::get_font('helvetica'),9);
 
 $pdf = $dompdf->output(); //extrae el contenido renderizado del PDF
-$filename= 'Reporte de Atletas Activos.pdf';
+$filename= 'Reporte de Usuarios del Sistema.pdf';
 
 $dompdf->stream($filename,array("attachment"=>0));
 

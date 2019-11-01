@@ -55,7 +55,7 @@ $form.='<td>Cédula del Representado:</td>';
 $form.='<td><input id="num2" type="text" name="cedula_a" class="cajasdetexto" onkeypress="return solonumeros(event)" onpaste="return false" pattern="[0-9]{7,8}" title="Debe tener de 7 u 8 digitos" required></td>';
 $form.='</tr>';
 $form.='<tr>';
-$form.='<td>Parentezco con el Representado:</td>';
+$form.='<td>Parentesco con el Representado:</td>';
 $form.='<td>'.$select.'</td>';
 $form.='</tr>';
 $form.='</table>';

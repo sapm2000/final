@@ -82,7 +82,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['cataatle1']))
 
 	$reporte.="<table class=obser>";
 	$reporte.="<tr>";
-	$reporte.="<td>Observaciones:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>";
+	$reporte.="<td>Observaciones:</td>";
 	$reporte.="</tr>";
 	$reporte.="</table>";
 

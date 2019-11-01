@@ -37,10 +37,10 @@ if($_GET['accion']=="actual" && !empty($_SESSION['cataeven2']))
 
 	$cata.="<form name='catalog' action='../../Controlador/EventoController2.php?accion=registrar' method='post'>";
 	$cata.="<table class=tabla-cat id=tabla>";
-	$reporte.="<br><table class=tabla-cat id=tabla>";
-	$reporte.="<table class=tabla-catb id=tabla>";
+	$reporte.="<br><table class=tabla-cateve id=tabla>";
+	$reporte.="<table class=tabla-catevento id=tabla>";
 	$cata.="<tr><th>Nombre</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Tipo</th><th>Municipio</th><th>Parroquia</th><th>Cantidad de Participantes Registrados</th><th colspan='2'>Acción</th></tr>";
-	$reporte.="<tr><th>Nombre</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Tipo</th><th>Municipio</th><th>Parroquia</th><th>Cantidad de Participantes Registrados</th><th colspan='2'>Acción</th></tr>";
+	$reporte.="<tr><th>Nombre</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Tipo</th><th>Municipio</th><th>Parroquia</th><th>Cantidad de Participantes Registrados</th></tr>";
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
@@ -69,7 +69,7 @@ if($_GET['accion']=="actual" && !empty($_SESSION['cataeven2']))
 		$reporte.="<td>".$cat['std']."</td>";
 		$reporte.="<td>".$cat['descrips']."</td>";
 		$reporte.="<td>".$cat['descrip']."</td>";
-		$reporte.="<td>".$cat['actual']."</td>";
+		$reporte.="<td>".$cat['actual']."</td>";	
 	}
 	$cata.="</table><br>";
 
