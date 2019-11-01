@@ -25,6 +25,7 @@ $form.='<tr>';
 $form.='<td>Buscador:</td>';
 $form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" name="nombre" maxlenght="9" ></td>';
 $form.='<td> <a href="../evento/evento.php?accion=actualizar"><input type="button" class="botonmodal" value="+ Evento"> </a></td>';
+$form.='<td> <a href="generarreporte.php?"><input type="button" class="botonmodal" value="Generar Reporte" name="activos" title="Generar Reporte"> </a></td>';
 $form.='</tr>';
 $form.='</table>';
 $form.='</form>';
@@ -32,9 +33,14 @@ $form.='</form>';
 if($_GET['accion']=="actual" && !empty($_SESSION['cataeven2']))
 {
 	$catalogo = $_SESSION['cataeven2'];
+	$reporte='';
+
 	$cata.="<form name='catalog' action='../../Controlador/EventoController2.php?accion=registrar' method='post'>";
 	$cata.="<table class=tabla-cat id=tabla>";
+	$reporte.="<br><table class=tabla-cat id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla>";
 	$cata.="<tr><th>Nombre</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Tipo</th><th>Municipio</th><th>Parroquia</th><th>Cantidad de Participantes Registrados</th><th colspan='2'>Acción</th></tr>";
+	$reporte.="<tr><th>Nombre</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Tipo</th><th>Municipio</th><th>Parroquia</th><th>Cantidad de Participantes Registrados</th><th colspan='2'>Acción</th></tr>";
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
@@ -52,8 +58,26 @@ if($_GET['accion']=="actual" && !empty($_SESSION['cataeven2']))
 		$cata.="<img src='../imagenes1/participantes.png' width='15px' height='15px' title='Añadir mas participantes'></a></td>";
 		$cata.="<td><a href='../../Controlador/EventoController.php?accion=seleccionar&id=".$cat['id']."'>";	
 		$cata.="<img src='../imagenes1/editar.png' width='15px' height='15px' title='Editar'></a></td>";
+
+		$reporte.="<tr>";	
+		$reporte.="<td>".$cat['nombre']."</td>";
+		$fecha1=$cat['fecha_inicio'];
+		$fecha2=$cat['fecha_cierre'];
+		$reporte.="<td>".date('d-m-Y',strtotime($fecha1))."</td>";
+		$reporte.="<td>".date('d-m-Y',strtotime($fecha2))."</td>";
+		$reporte.="<td>".$cat['descripcion']."</td>";
+		$reporte.="<td>".$cat['std']."</td>";
+		$reporte.="<td>".$cat['descrips']."</td>";
+		$reporte.="<td>".$cat['descrip']."</td>";
+		$reporte.="<td>".$cat['actual']."</td>";
 	}
 	$cata.="</table><br>";
+
+	$reporte.="</table>";
+	
+	$reporte.="</table><br>";
+
+	$_SESSION['reporteevento']=$reporte;
 }
 elseif ($_GET['accion']=='ver_detalles')
 {

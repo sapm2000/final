@@ -23,6 +23,7 @@ $form.='<table>';
 $form.='<tr>';
 $form.='<td>Buscador:</td>';
 $form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()"  name="nombre" maxlenght="9" ></td>';
+$form.='<td> <a href="generarreporte.php?"><input type="button" class="botonmodal" value="Generar Reporte" name="activos" title="Generar Reporte"> </a></td>';
 $form.='<td> <a href="../representante/representante.php?accion=actualizar"><input type="button" class="botonmodal" value="+ Representante"> </a></td>';
 $form.='</tr>';
 $form.='</table>';
@@ -31,9 +32,13 @@ $form.='</form>';
 if($_GET['accion']=="actual" && !empty($_SESSION['catarepre2']))
 {
 	$catalogo = $_SESSION['catarepre2'];
+	$reporte='';
 	$cata.="<form name='catalog' action='../../Controlador/RepresentanteController.php?accion=registrar' method='post'>";
 	$cata.="<table class=tabla-cat id=tabla>";
+	$reporte.="<br><table class=tabla-cat id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla>";
 	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Número de Teléfono</th><th>Correo Electrónico</th><th>Cédula del Representado</th><th>Parentesco</th><th colspan='3'>Acción</th></tr>";
+	$reporte.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Número de Teléfono</th><th>Correo Electrónico</th><th>Cédula del Representado</th><th>Parentesco</th><th colspan='3'>Acción</th></tr>";
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
@@ -51,8 +56,23 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catarepre2']))
 		$cata.="<td><a href='../../Controlador/RepresentanteController.php?accion=eliminar&id=".$cat['id']."'>";	
 		$cata.="<img src='../imagenes1/eliminar.png' width='15px' height='15px' title='Eliminar'></a></td>";	
 		$cata.="</tr>";	
+
+		$reporte.="<tr>";	
+		$reporte.="<td>".$cat['cedula']."</td>";
+		$reporte.="<td>".$cat['nombre']."</td>";
+		$reporte.="<td>".$cat['apellido']."</td>";
+		$reporte.="<td>".$cat['n_tel']."</td>";
+		$reporte.="<td>".$cat['correo']."</td>";
+		$reporte.="<td>".$cat['atl']."</td>";
+		$reporte.="<td>".$cat['parentezco']."</td>";
 	}
 	$cata.="</table><br>";
+
+	$reporte.="</table>";
+	
+	$reporte.="</table><br>";
+
+	$_SESSION['reporterepresentante']=$reporte;
 }
 elseif ($_GET['accion']=='ver_detalles')
 {
