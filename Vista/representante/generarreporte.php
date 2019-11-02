@@ -6,7 +6,15 @@ require_once("../dompdf/dompdf_config.inc.php");
 
 $code="<center><img src='../imagenes1/encabezado.jpg'></center>";
 $code.="<h1 class=texto>Reporte de Representantes.</h1>";
-$code.=$_SESSION['reporterepresentante'];
+if ($_REQUEST['accion']=="global") {
+
+   $code.=$_SESSION['reporterepresentante'];
+}
+    
+if ($_REQUEST['accion']=="detalle") {
+    
+    $code.=$_SESSION['reporterepresentantedetalles'];
+}
 $code.='<link rel="stylesheet" href="../css/pdfreporte.css" type="text/css">';
 
 

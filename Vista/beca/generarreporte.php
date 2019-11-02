@@ -15,7 +15,7 @@ $code.=$_SESSION['reportebeca'];
 if ($_REQUEST['accion']=="detalle") {
 
     $code.=$_SESSION['reportebecadetalle'];
-    }
+}
 $code.='<link rel="stylesheet" href="../css/pdfreportebecas.css" type="text/css">';
 
 
