@@ -68,6 +68,7 @@ if($_GET['accion']=="actual")
 	$reporte.="<table class=tabla-catdeta id=tabla>";
 
 	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Monto</th></tr>";
+	$reporte.="<h1>Becados.</h1>";
 	$reporte.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Monto</th></tr>";
 	foreach($catalogo as $cat)
 	{

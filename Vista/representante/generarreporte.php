@@ -5,17 +5,21 @@ session_start();
 require_once("../dompdf/dompdf_config.inc.php");
 
 $code="<center><img src='../imagenes1/encabezado.jpg'></center>";
-$code.="<h1 class=texto>Reporte de Representantes.</h1>";
-if ($_REQUEST['accion']=="global") {
 
+if ($_REQUEST['accion']=="global") {
+    $code.="<h1 class=texto>Reporte de Representantes.</h1>";
    $code.=$_SESSION['reporterepresentante'];
+   $code.='<link rel="stylesheet" href="../css/pdfreporte.css" type="text/css">';
+   $filename= 'Reporte de Representantes.pdf';
 }
     
 if ($_REQUEST['accion']=="detalle") {
-    
+    $code.="<h1 class=texto>Reporte Especifico de un Representante.</h1>";
     $code.=$_SESSION['reporterepresentantedetalles'];
+    $code.='<link rel="stylesheet" href="../css/pdfreporterepresentanteagregar.css" type="text/css">';
+    $filename= 'Reporte Especifico de un Representante.pdf';
 }
-$code.='<link rel="stylesheet" href="../css/pdfreporte.css" type="text/css">';
+
 
 
 
@@ -32,7 +36,7 @@ $canvas->page_text($w-80,$h-15,"Página {PAGE_NUM} de {PAGE_COUNT}", Font_Metric
 $canvas->page_text($w-450,$h-15,"Instituto Autónomo del Deporte FUNDEY", Font_Metrics::get_font('helvetica'),9);
 
 $pdf = $dompdf->output(); //extrae el contenido renderizado del PDF
-$filename= 'Reporte de Representantes.pdf';
+
 
 $dompdf->stream($filename,array("attachment"=>0));
 

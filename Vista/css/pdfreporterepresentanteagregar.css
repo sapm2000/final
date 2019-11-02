@@ -91,20 +91,21 @@ a.popup-cerrar
    color:#fff;
 }
 
-table.tabla-cat
+table.tabla-cat2
 {
-    text-align: center;
+	text-align: center;
    font-size: 15;
-   position: absolute;
-   top: 15%;
-   left: 15%;
-   margin-left: 25px;
-   right: 10%;
-
    font-family: fantasy;
+   position: fixed;
+   top: 17%;
+   bottom: 10%;
+   left: 19%;
+   margin-left: 0px;
+   right: 19%;
+
 }
 
-table.tabla-cat th
+table.tabla-cat2 th
 {
 	background-color:#1E90FF;
    color: white;
@@ -112,7 +113,7 @@ table.tabla-cat th
    font-family: fantasy;
 }
 
-table.tabla-cat tr:hover td
+table.tabla-cat2 tr:hover td
 {
    background-color:#F1F1F1;
    font-family: fantasy;
@@ -147,26 +148,27 @@ html {
 
 }
 
-table.tabla-catb
+table.tabla-catborde
 {
 	text-align: center;
    font-size: 12;
    font-family: fantasy;
    border: 3px solid #1E90FF;
    border-radius: 8px 8px 8px 8px;
-   position: absolute;
-   top: 15%;
-   left: 25%;
+   position: fixed;
+   top: 17%;
+   bottom: 10%;
+   left: 19%;
    margin-left: 0px;
-   right: 25%;
+   right: 19%;
 }
 
-table.tabla-catb td 
+table.tabla-catborde td 
 {
   border: 1px solid #D3D3D3;
 }
 
-table.tabla-catb th
+table.tabla-catborde th
 {
 	background-color:#1E90FF;
    color: white;
@@ -174,7 +176,7 @@ table.tabla-catb th
    font-family: fantasy;
 }
 
-table.tabla-catb tr:hover td
+table.tabla-catborde tr:hover td
 {
    background-color:#F1F1F1;
    font-family: fantasy;
@@ -195,24 +197,23 @@ table.obser td
    text-align: center;
 }
 
+/* Estilo de la tabla Representados */
 
-/*Detalles de las Becas*/
 
-
-table.tabla-catdetalle
+table.tabla-catrepre
 {
     text-align: center;
    font-size: 15;
-   position: absolute;
-   top: 19%;
-   left: 15%;
-   margin-left: 25px;
-   right: 10%;
+   position: fixed;
+   top: 21%;
+   left: 30%;
+   margin-left: 0px;
+   right: 30%;
    margin-top: 7%;
    font-family: fantasy;
 }
 
-table.tabla-catdetalle th
+table.tabla-catrepre th
 {
 	background-color:#1E90FF;
    color: white;
@@ -220,33 +221,33 @@ table.tabla-catdetalle th
    font-family: fantasy;
 }
 
-table.tabla-catdetalle tr:hover td
+table.tabla-catrepre tr:hover td
 {
    background-color:#F1F1F1;
    font-family: fantasy;
 }
 
-table.tabla-catdeta
+table.tabla-catrepresenta
 {
 	text-align: center;
    font-size: 12;
    font-family: fantasy;
    border: 3px solid #00008B;
    border-radius: 8px 8px 8px 8px;
-   position: absolute;
-   top: 19%;
-   left: 23%;
+   position: fixed;
+   top: 21%;
+   left: 30%;
    margin-left: 0px;
    margin-top: 7%;
-   right: 32%;
+   right: 30%;
 }
 
-table.tabla-catdeta td 
+table.tabla-catrepresenta td 
 {
   border: 1px solid #D3D3D3;
 }
 
-table.tabla-catdeta th
+table.tabla-catrepresenta th
 {
 	background-color:#1E90FF;
    color: white;
@@ -254,7 +255,7 @@ table.tabla-catdeta th
    font-family: fantasy;
 }
 
-table.tabla-catdeta tr:hover td
+table.tabla-catrepresenta tr:hover td
 {
    background-color:#F1F1F1;
    font-family: fantasy;

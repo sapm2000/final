@@ -59,8 +59,10 @@ if($_GET['accion']=="actual")
 
 	$form.='</form>';
 	$cata.="<table class=tabla-cat id=tabla1>";
-	$reporte.="<br><table class=tabla-cat id=tabla>";
-	$reporte.="<table class=tabla-catb id=tabla>";
+
+	$reporte.="<br><table class=tabla-cat2 id=tabla>";
+	$reporte.="<table class=tabla-catborde id=tabla>";
+
 	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Correo Electrónico</th><th>Número de Teléfono</th></tr>";
 	$reporte.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Correo Electrónico</th><th>Número de Teléfono</th></tr>";
 
@@ -91,11 +93,13 @@ if($_GET['accion']=="actual")
 
 	$machu = $_SESSION['catapar'];
 	$cata.="<table class=tabla-cat id=tabla>";
-	$reporte.="<br><table class=tabla-catdetalle id=tabla align=center>";
-	$reporte.="<table class=tabla-catdeta id=tabla>";
+
+	$reporte.="<br><table class=tabla-catrepre id=tabla>";
+	$reporte.="<table class=tabla-catrepresenta id=tabla>";
 
 	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Parentesco</th><th>Acción</th></tr>";
-	$reporte.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Parentesco</th><th>Acción</th></tr>";
+	$reporte.="<h1>Representados.</h1>";
+	$reporte.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Parentesco</th></tr>";
 
 	foreach($machu as $cat)
 	{
