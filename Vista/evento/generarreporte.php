@@ -6,9 +6,19 @@ require_once("../dompdf/dompdf_config.inc.php");
 
 $code="<center><img src='../imagenes1/encabezado.jpg'></center>";
 $code.="<h1 class=textoeve>Reporte de Eventos.</h1>";
-$code.=$_SESSION['reporteevento'];
 $code.='<link rel="stylesheet" href="../css/pdfreporteeventos.css" type="text/css">';
 
+if ($_REQUEST['accion']=="global") {
+    $code.=$_SESSION['reporteevento'];
+    $code.='<link rel="stylesheet" href="../css/pdfreporte.css" type="text/css">';
+   $filename= 'Reporte de Representantes.pdf';
+}
+    
+if ($_REQUEST['accion']=="detalle") {
+    $code.=$_SESSION['reporteeventodetalles'];
+    $code.='<link rel="stylesheet" href="../css/pdfreporterepresentanteagregar.css" type="text/css">';
+    $filename= 'Reporte Especifico de un Representante.pdf';
+}
 
 
 $dompdf = new DOMPDF();
