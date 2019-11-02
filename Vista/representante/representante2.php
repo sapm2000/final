@@ -23,7 +23,7 @@ $form.='<table>';
 $form.='<tr>';
 $form.='<td>Buscador:</td>';
 $form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()"  name="nombre" maxlenght="9" ></td>';
-$form.='<td> <a href="generarreporte.php?"><input type="button" class="botonmodal" value="Generar Reporte" name="activos" title="Generar Reporte"> </a></td>';
+$form.='<td> <a href="generarreporte.php?accion=global"><input type="button" class="botonmodal" value="Generar Reporte" name="activos" title="Generar Reporte"> </a></td>';
 $form.='<td> <a href="../representante/representante.php?accion=actualizar"><input type="button" class="botonmodal" value="+ Representante"> </a></td>';
 $form.='</tr>';
 $form.='</table>';

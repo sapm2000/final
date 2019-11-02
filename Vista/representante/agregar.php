@@ -17,6 +17,8 @@ $boton='';
 
 if($_GET['accion']=="actual")
 {
+	$reporte='';
+
 
 	$algunis = $_SESSION['selectp'];
 	$select = "<select name='parentezco' required>";
@@ -38,6 +40,7 @@ if($_GET['accion']=="actual")
 	$form.='<tr>';
 	$form.='<td>Cédula:</td>';
 	$form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" name="cedula_a" maxlenght="9" pattern="[0-9]{7,8}" title="Debe tener de 7 u 8 digitos" required></td>';
+	$form.='<td> <a href="generarreporte.php?accion=detalle"><input type="button" class="botonmodal" value="Generar Reporte" name="activos" title="Generar Reporte"> </a></td>';
 	$form.='<td><input id="searchTerm" type="hidden" class="cajasdetexto" onkeyup="doSearch()" value="'.$id.'" name="cedula" maxlenght="9" pattern="[0-9]{7,8}" title="Debe tener de 7 u 8 digitos" required></td>';
 	$form.='<tr>';
 	$form.='<td>Parentesco con el Representado:</td>';
@@ -56,7 +59,11 @@ if($_GET['accion']=="actual")
 
 	$form.='</form>';
 	$cata.="<table class=tabla-cat id=tabla1>";
+	$reporte.="<br><table class=tabla-cat id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla>";
 	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Correo Electrónico</th><th>Número de Teléfono</th></tr>";
+	$reporte.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Correo Electrónico</th><th>Número de Teléfono</th></tr>";
+
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
@@ -66,16 +73,30 @@ if($_GET['accion']=="actual")
 		$cata.="<td>".$cat['correo']."</td>";
 		$cata.="<td>".$cat['n_tel']."</td>";
 
+		$reporte.="<tr>";	
+		$reporte.="<td>".$cat['cedula']."</td>";
+		$reporte.="<td>".$cat['nombre']."</td>";
+		$reporte.="<td>".$cat['apellido']."</td>";
+		$reporte.="<td>".$cat['correo']."</td>";
+		$reporte.="<td>".$cat['n_tel']."</td>";
+
 
 		
 		
 		$cata.="</tr>";	
 	}
 	$cata.="</table><br>";
+	$reporte.="</table>";
+	$reporte.="</table>";
 
 	$machu = $_SESSION['catapar'];
 	$cata.="<table class=tabla-cat id=tabla>";
+	$reporte.="<br><table class=tabla-catdetalle id=tabla align=center>";
+	$reporte.="<table class=tabla-catdeta id=tabla>";
+
 	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Parentesco</th><th>Acción</th></tr>";
+	$reporte.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Parentesco</th><th>Acción</th></tr>";
+
 	foreach($machu as $cat)
 	{
 		$cata.="<tr>";	
@@ -87,8 +108,22 @@ if($_GET['accion']=="actual")
 		$cata.="<td><a href='../../Controlador/RepresentanteController.php?accion=eliminar1&id=".$cat['id']."&id_repre=".$cat['carajo']."'>";	
 		$cata.="<img src='../Imagenes1/eliminar.png' width='15px' height='15px' title='Eliminar'></a></td>";	
 		$cata.="</tr>";	
+
+		$reporte.="<tr>";	
+		$reporte.="<td>".$cat['cedula']."</td>";
+		$reporte.="<td>".$cat['nombre']."</td>";
+		$reporte.="<td>".$cat['apellido']."</td>";
+		$reporte.="<td>".$cat['parentezco']."</td>";
 	}
 	$cata.="</table><br>";
+
+	
+	$reporte.="</table>";
+	
+	$reporte.="</table><br>";
+
+	$_SESSION['reporterepresentantedetalles']=$reporte;
+
 }
 
 
