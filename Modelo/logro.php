@@ -146,6 +146,17 @@ class Logro extends ClaseBase
 			
 		}
 
+		public function getAtleta()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT atleta.*, tallas.talla, calzados.calzado FROM atleta LEFT OUTER JOIN tallas ON atleta.id_talla=tallas.id LEFT OUTER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.id=$this->id_atleta";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+			
+		}
+
 		public function deletetodo()
 		{
 			$cc = Conexion::getInstance();
