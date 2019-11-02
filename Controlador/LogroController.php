@@ -94,7 +94,10 @@ switch($_REQUEST['accion'])
 		$logro->setId_atleta($_GET['id']);
 		$_SESSION['logro']=$logro->getId_atleta();
 		$datos = $logro->getById_atleta($id);
+		$encabezado=$logro->getAtleta();
 		$_SESSION['catalogro'] = $datos;
+		$_SESSION['encabezado'] = $encabezado;
+
 		
 		header("Location: ../Vista/logro/consultalogro.php?accion=actual&id=".$id);	
 		break;	

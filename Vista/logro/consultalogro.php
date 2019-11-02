@@ -27,8 +27,31 @@ $form.='</table>';
 
 if($_GET['accion']=="actual")
 {
+	$encabezado = $_SESSION['encabezado'];
+	$cata.="<table class=tabla-cat id=tabla>";
+
+	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th><th colspan='4'>Acción</th></tr>";
+	foreach($encabezado as $enc)
+	{
+		$cata.="<tr>";	
+		$cata.="<td>".$enc['cedula']."</td>";	
+		$cata.="<td>".$enc['nombre']."</td>";	
+		$cata.="<td>".$enc['apellido']."</td>";	
+		$cata.="<td>".$enc['f_nac']."</td>";	
+		$cata.="<td>".$enc['tipos']."</td>";	
+		$cata.="<td>".$enc['mano']."</td>";	
+		$cata.="<td>".$enc['sexo']."</td>";	
+		$cata.="<td>".$enc['peso']."</td>";
+		$cata.="<td>".$enc['altura']."</td>";	
+		$cata.="<td>".$enc['talla']."</td>";	
+		$cata.="<td>".$enc['calzado']."</td>";	
+		$cata.="<td>".$enc['n_tel']."</td>";	
+		$cata.="</tr>";	
+	}
+	$cata.="</table><br>";
+
+
 	$catalogo = $_SESSION['catalogro'];
-	$cata.="<form name='catalog' action='../../Controlador/LogroController.php?accion=registrar' method='post'>";
 	$cata.="<table class=tabla-cat id=tabla>";
 	$cata.="<tr><th>Tipo de Logro</th><th>Pais</th><th>Estado</th><th>Ciudad</th><th>Disciplina</th><th>Resultado</th><th>Descripción</th><th>Observación</th><th colspan='3'>Acción</th></tr>";
 	foreach($catalogo as $cat)
