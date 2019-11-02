@@ -5,16 +5,18 @@ session_start();
 require_once("../dompdf/dompdf_config.inc.php");
 
 $code="<center><img src='../imagenes1/encabezado.jpg'></center>";
-$code.="<h1 class=texto>Reporte Global de Becas.</h1>";
+
 
 if ($_REQUEST['accion']=="global") {
-
-$code.=$_SESSION['reportebeca'];
+    $code.="<h1 class=texto>Reporte Global de Becas.</h1>";
+    $code.=$_SESSION['reportebeca'];
+    $filename= 'Reporte Global de Becas.pdf';
 }
 
 if ($_REQUEST['accion']=="detalle") {
-
+    $code.="<h1 class=texto>Reporte Especifico de una Beca.</h1>";
     $code.=$_SESSION['reportebecadetalle'];
+    $filename= 'Reporte Especifico de una Beca.pdf';
 }
 $code.='<link rel="stylesheet" href="../css/pdfreportebecas.css" type="text/css">';
 
@@ -33,7 +35,7 @@ $canvas->page_text($w-80,$h-15,"Página {PAGE_NUM} de {PAGE_COUNT}", Font_Metric
 $canvas->page_text($w-450,$h-15,"Instituto Autónomo del Deporte FUNDEY", Font_Metrics::get_font('helvetica'),9);
 
 $pdf = $dompdf->output(); //extrae el contenido renderizado del PDF
-$filename= 'Reporte Global de Becas.pdf';
+
 
 $dompdf->stream($filename,array("attachment"=>0));
 
