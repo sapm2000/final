@@ -24,9 +24,10 @@ $form.='<table>';
 $form.='<tr>';
 $form.='<td>Calzado:</td>';
 $form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" id="letra" onkeypress="return solonumeros(event)" onpaste="return false" name="cal" maxlenght="9" pattern="[0-9]{2}" title="máximo de 2 caracteres" required></td>';
+$form.='<td> <a href="generarreporte.php?"><input type="button" class="botonmodal" value="Generar Reporte" name="activos" title="Generar Reporte"> </a></td>';
 $form.='</tr>';
 $form.='</table>';
-$form.='<td> <a href="generarreporte.php?"><input type="button" class="botonmodal" value="Generar Reporte" name="activos" title="Generar Reporte"> </a></td>';
+
 $form.='</form>';
 
 if($_GET['accion']=="actual" && !empty($_SESSION['catacalrep']))
@@ -37,6 +38,7 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catacalrep']))
 	$cata.="<form name='catalog' action='../../Controlador/CalzadoController.php?accion=registrar' method='post'>";
 	$cata.="<table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-cat id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla>";
 
 	$cata.="<tr><th>Calzados</th><th>Total</th></tr>";
 	$reporte.="<tr><th>Calzados</th><th>Total</th></tr>";
