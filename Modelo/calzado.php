@@ -34,6 +34,16 @@ class Calzado extends ClaseBase
 		$cambio = $result->execute();
 		return $cambio;
 	}
+
+	public function getreporte()
+	{
+		$cc = Conexion::getInstance();
+		$sql = "SELECT calzado, COUNT(*) AS total from atleta INNER join calzados on atleta.id_calzado=calzados.id GROUP BY calzado";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
 }
 
 ?>
