@@ -213,7 +213,7 @@ switch ($_REQUEST['accion']) //Evaluo los vaores de 'accion' enviado por URL
 				$menu.=				'<img src="../imagenes1/descargas1.png" height="40px" width="40px" > Reportes';
 				$menu.=				'</a>';
 				$menu.=				'<ul class="submenu"><!-- Segundo nivel desplegable -->';
-				$menu.=					'<li><a href="../atleta/atletareporte.php?accion=actualizar">Atletas</a></li>';
+				$menu.=					'<li><a href="#">Reporte 1</a></li>';
 				$menu.=					'<li><a href="#">Reporte 2</a></li>';
 				$menu.=					'<li><a href="#">Reporte 3</a></li>';
 				$menu.=				'</ul>';
