@@ -61,11 +61,12 @@ if ($_GET['accion']=='ver_detalles')
 	$cata.='</table>';
 	$cata.='</form>';
 	$cata.="<table class=tabla-cat id=tabla1>";
-	$reporte.="<br><table class=tabla-cat2 id=tabla>";
-	$reporte.="<table class=tabla-catborde id=tabla>";
+
+	$reporte.="<br><table class=tabla-cat id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla>";
 
 	$cata.="<tr><th>Nombre</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Tipo</th><th>Municipio</th><th>Parroquia</th><th colspan='2'>Acción</th></tr>";
-	$reporte.="<tr><th>Nombre</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Tipo</th><th>Municipio</th><th>Parroquia</th><th colspan='2'>Acción</th></tr>";
+	$reporte.="<tr><th>Nombre</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Tipo</th><th>Municipio</th><th>Parroquia</th></tr>";
 
 	$catalogo = $_SESSION['modieven3'];
 	foreach($catalogo as $cat)
@@ -102,13 +103,15 @@ if ($_GET['accion']=='ver_detalles')
 $reporte.="</table>";
 $reporte.="</table>";
 
-$reporte.="<br><table class=tabla-catrepre id=tabla>";
-$reporte.="<table class=tabla-catrepresenta id=tabla>";
+
+$reporte.="<br><table class=tabla-catdeta id=tabla>";
+$reporte.="<table class=tabla-catdetalle id=tabla>";
 
 $cat1 = $_SESSION['catapart'];
 	$cata.="<table class=tabla-cat id=tabla>";
-	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Posición</th><th>observacion</th><th>Acción</th></tr>";
-	$reporte.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Posición</th><th>observacion</th><th>Acción</th></tr>";
+	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Posición</th><th>Observacion</th><th>Acción</th></tr>";
+	$reporte.="<h1>Participantes</h1>";
+	$reporte.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Posición</th><th>Observacion</th></tr>";
 
 	foreach($cat1 as $cat)
 	{
