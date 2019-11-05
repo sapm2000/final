@@ -12,6 +12,14 @@ switch($_REQUEST['accion'])
 		header("Location: ../Vista/talla/talla.php?accion=actual");
 		break;
 	}
+
+	case "buscatodosreporte":
+	{
+		$todos = $talla->getreporte();
+		$_SESSION['catatalrep'] = $todos;
+		header("Location: ../Vista/talla/reportetalla.php?accion=actual");
+		break;
+	}
 	case "registrar":
 	{
 		if(isset($_REQUEST['BtRegistrar']))
