@@ -92,7 +92,7 @@ switch($_REQUEST['accion'])
 		break;
 	}
 
-	case "buscatodos1":
+	case "buscatodos5":
 	{
 		
 		$todos = $atleta->getAllAtleta($tab);
@@ -1095,8 +1095,9 @@ case "registrarRegistro_medico":
 				
 				$n = $atleta->getPrimerdigito();
 				$_SESSION['nivel10'] = $n;
-				
+				var_dump ($n);				
 				header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
+				break;
 			}
 
 			case 'filtroultimodigito':
@@ -1107,6 +1108,7 @@ case "registrarRegistro_medico":
 				$_SESSION['nivel10'] = $n;
 				
 				header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
+				break;
 			}
 			case 'filtrofechanac':
 			{
@@ -1118,6 +1120,7 @@ case "registrarRegistro_medico":
 				$_SESSION['nivel10'] = $n;
 				
 				header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
+				break;
 			}
 			case 'filtrotiposanguineo':
 			{
@@ -1128,6 +1131,7 @@ case "registrarRegistro_medico":
 				$_SESSION['nivel10'] = $n;
 				
 				header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
+				break;
 			}
 			case 'filtroestadocivil':
 			{
@@ -1138,6 +1142,7 @@ case "registrarRegistro_medico":
 				
 				
 				header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
+				break;
 			}
 
 			case 'filtrosexo':
@@ -1149,6 +1154,7 @@ case "registrarRegistro_medico":
 				
 				
 				header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
+				break;
 			}
 
 			case 'filtronivel':
@@ -1161,6 +1167,7 @@ case "registrarRegistro_medico":
 				
 				
 				header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
+				break;
 			}
 
 
