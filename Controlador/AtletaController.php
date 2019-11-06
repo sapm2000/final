@@ -1080,5 +1080,44 @@ case "registrarRegistro_medico":
 				}
 				break;
 		}
+
+		case 'filtros':
+			{
+				if(isset($_REQUEST['sangre']))
+				{
+					$atleta->setTipos($_POST['tipos']);
+					$datos=$atleta->buscatipossanguineos();
+					$_SESSION['datos']=$datos;
+				
+					header("Location: ../Vista/atleta/atletaconfiltros.php?accion=actual");
+
+				}
+				if(isset($_REQUEST['civil']))
+				{
+					$atleta->setEstadoc($_POST['estadoc']);
+					$datos=$atleta->buscatipocivil();
+					$_SESSION['datos']=$datos;
+				
+					header("Location: ../Vista/atleta/atletaconfiltros.php?accion=actual");
+				}
+				if(isset($_REQUEST['sexo']))
+				{
+
+				}
+				if(isset($_REQUEST['nivel']))
+				{
+
+				}
+				if(isset($_REQUEST['nac']))
+				{
+
+				}
+
+
+			}
+
+
+
+
 }
 ?>

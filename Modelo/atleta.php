@@ -541,6 +541,26 @@ class Atleta extends ClaseBase
 			$cambio = $result->execute();
 			return $cambio;
 		}
+
+		public function buscatipossanguineos()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT atleta.*, tallas.talla, calzados.calzado FROM atleta LEFT OUTER JOIN tallas ON atleta.id_talla=tallas.id LEFT OUTER JOIN calzados ON atleta.id_calzado=calzados.id WHERE activo=0 AND tipos='$this->tipos'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function buscatipocivil()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT atleta.*, tallas.talla, calzados.calzado FROM atleta LEFT OUTER JOIN tallas ON atleta.id_talla=tallas.id LEFT OUTER JOIN calzados ON atleta.id_calzado=calzados.id WHERE activo=0 AND estadoc='$this->estadoc'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
 }
 
 

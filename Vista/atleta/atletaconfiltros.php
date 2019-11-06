@@ -34,9 +34,9 @@ $form.='<td> <a href="consultaatleta2.php?accion=actualizar"><input type="button
 $form.='</tr>';
 $form.='</table>';
 
-if($_GET['accion']=="actual"&&!empty($_SESSION['cataatle']))
+if($_GET['accion']=="actual"&&!empty($_SESSION['datos']))
 {
-	$catalogo = $_SESSION['cataatle'];
+	$catalogo = $_SESSION['datos'];
 	$reporte='';
 	$cata.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrar' method='post'>";
 	$cata.="<table class=tabla-cat id=tabla>";
@@ -103,7 +103,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['cataatle']))
 	$_SESSION['reporte']=$reporte;
 
 }
-if (empty($_SESSION['cataatle'])) {
+if (empty($_SESSION['datos'])) {
 	$cata.="no hay atletas registrados";
 }
 
