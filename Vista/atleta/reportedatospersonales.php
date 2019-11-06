@@ -52,6 +52,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['nivel10']))
 		$cata.="<td>".$cat['cedula']."</td>";	
 		$cata.="<td>".$cat['nombre']."</td>";	
 		$cata.="<td>".$cat['apellido']."</td>";	
+		$cata.="<td>".$cat['sexo']."</td>";	
 		$cata.="<td>".$cat['f_nac']."</td>";	
 		$cata.="<td>".$cat['tipos']."</td>";	
 		$cata.="<td>".$cat['estadoc']."</td>";	
@@ -63,7 +64,8 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['nivel10']))
 		$reporte.="<td>".$cat['nac']."</td>";	
 		$reporte.="<td>".$cat['cedula']."</td>";	
 		$reporte.="<td>".$cat['nombre']."</td>";	
-		$reporte.="<td>".$cat['apellido']."</td>";	
+		$reporte.="<td>".$cat['apellido']."</td>";
+		$reporte.="<td>".$cat['sexo']."</td>";		
 		$reporte.="<td>".$cat['f_nac']."</td>";	
 		$reporte.="<td>".$cat['tipos']."</td>";	
 		$reporte.="<td>".$cat['estadoc']."</td>";	

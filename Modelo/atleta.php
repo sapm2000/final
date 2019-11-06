@@ -288,6 +288,16 @@ class Atleta extends ClaseBase
 		return $this->primer;
 
 	}
+	public function setSegundo($segundo)
+	{
+		$this->segundo = $segundo;
+	}
+
+	public function getSegundo()
+	{
+		return $this->segundo;
+
+	}
 	
 	
 
@@ -574,6 +584,63 @@ class Atleta extends ClaseBase
 			return ($trae);
 		}
 
+		public function getUltimodigito()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT nac,cedula,nombre,apellido,f_nac,tipos,estadoc,sexo,nivel FROM atleta INNER JOIN nivels on atleta.id_nivel=nivels.id WHERE atleta.activo=0 and atleta.cedula like '%$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+		public function getFechaNac()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT nac,cedula,nombre,apellido,f_nac,tipos,estadoc,sexo,nivel FROM atleta INNER JOIN nivels on atleta.id_nivel=nivels.id WHERE atleta.activo=0 and atleta.f_nac BETWEEN '$this->primer' AND '$this->segundo'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function getTiposangre()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT nac,cedula,nombre,apellido,f_nac,tipos,estadoc,sexo,nivel FROM atleta INNER JOIN nivels on atleta.id_nivel=nivels.id WHERE atleta.activo=0 and atleta.tipos='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function getEstadocivil()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT nac,cedula,nombre,apellido,f_nac,tipos,estadoc,sexo,nivel FROM atleta INNER JOIN nivels on atleta.id_nivel=nivels.id WHERE atleta.activo=0 and atleta.estadoc='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+		public function getSsexo()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT nac,cedula,nombre,apellido,f_nac,tipos,estadoc,sexo,nivel FROM atleta INNER JOIN nivels on atleta.id_nivel=nivels.id WHERE atleta.activo=0 and atleta.sexo='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function getnnivel()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT nac,cedula,nombre,apellido,f_nac,tipos,estadoc,sexo,nivel FROM atleta INNER JOIN nivels on atleta.id_nivel=nivels.id WHERE atleta.activo=0 and nivels.id='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
 		
 }
 

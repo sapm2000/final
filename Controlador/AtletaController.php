@@ -74,6 +74,14 @@ switch($_REQUEST['accion'])
 		header("Location: ../Vista/atleta/datosp.php?accion=actual");
 		break;
 	}
+	case "buscatodos1":
+	{
+		$n = $nivel->getAll($tab);
+		$_SESSION['nivel'] = $n;
+		
+		header("Location: ../Vista/atleta/filtronivel.php?accion=actual");
+		break;
+	}
 
 	case "buscafiltros":
 	{
@@ -1091,7 +1099,69 @@ case "registrarRegistro_medico":
 				header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
 			}
 
+			case 'filtroultimodigito':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				
+				$n = $atleta->getUltimodigito();
+				$_SESSION['nivel10'] = $n;
+				
+				header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
+			}
+			case 'filtrofechanac':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				$atleta->setSegundo($_POST['segundo']);
+				
+				
+				$n = $atleta->getFechaNac();
+				$_SESSION['nivel10'] = $n;
+				
+				header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
+			}
+			case 'filtrotiposanguineo':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				
+				
+				$n = $atleta->getTiposangre();
+				$_SESSION['nivel10'] = $n;
+				
+				header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
+			}
+			case 'filtroestadocivil':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				
+				$n = $atleta->getEstadocivil();
+				$_SESSION['nivel10'] = $n;
+				
+				
+				header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
+			}
 
+			case 'filtrosexo':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				
+				$n = $atleta->getSsexo();
+				$_SESSION['nivel10'] = $n;
+				
+				
+				header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
+			}
+
+			case 'filtronivel':
+			{
+				$atleta->setPrimer($_POST['primer']);
+			
+				
+				$n = $atleta->getnnivel();
+				$_SESSION['nivel10'] = $n;
+				
+				
+				header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
+			}
 
 
 }

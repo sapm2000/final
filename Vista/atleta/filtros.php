@@ -12,40 +12,13 @@ if(empty($_REQUEST['accion']))
 	header("Location: ../menuv/menuv.php?accion=validado");
 }
 
-$select = "<select name='tipos' required>";
-$select.= "<option value=''>Seleccione un tipo de sangre</option>";
-$select.= "<option value='A+'>A+</option>";
-$select.= "<option value='A-'>A-</option>";
-$select.= "<option value='B+'>B+</option>";
-$select.= "<option value='B-'>B-</option>";
-$select.= "<option value='O+'>O+</option>";
-$select.= "<option value='O-'>O-</option>";
-$select.= "<option value='AB+'>AB+</option>";
-$select.= "<option value='AB-'>AB-</option>";
-$select.= "</select>";
-
-$estadocivil.="<select name='estadoc' required>";
-$estadocivil.= "<option value=''>Seleccione un estado civil</option>";
-$estadocivil.= "<option>SOLTERO/A</option>";
-$estadocivil.= "<option>CASADO/A</option>";
-$estadocivil.= "<option>DIVORCIADO/A</option>";
-$estadocivil.= "<option>VIUDO/A</option>";
-$estadocivil.= "</select>";
-
-$sexo ="<select name='sexo' required>";
-$sexo.="<option value=''>Seleccione un sexo</option>";
-$sexo.= "<option>F</option>";
-$sexo.= "<option>M</option>";
-$sexo.="</select>";
 
 
-$nac='';
-$nac.="<select name='nacio'  style='width:40px' required>";
-$nac.= "<option value=''>Seleccione una nacionalidad</option>";
-$nac.= "<option>V</option>";
-$nac.= "<option>E</option>";
-$nac.= "<option>P</option>";
-$nac.= "</select>";
+
+
+
+
+
 
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
@@ -60,14 +33,14 @@ $form.='<h2>Datos Personales</h2>';
 
 $form.='<td> <a href="reportedatospersonales.php?accion=actualizar"><input type="button" value="Reporte General" class="botonmodal" title="Reporte de Datos General de los Atletas Según sus Datos Personales" id="" name=""></a></td>';
 $form.='<td><a href="filtroprimercedula.php?accion=actualizar"><input type="button" value="Reporte de Primeros N° de Cédula" class="botonmodal" title="Reporte de los Atleta por sus Primeros N° de Cédula" id="" name=""></a></td>';
-$form.='<td><input type="button" value="Reporte de Ultimos N° de Cédula" class="botonmodal" title="Reporte de los Atleta por sus Ultimos N° de Cédula" id="" name=""></td>';
-$form.='<td><input type="button" value="Reporte de Fecha de Nacimiento" class="botonmodal" title="Reporte de los Atletas por Fecha de Nacimiento" id="" name=""></td>';
+$form.='<td><a href="filtroultimacedula.php?accion=actualizar"><input type="button" value="Reporte de Ultimos N° de Cédula" class="botonmodal" title="Reporte de los Atleta por sus Ultimos N° de Cédula" id="" name=""></a></td>';
+$form.='<td><a href="filtrofechanac.php?accion=actualizar"><input type="button" value="Reporte de Fecha de Nacimiento" class="botonmodal" title="Reporte de los Atletas por Fecha de Nacimiento" id="" name=""></a></td>';
 $form.='</tr>';
 $form.='<tr>';
-$form.='<td><input type="button" value="Reporte de Tipo Sanguíneo" class="botonmodal" title="Reporte de Tipo Sanguíneo de los Atletas" id="" name=""></td>';
-$form.='<td><input type="button" value="Reporte de Estado Cívil" class="botonmodal" title="Reporte de el Estado Cívil de los Atletas" id="" name=""></td>';
-$form.='<td><input type="button" value="Reporte de Genero" class="botonmodal" title="Reporte de Atletas Según su Genero" id="" name=""></td>';
-$form.='<td><input type="button" value="Reporte de Nivel de Estudio" class="botonmodal" title="Reporte de Atletas Según su Nivel de Estudio" id="" name=""></td>';
+$form.='<td><a href="filtrotiposanguineo.php?accion=actualizar"><input type="button" value="Reporte de Tipo Sanguíneo" class="botonmodal" title="Reporte de Tipo Sanguíneo de los Atletas" id="" name=""></a></td>';
+$form.='<td><a href="filtroestadocivil.php?accion=actualizar"><input type="button" value="Reporte de Estado Cívil" class="botonmodal" title="Reporte de el Estado Cívil de los Atletas" id="" name=""></a></td>';
+$form.='<td><a href="filtrosexo.php?accion=actualizar"><input type="button" value="Reporte de Genero" class="botonmodal" title="Reporte de Atletas Según su Genero" id="" name=""></td>';
+$form.='<td><a href="../../Controlador/AtletaController.php?accion=buscatodos1"><input type="button" value="Reporte de Nivel de Estudio" class="botonmodal" title="Reporte de Atletas Según su Nivel de Estudio" id="" name=""></td>';
 $form.='</tr>';
 $form.='</table>';
 $form.='</form>';
