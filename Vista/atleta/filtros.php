@@ -66,38 +66,42 @@ $form.='<form name="atleta" method="post" action="../../Controlador/AtletaContro
 $form.='<table>';
 $form.='<tr>';
 $form.='<td>'.$select.'</td>';
-$form.='</tr>';
-$form.='</table>';
+$form.='<td><br><input type="submit" value="Filtrar" title="Filtrar por tipo de sangre" id="submit" name=""></td>';
 $form.='</form>';
 
 $form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=registrar">';
-$form.='<table>';
-$form.='<tr>';
+
+
 $form.='<td>'.$estadocivil.'</td>';
-$form.='</tr>';
-$form.='</table>';
+$form.='<td><br><input type="submit" value="Filtrar" title="Filtrar por tipo de estado cívil" id="submit" name=""></td>';
+
 $form.='</form>';
 
 $form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=registrar">';
-$form.='<table>';
-$form.='<tr>';
+
+
 $form.='<td>'.$sexo.'</td>';
-$form.='</tr>';
-$form.='</table>';
+$form.='<td><br><input type="submit" value="Filtrar" title="Filtrar por sexo" id="submit" name=""></td>';
+
+
 $form.='</form>';
 
 $form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=registrar">';
-$form.='<table>';
-$form.='<tr>';
+
+
 $form.='<td>'.$nivel.'</td>';
-$form.='</tr>';
-$form.='</table>';
+$form.='<td><br><input type="submit" value="Filtrar" title="Filtrar por nivel de educación" id="submit" name=""></td>';
+
+
 $form.='</form>';
 
 $form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=registrar">';
-$form.='<table>';
-$form.='<tr>';
+
+
 $form.='<td>'.$nac.'</td>';
+
+$form.='<td><br><input type="submit" value="Filtrar" title="Filtrar por nacionalidad" id="submit" name=""></td>';
+
 $form.='</tr>';
 $form.='</table>';
 $form.='</form>';
