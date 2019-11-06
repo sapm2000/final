@@ -75,6 +75,15 @@ switch($_REQUEST['accion'])
 		break;
 	}
 
+	case "buscafiltros":
+	{
+		$n = $nivel->getAll($tab);
+		$_SESSION['nivel10'] = $n;
+		
+		header("Location: ../Vista/atleta/filtros.php?accion=actual");
+		break;
+	}
+
 	case "buscatodos1":
 	{
 		
