@@ -66,28 +66,132 @@ $boton='';
 $form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=filtros">';
 $form.='<table>';
 $form.='<tr>';
-$form.='<td>'.$select.'</td>';
-$form.='<td><br><input type="submit" value="Filtrar" name="sangre" title="Filtrar por tipo de sangre" id="submit" name=""></td>';
+$form.='<hr></hr>';
+$form.='<h2>Datos Personales</h2>';
+
+$form.='<td><input type="button" value="Reporte General" class="botonmodal" title="Reporte de Datos General de los Atletas Según sus Datos Personales" id="" name=""></td>';
+$form.='<td><input type="button" value="Reporte de Primeros N° de Cédula" class="botonmodal" title="Reporte de los Atleta por sus Primeros N° de Cédula" id="" name=""></td>';
+$form.='<td><input type="button" value="Reporte de Ultimos N° de Cédula" class="botonmodal" title="Reporte de los Atleta por sus Ultimos N° de Cédula" id="" name=""></td>';
+$form.='<td><input type="button" value="Reporte de Fecha de Nacimiento" class="botonmodal" title="Reporte de los Atletas por Fecha de Nacimiento" id="" name=""></td>';
+$form.='</tr>';
+$form.='<tr>';
+$form.='<td><input type="button" value="Reporte de Tipo Sanguíneo" class="botonmodal" title="Reporte de Tipo Sanguíneo de los Atletas" id="" name=""></td>';
+$form.='<td><input type="button" value="Reporte de Estado Cívil" class="botonmodal" title="Reporte de el Estado Cívil de los Atletas" id="" name=""></td>';
+$form.='<td><input type="button" value="Reporte de Genero" class="botonmodal" title="Reporte de Atletas Según su Genero" id="" name=""></td>';
+$form.='<td><input type="button" value="Reporte de Nivel de Estudio" class="botonmodal" title="Reporte de Atletas Según su Nivel de Estudio" id="" name=""></td>';
+$form.='</tr>';
+$form.='</table>';
 $form.='</form>';
 
-$form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=filtros">';
-$form.='<td>'.$estadocivil.'</td>';
-$form.='<td><br><input type="submit" value="Filtrar" name="civil" title="Filtrar por tipo de estado cívil" id="submit" name=""></td>';
-$form.='</form>';
+
+
 
 $form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=filtros">';
-$form.='<td>'.$sexo.'</td>';
-$form.='<td><br><input type="submit" value="Filtrar" name="sexo" title="Filtrar por sexo" id="submit" name=""></td>';
+$form.='<table>';
+$form.='<tr>';
+$form.='<hr></hr>';
+$form.='<h2>Datos de Indumentaria</h2>';
+
+$form.='<td><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según su Indumentaria" id="" name=""></td>';
+$form.='<td><input type="button" value="Reporte de Peso" class="botonmodal" title="Reporte de los Atletas Según el Peso" id="" name=""></td>';
+$form.='<td><input type="button" value="Reporte de Altura" class="botonmodal" title="Reporte de los Atletas Según la Altura" id="" name=""></td>';
+$form.='</tr>';
+$form.='<tr>';
+$form.='<td><input type="button" value="Reporte de Talla" class="botonmodal" title="Reporte de los Atletas Según la Talla" id="" name=""></td>';
+$form.='<td><input type="button" value="Reporte de Calzado" class="botonmodal" title="Reporte de Datos de los Atletas Según el Calzado" id="" name=""></td>';
+$form.='<td><input type="button" value="Reporte de Mano Hábil" class="botonmodal" title="Reporte de los Atletas Según la Mano Hábil" id="" name=""></td>';
+$form.='</tr>';
+$form.='</table>';
 $form.='</form>';
 
-$form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=filtros">';
-$form.='<td>'.$nivel.'</td>';
-$form.='<td><br><input type="submit" value="Filtrar" name="nivel" title="Filtrar por nivel de educación" id="submit" name=""></td>';
-$form.='</form>';
+
+
 
 $form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=filtros">';
-$form.='<td>'.$nac.'</td>';
-$form.='<td><br><input type="submit" value="Filtrar" name="nac" title="Filtrar por nacionalidad" id="submit" name=""></td>';
+$form.='<table>';
+$form.='<tr>';
+$form.='<hr></hr>';
+$form.='<h2>Datos de Contacto</h2>';
+
+$form.='<td><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Datos de Contacto" id="" name=""></td>';
+$form.='<td><input type="button" value="Reporte de Operador Telefónico" class="botonmodal" title="Reporte de los Atletas Según el Operador Telefónico" id="" name=""></td>';
+$form.='<td><input type="button" value="Reporte de Municipio" class="botonmodal" title="Reporte de los Atletas Según el Municipio" id="" name=""></td>';
+$form.='<td><input type="button" value="Reporte de Parroquia" class="botonmodal" title="Reporte de los Atletas Según la Parroquia" id="" name=""></td>';
+$form.='</tr>';
+$form.='</table>';
+$form.='</form>';
+
+
+
+
+$form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=filtros">';
+$form.='<table>';
+$form.='<tr>';
+$form.='<hr></hr>';
+$form.='<h2>Datos Bancarios</h2>';
+
+$form.='<td><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Datos Bancarios" id="" name=""></td>';
+$form.='<td><input type="button" value="Reporte de Bancos" class="botonmodal" title="Reporte de los Atletas Según el Banco" id="" name=""></td>';
+$form.='<td><input type="button" value="Reporte de Tipo de Cuentas" class="botonmodal" title="Reporte de los Atletas Según el Tipo de Cuenta" id="" name=""></td>';
+$form.='</tr>';
+$form.='</table>';
+$form.='</form>';
+
+
+
+
+$form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=filtros">';
+$form.='<table>';
+$form.='<tr>';
+$form.='<hr></hr>';
+$form.='<h2>Datos de Disciplinas</h2>';
+
+$form.='<td><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Disciplinas" id="" name=""></td>';
+$form.='<td><input type="button" value="Reporte de Disciplinas" class="botonmodal" title="Reporte de los Atletas Según La Disciplina" id="" name=""></td>';
+$form.='<td><input type="button" value="Reporte de Modalidades" class="botonmodal" title="Reporte de los Atletas Según su Modalidad" id="" name=""></td>';
+$form.='</tr>';
+$form.='</table>';
+$form.='</form>';
+
+
+
+
+$form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=filtros">';
+$form.='<table>';
+$form.='<tr>';
+$form.='<hr></hr>';
+$form.='<h2>Datos Laborales</h2>';
+
+$form.='<td><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Datos Laborales" id="" name=""></td>';
+
+$form.='</tr>';
+$form.='</table>';
+$form.='</form>';
+
+
+
+
+$form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=filtros">';
+$form.='<table>';
+$form.='<tr>';
+$form.='<hr></hr>';
+$form.='<h2>Datos de Registro Médico</h2>';
+
+$form.='<td><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Registros Médicos" id="" name=""></td>';
+$form.='</tr>';
+$form.='</table>';
+$form.='</form>';
+
+
+
+
+$form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=filtros">';
+$form.='<table>';
+$form.='<tr>';
+$form.='<hr></hr>';
+$form.='<h2>Datos de Discapacidades</h2>';
+
+$form.='<td><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Discapacidades" id="" name=""></td>';
 $form.='</tr>';
 $form.='</table>';
 $form.='</form>';
@@ -96,11 +200,10 @@ $form.='</form>';
 
 
 
-
 $diccionario = array 
 (
 	'PERFIL' => $perfil,
-	'TITULO'=>'Atletas',
+	'TITULO'=>'Reportes de Atletas con Filtros',
 	'CATALOGO'=>$cata,
 	'BOTONREG'=>$boton,
 	'FORMULARIO'=>$form, 	
