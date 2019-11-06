@@ -65,14 +65,15 @@ if ($_GET['accion']=='ver_detalles')
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla>";
 
-	$cata.="<tr><th>Nombre</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Tipo</th><th>Municipio</th><th>Parroquia</th><th colspan='2'>Acción</th></tr>";
-	$reporte.="<tr><th>Nombre</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Tipo</th><th>Municipio</th><th>Parroquia</th></tr>";
+	$cata.="<tr><th>Nombre</th><th>tipo evento</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Tipo</th><th>Municipio</th><th>Parroquia</th><th colspan='2'>Acción</th></tr>";
+	$reporte.="<tr><th>Nombre</th><th>tipo evento</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Tipo</th><th>Municipio</th><th>Parroquia</th></tr>";
 
 	$catalogo = $_SESSION['modieven3'];
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
 		$cata.="<td>".$cat['nombre']."</td>";
+		$cata.="<td>".$cat['tipo']."</td>";
 		$fecha1=$cat['fecha_inicio'];
 		$fecha2=$cat['fecha_cierre'];
 		$cata.="<td>".date('d-m-Y',strtotime($fecha1))."</td>";
@@ -86,6 +87,7 @@ if ($_GET['accion']=='ver_detalles')
 
 		$reporte.="<tr>";	
 		$reporte.="<td>".$cat['nombre']."</td>";
+		$reporte.="<td>".$cat['tipo']."</td>";
 		$fecha1=$cat['fecha_inicio'];
 		$fecha2=$cat['fecha_cierre'];
 		$reporte.="<td>".date('d-m-Y',strtotime($fecha1))."</td>";

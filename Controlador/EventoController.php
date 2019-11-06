@@ -62,6 +62,8 @@ switch($_REQUEST['accion'])
 			$evento->setId_municipio($_POST['id_municipio']);
 			$evento->setId_parroquia($_POST['id_parroquia']);
 			$evento->setParti($_POST['parti']);
+			$evento->setTipo($_POST['tipo']);
+			$_SESSION['tipologroevento']=$evento->getTipo();
 			$equipos=$evento->getParti();
 			$_SESSION['parti']=$evento->getParti();
 			$evento->setCanti($_POST['canti']);
@@ -166,7 +168,7 @@ switch($_REQUEST['accion'])
 				$_SESSION['act']=$_SESSION['act']+1;
 
 				$evento->setActual($_SESSION['act']);
-				$logro->setTipo('estadal');
+				$logro->setTipo($_SESSION['tipologroevento']);
 				$logro->setPais('venezuela');
 				$logro->setEstado('yaracuy');
 				$logro->setCiudad($_SESSION['ciudad']);

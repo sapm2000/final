@@ -1,20 +1,22 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 27-10-2019 a las 18:34:31
--- Versión del servidor: 5.5.24-log
--- Versión de PHP: 5.4.3
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 06-11-2019 a las 18:31:13
+-- Versión del servidor: 10.1.38-MariaDB
+-- Versión de PHP: 7.3.4
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de datos: `fundey`
@@ -26,8 +28,8 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `atleta`
 --
 
-CREATE TABLE IF NOT EXISTS `atleta` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `atleta` (
+  `id` int(11) NOT NULL,
   `nac` varchar(1) NOT NULL,
   `cedula` varchar(9) NOT NULL,
   `nombre` varchar(50) NOT NULL,
@@ -48,13 +50,8 @@ CREATE TABLE IF NOT EXISTS `atleta` (
   `id_calzado` int(11) NOT NULL,
   `altura` varchar(4) NOT NULL,
   `peso` varchar(6) NOT NULL,
-  `mano` varchar(12) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `cedula` (`cedula`),
-  KEY `n` (`id_nivel`),
-  KEY `p` (`id_parroquia`),
-  KEY `m` (`id_municipio`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
+  `mano` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `atleta`
@@ -63,10 +60,10 @@ CREATE TABLE IF NOT EXISTS `atleta` (
 INSERT INTO `atleta` (`id`, `nac`, `cedula`, `nombre`, `apellido`, `f_nac`, `tipos`, `estadoc`, `sexo`, `id_nivel`, `correo`, `n_tel`, `n_eme`, `id_municipio`, `id_parroquia`, `direccion`, `activo`, `id_talla`, `id_calzado`, `altura`, `peso`, `mano`) VALUES
 (1, 'V', '30426947', 'FREDDERICK', 'HERNANDEZ', '2004-07-06', 'O+', 'SOLTERO/A', 'M', 1, 'DASDAD@ASDS.COM', '12345678900', '00987654321', 13, 19, 'ASDA', 2, 8, 7, '1,10', '90.0', 'DIESTRO'),
 (2, '', '27328852', 'MARYORITH', 'SINGER', '2000-05-05', 'O+', 'SOLTERO/A', 'F', 3, 'MARYORITHSINGER05@GMAIL.COM', '04125084544', '04245222312', 1, 1, 'FINAL CALLE 28 CON 14 AV.', 2, 0, 0, '', '', ''),
-(3, 'V', '26943430', 'SAMUEL', 'PEREZ', '2000-01-06', 'O+', 'SOLTERO/A', 'F', 3, '8@SADSA.COM', '04245222312', '04125084544', 11, 17, '2 AV.', 0, 0, 0, '', '', ''),
-(4, '', '1234567', 'FSDFS', 'SDFDSFS', '2000-06-12', 'O-', 'SOLTERO/A', 'M', 2, '', '', '', 0, 0, '', 0, 8, 5, '123', '12', ''),
-(5, 'E', '7590456', 'ADSAD', 'ASDADAS', '2000-06-01', 'O-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(6, 'V', '1478558', 'XCZCZXC', 'ZXCZXCZXC', '2019-10-06', 'B-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
+(3, 'V', '26943430', 'SAMUEL', 'PEREZ', '2000-01-06', 'O+', 'SOLTERO/A', 'F', 3, '8@SADSA.COM', '04245222312', '04125084544', 11, 17, '2 AV.', 0, 5, 6, '1,71', '50.0', 'DIESTRO'),
+(4, '', '1234567', 'FSDFS', 'SDFDSFS', '2000-06-12', 'O-', 'SOLTERO/A', 'M', 2, '', '', '', 0, 0, '', 2, 8, 5, '123', '12', ''),
+(5, 'E', '7590456', 'ADSAD', 'ASDADAS', '2000-06-01', 'O-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 0, 5, '', '', ''),
+(6, 'V', '1478558', 'XCZCZXC', 'ZXCZXCZXC', '2019-10-06', 'B-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 0, 5, '', '', ''),
 (7, 'V', '5145789', 'ASDASD', 'ALVAREZ', '2019-10-13', 'O+', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
 (8, 'V', '12745678', 'ASD', 'ALVAREZ', '2019-09-30', 'B+', 'SOLTERO/A', 'M', 2, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
 (9, 'V', '12345685', 'ASASASAS', 'XXXXXX', '2019-10-10', 'B-', 'CASADO/A', 'F', 1, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
@@ -97,13 +94,19 @@ INSERT INTO `atleta` (`id`, `nac`, `cedula`, `nombre`, `apellido`, `f_nac`, `tip
 -- Estructura de tabla para la tabla `atleta_representante`
 --
 
-CREATE TABLE IF NOT EXISTS `atleta_representante` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `atleta_representante` (
+  `id` int(11) NOT NULL,
   `id_atleta` int(11) NOT NULL,
   `id_representante` int(11) NOT NULL,
-  `id_parentezco` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `id_parentezco` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `atleta_representante`
+--
+
+INSERT INTO `atleta_representante` (`id`, `id_atleta`, `id_representante`, `id_parentezco`) VALUES
+(3, 3, 2, 5);
 
 -- --------------------------------------------------------
 
@@ -111,12 +114,10 @@ CREATE TABLE IF NOT EXISTS `atleta_representante` (
 -- Estructura de tabla para la tabla `bancos`
 --
 
-CREATE TABLE IF NOT EXISTS `bancos` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `banco` varchar(50) NOT NULL,
-  UNIQUE KEY `id` (`id`),
-  UNIQUE KEY `banco` (`banco`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+CREATE TABLE `bancos` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `banco` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `bancos`
@@ -141,19 +142,18 @@ INSERT INTO `bancos` (`id`, `banco`) VALUES
 -- Estructura de tabla para la tabla `becas`
 --
 
-CREATE TABLE IF NOT EXISTS `becas` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `becas` (
+  `id` int(11) NOT NULL,
   `id_atleta` int(11) NOT NULL,
-  `monto` double NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+  `monto` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `becas`
 --
 
 INSERT INTO `becas` (`id`, `id_atleta`, `monto`) VALUES
-(1, 1, 1000);
+(1, 3, 10000);
 
 -- --------------------------------------------------------
 
@@ -161,12 +161,11 @@ INSERT INTO `becas` (`id`, `id_atleta`, `monto`) VALUES
 -- Estructura de tabla para la tabla `becas_gloria`
 --
 
-CREATE TABLE IF NOT EXISTS `becas_gloria` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `becas_gloria` (
+  `id` int(11) NOT NULL,
   `id_atleta` int(11) NOT NULL,
-  `monto` double NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+  `monto` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `becas_gloria`
@@ -182,14 +181,13 @@ INSERT INTO `becas_gloria` (`id`, `id_atleta`, `monto`) VALUES
 -- Estructura de tabla para la tabla `becas_mes`
 --
 
-CREATE TABLE IF NOT EXISTS `becas_mes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `becas_mes` (
+  `id` int(11) NOT NULL,
   `fecha` varchar(50) NOT NULL,
   `montoT` float NOT NULL,
   `becados` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+  `nombre` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `becas_mes`
@@ -209,7 +207,15 @@ INSERT INTO `becas_mes` (`id`, `fecha`, `montoT`, `becados`, `nombre`) VALUES
 (11, '2019-10-07', 1243540000, 2, 'DSFDS'),
 (12, '2019-10-07', 2468, 2, 'VJ'),
 (13, '2019-10-07', 2468, 2, 'SADASD'),
-(14, '2019-10-31', 2468, 2, 'S');
+(14, '2019-10-31', 2468, 2, 'S'),
+(15, '2019-12-11', 33000, 3, 'ALTORENDIMIENTOJULIO'),
+(16, '2019-12-11', 33000, 3, 'ALTORENDIMIENTOJULIO'),
+(17, '2019-10-08', 33000, 3, 'XD'),
+(23, '2019-10-14', 23000, 3, 'HOLA'),
+(25, '2019-10-08', 23000, 3, 'B'),
+(28, '2019-10-15', 23000, 3, 'C'),
+(29, '2019-10-22', 23000, 3, 'ASD'),
+(38, '2019-10-23', 10000, 1, 'D');
 
 -- --------------------------------------------------------
 
@@ -217,14 +223,13 @@ INSERT INTO `becas_mes` (`id`, `fecha`, `montoT`, `becados`, `nombre`) VALUES
 -- Estructura de tabla para la tabla `becas_total`
 --
 
-CREATE TABLE IF NOT EXISTS `becas_total` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `becas_total` (
+  `id` int(11) NOT NULL,
   `id_atleta` int(11) NOT NULL,
   `monto` float NOT NULL,
   `fecha` varchar(50) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+  `nombre` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `becas_total`
@@ -237,7 +242,29 @@ INSERT INTO `becas_total` (`id`, `id_atleta`, `monto`, `fecha`, `nombre`) VALUES
 (4, 1, 1234, '2019-10-07', 'SADASD'),
 (5, 2, 1234, '2019-10-07', 'SADASD'),
 (6, 1, 1234, '2019-10-31', 'S'),
-(7, 2, 1234, '2019-10-31', 'S');
+(7, 2, 1234, '2019-10-31', 'S'),
+(8, 3, 10000, '2019-12-11', 'ALTORENDIMIENTOJULIO'),
+(9, 4, 20000, '2019-12-11', 'ALTORENDIMIENTOJULIO'),
+(10, 5, 3000, '2019-12-11', 'ALTORENDIMIENTOJULIO'),
+(11, 3, 10000, '2019-12-11', 'ALTORENDIMIENTOJULIO'),
+(12, 4, 20000, '2019-12-11', 'ALTORENDIMIENTOJULIO'),
+(13, 5, 3000, '2019-12-11', 'ALTORENDIMIENTOJULIO'),
+(14, 3, 10000, '2019-10-08', 'XD'),
+(15, 4, 20000, '2019-10-08', 'XD'),
+(16, 5, 3000, '2019-10-08', 'XD'),
+(27, 3, 1000, '2019-10-14', 'HOLA'),
+(28, 4, 2000, '2019-10-14', 'HOLA'),
+(29, 5, 20000, '2019-10-14', 'HOLA'),
+(33, 3, 1000, '2019-10-08', 'B'),
+(34, 4, 2000, '2019-10-08', 'B'),
+(35, 5, 20000, '2019-10-08', 'B'),
+(42, 3, 1000, '2019-10-15', 'C'),
+(43, 4, 2000, '2019-10-15', 'C'),
+(44, 5, 20000, '2019-10-15', 'C'),
+(45, 3, 1000, '2019-10-22', 'ASD'),
+(46, 4, 2000, '2019-10-22', 'ASD'),
+(47, 5, 20000, '2019-10-22', 'ASD'),
+(68, 3, 10000, '2019-10-23', 'D');
 
 -- --------------------------------------------------------
 
@@ -245,11 +272,10 @@ INSERT INTO `becas_total` (`id`, `id_atleta`, `monto`, `fecha`, `nombre`) VALUES
 -- Estructura de tabla para la tabla `calzados`
 --
 
-CREATE TABLE IF NOT EXISTS `calzados` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `calzado` varchar(2) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+CREATE TABLE `calzados` (
+  `id` int(11) NOT NULL,
+  `calzado` varchar(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `calzados`
@@ -268,8 +294,8 @@ INSERT INTO `calzados` (`id`, `calzado`) VALUES
 -- Estructura de tabla para la tabla `cuenta`
 --
 
-CREATE TABLE IF NOT EXISTS `cuenta` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `cuenta` (
+  `id` int(11) NOT NULL,
   `nac` varchar(1) NOT NULL,
   `cedula` varchar(9) NOT NULL,
   `nombre` varchar(50) NOT NULL,
@@ -277,9 +303,8 @@ CREATE TABLE IF NOT EXISTS `cuenta` (
   `id_banco` int(11) NOT NULL,
   `numeroc` varchar(20) NOT NULL,
   `tipo` varchar(10) NOT NULL,
-  `id_atleta` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
+  `id_atleta` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `cuenta`
@@ -322,16 +347,15 @@ INSERT INTO `cuenta` (`id`, `nac`, `cedula`, `nombre`, `apellido`, `id_banco`, `
 -- Estructura de tabla para la tabla `datoll`
 --
 
-CREATE TABLE IF NOT EXISTS `datoll` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `datoll` (
+  `id` int(11) NOT NULL,
   `correol` varchar(100) NOT NULL,
   `empresa` varchar(50) NOT NULL,
   `id_municipio1` int(11) NOT NULL,
   `id_parroquia1` int(11) NOT NULL,
   `direccion1` varchar(500) NOT NULL,
-  `id_atleta` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
+  `id_atleta` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `datoll`
@@ -374,12 +398,10 @@ INSERT INTO `datoll` (`id`, `correol`, `empresa`, `id_municipio1`, `id_parroquia
 -- Estructura de tabla para la tabla `discapacidades`
 --
 
-CREATE TABLE IF NOT EXISTS `discapacidades` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `discapacidad` varchar(50) NOT NULL,
-  UNIQUE KEY `id` (`id`),
-  UNIQUE KEY `discapacidad` (`discapacidad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+CREATE TABLE `discapacidades` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `discapacidad` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `discapacidades`
@@ -398,12 +420,10 @@ INSERT INTO `discapacidades` (`id`, `discapacidad`) VALUES
 -- Estructura de tabla para la tabla `disciplinas`
 --
 
-CREATE TABLE IF NOT EXISTS `disciplinas` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `disciplina` varchar(50) NOT NULL,
-  UNIQUE KEY `id` (`id`),
-  UNIQUE KEY `disciplina` (`disciplina`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+CREATE TABLE `disciplinas` (
+  `id` int(11) NOT NULL,
+  `disciplina` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `disciplinas`
@@ -428,12 +448,10 @@ INSERT INTO `disciplinas` (`id`, `disciplina`) VALUES
 -- Estructura de tabla para la tabla `estatus`
 --
 
-CREATE TABLE IF NOT EXISTS `estatus` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `estatu` varchar(50) NOT NULL,
-  UNIQUE KEY `id` (`id`),
-  UNIQUE KEY `estatu` (`estatu`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+CREATE TABLE `estatus` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `estatu` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `estatus`
@@ -454,8 +472,8 @@ INSERT INTO `estatus` (`id`, `estatu`) VALUES
 -- Estructura de tabla para la tabla `eventos`
 --
 
-CREATE TABLE IF NOT EXISTS `eventos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `eventos` (
+  `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `fecha_inicio` date NOT NULL,
   `fecha_cierre` date NOT NULL,
@@ -467,18 +485,22 @@ CREATE TABLE IF NOT EXISTS `eventos` (
   `parti` int(11) NOT NULL,
   `canti` int(11) NOT NULL,
   `actual` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
+  `tipo` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `eventos`
 --
 
-INSERT INTO `eventos` (`id`, `nombre`, `fecha_inicio`, `fecha_cierre`, `descripcion`, `id_disciplina`, `id_municipio`, `id_parroquia`, `maxpo`, `parti`, `canti`, `actual`) VALUES
-(23, 'ADADAS', '2000-06-01', '2020-01-01', 'TORNOE', 2, 1, 1, 11, 4, 44, 0),
-(24, 'FSDFS', '1200-06-01', '2020-01-01', 'C', 3, 1, 1, 10, 1, 10, 0),
-(25, 'CG', '2000-04-05', '2020-01-01', 'D', 1, 1, 1, 1, 3, 2, 0),
-(26, 'DADSADSADASDSADA', '2000-01-06', '2020-01-01', 'D', 3, 1, 1, 2, 2, 4, -2);
+INSERT INTO `eventos` (`id`, `nombre`, `fecha_inicio`, `fecha_cierre`, `descripcion`, `id_disciplina`, `id_municipio`, `id_parroquia`, `maxpo`, `parti`, `canti`, `actual`, `tipo`) VALUES
+(23, 'ADADAS', '2000-06-01', '2020-01-01', 'TORNOE', 2, 1, 1, 11, 4, 44, 0, ''),
+(24, 'FSDFS', '1200-06-01', '2020-01-01', 'C', 3, 1, 1, 10, 1, 10, 0, ''),
+(25, 'CG', '2000-04-05', '2020-01-01', 'D', 1, 1, 1, 1, 3, 2, 0, ''),
+(26, 'DADSADSADASDSADA', '2000-01-06', '2020-01-01', 'D', 3, 1, 1, 2, 2, 4, 0, ''),
+(27, 'ADAS', '2000-06-21', '2020-01-01', 'SADASDADAD', 2, 2, 2, 1, 1, 1, 0, ''),
+(28, 'SAD', '2019-10-28', '2020-01-01', 'DASD', 3, 1, 1, 1, 1, 1, 0, 'nacional'),
+(29, '11', '2019-11-12', '2020-01-01', '1', 1, 2, 2, 1, 1, 1, 0, 'mundial'),
+(30, '111111111111', '2019-11-04', '2020-01-01', '111111', 3, 1, 1, 1, 1, 1, 1, 'mundial');
 
 -- --------------------------------------------------------
 
@@ -486,14 +508,22 @@ INSERT INTO `eventos` (`id`, `nombre`, `fecha_inicio`, `fecha_cierre`, `descripc
 -- Estructura de tabla para la tabla `evento_participantes`
 --
 
-CREATE TABLE IF NOT EXISTS `evento_participantes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `evento_participantes` (
+  `id` int(11) NOT NULL,
   `id_evento` int(11) NOT NULL,
   `id_atleta` int(11) NOT NULL,
   `posicion` int(11) NOT NULL,
-  `observacion` varchar(500) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `observacion` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `evento_participantes`
+--
+
+INSERT INTO `evento_participantes` (`id`, `id_evento`, `id_atleta`, `posicion`, `observacion`) VALUES
+(1, 26, 3, 1, ''),
+(2, 26, 2, 2, '2'),
+(3, 30, 3, 1, '');
 
 -- --------------------------------------------------------
 
@@ -501,8 +531,8 @@ CREATE TABLE IF NOT EXISTS `evento_participantes` (
 -- Estructura de tabla para la tabla `logros`
 --
 
-CREATE TABLE IF NOT EXISTS `logros` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `logros` (
+  `id` int(11) NOT NULL,
   `tipo` varchar(50) NOT NULL,
   `pais` varchar(50) NOT NULL,
   `estado` varchar(50) NOT NULL,
@@ -513,9 +543,18 @@ CREATE TABLE IF NOT EXISTS `logros` (
   `observacion` varchar(100) NOT NULL,
   `id_atleta` int(11) NOT NULL,
   `modi` int(11) NOT NULL,
-  `id_evento` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `id_evento` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `logros`
+--
+
+INSERT INTO `logros` (`id`, `tipo`, `pais`, `estado`, `ciudad`, `disciplina`, `descripcion`, `resultado`, `observacion`, `id_atleta`, `modi`, `id_evento`) VALUES
+(1, 'ADIOS', 'sadsd', 'adasd', 'asdasd', 'AJEDREZ', 'ad', '1', 'd', 3, 1, 0),
+(2, 'estadal', 'venezuela', 'yaracuy', 'ARISTIDES BASTIDAS', 'AJEDREZ', 'D', '1', '', 3, 0, 26),
+(3, 'estadal', 'venezuela', 'yaracuy', 'ARISTIDES BASTIDAS', 'AJEDREZ', 'D', '2', '2', 2, 0, 26),
+(4, 'mundial', 'venezuela', 'yaracuy', 'ARISTIDES BASTIDAS', 'AJEDREZ', '111111', '1', '', 3, 0, 30);
 
 -- --------------------------------------------------------
 
@@ -523,14 +562,11 @@ CREATE TABLE IF NOT EXISTS `logros` (
 -- Estructura de tabla para la tabla `modalidades`
 --
 
-CREATE TABLE IF NOT EXISTS `modalidades` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `modalidades` (
+  `id` int(11) NOT NULL,
   `modalidad` varchar(50) NOT NULL,
-  `id_disciplina` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `modalidad` (`modalidad`),
-  KEY `sadasd` (`id_disciplina`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+  `id_disciplina` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `modalidades`
@@ -550,13 +586,10 @@ INSERT INTO `modalidades` (`id`, `modalidad`, `id_disciplina`) VALUES
 -- Estructura de tabla para la tabla `municipio`
 --
 
-CREATE TABLE IF NOT EXISTS `municipio` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `descrips` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id` (`id`),
-  UNIQUE KEY `descrips` (`descrips`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=15 ;
+CREATE TABLE `municipio` (
+  `id` int(11) NOT NULL,
+  `descrips` varchar(50) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `municipio`
@@ -584,13 +617,11 @@ INSERT INTO `municipio` (`id`, `descrips`) VALUES
 -- Estructura de tabla para la tabla `nivels`
 --
 
-CREATE TABLE IF NOT EXISTS `nivels` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `nivels` (
+  `id` int(11) NOT NULL,
   `nivel` varchar(50) NOT NULL,
-  `activo` tinyint(1) NOT NULL,
-  UNIQUE KEY `id` (`id`),
-  UNIQUE KEY `nivel` (`nivel`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+  `activo` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `nivels`
@@ -607,12 +638,10 @@ INSERT INTO `nivels` (`id`, `nivel`, `activo`) VALUES
 -- Estructura de tabla para la tabla `parentezcos`
 --
 
-CREATE TABLE IF NOT EXISTS `parentezcos` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `parentezco` varchar(50) NOT NULL,
-  UNIQUE KEY `id` (`id`),
-  UNIQUE KEY `parentezco` (`parentezco`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+CREATE TABLE `parentezcos` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `parentezco` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `parentezcos`
@@ -640,14 +669,11 @@ INSERT INTO `parentezcos` (`id`, `parentezco`) VALUES
 -- Estructura de tabla para la tabla `parroquia`
 --
 
-CREATE TABLE IF NOT EXISTS `parroquia` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `parroquia` (
+  `id` int(11) NOT NULL,
   `descrip` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `id_municipio` int(11) NOT NULL,
-  UNIQUE KEY `id` (`id`),
-  UNIQUE KEY `descrip` (`descrip`),
-  KEY `fdgdf` (`id_municipio`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=22 ;
+  `id_municipio` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `parroquia`
@@ -682,12 +708,11 @@ INSERT INTO `parroquia` (`id`, `descrip`, `id_municipio`) VALUES
 -- Estructura de tabla para la tabla `puente_discapacidad`
 --
 
-CREATE TABLE IF NOT EXISTS `puente_discapacidad` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `puente_discapacidad` (
+  `id` int(11) NOT NULL,
   `id_atleta` int(11) NOT NULL,
-  `id_discapacidad` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+  `id_discapacidad` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `puente_discapacidad`
@@ -703,14 +728,13 @@ INSERT INTO `puente_discapacidad` (`id`, `id_atleta`, `id_discapacidad`) VALUES
 -- Estructura de tabla para la tabla `puente_disciplina`
 --
 
-CREATE TABLE IF NOT EXISTS `puente_disciplina` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `puente_disciplina` (
+  `id` int(11) NOT NULL,
   `id_atleta` int(11) NOT NULL,
   `id_disciplina` int(11) NOT NULL,
   `id_modalidad` int(11) NOT NULL,
-  `id_estatus` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+  `id_estatus` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `puente_disciplina`
@@ -731,13 +755,12 @@ INSERT INTO `puente_disciplina` (`id`, `id_atleta`, `id_disciplina`, `id_modalid
 -- Estructura de tabla para la tabla `puente_registro_medico`
 --
 
-CREATE TABLE IF NOT EXISTS `puente_registro_medico` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `puente_registro_medico` (
+  `id` int(11) NOT NULL,
   `id_atleta` int(11) NOT NULL,
   `id_registro_medico` int(11) NOT NULL,
-  `fecha_medica` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+  `fecha_medica` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `puente_registro_medico`
@@ -759,12 +782,10 @@ INSERT INTO `puente_registro_medico` (`id`, `id_atleta`, `id_registro_medico`, `
 -- Estructura de tabla para la tabla `registro_medicos`
 --
 
-CREATE TABLE IF NOT EXISTS `registro_medicos` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `registro_medico` varchar(500) NOT NULL,
-  UNIQUE KEY `id` (`id`),
-  UNIQUE KEY `alergia` (`registro_medico`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+CREATE TABLE `registro_medicos` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `registro_medico` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `registro_medicos`
@@ -787,16 +808,21 @@ INSERT INTO `registro_medicos` (`id`, `registro_medico`) VALUES
 -- Estructura de tabla para la tabla `representantes`
 --
 
-CREATE TABLE IF NOT EXISTS `representantes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `representantes` (
+  `id` int(11) NOT NULL,
   `cedula` varchar(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `apellido` varchar(50) NOT NULL,
   `correo` varchar(50) NOT NULL,
-  `n_tel` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `cedula` (`cedula`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `n_tel` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `representantes`
+--
+
+INSERT INTO `representantes` (`id`, `cedula`, `nombre`, `apellido`, `correo`, `n_tel`) VALUES
+(2, '7590456', 'BLANCA', 'SINGER', 'BLANCA@BLAMCA.COM', '04128504562');
 
 -- --------------------------------------------------------
 
@@ -804,11 +830,10 @@ CREATE TABLE IF NOT EXISTS `representantes` (
 -- Estructura de tabla para la tabla `tallas`
 --
 
-CREATE TABLE IF NOT EXISTS `tallas` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `talla` varchar(3) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+CREATE TABLE `tallas` (
+  `id` int(11) NOT NULL,
+  `talla` varchar(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `tallas`
@@ -826,11 +851,10 @@ INSERT INTO `tallas` (`id`, `talla`) VALUES
 -- Estructura de tabla para la tabla `tipo_logros`
 --
 
-CREATE TABLE IF NOT EXISTS `tipo_logros` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `tipo_logro` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+CREATE TABLE `tipo_logros` (
+  `id` int(11) NOT NULL,
+  `tipo_logro` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `tipo_logros`
@@ -846,8 +870,8 @@ INSERT INTO `tipo_logros` (`id`, `tipo_logro`) VALUES
 -- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE IF NOT EXISTS `usuarios` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+CREATE TABLE `usuarios` (
+  `id` bigint(20) UNSIGNED NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `apellido` varchar(50) NOT NULL,
   `usuario` varchar(30) NOT NULL,
@@ -856,11 +880,8 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `n_tel` varchar(11) NOT NULL,
   `correo` varchar(50) NOT NULL,
   `conf_clave` varchar(50) NOT NULL,
-  `tipo` varchar(50) NOT NULL,
-  UNIQUE KEY `id` (`id`),
-  UNIQUE KEY `kgjhgjh` (`usuario`),
-  UNIQUE KEY `usuario_2` (`usuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
+  `tipo` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -870,6 +891,382 @@ INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `usuario`, `clave`, `n_eme`,
 (30, 'SAMUEL', 'PEREZ', 'SAPM2000', '12345678', '12345678900', '12345678900', '123456789@12345678.COM', '123456789', 'ADMINISTRADOR'),
 (31, 'MARYORITH', 'SINGER', 'MARYO05', '123456', '12345678900', '32112321312', 'ASDASA@ASDA.COM', '123456', 'ADMINISTRADOR'),
 (33, 'SADSADSAD', 'ASDSADSADSA', 'DADADA', '123', '00987654321', '12345678900', 'SDASDAD@ASDSADCP.SDF', '123', 'ADMINISTRADOR');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `atleta`
+--
+ALTER TABLE `atleta`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `cedula` (`cedula`),
+  ADD KEY `n` (`id_nivel`),
+  ADD KEY `p` (`id_parroquia`),
+  ADD KEY `m` (`id_municipio`);
+
+--
+-- Indices de la tabla `atleta_representante`
+--
+ALTER TABLE `atleta_representante`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `bancos`
+--
+ALTER TABLE `bancos`
+  ADD UNIQUE KEY `id` (`id`),
+  ADD UNIQUE KEY `banco` (`banco`);
+
+--
+-- Indices de la tabla `becas`
+--
+ALTER TABLE `becas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `becas_gloria`
+--
+ALTER TABLE `becas_gloria`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `becas_mes`
+--
+ALTER TABLE `becas_mes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `becas_total`
+--
+ALTER TABLE `becas_total`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `calzados`
+--
+ALTER TABLE `calzados`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `cuenta`
+--
+ALTER TABLE `cuenta`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `datoll`
+--
+ALTER TABLE `datoll`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `discapacidades`
+--
+ALTER TABLE `discapacidades`
+  ADD UNIQUE KEY `id` (`id`),
+  ADD UNIQUE KEY `discapacidad` (`discapacidad`);
+
+--
+-- Indices de la tabla `disciplinas`
+--
+ALTER TABLE `disciplinas`
+  ADD UNIQUE KEY `id` (`id`),
+  ADD UNIQUE KEY `disciplina` (`disciplina`);
+
+--
+-- Indices de la tabla `estatus`
+--
+ALTER TABLE `estatus`
+  ADD UNIQUE KEY `id` (`id`),
+  ADD UNIQUE KEY `estatu` (`estatu`);
+
+--
+-- Indices de la tabla `eventos`
+--
+ALTER TABLE `eventos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `evento_participantes`
+--
+ALTER TABLE `evento_participantes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `logros`
+--
+ALTER TABLE `logros`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `modalidades`
+--
+ALTER TABLE `modalidades`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `modalidad` (`modalidad`),
+  ADD KEY `sadasd` (`id_disciplina`);
+
+--
+-- Indices de la tabla `municipio`
+--
+ALTER TABLE `municipio`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`),
+  ADD UNIQUE KEY `descrips` (`descrips`);
+
+--
+-- Indices de la tabla `nivels`
+--
+ALTER TABLE `nivels`
+  ADD UNIQUE KEY `id` (`id`),
+  ADD UNIQUE KEY `nivel` (`nivel`);
+
+--
+-- Indices de la tabla `parentezcos`
+--
+ALTER TABLE `parentezcos`
+  ADD UNIQUE KEY `id` (`id`),
+  ADD UNIQUE KEY `parentezco` (`parentezco`);
+
+--
+-- Indices de la tabla `parroquia`
+--
+ALTER TABLE `parroquia`
+  ADD UNIQUE KEY `id` (`id`),
+  ADD UNIQUE KEY `descrip` (`descrip`),
+  ADD KEY `fdgdf` (`id_municipio`);
+
+--
+-- Indices de la tabla `puente_discapacidad`
+--
+ALTER TABLE `puente_discapacidad`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `puente_disciplina`
+--
+ALTER TABLE `puente_disciplina`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `puente_registro_medico`
+--
+ALTER TABLE `puente_registro_medico`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `registro_medicos`
+--
+ALTER TABLE `registro_medicos`
+  ADD UNIQUE KEY `id` (`id`),
+  ADD UNIQUE KEY `alergia` (`registro_medico`);
+
+--
+-- Indices de la tabla `representantes`
+--
+ALTER TABLE `representantes`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `cedula` (`cedula`);
+
+--
+-- Indices de la tabla `tallas`
+--
+ALTER TABLE `tallas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `tipo_logros`
+--
+ALTER TABLE `tipo_logros`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD UNIQUE KEY `id` (`id`),
+  ADD UNIQUE KEY `kgjhgjh` (`usuario`),
+  ADD UNIQUE KEY `usuario_2` (`usuario`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `atleta`
+--
+ALTER TABLE `atleta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT de la tabla `atleta_representante`
+--
+ALTER TABLE `atleta_representante`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `bancos`
+--
+ALTER TABLE `bancos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT de la tabla `becas`
+--
+ALTER TABLE `becas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `becas_gloria`
+--
+ALTER TABLE `becas_gloria`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `becas_mes`
+--
+ALTER TABLE `becas_mes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- AUTO_INCREMENT de la tabla `becas_total`
+--
+ALTER TABLE `becas_total`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+
+--
+-- AUTO_INCREMENT de la tabla `calzados`
+--
+ALTER TABLE `calzados`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de la tabla `cuenta`
+--
+ALTER TABLE `cuenta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT de la tabla `datoll`
+--
+ALTER TABLE `datoll`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT de la tabla `discapacidades`
+--
+ALTER TABLE `discapacidades`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `disciplinas`
+--
+ALTER TABLE `disciplinas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de la tabla `estatus`
+--
+ALTER TABLE `estatus`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `eventos`
+--
+ALTER TABLE `eventos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT de la tabla `evento_participantes`
+--
+ALTER TABLE `evento_participantes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `logros`
+--
+ALTER TABLE `logros`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `modalidades`
+--
+ALTER TABLE `modalidades`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `municipio`
+--
+ALTER TABLE `municipio`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT de la tabla `nivels`
+--
+ALTER TABLE `nivels`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `parentezcos`
+--
+ALTER TABLE `parentezcos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT de la tabla `parroquia`
+--
+ALTER TABLE `parroquia`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT de la tabla `puente_discapacidad`
+--
+ALTER TABLE `puente_discapacidad`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT de la tabla `puente_disciplina`
+--
+ALTER TABLE `puente_disciplina`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT de la tabla `puente_registro_medico`
+--
+ALTER TABLE `puente_registro_medico`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT de la tabla `registro_medicos`
+--
+ALTER TABLE `registro_medicos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de la tabla `representantes`
+--
+ALTER TABLE `representantes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `tallas`
+--
+ALTER TABLE `tallas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de la tabla `tipo_logros`
+--
+ALTER TABLE `tipo_logros`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- Restricciones para tablas volcadas
@@ -886,6 +1283,7 @@ ALTER TABLE `modalidades`
 --
 ALTER TABLE `parroquia`
   ADD CONSTRAINT `fdgdf` FOREIGN KEY (`id_municipio`) REFERENCES `municipio` (`id`) ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

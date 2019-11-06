@@ -44,6 +44,16 @@ foreach($todospa as $t)
 $parroquia.= "<option value=".$t['id']." class='mun".$t['id_municipio']."'>".$t['descrip']."</option>";	
 }
 $parroquia.= "</select>";
+
+$tipo = "<select name='tipo' required>";
+$tipo.= "<option>nacional</option>";
+$tipo.= "<option>regional</option>";
+$tipo.= "<option>internacional</option>";
+$tipo.= "<option>mundial</option>";
+$tipo.= "</select>";
+
+
+
 $form.='<form name="regevento" method="post" action="../../Controlador/EventoController.php?accion=registrar">';
 $form.='<table>';
 $form.='<tr>';
@@ -77,6 +87,11 @@ $form.='</tr>';
 $form.='<tr>';
 $form.='<td>N° de Participantes por Equipo:</td>';
 $form.='<td><input id="" type="text" class="cajasdetexto" name="parti" size="3" onkeypress="return solonumeros(event)" onpaste="return false" pattern="([1-9]{1})([0-9]{1,})*" required></td>';
+$form.='</tr>';
+$form.='<tr>';
+$form.='<tr>';
+$form.='<td>tipo de evento</td>';
+$form.='<td>'.$tipo.'</td>';
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Descripción:</td>';
