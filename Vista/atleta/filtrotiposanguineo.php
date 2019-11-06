@@ -15,6 +15,7 @@ if(empty($_REQUEST['accion']))
 
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
+$_SESSION['titulo']='Reporte de Atletas Filtrado por Tipo Sanguíneo';
 $form='';
 $cata='';
 $boton='';
@@ -32,7 +33,7 @@ $select.= "<option value='AB-'>AB-</option>";
 $select.= "</select>";
 $form.='<table>';
 $form.='<tr>';
-$form.='<td>ingrese el tipo sanguineo</td>';
+$form.='<td>Ingrese el tipo sanguíneo</td>';
 $form.='<td>'.$select.'</td>';
 $form.='<td> <input type="submit" class="botonmodal" value="Buscar"> </td>';
 $form.='</tr>';

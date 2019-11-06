@@ -15,6 +15,7 @@ if(empty($_REQUEST['accion']))
 
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
+$_SESSION['titulo']='Reporte de Atletas Filtrado por Estado Cívil';
 $form='';
 $cata='';
 $boton='';
@@ -28,7 +29,7 @@ $estadocivil.= "<option>VIUDO/A</option>";
 $estadocivil.= "</select>";
 $form.='<table>';
 $form.='<tr>';
-$form.='<td>ingrese el estado civil</td>';
+$form.='<td>Ingrese el estado cívil</td>';
 $form.='<td>'.$estadocivil.'</td>';
 $form.='<td> <input type="submit" class="botonmodal" value="Buscar"> </td>';
 $form.='</tr>';
