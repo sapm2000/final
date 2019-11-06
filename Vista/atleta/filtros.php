@@ -52,6 +52,7 @@ $nivel.= "</select>";
 
 $nac='';
 $nac.="<select name='nacio'  style='width:40px' required>";
+$nac.= "<option value=''>Seleccione una nacionalidad</option>";
 $nac.= "<option>V</option>";
 $nac.= "<option>E</option>";
 $nac.= "<option>P</option>";
