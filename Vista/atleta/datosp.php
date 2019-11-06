@@ -66,11 +66,12 @@ $form.="<div id=parte1>";
 $form.='<input type="button" value="Datos Personales" id="Personales" class="botonmodalsuperioractual">';
 $form.='<input type="button" value="Indumentaria" id="datosb" class="botonmodalsuperior">';
 $form.='<input type="button" value="Datos de Contacto" id="siguiente11" class="botonmodalsuperior">';
-$form.='<input type="button" value="Datos Laborales" id="datosl" class="botonmodalsuperior">';
 $form.='<input type="button" value="Datos Bancarios" id="datosb" class="botonmodalsuperior">';
-$form.='<input type="button" value="Registro_medicos" id="a" class="botonmodalsuperior">';
-$form.='<input type="button" value="Discapacidades" id="d" class="botonmodalsuperior">';
 $form.='<input type="submit" value="Disciplinas" name="Disciplinas" id="d" class="botonmodalsuperior">';
+$form.='<input type="button" value="Datos Laborales" id="datosl" class="botonmodalsuperior">';
+$form.='<input type="button" value="Registro Médicos" id="a" class="botonmodalsuperior">';
+$form.='<input type="button" value="Discapacidades" id="d" class="botonmodalsuperior">';
+
 $form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=registrar">';
 $form.='<table>';
 $form.='<tr>';

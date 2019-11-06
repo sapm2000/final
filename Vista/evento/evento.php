@@ -46,10 +46,10 @@ $parroquia.= "<option value=".$t['id']." class='mun".$t['id_municipio']."'>".$t[
 $parroquia.= "</select>";
 
 $tipo = "<select name='tipo' required>";
-$tipo.= "<option>nacional</option>";
-$tipo.= "<option>regional</option>";
-$tipo.= "<option>internacional</option>";
-$tipo.= "<option>mundial</option>";
+$tipo.= "<option>NACIONAL</option>";
+$tipo.= "<option>REGIONAL</option>";
+$tipo.= "<option>INTERNACIONAL</option>";
+$tipo.= "<option>MUNDIAL</option>";
 $tipo.= "</select>";
 
 
@@ -90,7 +90,7 @@ $form.='<td><input id="" type="text" class="cajasdetexto" name="parti" size="3" 
 $form.='</tr>';
 $form.='<tr>';
 $form.='<tr>';
-$form.='<td>tipo de evento</td>';
+$form.='<td>Tipo de Evento:</td>';
 $form.='<td>'.$tipo.'</td>';
 $form.='</tr>';
 $form.='<tr>';

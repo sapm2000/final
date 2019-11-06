@@ -133,6 +133,12 @@ table.tabla-cat tr:hover td
 
 }
 
+hr {
+   border: 0;
+   height: 12px; 
+   box-shadow: inset 0 12px 12px -12px SlateGray;
+}
+
 /*ventana menor a 980 píxeles*/
 @media screen and (max-width: 980px){
 
