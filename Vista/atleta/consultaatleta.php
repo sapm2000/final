@@ -7,7 +7,7 @@ if(empty($_SESSION['nombre']))
 
 if($_GET['accion']=="actualizar")
 {
-	header("Location: ../../Controlador/AtletaController.php?accion=buscatodos1");
+	header("Location: ../../Controlador/AtletaController.php?accion=buscatodos5");
 }
 
 if(empty($_REQUEST['accion']))
