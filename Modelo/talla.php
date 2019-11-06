@@ -34,6 +34,16 @@ class Talla extends ClaseBase
 		$cambio = $result->execute();
 		return $cambio;
 	}
+
+	public function getreporte()
+	{
+		$cc = Conexion::getInstance();
+		$sql = "SELECT talla, COUNT(*) AS total from atleta INNER join tallas on atleta.id_talla=tallas.id GROUP BY talla";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
 }
 
 ?>
