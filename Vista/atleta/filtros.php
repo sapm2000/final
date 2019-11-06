@@ -5,10 +5,7 @@ if(empty($_SESSION['nombre']))
 	header('Location: ../Persona/InicioSesion.php');
 }
 
-if($_GET['accion']=="actualizar")
-{
-	header("Location: ../../Controlador/AtletaController.php?accion=buscafiltros");
-}
+
 
 if(empty($_REQUEST['accion']))
 {
@@ -41,14 +38,6 @@ $sexo.= "<option>F</option>";
 $sexo.= "<option>M</option>";
 $sexo.="</select>";
 
-$todos = $_SESSION['nivel10'];
-$nivel = "<select name='id_nivel' required>";
-$nivel.= "<option value=''>Seleccione un nivel</option>";
-foreach($todos as $td)
-{
-	$nivel.= "<option value=".$td['id'].">".$td['nivel']."</option>";	
-}
-$nivel.= "</select>";
 
 $nac='';
 $nac.="<select name='nacio'  style='width:40px' required>";
@@ -69,8 +58,8 @@ $form.='<tr>';
 $form.='<hr></hr>';
 $form.='<h2>Datos Personales</h2>';
 
-$form.='<td><input type="button" value="Reporte General" class="botonmodal" title="Reporte de Datos General de los Atletas Según sus Datos Personales" id="" name=""></td>';
-$form.='<td><input type="button" value="Reporte de Primeros N° de Cédula" class="botonmodal" title="Reporte de los Atleta por sus Primeros N° de Cédula" id="" name=""></td>';
+$form.='<td> <a href="reportedatospersonales.php?accion=actualizar"><input type="button" value="Reporte General" class="botonmodal" title="Reporte de Datos General de los Atletas Según sus Datos Personales" id="" name=""></a></td>';
+$form.='<td><a href="filtroprimercedula.php?accion=actualizar"><input type="button" value="Reporte de Primeros N° de Cédula" class="botonmodal" title="Reporte de los Atleta por sus Primeros N° de Cédula" id="" name=""></a></td>';
 $form.='<td><input type="button" value="Reporte de Ultimos N° de Cédula" class="botonmodal" title="Reporte de los Atleta por sus Ultimos N° de Cédula" id="" name=""></td>';
 $form.='<td><input type="button" value="Reporte de Fecha de Nacimiento" class="botonmodal" title="Reporte de los Atletas por Fecha de Nacimiento" id="" name=""></td>';
 $form.='</tr>';

@@ -277,6 +277,18 @@ class Atleta extends ClaseBase
 		return $this->fecha_medica;
 
 	}
+
+	public function setPrimer($primer)
+	{
+		$this->primer = $primer;
+	}
+
+	public function getPrimer()
+	{
+		return $this->primer;
+
+	}
+	
 	
 
 	public function guardarAtleta()
@@ -542,25 +554,27 @@ class Atleta extends ClaseBase
 			return $cambio;
 		}
 
-		public function buscatipossanguineos()
+		public function getDatosPersonales()
 		{
 			$cc = Conexion::getInstance();
-			$sql = "SELECT atleta.*, tallas.talla, calzados.calzado FROM atleta LEFT OUTER JOIN tallas ON atleta.id_talla=tallas.id LEFT OUTER JOIN calzados ON atleta.id_calzado=calzados.id WHERE activo=0 AND tipos='$this->tipos'";
+			$sql = "SELECT nac,cedula,nombre,apellido,f_nac,tipos,estadoc,sexo,nivel FROM atleta INNER JOIN nivels on atleta.id_nivel=nivels.id WHERE atleta.activo=0";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			$trae = $result->fetchAll();
 			return ($trae);
 		}
 
-		public function buscatipocivil()
+		public function getPrimerdigito()
 		{
 			$cc = Conexion::getInstance();
-			$sql = "SELECT atleta.*, tallas.talla, calzados.calzado FROM atleta LEFT OUTER JOIN tallas ON atleta.id_talla=tallas.id LEFT OUTER JOIN calzados ON atleta.id_calzado=calzados.id WHERE activo=0 AND estadoc='$this->estadoc'";
+			$sql = "SELECT nac,cedula,nombre,apellido,f_nac,tipos,estadoc,sexo,nivel FROM atleta INNER JOIN nivels on atleta.id_nivel=nivels.id WHERE atleta.activo=0 and atleta.cedula like '$this->primer%'";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			$trae = $result->fetchAll();
 			return ($trae);
 		}
+
+		
 }
 
 
