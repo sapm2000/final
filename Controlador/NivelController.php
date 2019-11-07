@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 require_once("../Modelo/nivel.php");
 $nivel = new Nivel();
 $nivel->setTabla("nivels");
@@ -51,4 +52,5 @@ switch($_REQUEST['accion'])
 		break;
 	}
 }
+ob_end_flush();
 ?>

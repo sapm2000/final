@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 require_once("../Modelo/parentezco.php");
 $parentezco = new Parentezco();
 $parentezco->setTabla("parentezcos");
@@ -51,4 +52,5 @@ switch($_REQUEST['accion'])
 		break;
 	}
 }
+ob_end_flush();
 ?>

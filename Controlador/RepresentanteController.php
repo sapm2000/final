@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 require_once("../Modelo/representante.php");
 require_once("../Modelo/parentezco.php");
 
@@ -291,4 +292,5 @@ switch($_REQUEST['accion'])
 			break;
 		}
 }
+ob_end_flush();
 ?>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 require_once("../Modelo/discapacidad.php");
 $discapacidad = new Discapacidad();
 $discapacidad->setTabla("discapacidades");
@@ -51,4 +52,5 @@ switch($_REQUEST['accion'])
 		break;
 	}
 }
+ob_end_flush();
 ?>
