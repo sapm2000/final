@@ -13,6 +13,7 @@ if(empty($_REQUEST['accion']))
 }
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
+$_SESSION['titulo']='Reporte de Atletas Filtrado por Altura';
 $form='';
 $cata='';
 $boton='';
@@ -24,8 +25,8 @@ $form.='</tr>';
 $form.='</table>';
 $form.='<table align=center>';
 $form.='<tr>';
-$form.='<td>Desde:<input  type="text" class="cajasdetexto" name="primer" required></td>';
-$form.='<td>Hasta:<input  type="text" class="cajasdetexto"  name="segundo" required></td>';
+$form.='<td>Desde:<input  type="text" class="cajasdetexto" name="primer" pattern="[0-2]{1}([0-9]{2})" title="ej: 160" required></td>';
+$form.='<td>Hasta:<input  type="text" class="cajasdetexto"  name="segundo" pattern="[0-2]{1}([0-9]{2})" title="ej: 160" required></td>';
 $form.='<td> <input type="submit" class="botonmodal" value="Buscar"> </td>';
 $form.='</tr>';
 $form.='</table>';

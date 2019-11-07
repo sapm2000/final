@@ -28,7 +28,7 @@ $todostd = $_SESSION['talla'];
 	$talla.= "</select>";
 
 
-$_SESSION['titulo']='Reporte de Atletas Filtrado por Estado Cívil';
+$_SESSION['titulo']='Reporte de Atletas Filtrado por Talla';
 $form='';
 $cata='';
 $boton='';

@@ -23,13 +23,14 @@ $mano.= "</select>";
 
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
+$_SESSION['titulo']='Reporte de Atletas Filtrado por Mano Hábil';
 $form='';
 $cata='';
 $boton='';
 $form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=filtromano">';
 $form.='<table>';
 $form.='<tr>';
-$form.='<td>Ingrese la mano habil a buscar:</td>';
+$form.='<td>Ingrese la mano hábil a buscar:</td>';
 $form.='<td>'.$mano.'</td>';
 $form.='<td> <input type="submit" class="botonmodal" value="Buscar"> </td>';
 $form.='</tr>';

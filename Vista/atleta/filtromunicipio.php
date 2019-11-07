@@ -25,6 +25,7 @@ $municipio1.= "</select>";
 
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
+$_SESSION['titulo']='Reporte de los Atletas Filtrado por Municipio';
 $form='';
 $cata='';
 $boton='';

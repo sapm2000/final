@@ -16,6 +16,7 @@ if(empty($_REQUEST['accion']))
 }
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
+$_SESSION['titulo']='Reporte General de Contacto de los Atletas';
 $form='';
 $cata='';
 $boton='';
@@ -42,8 +43,8 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['contacto']))
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
-	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Sexo</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Estado Cívil</th><th>Nivel de Estudio</th></tr>";
-	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Sexo</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Estado Cívil</th><th>Nivel de Estudio</th></tr>";
+	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Correo Eléctronico</th><th>Número de Telefóno</th><th>Número de Emergencia</th><th>Municipio</th><th>Parroquia</th><th>Dirección</th></tr>";
+	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Correo Eléctronico</th><th>Número de Telefóno</th><th>Número de Emergencia</th><th>Municipio</th><th>Parroquia</th><th>Dirección</th></tr>";
 
 	foreach($catalogo as $cat)
 	{
