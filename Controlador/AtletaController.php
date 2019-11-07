@@ -74,6 +74,45 @@ switch($_REQUEST['accion'])
 		header("Location: ../Vista/atleta/datosp.php?accion=actual");
 		break;
 	}
+
+	case "buscatallas":
+	{
+		$n = $talla->getAll($tab);
+		$_SESSION['talla'] = $n;
+		
+		header("Location: ../Vista/atleta/filtrotalla.php?accion=actual");
+		break;
+	}
+
+	case "buscamunicipios":
+	{
+		$n = $municipio->getAll($tab);
+		$_SESSION['municipio'] = $n;
+		
+		header("Location: ../Vista/atleta/filtromunicipio.php?accion=actual");
+		break;
+	}
+
+	case "buscaparroquias":
+	{
+		$n = $municipio->getAll($tab);
+		$_SESSION['municipio'] = $n;
+		$d = $parroquia->getAll($tab);
+		$_SESSION['parroquia'] = $d;
+		
+		header("Location: ../Vista/atleta/filtroparroquia.php?accion=actual");
+		break;
+	}
+
+	case "buscacalzado":
+	{
+		$n = $calzado->getAll($tab);
+		$_SESSION['calzado'] = $n;
+		
+		header("Location: ../Vista/atleta/filtrocalzado.php?accion=actual");
+		break;
+	}
+
 	case "buscatodos1":
 	{
 		$n = $nivel->getAll($tab);
@@ -93,6 +132,29 @@ switch($_REQUEST['accion'])
 		header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
 		break;
 	}
+	case "buscafiltrosindumentaria":
+	{
+		$n = $atleta->getIndumentaria();
+		$_SESSION['indumentaria'] = $n;
+		$_SESSION['titulo']='Reporte de Indumentaria de los Atletas';
+		
+		
+		header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
+		break;
+	}
+
+	case "buscafiltroscontacto":
+	{
+		$n = $atleta->getContacto();
+		$_SESSION['contacto'] = $n;
+		$_SESSION['titulo']='Reporte de Contacto de los Atletas';
+		
+		
+		header("Location: ../Vista/atleta/reportecontacto.php?accion=actual");
+		break;
+	}
+
+	
 
 	case "buscatodos5":
 	{
@@ -1169,6 +1231,105 @@ case "registrarRegistro_medico":
 				
 				
 				header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
+				break;
+			}
+
+			case 'filtropeso':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				$atleta->setSegundo($_POST['segundo']);
+				
+				
+				$n = $atleta->getPpeso();
+				$_SESSION['indumentaria'] = $n;
+				
+				header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
+				break;
+			}
+
+			case 'filtroaltura':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				$atleta->setSegundo($_POST['segundo']);
+				
+				
+				$n = $atleta->getAaltura();
+				$_SESSION['indumentaria'] = $n;
+				
+				header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
+				break;
+			}
+
+			case 'filtrotalla':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				
+				
+				$n = $atleta->getTtalla();
+				$_SESSION['indumentaria'] = $n;
+				
+				header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
+				break;
+			}
+
+			case 'filtrocalzado':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				
+				
+				$n = $atleta->getCcalzado();
+				$_SESSION['indumentaria'] = $n;
+				
+				header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
+				break;
+			}
+
+			case 'filtromano':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				
+				
+				$n = $atleta->getMmano();
+				$_SESSION['indumentaria'] = $n;
+				
+				header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
+				break;
+			}
+
+			case 'filtrooperadora':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				
+				
+				$n = $atleta->getOperadora();
+				$_SESSION['contacto'] = $n;
+				
+				header("Location: ../Vista/atleta/reportecontacto.php?accion=actual");
+				break;
+			}
+
+			case 'filtromunicipio':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				
+				
+				$n = $atleta->getMmunicipio();
+				$_SESSION['contacto'] = $n;
+				
+				header("Location: ../Vista/atleta/reportecontacto.php?accion=actual");
+				break;
+			}
+
+			case 'filtroparroquia':
+			{
+				$atleta->setId_municipio($_POST['id_municipio']);
+				$atleta->setId_parroquia($_POST['id_parroquia']);
+				
+				
+				$n = $atleta->getPparroquia();
+				$_SESSION['contacto'] = $n;
+				
+				header("Location: ../Vista/atleta/reportecontacto.php?accion=actual");
 				break;
 			}
 

@@ -641,7 +641,105 @@ class Atleta extends ClaseBase
 			$trae = $result->fetchAll();
 			return ($trae);
 		}
+
+		public function getIndumentaria()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,peso,altura,talla,calzado,mano FROM atleta INNER JOIN tallas on atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function getPpeso()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,peso,altura,talla,calzado,mano FROM atleta INNER JOIN tallas on atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.peso BETWEEN $this->primer AND $this->segundo";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function getAaltura()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,peso,altura,talla,calzado,mano FROM atleta INNER JOIN tallas on atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.altura BETWEEN $this->primer AND $this->segundo";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function getTtalla()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,peso,altura,talla,calzado,mano FROM atleta INNER JOIN tallas on atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND  tallas.id=$this->primer";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
 		
+		public function getCcalzado()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,peso,altura,talla,calzado,mano FROM atleta INNER JOIN tallas on atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND  calzados.id=$this->primer";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function getMmano()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,peso,altura,talla,calzado,mano FROM atleta INNER JOIN tallas on atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND  atleta.mano='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function getContacto()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,correo,n_tel,n_eme,descrip,descrips,direccion FROM atleta INNER JOIN municipio ON atleta.id_municipio=municipio.id INNER JOIN parroquia ON atleta.id_parroquia=parroquia.id WHERE atleta.activo=0";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function getOperadora()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,correo,n_tel,n_eme,descrip,descrips,direccion FROM atleta INNER JOIN municipio ON atleta.id_municipio=municipio.id INNER JOIN parroquia ON atleta.id_parroquia=parroquia.id WHERE atleta.activo=0 and atleta.n_tel like '$this->primer%'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function getMmunicipio()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,correo,n_tel,n_eme,descrip,descrips,direccion FROM atleta INNER JOIN municipio ON atleta.id_municipio=municipio.id INNER JOIN parroquia ON atleta.id_parroquia=parroquia.id WHERE atleta.activo=0 and municipio.id=$this->primer";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+		public function getPparroquia()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,correo,n_tel,n_eme,descrip,descrips,direccion FROM atleta INNER JOIN municipio ON atleta.id_municipio=municipio.id INNER JOIN parroquia ON atleta.id_parroquia=parroquia.id WHERE atleta.activo=0 and municipio.id=$this->id_municipio and parroquia.id=$this->id_parroquia";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
 }
 
 
