@@ -27,7 +27,7 @@ $todospar = $_SESSION['calzado'];
 	$calzado.= "</select>";
 
 
-$_SESSION['titulo']='Reporte de Atletas Filtrado por Estado Cívil';
+$_SESSION['titulo']='Reporte de Atletas Filtrado por Calzado';
 $form='';
 $cata='';
 $boton='';

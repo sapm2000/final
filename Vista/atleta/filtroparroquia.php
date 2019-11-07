@@ -34,6 +34,7 @@ $todospar = $_SESSION['parroquia'];
 
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
+$_SESSION['titulo']='Reporte de los Atletas Filtrado por Parroquia';
 $form='';
 $cata='';
 $boton='';
