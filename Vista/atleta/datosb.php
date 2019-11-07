@@ -53,12 +53,12 @@ if($_GET['accion']=='ver_detalles') {
 	$tipo1.="<select name='tipo1' required>";
 	$tipo1.="<option value=''>Seleccione un tipo de cuenta</option>";
 	if ($tip=='Ahorro') {
-		$tipo1.= "<option selected value=''>AHORRO</option>";
+		$tipo1.= "<option selected>AHORRO</option>";
 		$tipo1.= "<option>CORRIENTE</option>";
 	}
 	else {
 		$tipo1.= "<option>AHORRO</option>";
-		$tipo1.= "<option selected value=''>CORRIENTE</option>";
+		$tipo1.= "<option selected>CORRIENTE</option>";
 	}
 	
 	$tipo1.= "</select>";

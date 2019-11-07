@@ -92,9 +92,9 @@ $form.='<tr>';
 $form.='<hr></hr>';
 $form.='<h2>Datos Bancarios</h2>';
 
-$form.='<td><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Datos Bancarios" id="" name=""></td>';
-$form.='<td><input type="button" value="Reporte de Bancos" class="botonmodal" title="Reporte de los Atletas Según el Banco" id="" name=""></td>';
-$form.='<td><input type="button" value="Reporte de Tipo de Cuentas" class="botonmodal" title="Reporte de los Atletas Según el Tipo de Cuenta" id="" name=""></td>';
+$form.='<td><a href="reportebancario.php?accion=actualizar"><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Datos Bancarios" id="" name=""></a></td>';
+$form.='<td><a href="../../Controlador/AtletaController.php?accion=buscabancos"><input type="button" value="Reporte de Bancos" class="botonmodal" title="Reporte de los Atletas Según el Banco" id="" name=""></a></td>';
+$form.='<td><a href="filtrotipocuenta.php?accion=actualizar"><input type="button" value="Reporte de Tipo de Cuentas" class="botonmodal" title="Reporte de los Atletas Según el Tipo de Cuenta" id="" name=""></td>';
 $form.='</tr>';
 $form.='</table>';
 $form.='</form>';
@@ -108,9 +108,9 @@ $form.='<tr>';
 $form.='<hr></hr>';
 $form.='<h2>Datos de Disciplinas</h2>';
 
-$form.='<td><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Disciplinas" id="" name=""></td>';
-$form.='<td><input type="button" value="Reporte de Disciplinas" class="botonmodal" title="Reporte de los Atletas Según La Disciplina" id="" name=""></td>';
-$form.='<td><input type="button" value="Reporte de Modalidades" class="botonmodal" title="Reporte de los Atletas Según su Modalidad" id="" name=""></td>';
+$form.='<td><a href="reportedisciplinas.php?accion=actualizar"><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Disciplinas" id="" name=""></td>';
+$form.='<td><a href="../../Controlador/AtletaController.php?accion=buscadisciplinas"><input type="button" value="Reporte de Disciplinas" class="botonmodal" title="Reporte de los Atletas Según La Disciplina" id="" name=""></td>';
+$form.='<td><a href="../../Controlador/AtletaController.php?accion=buscamodalidades"><input type="button" value="Reporte de Modalidades" class="botonmodal" title="Reporte de los Atletas Según su Modalidad" id="" name=""></td>';
 $form.='</tr>';
 $form.='</table>';
 $form.='</form>';
@@ -124,7 +124,7 @@ $form.='<tr>';
 $form.='<hr></hr>';
 $form.='<h2>Datos Laborales</h2>';
 
-$form.='<td><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Datos Laborales" id="" name=""></td>';
+$form.='<td><a href="reportelaboral.php?accion=actualizar"><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Datos Laborales" id="" name=""></td>';
 
 $form.='</tr>';
 $form.='</table>';
@@ -139,7 +139,7 @@ $form.='<tr>';
 $form.='<hr></hr>';
 $form.='<h2>Datos de Registro Médico</h2>';
 
-$form.='<td><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Registros Médicos" id="" name=""></td>';
+$form.='<td><a href="reportemedico.php?accion=actualizar"><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Registros Médicos" id="" name=""></td>';
 $form.='</tr>';
 $form.='</table>';
 $form.='</form>';
@@ -153,7 +153,7 @@ $form.='<tr>';
 $form.='<hr></hr>';
 $form.='<h2>Datos de Discapacidades</h2>';
 
-$form.='<td><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Discapacidades" id="" name=""></td>';
+$form.='<td><a href="reportediscapacidad.php?accion=actualizar"><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Discapacidades" id="" name=""></td>';
 $form.='</tr>';
 $form.='</table>';
 $form.='</form>';
