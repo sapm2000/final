@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 require_once("../Modelo/registro_medico.php");
 $registro_medico = new Registro_medico();
 $registro_medico->setTabla("registro_medicos");
@@ -51,4 +52,5 @@ switch($_REQUEST['accion'])
 		break;
 	}
 }
+ob_end_flush();
 ?>

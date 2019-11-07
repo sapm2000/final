@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 include('../Modelo/municipio.php');
 $std= new Municipio();
 $std->setTabla('municipio');
@@ -71,4 +72,5 @@ switch($_REQUEST['accion'])
 		break;
 	}
 }
+ob_end_flush();
 ?>

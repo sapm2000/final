@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 include('../Modelo/parroquia.php');
 include('../Modelo/municipio.php');
 $std = new Municipio();
@@ -77,4 +78,5 @@ switch($_REQUEST['accion'])
 		break;
 	}
 }
+ob_end_flush();
 ?>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 require_once("../Modelo/tipo_logro.php");
 $tipo_logro = new Tipo_logro();
 $tipo_logro->setTabla("tipo_logros");
@@ -51,4 +52,5 @@ switch($_REQUEST['accion'])
 		break;
 	}
 }
+ob_end_flush();
 ?>

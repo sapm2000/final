@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 include('../Modelo/modalidades.php');
 include('../Modelo/disciplina.php');
 $mod = new Modalidad();
@@ -70,4 +71,5 @@ switch($_REQUEST['accion'])
 
 	
 }
+ob_end_flush();
 ?>

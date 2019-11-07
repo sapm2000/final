@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 require_once("../Modelo/evento.php");
 require_once("../Modelo/municipio.php");
 require_once("../Modelo/disciplina.php");
@@ -308,4 +309,5 @@ switch($_REQUEST['accion'])
 			break;
 		}
 }
+ob_end_flush();
 ?>

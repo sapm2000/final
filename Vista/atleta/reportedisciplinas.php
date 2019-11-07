@@ -89,7 +89,12 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['disciplinas']))
 
 	$cata.="<table class=tabla-cat id=tabla>";
 
-	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Modalidad</th><th>Estatus</th></tr>";
+	$reporte.="<center><h1>Reporte de la Cantidad de Atletas en Cada Disciplina</h1></center>";
+	$reporte.="<br><table class=tabla-cat id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla align=center>";
+
+	$cata.="<tr><th>Disciplinas</th><th>Total</th></tr>";
+	$reporte.="<tr><th>Disciplinas</th><th>Total</th></tr>";
 
 	foreach($contar as $con)
 	{
@@ -99,17 +104,31 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['disciplinas']))
 		$cata.="<td>".$con['disciplina']."</td>";	
 		$cata.="<td>".$con['total']."</td>";	
 
-			
+		$reporte.="<tr>";
+
+		$reporte.="<td>".$con['disciplina']."</td>";	
+		$reporte.="<td>".$con['total']."</td>";	
 		
 
 	}
 	$cata.="</table><br>";
 
+	$reporte.="</table>";
+
+	$reporte.="</table>";
+	
+	$reporte.="</table><br>";
+
 	$contarmod = $_SESSION['contarmod'];
 
 	$cata.="<table class=tabla-cat id=tabla>";
 
-	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Modalidad</th><th>Estatus</th></tr>";
+	$reporte.="<center><h1>Reporte de la Cantidad de Atletas en Cada Disciplina y su Modalidad</h1></center>";
+	$reporte.="<br><table class=tabla-cat id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla align=center>";
+
+	$cata.="<tr><th>Disciplina</th><th>Modalidad</th><th>Total</th></tr>";
+	$reporte.="<tr><th>Disciplina</th><th>Modalidad</th><th>Total</th></tr>";
 
 	foreach($contarmod as $conta)
 	{
@@ -120,11 +139,20 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['disciplinas']))
 		$cata.="<td>".$conta['modalidad']."</td>";	
 		$cata.="<td>".$conta['total']."</td>";	
 
-			
+		$reporte.="<tr>";
+		$reporte.="<td>".$conta['disciplina']."</td>";	
+		$reporte.="<td>".$conta['modalidad']."</td>";	
+		$reporte.="<td>".$conta['total']."</td>";	
 		
 
 	}
 	$cata.="</table><br>";
+
+	$reporte.="</table>";
+
+	$reporte.="</table>";
+	
+	$reporte.="</table><br>";
 	}
 	}
 
