@@ -20,7 +20,7 @@ if ($_REQUEST['accion']=="gloria") {
 
 if ($_REQUEST['accion']=="filtroga") {
     $code.="<h1 class=texto>".$_SESSION['titulo']."</h1>";
-    $filename= $_SESSION['titulo'];
+    $filename= $_SESSION['titulo'].".pdf";
 }
 $code.=$_SESSION['reporte'];
 $code.='<link rel="stylesheet" href="../css/pdfreporte.css" type="text/css">';
