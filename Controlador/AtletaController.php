@@ -83,6 +83,27 @@ switch($_REQUEST['accion'])
 		header("Location: ../Vista/atleta/filtrotalla.php?accion=actual");
 		break;
 	}
+
+	case "buscamunicipios":
+	{
+		$n = $municipio->getAll($tab);
+		$_SESSION['municipio'] = $n;
+		
+		header("Location: ../Vista/atleta/filtromunicipio.php?accion=actual");
+		break;
+	}
+
+	case "buscaparroquias":
+	{
+		$n = $municipio->getAll($tab);
+		$_SESSION['municipio'] = $n;
+		$d = $parroquia->getAll($tab);
+		$_SESSION['parroquia'] = $d;
+		
+		header("Location: ../Vista/atleta/filtroparroquia.php?accion=actual");
+		break;
+	}
+
 	case "buscacalzado":
 	{
 		$n = $calzado->getAll($tab);
@@ -121,6 +142,19 @@ switch($_REQUEST['accion'])
 		header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
 		break;
 	}
+
+	case "buscafiltroscontacto":
+	{
+		$n = $atleta->getContacto();
+		$_SESSION['contacto'] = $n;
+		$_SESSION['titulo']='Reporte de Contacto de los Atletas';
+		
+		
+		header("Location: ../Vista/atleta/reportecontacto.php?accion=actual");
+		break;
+	}
+
+	
 
 	case "buscatodos5":
 	{
@@ -1259,6 +1293,43 @@ case "registrarRegistro_medico":
 				$_SESSION['indumentaria'] = $n;
 				
 				header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
+				break;
+			}
+
+			case 'filtrooperadora':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				
+				
+				$n = $atleta->getOperadora();
+				$_SESSION['contacto'] = $n;
+				
+				header("Location: ../Vista/atleta/reportecontacto.php?accion=actual");
+				break;
+			}
+
+			case 'filtromunicipio':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				
+				
+				$n = $atleta->getMmunicipio();
+				$_SESSION['contacto'] = $n;
+				
+				header("Location: ../Vista/atleta/reportecontacto.php?accion=actual");
+				break;
+			}
+
+			case 'filtroparroquia':
+			{
+				$atleta->setId_municipio($_POST['id_municipio']);
+				$atleta->setId_parroquia($_POST['id_parroquia']);
+				
+				
+				$n = $atleta->getPparroquia();
+				$_SESSION['contacto'] = $n;
+				
+				header("Location: ../Vista/atleta/reportecontacto.php?accion=actual");
 				break;
 			}
 

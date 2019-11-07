@@ -701,6 +701,45 @@ class Atleta extends ClaseBase
 			$trae = $result->fetchAll();
 			return ($trae);
 		}
+
+		public function getContacto()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,correo,n_tel,n_eme,descrip,descrips,direccion FROM atleta INNER JOIN municipio ON atleta.id_municipio=municipio.id INNER JOIN parroquia ON atleta.id_parroquia=parroquia.id WHERE atleta.activo=0";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function getOperadora()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,correo,n_tel,n_eme,descrip,descrips,direccion FROM atleta INNER JOIN municipio ON atleta.id_municipio=municipio.id INNER JOIN parroquia ON atleta.id_parroquia=parroquia.id WHERE atleta.activo=0 and atleta.n_tel like '$this->primer%'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function getMmunicipio()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,correo,n_tel,n_eme,descrip,descrips,direccion FROM atleta INNER JOIN municipio ON atleta.id_municipio=municipio.id INNER JOIN parroquia ON atleta.id_parroquia=parroquia.id WHERE atleta.activo=0 and municipio.id=$this->primer";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+		public function getPparroquia()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,correo,n_tel,n_eme,descrip,descrips,direccion FROM atleta INNER JOIN municipio ON atleta.id_municipio=municipio.id INNER JOIN parroquia ON atleta.id_parroquia=parroquia.id WHERE atleta.activo=0 and municipio.id=$this->id_municipio and parroquia.id=$this->id_parroquia";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
 }
 
 
