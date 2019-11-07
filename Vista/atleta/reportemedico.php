@@ -42,8 +42,8 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['medico']))
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
-	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Peso</th><th>Talla</th><th>Altura</th><th>Calzado</th><th>Mano Hábil</th></tr>";
-	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Peso</th><th>Talla</th><th>Altura</th><th>Calzado</th><th>Mano Hábil</th></tr>";
+	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Fecha Médica</th><th>Registro Médico</th></tr>";
+	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Fecha Médica</th><th>Registro Médico</th></tr>";
 
 	foreach($catalogo as $cat)
 	{

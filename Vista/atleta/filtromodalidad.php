@@ -34,6 +34,7 @@ $modalidad1.= "</select>";
 
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
+$_SESSION['titulo']='Reporte de Atletas Filtrado por Modalidad';
 $form='';
 $cata='';
 $boton='';
@@ -42,7 +43,7 @@ $form.='<table>';
 $form.='<tr>';
 $form.='<td>Ingrese el municipio</td>';
 $form.='<td>'.$disciplina1.'</td>';
-$form.='<td>Ingrese la parroquia</td>';
+$form.='<td>Ingrese la modalidad</td>';
 $form.='<td>'.$modalidad1.'</td>';
 $form.='<td> <input type="submit" class="botonmodal" value="Buscar"> </td>';
 $form.='</tr>';

@@ -97,7 +97,7 @@ switch($_REQUEST['accion'])
 	case "buscabancos":
 	{
 		$n = $banco->getAll($tab);
-		$_SESSION['bancos'] = $n;
+		$_SESSION['bancos1'] = $n;
 		
 		header("Location: ../Vista/atleta/filtrobancos.php?accion=actual");
 		break;
@@ -187,7 +187,7 @@ switch($_REQUEST['accion'])
 	{
 		$n = $atleta->getMedico();
 		$_SESSION['medico'] = $n;
-		$_SESSION['titulo']='Reporte de registro medico de los Atletas';
+		$_SESSION['titulo']='Reporte de Registro Médico de los Atletas';
 		
 		
 		header("Location: ../Vista/atleta/reportemedico.php?accion=actual");
@@ -198,7 +198,7 @@ switch($_REQUEST['accion'])
 	{
 		$n = $atleta->getDiscappacidades();
 		$_SESSION['discapacidad'] = $n;
-		$_SESSION['titulo']='Reporte de discapacidades de los Atletas';
+		$_SESSION['titulo']='Reporte de Discapacidades de los Atletas';
 		
 		
 		header("Location: ../Vista/atleta/reportediscapacidad.php?accion=actual");
@@ -220,7 +220,7 @@ switch($_REQUEST['accion'])
 	{
 		$n = $atleta->getBancario();
 		$_SESSION['bancos'] = $n;
-		$_SESSION['titulo']='Reporte de datos bancarios de los Atletas';
+		$_SESSION['titulo']='Reporte de Datos Bancarios de los Atletas';
 		
 		
 		header("Location: ../Vista/atleta/reportebancario.php?accion=actual");
@@ -231,7 +231,7 @@ switch($_REQUEST['accion'])
 	{
 		$n = $atleta->getdisandmod();
 		$_SESSION['disciplinas'] = $n;
-		$_SESSION['titulo']='Reporte de disciplinas de los Atletas';
+		$_SESSION['titulo']='Reporte de Disciplinas de los Atletas';
 		
 		
 		header("Location: ../Vista/atleta/reportedisciplinas.php?accion=actual");

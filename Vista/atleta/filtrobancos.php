@@ -12,7 +12,7 @@ if(empty($_REQUEST['accion']))
 	header("Location: ../menuv/menuv.php?accion=validado");
 }
 
-$todosba = $_SESSION['banco1'];
+$todosba = $_SESSION['bancos1'];
 	$banco1 = "<select name='primer' required>";
 	$banco1.= "<option value=''>Seleccione un banco</option>";
 	foreach ($todosba as $tb) {
@@ -23,6 +23,7 @@ $todosba = $_SESSION['banco1'];
 
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
+$_SESSION['titulo']='Reporte de Atletas Filtrado por Banco';
 $form='';
 $cata='';
 $boton='';
