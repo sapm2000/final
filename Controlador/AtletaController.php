@@ -94,6 +94,24 @@ switch($_REQUEST['accion'])
 		break;
 	}
 
+	case "buscabancos":
+	{
+		$n = $banco->getAll($tab);
+		$_SESSION['bancos'] = $n;
+		
+		header("Location: ../Vista/atleta/filtrobancos.php?accion=actual");
+		break;
+	}
+
+	case "buscadisciplinas":
+	{
+		$n = $disciplina->getAll($tab);
+		$_SESSION['disciplin'] = $n;
+		
+		header("Location: ../Vista/atleta/filtrodisciplinas.php?accion=actual");
+		break;
+	}
+
 	case "buscaparroquias":
 	{
 		$n = $municipio->getAll($tab);
@@ -102,6 +120,16 @@ switch($_REQUEST['accion'])
 		$_SESSION['parroquia'] = $d;
 		
 		header("Location: ../Vista/atleta/filtroparroquia.php?accion=actual");
+		break;
+	}
+	case "buscamodalidades":
+	{
+		$n = $disciplina->getAll($tab);
+		$_SESSION['disciplin'] = $n;
+		$d = $modalidad->getAll($tab);
+		$_SESSION['modalidad'] = $d;
+		
+		header("Location: ../Vista/atleta/filtromodalidad.php?accion=actual");
 		break;
 	}
 
@@ -144,6 +172,39 @@ switch($_REQUEST['accion'])
 		break;
 	}
 
+	case "buscafiltroslaboral":
+	{
+		$n = $atleta->getLlaboral();
+		$_SESSION['laboral'] = $n;
+		$_SESSION['titulo']='Reporte de Trabajo de los Atletas';
+		
+		
+		header("Location: ../Vista/atleta/reportelaboral.php?accion=actual");
+		break;
+	}
+
+	case "buscafiltrosmedico":
+	{
+		$n = $atleta->getMedico();
+		$_SESSION['medico'] = $n;
+		$_SESSION['titulo']='Reporte de registro medico de los Atletas';
+		
+		
+		header("Location: ../Vista/atleta/reportemedico.php?accion=actual");
+		break;
+	}
+
+	case "buscafiltrosdiscapacidad":
+	{
+		$n = $atleta->getDiscappacidades();
+		$_SESSION['discapacidad'] = $n;
+		$_SESSION['titulo']='Reporte de discapacidades de los Atletas';
+		
+		
+		header("Location: ../Vista/atleta/reportediscapacidad.php?accion=actual");
+		break;
+	}
+
 	case "buscafiltroscontacto":
 	{
 		$n = $atleta->getContacto();
@@ -152,6 +213,28 @@ switch($_REQUEST['accion'])
 		
 		
 		header("Location: ../Vista/atleta/reportecontacto.php?accion=actual");
+		break;
+	}
+
+	case "buscafiltrosbancos":
+	{
+		$n = $atleta->getBancario();
+		$_SESSION['bancos'] = $n;
+		$_SESSION['titulo']='Reporte de datos bancarios de los Atletas';
+		
+		
+		header("Location: ../Vista/atleta/reportebancario.php?accion=actual");
+		break;
+	}
+
+	case "buscafiltrosdisciplinas":
+	{
+		$n = $atleta->getdisandmod();
+		$_SESSION['disciplinas'] = $n;
+		$_SESSION['titulo']='Reporte de disciplinas de los Atletas';
+		
+		
+		header("Location: ../Vista/atleta/reportedisciplinas.php?accion=actual");
 		break;
 	}
 
@@ -1331,6 +1414,55 @@ case "registrarRegistro_medico":
 				$_SESSION['contacto'] = $n;
 				
 				header("Location: ../Vista/atleta/reportecontacto.php?accion=actual");
+				break;
+			}
+
+			case 'filtrobancos':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				
+				
+				$n = $atleta->getBbancos();
+				$_SESSION['bancos'] = $n;
+				
+				header("Location: ../Vista/atleta/reportebancario.php?accion=actual");
+				break;
+			}
+
+			case 'filtrotipocuenta':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				
+				
+				$n = $atleta->gettipocuenta();
+				$_SESSION['bancos'] = $n;
+				
+				header("Location: ../Vista/atleta/reportebancario.php?accion=actual");
+				break;
+			}
+
+			case 'filtrodisciplinas':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				
+				
+				$n = $atleta->getDdisciplinas();
+				$_SESSION['disciplinas'] = $n;
+				
+				header("Location: ../Vista/atleta/reportedisciplinas.php?accion=actual");
+				break;
+			}
+
+			case 'filtromodalidad':
+			{
+				$atleta->setId_disciplina($_POST['id_disciplina']);
+				$atleta->setId_modalidad($_POST['id_modalidad']);
+				
+				
+				$n = $atleta->getMmodalidad();
+				$_SESSION['disciplinas'] = $n;
+				
+				header("Location: ../Vista/atleta/reportedisciplinas.php?accion=actual");
 				break;
 			}
 
