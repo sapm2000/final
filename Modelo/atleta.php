@@ -642,6 +642,16 @@ class Atleta extends ClaseBase
 			return ($trae);
 		}
 
+		public function getNacionalidad()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT nac,cedula,nombre,apellido,f_nac,tipos,estadoc,sexo,nivel FROM atleta INNER JOIN nivels on atleta.id_nivel=nivels.id WHERE atleta.activo=0 and atleta.nac='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
 		public function getIndumentaria()
 		{
 			$cc = Conexion::getInstance();
@@ -790,6 +800,37 @@ class Atleta extends ClaseBase
 			$trae = $result->fetchAll();
 			return ($trae);
 		}
+
+		public function getEestatus()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT atleta.cedula, atleta.nac, atleta.nombre,atleta.apellido,disciplinas.disciplina,modalidades.modalidad,estatus.estatu FROM puente_disciplina INNER JOIN atleta on puente_disciplina.id_atleta=atleta.id INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id INNER JOIN modalidades ON puente_disciplina.id_modalidad=modalidades.id INNER JOIN estatus ON puente_disciplina.id_estatus=estatus.id WHERE atleta.activo=0 and puente_disciplina.id_estatus=$this->primer";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentadisciplinas()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT disciplinas.disciplina,id_disciplina, COUNT(*) AS total FROM puente_disciplina INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id INNER JOIN atleta ON puente_disciplina.id_atleta=atleta.id WHERE atleta.activo=0 GROUP BY id_disciplina ";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentamodalidades()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT disciplinas.disciplina,modalidades.modalidad,puente_disciplina.id_modalidad, COUNT(*) AS total FROM puente_disciplina INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id INNER JOIN atleta ON puente_disciplina.id_atleta=atleta.id INNER JOIN modalidades ON puente_disciplina.id_modalidad=modalidades.id WHERE atleta.activo=0 GROUP BY id_modalidad";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
 
 		public function getMmodalidad()
 		{
