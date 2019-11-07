@@ -80,9 +80,60 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['disciplinas']))
 	
 	$reporte.="</table><br>";
 
-	$_SESSION['reporte']=$reporte;
+	if($_SESSION['contar']!='') {
 
-}
+	
+
+
+	$contar = $_SESSION['contar'];
+
+	$cata.="<table class=tabla-cat id=tabla>";
+
+	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Modalidad</th><th>Estatus</th></tr>";
+
+	foreach($contar as $con)
+	{
+		
+		$cata.="<tr>";	
+
+		$cata.="<td>".$con['disciplina']."</td>";	
+		$cata.="<td>".$con['total']."</td>";	
+
+			
+		
+
+	}
+	$cata.="</table><br>";
+
+	$contarmod = $_SESSION['contarmod'];
+
+	$cata.="<table class=tabla-cat id=tabla>";
+
+	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Modalidad</th><th>Estatus</th></tr>";
+
+	foreach($contarmod as $conta)
+	{
+		
+		$cata.="<tr>";	
+
+		$cata.="<td>".$conta['disciplina']."</td>";	
+		$cata.="<td>".$conta['modalidad']."</td>";	
+		$cata.="<td>".$conta['total']."</td>";	
+
+			
+		
+
+	}
+	$cata.="</table><br>";
+	}
+	}
+
+
+	$_SESSION['reporte']=$reporte;
+	
+
+
+
 if (empty($_SESSION['disciplinas'])) {
 	$cata.="No hay atletas registrados";
 }

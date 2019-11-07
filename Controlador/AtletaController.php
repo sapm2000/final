@@ -112,6 +112,15 @@ switch($_REQUEST['accion'])
 		break;
 	}
 
+	case "buscaestatus":
+	{
+		$n = $estatu->getAll($tab);
+		$_SESSION['estatus'] = $n;
+		
+		header("Location: ../Vista/atleta/filtroestatus.php?accion=actual");
+		break;
+	}
+
 	case "buscaparroquias":
 	{
 		$n = $municipio->getAll($tab);
@@ -232,6 +241,12 @@ switch($_REQUEST['accion'])
 		$n = $atleta->getdisandmod();
 		$_SESSION['disciplinas'] = $n;
 		$_SESSION['titulo']='Reporte de Disciplinas de los Atletas';
+
+		$s = $atleta->cuentadisciplinas();
+		$_SESSION['contar'] = $s;
+
+		$x = $atleta->cuentamodalidades();
+		$_SESSION['contarmod'] = $x;
 		
 		
 		header("Location: ../Vista/atleta/reportedisciplinas.php?accion=actual");
@@ -1318,6 +1333,19 @@ case "registrarRegistro_medico":
 				break;
 			}
 
+			case 'filtronacionalidad':
+			{
+				$atleta->setPrimer($_POST['primer']);
+			
+				
+				$n = $atleta->getNacionalidad();
+				$_SESSION['nivel10'] = $n;
+				
+				
+				header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
+				break;
+			}
+
 			case 'filtropeso':
 			{
 				$atleta->setPrimer($_POST['primer']);
@@ -1447,6 +1475,21 @@ case "registrarRegistro_medico":
 				
 				
 				$n = $atleta->getDdisciplinas();
+				$_SESSION['disciplinas'] = $n;
+
+				
+
+				
+				header("Location: ../Vista/atleta/reportedisciplinas.php?accion=actual");
+				break;
+			}
+
+			case 'filtroestatus':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				
+				
+				$n = $atleta->getEestatus();
 				$_SESSION['disciplinas'] = $n;
 				
 				header("Location: ../Vista/atleta/reportedisciplinas.php?accion=actual");
