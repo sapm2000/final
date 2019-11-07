@@ -27,7 +27,7 @@ $form.='</tr>';
 $form.='</table>';
 $form.='<table>';
 $form.='<tr>';
-$form.='<td> <a href="generarreporte.php?accion=activos"><input type="button" class="botonmodal" value="Generar Reporte" name="activos" title="Generar Reporte"> </a></td>';
+$form.='<td> <a href="generarreporte.php?accion=filtroga"><input type="button" class="botonmodal" value="Generar Reporte" name="filtroga" title="Generar Reporte"> </a></td>';
 
 $form.='</tr>';
 $form.='</table>';
@@ -40,10 +40,10 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['nivel10']))
 	$cata.="<table class=tabla-cat id=tabla>";
 
 	$reporte.="<br><table class=tabla-cat id=tabla>";
-	$reporte.="<table class=tabla-catb id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
-	$cata.="<tr><th colspan='2'>Cédula</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th><th colspan='4'>Acción</th></tr>";
-	$reporte.="<tr><th colspan='2'>Cédula</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th></tr>";
+	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Sexo</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Estado Cívil</th><th>Nivel de Estudio</th></tr>";
+	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Sexo</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Estado Cívil</th><th>Nivel de Estudio</th></tr>";
 
 	foreach($catalogo as $cat)
 	{
@@ -74,10 +74,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['nivel10']))
 	}
 	$cata.="</table><br>";
 
-	$reporte.="<table class=obser>";
-	$reporte.="<tr>";
-	$reporte.="<td>Observaciones:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>";
-	$reporte.="</tr>";
+
 	$reporte.="</table>";
 
 	$reporte.="</table>";
@@ -88,7 +85,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['nivel10']))
 
 }
 if (empty($_SESSION['nivel10'])) {
-	$cata.="no hay atletas registrados";
+	$cata.="No hay atletas registrados";
 }
 
 

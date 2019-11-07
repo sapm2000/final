@@ -13,15 +13,20 @@ if(empty($_REQUEST['accion']))
 }
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
+$_SESSION['titulo']='Reporte de Atletas Filtrado por Fecha de Nacimiento';
 $form='';
 $cata='';
 $boton='';
 $form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=filtrofechanac">';
 $form.='<table>';
 $form.='<tr>';
-$form.='<td>ingrese el rango de fecha a buscar:</td>';
-$form.='<td><input  type="date"  name="primer" ></td>';
-$form.='<td><input  type="date" class="cajasdetexto"  name="segundo" ></td>';
+$form.='<td>Ingrese el rango de fecha a buscar:</td>';
+$form.='</tr>';
+$form.='</table>';
+$form.='<table align=center>';
+$form.='<tr>';
+$form.='<td>Desde:<input  type="date" class="cajasdetexto" name="primer" required></td>';
+$form.='<td>Hasta:<input  type="date" class="cajasdetexto"  name="segundo" required></td>';
 $form.='<td> <input type="submit" class="botonmodal" value="Buscar"> </td>';
 $form.='</tr>';
 $form.='</table>';

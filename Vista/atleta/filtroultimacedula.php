@@ -13,13 +13,14 @@ if(empty($_REQUEST['accion']))
 }
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
+$_SESSION['titulo']='Reporte de Atletas Filtrado por el Último Dígito de la Cédula';
 $form='';
 $cata='';
 $boton='';
 $form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=filtroultimodigito">';
 $form.='<table>';
 $form.='<tr>';
-$form.='<td>ingrese el terminal de cedula a buscar:</td>';
+$form.='<td>Ingrese el terminal de cédula a buscar:</td>';
 $form.='<td><input  type="text" class="cajasdetexto"  name="primer" ></td>';
 $form.='<td> <input type="submit" class="botonmodal" value="Buscar"> </td>';
 $form.='</tr>';

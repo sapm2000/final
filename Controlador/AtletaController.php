@@ -87,6 +87,8 @@ switch($_REQUEST['accion'])
 	{
 		$n = $atleta->getDatosPersonales();
 		$_SESSION['nivel10'] = $n;
+		$_SESSION['titulo']='Reporte de Datos Personales de los Atletas';
+		
 		
 		header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
 		break;

@@ -15,6 +15,7 @@ if(empty($_REQUEST['accion']))
 
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
+$_SESSION['titulo']='Reporte de Atletas Filtrado por Genero';
 $form='';
 $cata='';
 $boton='';
@@ -27,7 +28,7 @@ $sexo.="</select>";
 
 $form.='<table>';
 $form.='<tr>';
-$form.='<td>ingrese el sexo</td>';
+$form.='<td>Ingrese el genero</td>';
 $form.='<td>'.$sexo.'</td>';
 $form.='<td> <input type="submit" class="botonmodal" value="Buscar"> </td>';
 $form.='</tr>';
