@@ -74,6 +74,24 @@ switch($_REQUEST['accion'])
 		header("Location: ../Vista/atleta/datosp.php?accion=actual");
 		break;
 	}
+
+	case "buscatallas":
+	{
+		$n = $talla->getAll($tab);
+		$_SESSION['talla'] = $n;
+		
+		header("Location: ../Vista/atleta/filtrotalla.php?accion=actual");
+		break;
+	}
+	case "buscacalzado":
+	{
+		$n = $calzado->getAll($tab);
+		$_SESSION['calzado'] = $n;
+		
+		header("Location: ../Vista/atleta/filtrocalzado.php?accion=actual");
+		break;
+	}
+
 	case "buscatodos1":
 	{
 		$n = $nivel->getAll($tab);
@@ -91,6 +109,16 @@ switch($_REQUEST['accion'])
 		
 		
 		header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
+		break;
+	}
+	case "buscafiltrosindumentaria":
+	{
+		$n = $atleta->getIndumentaria();
+		$_SESSION['indumentaria'] = $n;
+		$_SESSION['titulo']='Reporte de Indumentaria de los Atletas';
+		
+		
+		header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
 		break;
 	}
 
@@ -1169,6 +1197,68 @@ case "registrarRegistro_medico":
 				
 				
 				header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
+				break;
+			}
+
+			case 'filtropeso':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				$atleta->setSegundo($_POST['segundo']);
+				
+				
+				$n = $atleta->getPpeso();
+				$_SESSION['indumentaria'] = $n;
+				
+				header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
+				break;
+			}
+
+			case 'filtroaltura':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				$atleta->setSegundo($_POST['segundo']);
+				
+				
+				$n = $atleta->getAaltura();
+				$_SESSION['indumentaria'] = $n;
+				
+				header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
+				break;
+			}
+
+			case 'filtrotalla':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				
+				
+				$n = $atleta->getTtalla();
+				$_SESSION['indumentaria'] = $n;
+				
+				header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
+				break;
+			}
+
+			case 'filtrocalzado':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				
+				
+				$n = $atleta->getCcalzado();
+				$_SESSION['indumentaria'] = $n;
+				
+				header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
+				break;
+			}
+
+			case 'filtromano':
+			{
+				$atleta->setPrimer($_POST['primer']);
+				
+				
+				$n = $atleta->getMmano();
+				$_SESSION['indumentaria'] = $n;
+				
+				header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
 				break;
 			}
 
