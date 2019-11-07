@@ -21,7 +21,7 @@ $form.='<form name="atleta" method="post" action="../../Controlador/AtletaContro
 $form.='<table>';
 $form.='<tr>';
 $form.='<td>Ingrese los primeros dígitos de las cédulas a buscar:</td>';
-$form.='<td><input  type="text" class="cajasdetexto"  name="primer" ></td>';
+$form.='<td><input  type="text" class="cajasdetexto"  name="primer" pattern="[A-Z a-z 1-9]{2}" title="Solo dos dígitos" required></td>';
 $form.='<td> <input type="submit" class="botonmodal" value="Buscar"> </td>';
 $form.='</tr>';
 $form.='</table>';

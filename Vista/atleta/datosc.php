@@ -90,11 +90,11 @@ if($_GET['accion']=='ver_detalles') {
 	$form.='</tr>';
 	$form.='<tr>';
 	$form.='<td>Número de Teléfono:</td>';
-	$form.='<td><input id="num" type="text" class="cajasdetexto" value="'.$ntel.'"  name="n_tel" onkeypress="return solonumeros(event)" pattern="([0]{1})([2,4]{1})([0-9]{9})*" title="Solo 11 digitos" onpaste="return false" required></td>';
+	$form.='<td><input id="num" type="text" class="cajasdetexto" value="'.$ntel.'"  name="n_tel" onkeypress="return solonumeros(event)" pattern="([0]{1})([2,4]{1})([0-9]{9})*" title="Solo 11 dígitos" onpaste="return false" required></td>';
 	$form.='</tr>';
 	$form.='<tr>';
 	$form.='<td>Número de Emergencia:</td>';
-	$form.='<td><input id="num2" type="text" class="cajasdetexto" value="'.$neme.'"  name="n_eme" onkeypress="return solonumeros(event)" pattern="([0]{1})([2,4]{1})([0-9]{9})*" title="Solo 11 digitos" onpaste="return false" required></td>';
+	$form.='<td><input id="num2" type="text" class="cajasdetexto" value="'.$neme.'"  name="n_eme" onkeypress="return solonumeros(event)" pattern="([0]{1})([2,4]{1})([0-9]{9})*" title="Solo 11 dígitos" onpaste="return false" required></td>';
 	$form.='</tr>';
 	$form.='<tr>';
 	$form.='<td>Municipio:</td>';

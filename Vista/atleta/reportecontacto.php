@@ -16,7 +16,6 @@ if(empty($_REQUEST['accion']))
 }
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
-$_SESSION['titulo']='Reporte General de Contacto de los Atletas';
 $form='';
 $cata='';
 $boton='';
