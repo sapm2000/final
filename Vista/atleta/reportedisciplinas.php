@@ -31,11 +31,22 @@ $form.='<td> <a href="generarreporte.php?accion=filtroga"><input type="button" c
 
 $form.='</tr>';
 $form.='</table>';
+$reporte='';
 
-if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
-{
-	$catalogo = $_SESSION['hombres'];
-	$reporte='';
+
+for ($i=0;$i<=$_SESSION['contador'];$i++ ){
+	if (empty($_SESSION['disc'.$i])) {
+
+	}
+
+	else {
+
+	
+
+
+
+
+	$catalogo = $_SESSION['disc'.$i];
 	$cata.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrar' method='post'>";
 	$cata.="<center><h2>Atletas Masculinos en Cada Disciplina</h2></center>";
 	$cata.="<table class=tabla-cat id=tabla>";
@@ -83,88 +94,43 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
 	
 	$reporte.="</table><br>";
 
+	$contar = $_SESSION['cue'.$i];
 
-	$contar = $_SESSION['hombredisciplina'];
-
-	$cata.="<center><h2>Cantidad de Atletas Masculinos Registrados por Disciplina</h2></center>";
 	$cata.="<table class=tabla-cat id=tabla>";
-
-	$reporte.="<center><h2>Cantidad de Atletas Masculinos Registrados por Disciplina</h2></center>";
-	$reporte.="<br><table class=tabla-cat id=tabla>";
-	$reporte.="<table class=tabla-catb id=tabla align=center>";
-
-	$cata.="<tr><th>Disciplinas</th><th>Total</th></tr>";
-	$reporte.="<tr><th>Disciplinas</th><th>Total</th></tr>";
-
-	foreach($contar as $con)
-	{
-		
-		$cata.="<tr>";	
-
-		$cata.="<td>".$con['disciplina']."</td>";	
-		$cata.="<td>".$con['total']."</td>";	
-
-		$reporte.="<tr>";
-
-		$reporte.="<td>".$con['disciplina']."</td>";	
-		$reporte.="<td>".$con['total']."</td>";	
-		
-
+	foreach($contar as $con) {
+		$cata.="<tr><th>".$con['disciplina']." Masculino</th>";
+		$cata.="<td>".$con['contar']."</td>";
 	}
 	$cata.="</table><br>";
 
-	$reporte.="</table>";
-
-	$reporte.="</table>";
-	
+	$reporte.="<table class=tabla-cat id=tabla>";
+	foreach($contar as $con) {
+		$reporte.="<tr><th>".$con['disciplina']." Masculino</th>";
+		$reporte.="<td>".$con['contar']."</td>";
+	}
 	$reporte.="</table><br>";
+}
 
-	$contarmod = $_SESSION['hombremodalidad'];
-
-	$cata.="<center><h2>Cantidad de Atletas Masculinos Registrados por Modalidad</h2></center>";
-	$cata.="<table class=tabla-cat id=tabla>";
-
-	$reporte.="<center><h2>Cantidad de Atletas Masculinos Registrados por Modalidad</h2></center>";
-	$reporte.="<br><table class=tabla-cat id=tabla>";
-	$reporte.="<table class=tabla-catb id=tabla align=center>";
-
-	$cata.="<tr><th>Disciplina</th><th>Modalidad</th><th>Total</th></tr>";
-	$reporte.="<tr><th>Disciplina</th><th>Modalidad</th><th>Total</th></tr>";
-
-	foreach($contarmod as $conta)
-	{
-		
-		$cata.="<tr>";	
-
-		$cata.="<td>".$conta['disciplina']."</td>";	
-		$cata.="<td>".$conta['modalidad']."</td>";	
-		$cata.="<td>".$conta['total']."</td>";	
-
-		$reporte.="<tr>";
-		$reporte.="<td>".$conta['disciplina']."</td>";	
-		$reporte.="<td>".$conta['modalidad']."</td>";	
-		$reporte.="<td>".$conta['total']."</td>";	
-		
+	if (empty($_SESSION['discF'.$i])) {
 
 	}
-	$cata.="</table><br>";
 
-	$reporte.="</table>";
+	else {
 
-	$reporte.="</table>";
 	
-	$reporte.="</table><br>";
-	$catalogo = $_SESSION['mujeres'];
 
-	$cata.="<center><h2>Atletas Femeninos en Cada Disciplina</h2></center>";
+	$catalogo = $_SESSION['discF'.$i];
+	$cata.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrar' method='post'>";
+	$cata.="<center><h2>Atletas Masculinos en Cada Disciplina</h2></center>";
 	$cata.="<table class=tabla-cat id=tabla>";
 
-	$reporte.="<center><h2>Atletas Femeninos en Cada Disciplina</h2></center>";
+	$reporte.="<center><h2>Atletas Masculinos en Cada Disciplina</h2></center>";
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
-	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplinas</th><th>Modalidades</th><th>Estatus</th></tr>";
-	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplinas</th><th>Modalidades</th><th>Estatus</th></tr>";
+	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Modalidad</th><th>Estatus</th></tr>";
+
+	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Modalidad</th><th>Estatus</th></tr>";
 
 	foreach($catalogo as $cat)
 	{
@@ -201,157 +167,35 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
 	
 	$reporte.="</table><br>";
 
+	$contar = $_SESSION['cueF'.$i];
 
-	$contar = $_SESSION['mujerdisciplina'];
-
-	$cata.="<center><h2>Cantidad de Atletas Femeninos Registrados por Disciplina</h2></center>";
 	$cata.="<table class=tabla-cat id=tabla>";
-
-	$reporte.="<center><h2>Cantidad de Atletas Femeninos Registrados por Disciplina</h2></center>";
-	$reporte.="<br><table class=tabla-cat id=tabla>";
-	$reporte.="<table class=tabla-catb id=tabla align=center>";
-
-	$cata.="<tr><th>Disciplinas</th><th>Total</th></tr>";
-	$reporte.="<tr><th>Disciplinas</th><th>Total</th></tr>";
-
-	foreach($contar as $con)
-	{
-		
-		$cata.="<tr>";	
-
-		$cata.="<td>".$con['disciplina']."</td>";	
-		$cata.="<td>".$con['total']."</td>";	
-
-		$reporte.="<tr>";
-
-		$reporte.="<td>".$con['disciplina']."</td>";	
-		$reporte.="<td>".$con['total']."</td>";	
-		
-
+	foreach($contar as $con) {
+		$cata.="<tr><th>".$con['disciplina']." Masculino</th>";
+		$cata.="<td>".$con['contar']."</td>";
 	}
 	$cata.="</table><br>";
 
-	$reporte.="</table>";
-
-	$reporte.="</table>";
-	
+	$reporte.="<table class=tabla-cat id=tabla>";
+	foreach($contar as $con) {
+		$reporte.="<tr><th>".$con['disciplina']." Masculino</th>";
+		$reporte.="<td>".$con['contar']."</td>";
+	}
 	$reporte.="</table><br>";
-
-	$contarmod = $_SESSION['mujermodalidad'];
-
-	$cata.="<center><h2>Cantidad de Atletas Femeninos Registrados por Modalidad</h2></center>";
-	$cata.="<table class=tabla-cat id=tabla>";
-
-	$reporte.="<center><h2>Cantidad de Atletas Femeninos Registrados por Modalidad</h2></center>";
-	$reporte.="<br><table class=tabla-cat id=tabla>";
-	$reporte.="<table class=tabla-catb id=tabla align=center>";
-
-	$cata.="<tr><th>Disciplinas</th><th>Modalidades</th><th>Total</th></tr>";
-	$reporte.="<tr><th>Disciplinas</th><th>Modalidades</th><th>Total</th></tr>";
-
-	foreach($contarmod as $conta)
-	{
-		
-		$cata.="<tr>";	
-
-		$cata.="<td>".$conta['disciplina']."</td>";	
-		$cata.="<td>".$conta['modalidad']."</td>";	
-		$cata.="<td>".$conta['total']."</td>";	
-
-		$reporte.="<tr>";
-		$reporte.="<td>".$conta['disciplina']."</td>";	
-		$reporte.="<td>".$conta['modalidad']."</td>";	
-		$reporte.="<td>".$conta['total']."</td>";	
-		
 
 	}
-	$cata.="</table><br>";
-
-	$reporte.="</table>";
-
-	$reporte.="</table>";
-	
-	$reporte.="</table><br>";
 
 
-	$contar = $_SESSION['totaldisciplina'];
-
-	$cata.="<center><h2>Cantidad Total de Atletas Registrados por Disciplina</h1></center>";
-	$cata.="<table class=tabla-cat id=tabla>";
-
-	$reporte.="<center><h2>Cantidad Total de Atletas Registrados por Disciplina</h1></center>";
-	$reporte.="<br><table class=tabla-cat id=tabla>";
-	$reporte.="<table class=tabla-catb id=tabla align=center>";
-
-	$cata.="<tr><th>Disciplinas</th><th>Total</th></tr>";
-	$reporte.="<tr><th>Disciplinas</th><th>Total</th></tr>";
-
-	foreach($contar as $con)
-	{
-		
-		$cata.="<tr>";	
-
-		$cata.="<td>".$con['disciplina']."</td>";	
-		$cata.="<td>".$con['total']."</td>";	
-
-		$reporte.="<tr>";
-
-		$reporte.="<td>".$con['disciplina']."</td>";	
-		$reporte.="<td>".$con['total']."</td>";	
-		
-
-	}
-	$cata.="</table><br>";
-
-	$reporte.="</table>";
-
-	$reporte.="</table>";
-	
-	$reporte.="</table><br>";
-
-	$contarmod = $_SESSION['totalmodalidad'];
-
-	$cata.="<center><h2>Cantidad Total de Atletas Registrados por Modalidad</h2></center>";
-	$cata.="<table class=tabla-cat id=tabla>";
-
-	$reporte.="<center><h2>Cantidad Total de Atletas Registrados por Modalidad</h2></center>";
-	$reporte.="<br><table class=tabla-cat id=tabla>";
-	$reporte.="<table class=tabla-catb id=tabla align=center>";
-
-	$cata.="<tr><th>Disciplinas</th><th>Modalidades</th><th>Total</th></tr>";
-	$reporte.="<tr><th>Disciplinas</th><th>Modalidades</th><th>Total</th></tr>";
-
-	foreach($contarmod as $conta)
-	{
-		
-		$cata.="<tr>";	
-
-		$cata.="<td>".$conta['disciplina']."</td>";	
-		$cata.="<td>".$conta['modalidad']."</td>";	
-		$cata.="<td>".$conta['total']."</td>";	
-
-		$reporte.="<tr>";
-		$reporte.="<td>".$conta['disciplina']."</td>";	
-		$reporte.="<td>".$conta['modalidad']."</td>";	
-		$reporte.="<td>".$conta['total']."</td>";	
-		
-
-	}
-	$cata.="</table><br>";
-
-	$reporte.="</table>";
-
-	$reporte.="</table>";
-	
-	$reporte.="</table><br>";
 	
 	
 
 
-	$_SESSION['reporte']=$reporte;
-	
+
+
 
 }
+$_SESSION['reporte']=$reporte;
+
 
 if (empty($_SESSION['hombres'])) {
 	$cata.="No hay atletas registrados";
