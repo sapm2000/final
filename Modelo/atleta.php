@@ -805,7 +805,7 @@ class Atleta extends ClaseBase
 		public function getdisandmodhombres()
 		{
 			$cc = Conexion::getInstance();
-			$sql = "SELECT atleta.cedula, atleta.nac, atleta.nombre,atleta.apellido,disciplinas.disciplina,modalidades.modalidad,estatus.estatu FROM puente_disciplina INNER JOIN atleta on puente_disciplina.id_atleta=atleta.id INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id INNER JOIN modalidades ON puente_disciplina.id_modalidad=modalidades.id INNER JOIN estatus ON puente_disciplina.id_estatus=estatus.id WHERE atleta.activo=0 and atleta.sexo='M'";
+			$sql = "SELECT atleta.cedula, atleta.nac, atleta.nombre,atleta.apellido,disciplinas.disciplina,modalidades.modalidad,estatus.estatu FROM puente_disciplina INNER JOIN atleta on puente_disciplina.id_atleta=atleta.id INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id INNER JOIN modalidades ON puente_disciplina.id_modalidad=modalidades.id INNER JOIN estatus ON puente_disciplina.id_estatus=estatus.id WHERE atleta.activo=0 and atleta.sexo='M' ORDER BY atleta.cedula AND disciplinas.disciplina ";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			$trae = $result->fetchAll();
