@@ -37,6 +37,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
 	$catalogo = $_SESSION['hombres'];
 	$reporte='';
 	$cata.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrar' method='post'>";
+	$cata.="<center><h2>Atletas Masculinos en Cada Disciplina</h2></center>";
 	$cata.="<table class=tabla-cat id=tabla>";
 
 	$reporte.="<center><h2>Atletas Masculinos en Cada Disciplina</h2></center>";
@@ -85,6 +86,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
 
 	$contar = $_SESSION['hombredisciplina'];
 
+	$cata.="<center><h2>Cantidad de Atletas Masculinos Registrados por Disciplina</h2></center>";
 	$cata.="<table class=tabla-cat id=tabla>";
 
 	$reporte.="<center><h2>Cantidad de Atletas Masculinos Registrados por Disciplina</h2></center>";
@@ -119,6 +121,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
 
 	$contarmod = $_SESSION['hombremodalidad'];
 
+	$cata.="<center><h2>Cantidad de Atletas Masculinos Registrados por Modalidad</h2></center>";
 	$cata.="<table class=tabla-cat id=tabla>";
 
 	$reporte.="<center><h2>Cantidad de Atletas Masculinos Registrados por Modalidad</h2></center>";
@@ -153,7 +156,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
 	$reporte.="</table><br>";
 	$catalogo = $_SESSION['mujeres'];
 
-
+	$cata.="<center><h2>Atletas Femeninos en Cada Disciplina</h2></center>";
 	$cata.="<table class=tabla-cat id=tabla>";
 
 	$reporte.="<center><h2>Atletas Femeninos en Cada Disciplina</h2></center>";
@@ -201,6 +204,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
 
 	$contar = $_SESSION['mujerdisciplina'];
 
+	$cata.="<center><h2>Cantidad de Atletas Femeninos Registrados por Disciplina</h2></center>";
 	$cata.="<table class=tabla-cat id=tabla>";
 
 	$reporte.="<center><h2>Cantidad de Atletas Femeninos Registrados por Disciplina</h2></center>";
@@ -235,6 +239,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
 
 	$contarmod = $_SESSION['mujermodalidad'];
 
+	$reporte.="<center><h2>Cantidad de Atletas Femeninos Registrados por Modalidad</h2></center>";
 	$cata.="<table class=tabla-cat id=tabla>";
 
 	$reporte.="<center><h2>Cantidad de Atletas Femeninos Registrados por Modalidad</h2></center>";
@@ -271,6 +276,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
 
 	$contar = $_SESSION['totaldisciplina'];
 
+	$cata.="<center><h2>Cantidad Total de Atletas Registrados por Disciplina</h1></center>";
 	$cata.="<table class=tabla-cat id=tabla>";
 
 	$reporte.="<center><h2>Cantidad Total de Atletas Registrados por Disciplina</h1></center>";
@@ -305,6 +311,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
 
 	$contarmod = $_SESSION['totalmodalidad'];
 
+	$cata.="<center><h2>Cantidad Total de Atletas Registrados por Modalidad</h2></center>";
 	$cata.="<table class=tabla-cat id=tabla>";
 
 	$reporte.="<center><h2>Cantidad Total de Atletas Registrados por Modalidad</h2></center>";
