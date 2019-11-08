@@ -37,17 +37,19 @@ $form.='</table>';
 
 
 
-if($_GET['accion']=="actual" && !empty($_SESSION['catabeca1']))
+if($_GET['accion']=="actual" && !empty($_SESSION['catabeca100']))
 {
-	$catalogo = $_SESSION['catabeca1'];
+	$catalogo = $_SESSION['catabeca100'];
 	$cata.="<table class=tabla-cat id=tabla>";
-	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Becar</th><th>Monto</th></tr>";
+	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>disciplina</th><th>Becar</th><th>Monto</th></tr>";
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
 		$cata.="<td>".$cat['cedula']."</td>";	
 		$cata.="<td>".$cat['nombre']."</td>";	
 		$cata.="<td>".$cat['apellido']."</td>";	
+		$cata.="<td>".$cat['disciplina']."</td>";	
+
 
 		
 		$cata.="<td> <input  type='checkbox' class='a' id=".$cat['id']."> </td>";	
@@ -55,6 +57,8 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabeca1']))
 		
 		$cata.="<td> <input type='text' id='b".$cat['id']."' name='pago".$cat['id']."' style='display:none' onkeypress='return solonumeros(event)' pattern='([1-9]{1})([0-9]{3,})' title='ej: 2500' class='cajasdetexto' onpaste='return false'></td>";	
 		$cata.="<td> <input type='hidden' name='cuenta".$cat['id']."' value=".$cat['numeroc']."></td>";	
+		$cata.="<td><input type='hidden' name='disc".$cat['id']."' value='".$cat['disciplina']."'></td>";
+
 
 		
 

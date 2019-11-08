@@ -24,14 +24,14 @@ switch($_REQUEST['accion'])
 	case "buscatodos11":
 	{
 		$todos = $beca->todosatletasgloriosos($tab);
-		$_SESSION['catabeca1'] = $todos;
+		$_SESSION['catabeca100'] = $todos;
 		header("Location: ../Vista/beca/becanuevagloria.php?accion=actual");
 		break;
 	}
 	case "buscatodos111":
 	{
 		$todos = $beca->todosatletasgloriosos($tab);
-		$_SESSION['catabeca1'] = $todos;
+		$_SESSION['catabeca100'] = $todos;
 		header("Location: ../Vista/beca/becagloria.php?accion=actual");
 		break;
 	}
@@ -141,13 +141,14 @@ switch($_REQUEST['accion'])
 			for ($i=0;$i<=$x;$i++) {
 				$beca->setId_atleta($i);
 				$beca->setMonto($_POST['pago'.$i]);
+				$beca->setDisc($_POST['disc'.$i]);
 				$beca->setFecha($_POST['fecha']);
 				$originalDate = $beca->getFecha();
 				$newDate = date("Ymd", strtotime($originalDate));
 				$_SESSION['fechas']=$newDate;
 				
 				$comprobador=$beca->getMonto();
-			
+
 				if (empty($comprobador)) {
 
 				}
@@ -177,6 +178,7 @@ switch($_REQUEST['accion'])
 					$beca->guardarRegistro();
 				}
 			}
+
 			$beca->setFecha($_POST['fecha']);
 			
 
@@ -296,6 +298,7 @@ switch($_REQUEST['accion'])
 				$beca->setId_atleta($i);
 				$beca->setMonto($_POST['pago'.$i]);
 				$beca->setFecha($_POST['fecha']);
+				$beca->setDisc($_POST['disc'.$i]);
 				$originalDate = $beca->getFecha();
 				$newDate = date("Ymd", strtotime($originalDate));
 				$_SESSION['fechas']=$newDate;

@@ -69,13 +69,15 @@
             $cata.="<tr>";	
             $cata.="<td>".$cat['cedula']."</td>";	
             $cata.="<td>".$cat['nombre']."</td>";	
-            $cata.="<td>".$cat['apellido']."</td>";	
+            $cata.="<td>".$cat['apellido']."</td>";
+            $cata.="<td>".$cat['disc']."</td>";	
+	
 
 
             
             
             
-            $cata.="<td> <input type='text' id='b".$cat['id']."' name='pago".$cat['id']."' value='".$cat['monto']."' onkeypress='return solonumeros(event)' pattern='([1-9]{1})([0-9]{3,})' title='ej: 25000' class='cajasdetexto' onpaste='return false'></td>";            
+            $cata.="<td> <input type='text' id='b".$cat['id']."' readonly name='pago".$cat['id']."' value='".$cat['monto']."' onkeypress='return solonumeros(event)' pattern='([1-9]{1})([0-9]{3,})' title='ej: 25000' class='cajasdetexto' onpaste='return false'></td>";            
            
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-11-2019 a las 20:52:15
+-- Tiempo de generación: 08-11-2019 a las 22:41:43
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.4
 
@@ -58,10 +58,10 @@ CREATE TABLE `atleta` (
 --
 
 INSERT INTO `atleta` (`id`, `nac`, `cedula`, `nombre`, `apellido`, `f_nac`, `tipos`, `estadoc`, `sexo`, `id_nivel`, `correo`, `n_tel`, `n_eme`, `id_municipio`, `id_parroquia`, `direccion`, `activo`, `id_talla`, `id_calzado`, `altura`, `peso`, `mano`) VALUES
-(1, 'V', '30426947', 'FREDDERICK', 'HERNANDEZ', '2004-07-06', 'O+', 'SOLTERO/A', 'M', 1, 'DASDAD@ASDS.COM', '12345678900', '00987654321', 13, 19, 'ASDA', 0, 8, 7, '110', '90.0', 'DIESTRO'),
+(1, 'V', '30426947', 'FREDDERICK', 'HERNANDEZ', '2004-07-06', 'O+', 'SOLTERO/A', 'M', 1, 'DASDAD@ASDS.COM', '12345678900', '00987654321', 13, 19, 'ASDA', 2, 8, 7, '110', '90.0', 'DIESTRO'),
 (2, 'V', '27758852', 'MARYORITH', 'SINGER', '2000-05-05', 'O+', 'SOLTERO/A', 'F', 3, 'MARYORITHSINGER05@GMAIL.COM', '04125084544', '04245222312', 1, 1, 'FINAL CALLE 28 CON 14 AV.', 0, 0, 0, '', '', ''),
 (3, 'V', '26943430', 'SAMUEL', 'PEREZ', '2000-01-06', 'O+', 'SOLTERO/A', 'M', 3, '8@SADSA.COM', '04245222312', '04125084544', 11, 17, '2 AV.', 0, 5, 6, '171', '50.0', 'DIESTRO'),
-(4, '', '1234567', 'FSDFS', 'SDFDSFS', '2000-06-12', 'O-', 'SOLTERO/A', 'M', 2, '', '', '', 0, 0, '', 2, 8, 5, '123', '12', ''),
+(4, '', '1234567', 'FSDFS', 'SDFDSFS', '2000-06-12', 'O-', 'SOLTERO/A', 'M', 2, '', '', '', 0, 0, '', 0, 8, 5, '123', '12', ''),
 (5, 'E', '7590456', 'ADSAD', 'ASDADAS', '2000-06-01', 'O-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 0, 5, '', '', ''),
 (6, 'V', '1478558', 'XCZCZXC', 'ZXCZXCZXC', '2019-10-06', 'B-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 0, 5, '', '', ''),
 (7, 'V', '5145789', 'ASDASD', 'ALVAREZ', '2019-10-13', 'O+', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
@@ -145,15 +145,17 @@ INSERT INTO `bancos` (`id`, `banco`) VALUES
 CREATE TABLE `becas` (
   `id` int(11) NOT NULL,
   `id_atleta` int(11) NOT NULL,
-  `monto` double NOT NULL
+  `monto` double NOT NULL,
+  `disc` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `becas`
 --
 
-INSERT INTO `becas` (`id`, `id_atleta`, `monto`) VALUES
-(1, 3, 10000);
+INSERT INTO `becas` (`id`, `id_atleta`, `monto`, `disc`) VALUES
+(1, 2, 34535, 'AJEDREZ'),
+(2, 3, 53453, 'BOLAS CRIOLLAS');
 
 -- --------------------------------------------------------
 
@@ -164,16 +166,16 @@ INSERT INTO `becas` (`id`, `id_atleta`, `monto`) VALUES
 CREATE TABLE `becas_gloria` (
   `id` int(11) NOT NULL,
   `id_atleta` int(11) NOT NULL,
-  `monto` double NOT NULL
+  `monto` double NOT NULL,
+  `disc` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `becas_gloria`
 --
 
-INSERT INTO `becas_gloria` (`id`, `id_atleta`, `monto`) VALUES
-(1, 1, 1234),
-(2, 2, 1234);
+INSERT INTO `becas_gloria` (`id`, `id_atleta`, `monto`, `disc`) VALUES
+(1, 1, 1313, 'AJEDREZ');
 
 -- --------------------------------------------------------
 
@@ -194,28 +196,12 @@ CREATE TABLE `becas_mes` (
 --
 
 INSERT INTO `becas_mes` (`id`, `fecha`, `montoT`, `becados`, `nombre`) VALUES
-(1, '2019-10-23', 1000, 1, 'HOLA'),
-(2, '2019-10-16', 20000, 2, 'VIEJOS'),
-(3, '2019-10-06', 1333330, 2, 'VJ'),
-(4, '2019-09-30', 2469130, 2, 'ASDSAD'),
-(5, '2019-10-08', 4265, 2, 'SADSADA'),
-(6, '2019-09-29', 33624600, 2, 'SADSADA'),
-(7, '2019-10-21', 135444, 2, 'ASD'),
-(8, '2019-10-07', 2469130, 2, 'SAD'),
-(9, '2019-10-09', 1246890, 2, 'SADSADD'),
-(10, '2019-10-16', 400000, 2, 'DEFINITIVO'),
-(11, '2019-10-07', 1243540000, 2, 'DSFDS'),
-(12, '2019-10-07', 2468, 2, 'VJ'),
-(13, '2019-10-07', 2468, 2, 'SADASD'),
-(14, '2019-10-31', 2468, 2, 'S'),
-(15, '2019-12-11', 33000, 3, 'ALTORENDIMIENTOJULIO'),
-(16, '2019-12-11', 33000, 3, 'ALTORENDIMIENTOJULIO'),
-(17, '2019-10-08', 33000, 3, 'XD'),
-(23, '2019-10-14', 23000, 3, 'HOLA'),
-(25, '2019-10-08', 23000, 3, 'B'),
-(28, '2019-10-15', 23000, 3, 'C'),
-(29, '2019-10-22', 23000, 3, 'ASD'),
-(38, '2019-10-23', 10000, 1, 'D');
+(1, '2019-11-09', 17500, 3, 'HOLA'),
+(2, '2019-11-12', 89222, 3, 'W'),
+(3, '2019-11-12', 89222, 3, '2'),
+(4, '2019-11-21', 1000, 1, 'F'),
+(7, '2019-11-18', 87988, 2, 'D'),
+(8, '2019-11-18', 87988, 2, 'DD');
 
 -- --------------------------------------------------------
 
@@ -228,43 +214,29 @@ CREATE TABLE `becas_total` (
   `id_atleta` int(11) NOT NULL,
   `monto` float NOT NULL,
   `fecha` varchar(50) NOT NULL,
-  `nombre` varchar(100) NOT NULL
+  `nombre` varchar(100) NOT NULL,
+  `disc` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `becas_total`
 --
 
-INSERT INTO `becas_total` (`id`, `id_atleta`, `monto`, `fecha`, `nombre`) VALUES
-(1, 14, 414142000000000, '2019-02-02', 'sdfdsfd'),
-(2, 1, 1234, '2019-10-07', 'VJ'),
-(3, 2, 1234, '2019-10-07', 'VJ'),
-(4, 1, 1234, '2019-10-07', 'SADASD'),
-(5, 2, 1234, '2019-10-07', 'SADASD'),
-(6, 1, 1234, '2019-10-31', 'S'),
-(7, 2, 1234, '2019-10-31', 'S'),
-(8, 3, 10000, '2019-12-11', 'ALTORENDIMIENTOJULIO'),
-(9, 4, 20000, '2019-12-11', 'ALTORENDIMIENTOJULIO'),
-(10, 5, 3000, '2019-12-11', 'ALTORENDIMIENTOJULIO'),
-(11, 3, 10000, '2019-12-11', 'ALTORENDIMIENTOJULIO'),
-(12, 4, 20000, '2019-12-11', 'ALTORENDIMIENTOJULIO'),
-(13, 5, 3000, '2019-12-11', 'ALTORENDIMIENTOJULIO'),
-(14, 3, 10000, '2019-10-08', 'XD'),
-(15, 4, 20000, '2019-10-08', 'XD'),
-(16, 5, 3000, '2019-10-08', 'XD'),
-(27, 3, 1000, '2019-10-14', 'HOLA'),
-(28, 4, 2000, '2019-10-14', 'HOLA'),
-(29, 5, 20000, '2019-10-14', 'HOLA'),
-(33, 3, 1000, '2019-10-08', 'B'),
-(34, 4, 2000, '2019-10-08', 'B'),
-(35, 5, 20000, '2019-10-08', 'B'),
-(42, 3, 1000, '2019-10-15', 'C'),
-(43, 4, 2000, '2019-10-15', 'C'),
-(44, 5, 20000, '2019-10-15', 'C'),
-(45, 3, 1000, '2019-10-22', 'ASD'),
-(46, 4, 2000, '2019-10-22', 'ASD'),
-(47, 5, 20000, '2019-10-22', 'ASD'),
-(68, 3, 10000, '2019-10-23', 'D');
+INSERT INTO `becas_total` (`id`, `id_atleta`, `monto`, `fecha`, `nombre`, `disc`) VALUES
+(1, 1, 2500, '2019-11-09', 'HOLA', 'AJEDREZ'),
+(2, 2, 5000, '2019-11-09', 'HOLA', 'AJEDREZ'),
+(3, 3, 10000, '2019-11-09', 'HOLA', 'BOLAS CRIOLLAS'),
+(4, 1, 1234, '2019-11-12', 'W', 'AJEDREZ'),
+(5, 2, 34535, '2019-11-12', 'W', 'AJEDREZ'),
+(6, 3, 53453, '2019-11-12', 'W', 'BOLAS CRIOLLAS'),
+(7, 1, 1234, '2019-11-12', '2', 'AJEDREZ'),
+(8, 2, 34535, '2019-11-12', '2', 'AJEDREZ'),
+(9, 3, 53453, '2019-11-12', '2', 'BOLAS CRIOLLAS'),
+(10, 1, 1000, '2019-11-21', 'F', 'AJEDREZ'),
+(13, 2, 34535, '2019-11-18', 'D', 'AJEDREZ'),
+(14, 3, 53453, '2019-11-18', 'D', 'BOLAS CRIOLLAS'),
+(15, 2, 34535, '2019-11-18', 'DD', 'AJEDREZ'),
+(16, 3, 53453, '2019-11-18', 'DD', 'BOLAS CRIOLLAS');
 
 -- --------------------------------------------------------
 
@@ -743,8 +715,8 @@ CREATE TABLE `puente_disciplina` (
 
 INSERT INTO `puente_disciplina` (`id`, `id_atleta`, `id_disciplina`, `id_modalidad`, `id_estatus`, `becar`) VALUES
 (4, 3, 3, 6, 1, 0),
-(12, 2, 3, 6, 7, 0),
-(13, 3, 4, 1, 1, 0),
+(12, 2, 3, 6, 7, 1),
+(13, 3, 4, 1, 1, 1),
 (14, 3, 11, 2, 1, 0),
 (16, 1, 3, 6, 8, 1),
 (18, 1, 4, 1, 1, 0),
@@ -1117,25 +1089,25 @@ ALTER TABLE `bancos`
 -- AUTO_INCREMENT de la tabla `becas`
 --
 ALTER TABLE `becas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `becas_gloria`
 --
 ALTER TABLE `becas_gloria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `becas_mes`
 --
 ALTER TABLE `becas_mes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `becas_total`
 --
 ALTER TABLE `becas_total`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `calzados`
