@@ -240,7 +240,7 @@ switch($_REQUEST['accion'])
 	{
 		$n = $atleta->getdisandmodhombres();
 		$_SESSION['hombres'] = $n;
-		$_SESSION['titulo']='Reporte de Disciplinas de los Atletas';
+		$_SESSION['titulo']='Reporte General de Disciplinas de los Atletas';
 		$m = $atleta->getdisandmodmujeres();
 		$_SESSION['mujeres'] = $m;
 
