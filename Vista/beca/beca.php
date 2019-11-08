@@ -41,7 +41,7 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabeca']))
 {
 	$catalogo = $_SESSION['catabeca'];
 	$cata.="<table class=tabla-cat id=tabla>";
-	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>disciplina</th><th>Becar</th><th>Monto</th></tr>";
+	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Becar</th><th>Monto</th></tr>";
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
@@ -61,10 +61,10 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabeca']))
 
 
 		if (empty($cat['monto'])) {
-			$cata.="<td> <input type='text' id='b".$cat['id']."' name='pago".$cat['id']."' style='display:none' value='".$cat['monto']."' onkeypress='return solonumeros(event)' pattern='([1-9]{1})([0-9]{3,})' title='ej: 25000' class='cajasdetexto' onpaste='return false'></td>";	
+			$cata.="<td> <input type='text' id='b".$cat['id']."' name='pago".$cat['id']."' style='display:none' value='".$cat['monto']."' onkeypress='return solonumeros(event)' pattern='([1-9]{1})([0-9]{1,})' title='ej: 25000' class='cajasdetexto' onpaste='return false'></td>";	
 		}
 		else {
-			$cata.="<td> <input type='text' id='b".$cat['id']."' name='pago".$cat['id']."' value='".$cat['monto']."' onkeypress='return solonumeros(event)' pattern='([1-9]{1})([0-9]{3,})' title='ej: 25000' class='cajasdetexto' onpaste='return false'></td>";	
+			$cata.="<td> <input type='text' id='b".$cat['id']."' name='pago".$cat['id']."' value='".$cat['monto']."' onkeypress='return solonumeros(event)' pattern='([1-9]{1})([0-9]{1,})' title='ej: 25000' class='cajasdetexto' onpaste='return false'></td>";	
 		}
 		$cata.="<td> <input type='hidden' name='cuenta".$cat['id']."' value=".$cat['numeroc']."></td>";	
 		$cata.="<td><input type='hidden' name='disc".$cat['id']."' value='".$cat['disciplina']."'></td>";
