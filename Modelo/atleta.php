@@ -204,6 +204,16 @@ class Atleta extends ClaseBase
 		return $this->id_estatus;
 	}
 
+	public function setBecar($becar)
+	{
+		$this->becar = $becar;
+	}
+
+	public function getBecar()
+	{
+		return $this->becar;
+	}
+
 	public function setId_talla($id_talla)
 	{
 		$this->id_talla = $id_talla;
@@ -511,7 +521,18 @@ class Atleta extends ClaseBase
 		{
 			$cc=Conexion::getInstance();
 			//$sql="SELECT a.*, b.descrip AS std FROM parroquia AS a INNER JOIN municipio AS b ON b.id=a.id_municipio ORDER BY std";
-			$sql="SELECT puente_disciplina.id AS iddis,estatus.estatu, disciplinas.disciplina,modalidades.modalidad, atleta.id FROM puente_disciplina INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id INNER JOIN atleta ON puente_disciplina.id_atleta=atleta.id INNER JOIN modalidades ON puente_disciplina.id_modalidad=modalidades.id INNER JOIN estatus ON puente_disciplina.id_estatus=estatus.id WHERE atleta.id=$this->id_atleta";
+			$sql="SELECT puente_disciplina.id AS iddis,estatus.estatu, disciplinas.disciplina,modalidades.modalidad, atleta.id, puente_disciplina.becar FROM puente_disciplina INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id INNER JOIN atleta ON puente_disciplina.id_atleta=atleta.id INNER JOIN modalidades ON puente_disciplina.id_modalidad=modalidades.id INNER JOIN estatus ON puente_disciplina.id_estatus=estatus.id WHERE atleta.id=$this->id_atleta";
+			$result=$cc->db->prepare($sql);
+			$result->execute();
+			$trae=$result->fetchAll();
+			return ($trae);
+		}
+
+		public function getBbecar()
+		{
+			$cc=Conexion::getInstance();
+			//$sql="SELECT a.*, b.descrip AS std FROM parroquia AS a INNER JOIN municipio AS b ON b.id=a.id_municipio ORDER BY std";
+			$sql="SELECT becar FROM puente_disciplina WHERE id_atleta=$this->id_atleta";
 			$result=$cc->db->prepare($sql);
 			$result->execute();
 			$trae=$result->fetchAll();
@@ -521,7 +542,7 @@ class Atleta extends ClaseBase
 		public function guardarPuente2()
 		{
 			$con = Conexion::getInstance();
-			$sql = "INSERT INTO puente_disciplina (id_atleta,id_disciplina,id_modalidad,id_estatus) VALUES ('$this->id_atleta','$this->id_disciplina','$this->id_modalidad','$this->id_estatus')";
+			$sql = "INSERT INTO puente_disciplina (id_atleta,id_disciplina,id_modalidad,id_estatus,becar) VALUES ('$this->id_atleta','$this->id_disciplina','$this->id_modalidad','$this->id_estatus','$this->becar')";
 			$result = $con->db->prepare($sql);
 			$insert = $result->execute();
 			return $insert;
@@ -549,7 +570,7 @@ class Atleta extends ClaseBase
 		public function modificarEstatus()
 		{
 			$con = Conexion::getInstance();
-			$sql = "UPDATE puente_disciplina SET id_estatus='$this->id_estatus' WHERE id=$this->id";
+			$sql = "UPDATE puente_disciplina SET id_estatus='$this->id_estatus', becar='$this->becar' WHERE id=$this->id";
 			$result = $con->db->prepare($sql);
 			$cambio = $result->execute();
 			return $cambio;

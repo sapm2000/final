@@ -15,6 +15,8 @@ if ($_GET['accion']=='ver_detalles')
 	{
 		$id=$d['id'];
 		$ide=$d['id_estatus'];
+		$bec=$d['becar'];
+
 	}
 
 	$todosal = $_SESSION['estatus'];
@@ -32,11 +34,26 @@ if ($_GET['accion']=='ver_detalles')
 	}
 	$estatus.= "</select>";
 
+	$becar.="<select name='becar' required>";
+	if ($bec==1) {
+		$becar.= "<option selected value='1'>SI</option>";
+		$becar.= "<option value='0'>NO</option>";
+
+	}
+	else {
+		$becar.= "<option value='1'>SI</option>";
+		$becar.= "<option value='0' selected>NO</option>";
+	}
+
+	$becar.= "</select>";
+
 	$cata.="<form name='modiform' method='post' action='../../Controlador/AtletaController.php?accion=modificarEstatus&id=".$id."'>";
 	$cata.="<table>";
 	$cata.="<tr>";
 	$cata.="<td>Estatus:</td>";
 	$cata.="<td>".$estatus."</td>";
+	$cata.="<td>disciplina becada?</td>";
+	$cata.="<td>".$becar."</td>";
 	$cata.="</tr>";
 	$cata.="</table>";
 	$cata.="<br><input type='submit' value='Modificar' id='submit' name='BtModificar'>";

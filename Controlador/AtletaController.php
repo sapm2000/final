@@ -445,6 +445,9 @@ switch($_REQUEST['accion'])
 	case 'seleccionarEstatus':
 	{
 		$atleta->setId($_GET['id']);
+		$atleta->setId_atleta($_GET['atleta']);
+
+		$_SESSION['id_atleta']=$atleta->getId_atleta();
 		$datos = $atleta->getEstatus();
 		$_SESSION['modiestatus'] = $datos;
 		$est = $estatu->getAll($tab);
@@ -896,10 +899,15 @@ case "registrarRegistro_medico":
 			$atleta->setId_disciplina($_POST['id_disciplina']);
 			$atleta->setId_modalidad($_POST['id_modalidad']);
 			$atleta->setId_estatus($_POST['id_estatus']);
+			$atleta->setBecar($_POST['becar']);
+			$becar=$atleta->getBecar();
+
+
 
 			$asd=$atleta->detdisciplinas();
 			$t= count($asd);
 			$idd=$atleta->getId_modalidad();
+
 
 			for ($i=0;$i<=$t;$i++) {
 				if ($idd==$asd[$i][0]) {
@@ -909,6 +917,16 @@ case "registrarRegistro_medico":
 					echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/atleta/datosdisciplina.php?accion=ver_detalles'>"; 
 					break 2;
 
+				}
+			}
+
+			$l=$atleta->getBbecar();
+			$v=count($l);
+			for ($w=0;$w<=$v;$w++) {
+				if ($l[$w][0]==$becar&&$becar==1) {
+					echo "<script>alert('este atleta ya esta becado por otra disciplina')</script>";//Mensaje de Sesión no válida
+					echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/atleta/datosdisciplina.php?accion=ver_detalles'>"; 
+					break 2;
 				}
 			}
 
@@ -1042,6 +1060,20 @@ case "registrarRegistro_medico":
 			{
 				$atleta->setId($_GET['id']);
 				$atleta->setId_estatus($_POST['id_estatus']);
+				$atleta->setId_atleta($_SESSION['id_atleta']);
+				$atleta->setBecar($_POST['becar']);
+				$becar=$atleta->getBecar();
+				$l=$atleta->getBbecar();
+				$v=count($l);
+				for ($w=0;$w<=$v;$w++) {
+					if ($l[$w][0]==$becar&&$becar==1) {
+						echo "<script>alert('este atleta ya esta becado por otra disciplina')</script>";//Mensaje de Sesión no válida
+						echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/atleta/datosdisciplina.php?accion=ver_detalles'>"; 
+						break 2;
+					}
+				
+				}
+
 				$atleta->modificarEstatus();
 				header("Location: ../Vista/atleta/consultaatleta.php?accion=actualizar");
 			}

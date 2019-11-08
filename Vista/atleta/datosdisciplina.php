@@ -16,6 +16,12 @@ $estadocivil='';
 $sexo='';
 $tipo='';
 
+$becar.="<select name='becar' required>";
+$becar.= "<option value=''>Seleccione si la disciplina sera becada</option>";
+$becar.= "<option value='1'>SI</option>";
+$becar.= "<option value='0'>NO</option>";
+$becar.= "</select>";
+
 
 if($_GET['accion']=='ver_detalles') {
 
@@ -69,6 +75,7 @@ $estatus1.= "</select>";
 	$form.='<td>'.$disciplina1.'</td>';
 	$form.='<td>'.$modalidad1.'</td>';
 	$form.='<td>'.$estatus1.'</td>';
+	$form.='<td>'.$becar.'</td>';
 	$form.='<tr>';
 	$form.='<td></td>';
 	$form.='<td> <input type="submit" value="Añadir Disciplina" id="submit" name="BtRegistrar1"> </td>';
@@ -86,13 +93,21 @@ $estatus1.= "</select>";
 	$catalogo = $_SESSION['catadisci1'];
 	$form.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrarDisciplina' method='post'>";
 	$form.="<table class=tabla-cat id=tabla>";
-	$form.="<tr><th>Disciplina</th><th>Modalidad</th><th>Estatus</th><th colspan='2'>Acción</th></tr>";
+	$form.="<tr><th>Disciplina</th><th>Modalidad</th><th>Estatus</th><th>estado beca</th><th colspan='2'>Acción</th></tr>";
 	foreach($catalogo as $cat)
 	{
 		$form.="<tr>";	
 		$form.="<td>".$cat['disciplina']."</td>";
 		$form.="<td>".$cat['modalidad']."</td>";
 		$form.="<td>".$cat['estatu']."</td>";
+		if ($cat['becar']==1) {
+			$form.="<td>BECADO</td>";
+		}
+		else {
+			$form.="<td> </td>";
+
+		}
+
 
 
 		$form.="<td><a href='../../Controlador/AtletaController.php?accion=seleccionarEstatus&id=".$cat['iddis']."&atleta=".$cat['id']."'>";
