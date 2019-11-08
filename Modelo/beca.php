@@ -67,13 +67,23 @@ class Beca extends ClaseBase
 		return $this->nombre;
 	}
 
+	public function setDisc($disc)
+	{
+		$this->disc = $disc;
+	}
+
+	public function getDisc()
+	{
+		return $this->disc;
+	}
+
 
 
 
 	public function todosBecas()
 	{
 		$cc = Conexion::getInstance();
-		$sql = "SELECT atleta.nombre, atleta.id, atleta.apellido, atleta.cedula, becas.monto,cuenta.nac,cuenta.cedula AS ced , cuenta.numeroc FROM atleta INNER JOIN becas ON atleta.id=becas.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id WHERE NOT cuenta.numeroc='' and atleta.activo='0'";
+		$sql = "SELECT atleta.nombre, atleta.id, atleta.apellido, atleta.cedula, becas.monto,becas.disc,cuenta.nac,cuenta.cedula AS ced , cuenta.numeroc FROM atleta INNER JOIN becas ON atleta.id=becas.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id WHERE NOT cuenta.numeroc='' and atleta.activo='0'";
 		$result = $cc->db->prepare($sql);
 		$result->execute();
 		$trae = $result->fetchAll();
@@ -83,7 +93,7 @@ class Beca extends ClaseBase
 	public function todosBecasgloriosos()
 	{
 		$cc = Conexion::getInstance();
-		$sql = "SELECT atleta.nombre, atleta.id, atleta.apellido, atleta.cedula, becas_gloria.monto,cuenta.nac,cuenta.cedula AS ced , cuenta.numeroc FROM atleta INNER JOIN becas_gloria ON atleta.id=becas_gloria.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id WHERE NOT cuenta.numeroc='' and atleta.activo='2'";
+		$sql = "SELECT atleta.nombre, atleta.id, atleta.apellido, atleta.cedula, becas_gloria.monto, becas_gloria.disc, cuenta.nac,cuenta.cedula AS ced , cuenta.numeroc FROM atleta INNER JOIN becas_gloria ON atleta.id=becas_gloria.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id WHERE NOT cuenta.numeroc='' and atleta.activo='2'";
 		$result = $cc->db->prepare($sql);
 		$result->execute();
 		$trae = $result->fetchAll();
@@ -106,7 +116,7 @@ class Beca extends ClaseBase
 	public function todosatletas()
 	{
 		$cc = Conexion::getInstance();
-		$sql = "SELECT atleta.nombre, atleta.id, atleta.apellido, atleta.cedula, becas.monto,cuenta.nac,cuenta.cedula AS ced , cuenta.numeroc FROM atleta LEFT OUTER JOIN becas ON atleta.id=becas.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id WHERE NOT cuenta.numeroc='' and atleta.activo='0'";
+		$sql = "SELECT atleta.nombre, atleta.id, atleta.apellido, atleta.cedula, becas.monto,cuenta.nac,cuenta.cedula AS ced , cuenta.numeroc, puente_disciplina.becar,disciplinas.disciplina FROM atleta LEFT OUTER JOIN becas ON atleta.id=becas.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id INNER JOIN puente_disciplina ON atleta.id=puente_disciplina.id_atleta INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id WHERE NOT cuenta.numeroc='' and atleta.activo='0' and becar=1";
 		$result = $cc->db->prepare($sql);
 		$result->execute();
 		$trae = $result->fetchAll();
@@ -116,7 +126,7 @@ class Beca extends ClaseBase
 	public function todosatletasgloriosos()
 	{
 		$cc = Conexion::getInstance();
-		$sql = "SELECT atleta.nombre, atleta.id, atleta.apellido, atleta.cedula, becas_gloria.monto,cuenta.nac,cuenta.cedula AS ced , cuenta.numeroc FROM atleta LEFT OUTER JOIN becas_gloria ON atleta.id=becas_gloria.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id WHERE NOT cuenta.numeroc='' and atleta.activo='2'";
+		$sql = "SELECT atleta.nombre, atleta.id, atleta.apellido, atleta.cedula, becas.monto,cuenta.nac,cuenta.cedula AS ced , cuenta.numeroc, puente_disciplina.becar,disciplinas.disciplina FROM atleta LEFT OUTER JOIN becas ON atleta.id=becas.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id INNER JOIN puente_disciplina ON atleta.id=puente_disciplina.id_atleta INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id WHERE NOT cuenta.numeroc='' and atleta.activo='2' and becar=1";
 		$result = $cc->db->prepare($sql);
 		$result->execute();
 		$trae = $result->fetchAll();
@@ -126,7 +136,7 @@ class Beca extends ClaseBase
 	public function getDetalles()
 	{
 		$cc = Conexion::getInstance();
-		$sql = "SELECT atleta.*, becas_total.monto FROM atleta INNER JOIN becas_total ON becas_total.id_atleta=atleta.id WHERE fecha='$this->fecha' and becas_total.nombre='$this->nombre'";
+		$sql = "SELECT atleta.*, becas_total.monto,becas_total.disc FROM atleta INNER JOIN becas_total ON becas_total.id_atleta=atleta.id WHERE fecha='$this->fecha' and becas_total.nombre='$this->nombre'";
 		$result = $cc->db->prepare($sql);
 		$result->execute();
 		$trae = $result->fetchAll();
@@ -155,7 +165,7 @@ class Beca extends ClaseBase
 	public function guardarPersona()
 	{
 		$con = Conexion::getInstance();
-		$sql = "INSERT INTO $this->tabla (id_atleta,monto) VALUES ('$this->id_atleta','$this->monto')";
+		$sql = "INSERT INTO $this->tabla (id_atleta,monto,disc) VALUES ('$this->id_atleta','$this->monto','$this->disc')";
 		$result = $con->db->prepare($sql);
 		$insert = $result->execute();
 		return $insert;
@@ -163,7 +173,7 @@ class Beca extends ClaseBase
 	public function guardarPersonagloriosa()
 	{
 		$con = Conexion::getInstance();
-		$sql = "INSERT INTO becas_gloria (id_atleta,monto) VALUES ('$this->id_atleta','$this->monto')";
+		$sql = "INSERT INTO becas_gloria (id_atleta,monto,disc) VALUES ('$this->id_atleta','$this->monto','$this->disc')";
 		$result = $con->db->prepare($sql);
 		$insert = $result->execute();
 		return $insert;
@@ -172,7 +182,7 @@ class Beca extends ClaseBase
 	public function guardarRegistro()
 	{
 		$con = Conexion::getInstance();
-		$sql = "INSERT INTO becas_total (id_atleta,monto,fecha,nombre) VALUES ('$this->id_atleta','$this->monto','$this->fecha','$this->nombre')";
+		$sql = "INSERT INTO becas_total (id_atleta,monto,fecha,nombre,disc) VALUES ('$this->id_atleta','$this->monto','$this->fecha','$this->nombre','$this->disc')";
 		$result = $con->db->prepare($sql);
 		$insert = $result->execute();
 		return $insert;
