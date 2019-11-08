@@ -32,7 +32,7 @@
         $cata.= '</table>';
 
 		$cata.="<table class=tabla-cat id=tabla>";
-        $cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Monto</th></tr>";
+        $cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Monto</th></tr>";
         $data = '';
         $bice='';
 	    foreach($catalogo as $cat)

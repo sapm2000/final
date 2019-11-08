@@ -205,9 +205,6 @@ table.tabla-catdetalle
    font-size: 15;
    position: absolute;
    top: 19%;
-   left: 15%;
-   margin-left: 25px;
-   right: 10%;
    margin-top: 7%;
    font-family: fantasy;
 }
@@ -235,10 +232,7 @@ table.tabla-catdeta
    border-radius: 8px 8px 8px 8px;
    position: absolute;
    top: 19%;
-   left: 23%;
-   margin-left: 0px;
    margin-top: 7%;
-   right: 32%;
 }
 
 table.tabla-catdeta td 
