@@ -78,10 +78,16 @@ $estatus1.= "</select>";
 	$form.='<td>'.$becar.'</td>';
 	$form.='<tr>';
 	$form.='<td></td>';
-	$form.='<td> <input type="submit" value="Añadir Disciplina" id="submit" name="BtRegistrar1"> </td>';
+	$form.='<td>  </td>';
 	$form.='</tr>';
 	$form.='</tr>';
 	$form.='</tr>';
+
+	$form.='<table align="center">';
+	$form.='<tr>';
+	$form.='<td><input type="submit" value="Añadir Disciplina" id="submit" name="BtRegistrar1"></td>';
+	$form.='</tr>';
+	$form.='</table>';
 
 
 	$datoss = $_SESSION['modidisciplinas'];
@@ -93,7 +99,7 @@ $estatus1.= "</select>";
 	$catalogo = $_SESSION['catadisci1'];
 	$form.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrarDisciplina' method='post'>";
 	$form.="<table class=tabla-cat id=tabla>";
-	$form.="<tr><th>Disciplina</th><th>Modalidad</th><th>Estatus</th><th>estado beca</th><th colspan='2'>Acción</th></tr>";
+	$form.="<tr><th>Disciplina</th><th>Modalidad</th><th>Estatus</th><th>Estado Beca</th><th colspan='2'>Acción</th></tr>";
 	foreach($catalogo as $cat)
 	{
 		$form.="<tr>";	
