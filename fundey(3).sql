@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-11-2019 a las 18:39:13
+-- Tiempo de generación: 08-11-2019 a las 20:52:15
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.4
 
@@ -733,19 +733,22 @@ CREATE TABLE `puente_disciplina` (
   `id_atleta` int(11) NOT NULL,
   `id_disciplina` int(11) NOT NULL,
   `id_modalidad` int(11) NOT NULL,
-  `id_estatus` int(11) NOT NULL
+  `id_estatus` int(11) NOT NULL,
+  `becar` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `puente_disciplina`
 --
 
-INSERT INTO `puente_disciplina` (`id`, `id_atleta`, `id_disciplina`, `id_modalidad`, `id_estatus`) VALUES
-(2, 1, 3, 6, 7),
-(4, 3, 3, 6, 1),
-(12, 2, 3, 6, 7),
-(13, 3, 4, 1, 1),
-(14, 3, 11, 2, 1);
+INSERT INTO `puente_disciplina` (`id`, `id_atleta`, `id_disciplina`, `id_modalidad`, `id_estatus`, `becar`) VALUES
+(4, 3, 3, 6, 1, 0),
+(12, 2, 3, 6, 7, 0),
+(13, 3, 4, 1, 1, 0),
+(14, 3, 11, 2, 1, 0),
+(16, 1, 3, 6, 8, 1),
+(18, 1, 4, 1, 1, 0),
+(19, 1, 11, 2, 8, 0);
 
 -- --------------------------------------------------------
 
@@ -1228,7 +1231,7 @@ ALTER TABLE `puente_discapacidad`
 -- AUTO_INCREMENT de la tabla `puente_disciplina`
 --
 ALTER TABLE `puente_disciplina`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `puente_registro_medico`

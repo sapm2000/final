@@ -7,8 +7,8 @@ if(empty($_SESSION['nombre']))
 
 if ($_GET['accion']=='ver_detalles')
 {
+	$perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
 	$cata='';
-	$perfil='';
 	$boton='';
 	$datos = $_SESSION['modiestatus'];
 	foreach($datos as $d)
@@ -52,7 +52,7 @@ if ($_GET['accion']=='ver_detalles')
 	$cata.="<tr>";
 	$cata.="<td>Estatus:</td>";
 	$cata.="<td>".$estatus."</td>";
-	$cata.="<td>disciplina becada?</td>";
+	$cata.="<td>¿Disciplina Becada?:</td>";
 	$cata.="<td>".$becar."</td>";
 	$cata.="</tr>";
 	$cata.="</table>";
@@ -68,7 +68,8 @@ $diccionario = array
 	'TITULO'=>'Atleta',
 	'CATALOGO'=>$cata,
 	'BOTONREG'=>$boton,
-	'FORMULARIO'=>$form
+	'FORMULARIO'=>$form,
+	'MENU'=>$_SESSION['menu']
 );
 $template = file_get_contents('../Plantilla/ventanamodal.html');
 foreach ($diccionario as $clave=>$valor)
