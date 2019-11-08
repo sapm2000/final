@@ -239,7 +239,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
 
 	$contarmod = $_SESSION['mujermodalidad'];
 
-	$reporte.="<center><h2>Cantidad de Atletas Femeninos Registrados por Modalidad</h2></center>";
+	$cata.="<center><h2>Cantidad de Atletas Femeninos Registrados por Modalidad</h2></center>";
 	$cata.="<table class=tabla-cat id=tabla>";
 
 	$reporte.="<center><h2>Cantidad de Atletas Femeninos Registrados por Modalidad</h2></center>";
