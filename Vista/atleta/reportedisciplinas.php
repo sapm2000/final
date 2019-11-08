@@ -39,10 +39,12 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
 	$cata.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrar' method='post'>";
 	$cata.="<table class=tabla-cat id=tabla>";
 
+	$reporte.="<center><h2>Atletas Masculinos en Cada Disciplina</h2></center>";
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
 	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Modalidad</th><th>Estatus</th></tr>";
+
 	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Modalidad</th><th>Estatus</th></tr>";
 
 	foreach($catalogo as $cat)
@@ -85,7 +87,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
 
 	$cata.="<table class=tabla-cat id=tabla>";
 
-	$reporte.="<center><h1>Reporte de la Cantidad de Atletas en Cada Disciplina</h1></center>";
+	$reporte.="<center><h2>Cantidad de Atletas Masculinos Registrados por Disciplina</h2></center>";
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 
@@ -119,7 +121,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
 
 	$cata.="<table class=tabla-cat id=tabla>";
 
-	$reporte.="<center><h1>Reporte de la Cantidad de Atletas en Cada Disciplina y su Modalidad</h1></center>";
+	$reporte.="<center><h2>Cantidad de Atletas Masculinos Registrados por Modalidad</h2></center>";
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 
@@ -154,11 +156,12 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
 
 	$cata.="<table class=tabla-cat id=tabla>";
 
+	$reporte.="<center><h2>Atletas Femeninos en Cada Disciplina</h2></center>";
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
-	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Modalidad</th><th>Estatus</th></tr>";
-	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Modalidad</th><th>Estatus</th></tr>";
+	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplinas</th><th>Modalidades</th><th>Estatus</th></tr>";
+	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplinas</th><th>Modalidades</th><th>Estatus</th></tr>";
 
 	foreach($catalogo as $cat)
 	{
@@ -200,7 +203,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
 
 	$cata.="<table class=tabla-cat id=tabla>";
 
-	$reporte.="<center><h1>Reporte de la Cantidad de Atletas en Cada Disciplina</h1></center>";
+	$reporte.="<center><h2>Cantidad de Atletas Femeninos Registrados por Disciplina</h2></center>";
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 
@@ -234,12 +237,12 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
 
 	$cata.="<table class=tabla-cat id=tabla>";
 
-	$reporte.="<center><h1>Reporte de la Cantidad de Atletas en Cada Disciplina y su Modalidad</h1></center>";
+	$reporte.="<center><h2>Cantidad de Atletas Femeninos Registrados por Modalidad</h2></center>";
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 
-	$cata.="<tr><th>Disciplina</th><th>Modalidad</th><th>Total</th></tr>";
-	$reporte.="<tr><th>Disciplina</th><th>Modalidad</th><th>Total</th></tr>";
+	$cata.="<tr><th>Disciplinas</th><th>Modalidades</th><th>Total</th></tr>";
+	$reporte.="<tr><th>Disciplinas</th><th>Modalidades</th><th>Total</th></tr>";
 
 	foreach($contarmod as $conta)
 	{
@@ -270,7 +273,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
 
 	$cata.="<table class=tabla-cat id=tabla>";
 
-	$reporte.="<center><h1>Reporte de la Cantidad de Atletas en Cada Disciplina</h1></center>";
+	$reporte.="<center><h2>Cantidad Total de Atletas Registrados por Disciplina</h1></center>";
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 
@@ -304,12 +307,12 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['hombres']))
 
 	$cata.="<table class=tabla-cat id=tabla>";
 
-	$reporte.="<center><h1>Reporte de la Cantidad de Atletas en Cada Disciplina y su Modalidad</h1></center>";
+	$reporte.="<center><h2>Cantidad Total de Atletas Registrados por Modalidad</h2></center>";
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 
-	$cata.="<tr><th>Disciplina</th><th>Modalidad</th><th>Total</th></tr>";
-	$reporte.="<tr><th>Disciplina</th><th>Modalidad</th><th>Total</th></tr>";
+	$cata.="<tr><th>Disciplinas</th><th>Modalidades</th><th>Total</th></tr>";
+	$reporte.="<tr><th>Disciplinas</th><th>Modalidades</th><th>Total</th></tr>";
 
 	foreach($contarmod as $conta)
 	{
