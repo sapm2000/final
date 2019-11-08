@@ -238,15 +238,25 @@ switch($_REQUEST['accion'])
 
 	case "buscafiltrosdisciplinas":
 	{
-		$n = $atleta->getdisandmod();
-		$_SESSION['disciplinas'] = $n;
+		$n = $atleta->getdisandmodhombres();
+		$_SESSION['hombres'] = $n;
 		$_SESSION['titulo']='Reporte de Disciplinas de los Atletas';
+		$m = $atleta->getdisandmodmujeres();
+		$_SESSION['mujeres'] = $m;
 
-		$s = $atleta->cuentadisciplinas();
-		$_SESSION['contar'] = $s;
+		$t = $atleta->cuentadisciplinas();
+		$_SESSION['totaldisciplina'] = $t;
+		$s = $atleta->cuentadisciplinashombres();
+		$_SESSION['hombredisciplina'] = $s;
+		$a = $atleta->cuentadisciplinasmujeres();
+		$_SESSION['mujerdisciplina'] = $a;
 
-		$x = $atleta->cuentamodalidades();
-		$_SESSION['contarmod'] = $x;
+		$w = $atleta->cuentamodalidades();
+		$_SESSION['totalmodalidad'] = $w;
+		$x = $atleta->cuentamodalidadeshombre();
+		$_SESSION['hombremodalidad'] = $x;
+		$z = $atleta->cuentamodalidadesmujer();
+		$_SESSION['mujermodalidad'] = $z;
 		
 		
 		header("Location: ../Vista/atleta/reportedisciplinas.php?accion=actual");
