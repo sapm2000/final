@@ -837,7 +837,7 @@ class Atleta extends ClaseBase
 		public function detalledisciplinas()
 		{
 			$cc = Conexion::getInstance();
-			$sql = "SELECT atleta.cedula, atleta.nac, atleta.nombre,atleta.apellido,disciplinas.disciplina,modalidades.modalidad,estatus.estatu FROM puente_disciplina INNER JOIN atleta on puente_disciplina.id_atleta=atleta.id INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id INNER JOIN modalidades ON puente_disciplina.id_modalidad=modalidades.id INNER JOIN estatus ON puente_disciplina.id_estatus=estatus.id WHERE atleta.activo=0 and atleta.sexo='M' and disciplinas.disciplina='$this->primer'";
+			$sql = "SELECT atleta.cedula, atleta.nac, atleta.nombre,atleta.apellido,disciplinas.disciplina,modalidades.modalidad,estatus.estatu FROM puente_disciplina INNER JOIN atleta on puente_disciplina.id_atleta=atleta.id INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id INNER JOIN modalidades ON puente_disciplina.id_modalidad=modalidades.id INNER JOIN estatus ON puente_disciplina.id_estatus=estatus.id WHERE atleta.activo=0 and atleta.sexo='M' and disciplinas.disciplina='$this->primer' GROUP BY atleta.nombre";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			$trae = $result->fetchAll();
@@ -847,7 +847,7 @@ class Atleta extends ClaseBase
 		public function detalledisciplinasmujer()
 		{
 			$cc = Conexion::getInstance();
-			$sql = "SELECT atleta.cedula, atleta.nac, atleta.nombre,atleta.apellido,disciplinas.disciplina,modalidades.modalidad,estatus.estatu FROM puente_disciplina INNER JOIN atleta on puente_disciplina.id_atleta=atleta.id INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id INNER JOIN modalidades ON puente_disciplina.id_modalidad=modalidades.id INNER JOIN estatus ON puente_disciplina.id_estatus=estatus.id WHERE atleta.activo=0 and atleta.sexo='F' and disciplinas.disciplina='$this->primer'";
+			$sql = "SELECT atleta.cedula, atleta.nac, atleta.nombre,atleta.apellido,disciplinas.disciplina,modalidades.modalidad,estatus.estatu FROM puente_disciplina INNER JOIN atleta on puente_disciplina.id_atleta=atleta.id INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id INNER JOIN modalidades ON puente_disciplina.id_modalidad=modalidades.id INNER JOIN estatus ON puente_disciplina.id_estatus=estatus.id WHERE atleta.activo=0 and atleta.sexo='F' and disciplinas.disciplina='$this->primer' GROUP BY atleta.nombre";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			$trae = $result->fetchAll();
@@ -858,7 +858,7 @@ class Atleta extends ClaseBase
 		public function cuentapordisciplina()
 		{
 			$cc = Conexion::getInstance();
-			$sql = "SELECT atleta.cedula, atleta.nac, atleta.nombre,atleta.apellido, count(*) AS contar, disciplinas.disciplina,modalidades.modalidad,estatus.estatu FROM puente_disciplina INNER JOIN atleta on puente_disciplina.id_atleta=atleta.id INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id INNER JOIN modalidades ON puente_disciplina.id_modalidad=modalidades.id INNER JOIN estatus ON puente_disciplina.id_estatus=estatus.id WHERE atleta.activo=0 and atleta.sexo='M' and disciplinas.disciplina='$this->primer'";
+			$sql = "SELECT disciplinas.disciplina FROM puente_disciplina INNER JOIN atleta on puente_disciplina.id_atleta=atleta.id INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id INNER JOIN modalidades ON puente_disciplina.id_modalidad=modalidades.id INNER JOIN estatus ON puente_disciplina.id_estatus=estatus.id WHERE atleta.activo=0 and atleta.sexo='M' and disciplinas.disciplina='$this->primer' GROUP BY atleta.nombre ";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			$trae = $result->fetchAll();
@@ -868,7 +868,7 @@ class Atleta extends ClaseBase
 		public function cuentapordisciplinamujer()
 		{
 			$cc = Conexion::getInstance();
-			$sql = "SELECT atleta.cedula, atleta.nac, atleta.nombre,atleta.apellido, count(*) AS contar, disciplinas.disciplina,modalidades.modalidad,estatus.estatu FROM puente_disciplina INNER JOIN atleta on puente_disciplina.id_atleta=atleta.id INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id INNER JOIN modalidades ON puente_disciplina.id_modalidad=modalidades.id INNER JOIN estatus ON puente_disciplina.id_estatus=estatus.id WHERE atleta.activo=0 and atleta.sexo='F' and disciplinas.disciplina='$this->primer'";
+			$sql = "SELECT disciplinas.disciplina FROM puente_disciplina INNER JOIN atleta on puente_disciplina.id_atleta=atleta.id INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id INNER JOIN modalidades ON puente_disciplina.id_modalidad=modalidades.id INNER JOIN estatus ON puente_disciplina.id_estatus=estatus.id WHERE atleta.activo=0 and atleta.sexo='F' and disciplinas.disciplina='$this->primer' GROUP BY atleta.nombre ";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			$trae = $result->fetchAll();
