@@ -45,13 +45,13 @@ for ($i=0;$i<=$_SESSION['contadormod'];$i++ ){
 
 	$cata.="<table class=tabla-cat id=tabla>";
 	
-		$cata.="<h2> modalidad ".$_SESSION['ertitulo'.$i]." Masculino</h2>";
+		$cata.="<h2> MODALIDAD ".$_SESSION['ertitulo'.$i]." MASCULINO</h2>";
 		$cata.="<th>Cantidad</th>";
 		$cata.="<tr><td>".$_SESSION['cue'.$i]."</td></tr>";
 	
 	$cata.="</table><br>";
 
-	$reporte.="<center><h2> modalidad ".$_SESSION['ertitulo'.$i]." Masculino</h2></center>";
+	$reporte.="<center><h2> MODALIDAD ".$_SESSION['ertitulo'.$i]." MASCULINO</h2></center>";
 	$reporte.="<table class=tabla-cat id=tabla align=center>";
 	$reporte.="<table class=tabla-catdisci id=tabla align=center>";
 	$reporte.="<tr><th>Cantidad</th></tr>";
@@ -74,9 +74,9 @@ for ($i=0;$i<=$_SESSION['contadormod'];$i++ ){
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
-	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th></tr>";
+	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Modalidad</th></tr>";
 
-	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th></tr>";
+	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Modalidad</th></tr>";
 
 	foreach($catalogo as $cat)
 	{
@@ -121,14 +121,14 @@ for ($i=0;$i<=$_SESSION['contadormod'];$i++ ){
 		$contar = $_SESSION['cueF'.$i];
 
 	$cata.="<table class=tabla-cat id=tabla>";
-	$cata.="<h2> modalidad ".$_SESSION['ertituloF'.$i]." Femenino</h2>";
+	$cata.="<h2> MODALIDAD ".$_SESSION['ertituloF'.$i]." FEMENINO</h2>";
 	$cata.="<th>Cantidad</th>";
 	$cata.="<tr><td>".$_SESSION['cueF'.$i]."</td></tr>";
 	
 	$cata.="</table><br>";
 
 
-	$reporte.="<center><h2> modalidad ".$_SESSION['ertituloF'.$i]." Femenino</h2></center>";
+	$reporte.="<center><h2> MODALIDAD ".$_SESSION['ertituloF'.$i]." FEMENINO</h2></center>";
 	$reporte.="<table class=tabla-cat id=tabla align=center>";
 	$reporte.="<table class=tabla-catdisci id=tabla align=center>";
 	$reporte.="<tr><th>Cantidad</th></tr>";
@@ -149,9 +149,9 @@ for ($i=0;$i<=$_SESSION['contadormod'];$i++ ){
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
-	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th></tr>";
+	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Modalidad</th></tr>";
 
-	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th></tr>";
+	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Modalidad</th></tr>";
 
 	foreach($catalogo as $cat)
 	{
@@ -208,7 +208,7 @@ if (empty($_SESSION['hombres'])) {
 $diccionario = array 
 (
 	'PERFIL' => $perfil,
-	'TITULO'=>'reporte de '.$titulo,
+	'TITULO'=>'REPORTE DE '.$titulo,
 	'CATALOGO'=>$cata,
 	'BOTONREG'=>$boton,
 	'FORMULARIO'=>$form, 	
