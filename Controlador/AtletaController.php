@@ -238,26 +238,27 @@ switch($_REQUEST['accion'])
 
 	case "buscafiltrosdisciplinas":
 	{
-		$n = $atleta->getdisandmodhombres();
-		$_SESSION['hombres'] = $n;
 		$_SESSION['titulo']='Reporte de Atletas por Disciplinas';
-		$m = $atleta->getdisandmodmujeres();
-		$_SESSION['mujeres'] = $m;
 
-		$t = $atleta->cuentadisciplinas();
-		$_SESSION['totaldisciplina'] = $t;
-		$s = $atleta->cuentadisciplinashombres();
-		$_SESSION['hombredisciplina'] = $s;
-		$a = $atleta->cuentadisciplinasmujeres();
-		$_SESSION['mujerdisciplina'] = $a;
+		$disc=$atleta->traeDisciplinas();
+		$t=$atleta->cuentaDisciplina();
+		$_SESSION['contador']=$t[0][0];
+		for ($i=0;$i<=$t[0][0];$i++) {
+			$atleta->setPrimer($disc[$i][0]);
 
-		$w = $atleta->cuentamodalidades();
-		$_SESSION['totalmodalidad'] = $w;
-		$x = $atleta->cuentamodalidadeshombre();
-		$_SESSION['hombremodalidad'] = $x;
-		$z = $atleta->cuentamodalidadesmujer();
-		$_SESSION['mujermodalidad'] = $z;
-		
+			$_SESSION['disc'.$i]=$atleta->detalledisciplinas();
+			$_SESSION['cue'.$i]=$atleta->cuentapordisciplina();
+
+		}
+
+		for ($i=0;$i<=$t[0][0];$i++) {
+			$atleta->setPrimer($disc[$i][0]);
+
+			$_SESSION['discF'.$i]=$atleta->detalledisciplinasmujer();
+			$_SESSION['cueF'.$i]=$atleta->cuentapordisciplinamujer();
+
+		}
+
 		
 		header("Location: ../Vista/atleta/reportedisciplinas.php?accion=actual");
 		break;
