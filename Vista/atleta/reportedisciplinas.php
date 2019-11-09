@@ -52,11 +52,15 @@ for ($i=0;$i<=$_SESSION['contador'];$i++ ){
 	}
 	$cata.="</table><br>";
 
-	$reporte.="<table class=tabla-cat id=tabla>";
+	$reporte.="<center><h2>".$con['disciplina']." Masculino</h2></center>";
+	$reporte.="<table class=tabla-cat id=tabla align=center>";
+	$reporte.="<table class=tabla-catdisci id=tabla align=center>";
 	foreach($contar as $con) {
-		$reporte.="<tr><th>".$con['disciplina']." Masculino</th>";
-		$reporte.="<td>".$con['contar']."</td>";
+
+		$reporte.="<tr><th>Cantidad</th></tr>";
+		$reporte.="<tr><td>".$con['contar']."</td></tr>";
 	}
+	$reporte.="</table>";
 	$reporte.="</table><br>";
 	
 
@@ -131,12 +135,20 @@ for ($i=0;$i<=$_SESSION['contador'];$i++ ){
 	}
 	$cata.="</table><br>";
 
-	$reporte.="<table class=tabla-cat id=tabla>";
+
+	$reporte.="<center><h2>".$con['disciplina']." Femenino</h2></center>";
+	$reporte.="<table class=tabla-cat id=tabla align=center>";
+	$reporte.="<table class=tabla-catdisci id=tabla align=center>";
 	foreach($contar as $con) {
-		$reporte.="<tr><th>".$con['disciplina']." Masculino</th>";
-		$reporte.="<td>".$con['contar']."</td>";
+
+		$reporte.="<tr><th>Cantidad</th></tr>";
+		$reporte.="<tr><td>".$con['contar']."</td></tr>";
 	}
 	$reporte.="</table><br>";
+	$reporte.="</table><br>";
+
+
+
 
 	$catalogo = $_SESSION['discF'.$i];
 	$cata.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrar' method='post'>";
