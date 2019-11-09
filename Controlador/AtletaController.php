@@ -1521,15 +1521,48 @@ case "registrarRegistro_medico":
 			case 'filtrodisciplinas':
 			{
 				$atleta->setPrimer($_POST['primer']);
-				
-				
-				$n = $atleta->getDdisciplinas();
-				$_SESSION['disciplinas'] = $n;
+				$y=$atleta->traela();
+				$_SESSION['discipli']=$y[0][0];
 
 				
+				$disc=$atleta->traemodalidades();
+				var_dump($disc);
+				$t=$atleta->cuentamodalidadesdefinitivo();
+
+				$_SESSION['contadormod']=$t[0][0];
+
+				for ($i=0;$i<=$t[0][0];$i++) {
+					$atleta->setSegundo($disc[$i][0]);
+					$_SESSION['ertitulo'.$i]=$atleta->getSegundo();
+		
+					$_SESSION['disc'.$i]=$atleta->detallemodalidad();
+					$u=$atleta->cuentapormodalidad();
+					$_SESSION['cue'.$i]=$u[0][0];
+					
+					echo($_SESSION['cue'.$i]);
+					
+					
+
+				}
+
+				for ($i=0;$i<=$t[0][0];$i++) {
+					$atleta->setSegundo($disc[$i][0]);
+					$_SESSION['ertituloF'.$i]=$atleta->getSegundo();
+		
+					$_SESSION['discF'.$i]=$atleta->detallemodalidadmujer();
+					$u=$atleta->cuentapormodalidadmujer();
+					$_SESSION['cueF'.$i]=$u[0][0];
+					
+					echo($_SESSION['cueF'.$i]);
+					var_dump ($_SESSION['discF'.$i]);
+
+
+				}
+
+			
 
 				
-				header("Location: ../Vista/atleta/reportedisciplinas.php?accion=actual");
+				header("Location: ../Vista/atleta/reportedisciplinaespecifica.php?accion=actual");
 				break;
 			}
 
