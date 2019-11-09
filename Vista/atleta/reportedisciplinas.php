@@ -70,7 +70,7 @@ for ($i=0;$i<=$_SESSION['contador'];$i++ ){
 
 	$cata.="<table class=tabla-cat id=tabla>";
 
-	$reporte.="<center><h2>Atletas Masculinos en Cada Disciplina</h2></center>";
+
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
@@ -144,7 +144,7 @@ for ($i=0;$i<=$_SESSION['contador'];$i++ ){
 
 	$cata.="<table class=tabla-cat id=tabla>";
 
-	$reporte.="<center><h2>Atletas Femeninos en Cada Disciplina</h2></center>";
+
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
