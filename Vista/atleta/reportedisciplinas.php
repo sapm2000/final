@@ -74,9 +74,9 @@ for ($i=0;$i<=$_SESSION['contador'];$i++ ){
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
-	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Estatus</th></tr>";
+	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th></tr>";
 
-	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Estatus</th></tr>";
+	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th></tr>";
 
 	foreach($catalogo as $cat)
 	{
@@ -87,7 +87,6 @@ for ($i=0;$i<=$_SESSION['contador'];$i++ ){
 		$cata.="<td>".$cat['nombre']."</td>";	
 		$cata.="<td>".$cat['apellido']."</td>";	
 		$cata.="<td>".$cat['disciplina']."</td>";	
-		$cata.="<td>".$cat['estatu']."</td>";	
 		
 
 
@@ -98,7 +97,6 @@ for ($i=0;$i<=$_SESSION['contador'];$i++ ){
 		$reporte.="<td>".$cat['nombre']."</td>";	
 		$reporte.="<td>".$cat['apellido']."</td>";	
 		$reporte.="<td>".$cat['disciplina']."</td>";	
-		$reporte.="<td>".$cat['estatu']."</td>";		
 
 
 	}
@@ -151,9 +149,9 @@ for ($i=0;$i<=$_SESSION['contador'];$i++ ){
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
-	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Estatus</th></tr>";
+	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th></tr>";
 
-	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Estatus</th></tr>";
+	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th></tr>";
 
 	foreach($catalogo as $cat)
 	{
@@ -164,7 +162,6 @@ for ($i=0;$i<=$_SESSION['contador'];$i++ ){
 		$cata.="<td>".$cat['nombre']."</td>";	
 		$cata.="<td>".$cat['apellido']."</td>";	
 		$cata.="<td>".$cat['disciplina']."</td>";	
-		$cata.="<td>".$cat['estatu']."</td>";	
 		
 
 
@@ -175,7 +172,6 @@ for ($i=0;$i<=$_SESSION['contador'];$i++ ){
 		$reporte.="<td>".$cat['nombre']."</td>";	
 		$reporte.="<td>".$cat['apellido']."</td>";	
 		$reporte.="<td>".$cat['disciplina']."</td>";	
-		$reporte.="<td>".$cat['estatu']."</td>";		
 
 
 	}
