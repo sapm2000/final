@@ -41,14 +41,33 @@ for ($i=0;$i<=$_SESSION['contador'];$i++ ){
 
 	else {
 
+		$contar = $_SESSION['cue'.$i];
+
+	$cata.="<table class=tabla-cat id=tabla>";
+	foreach($contar as $con) {
+		$cata.="<h2>".$con['disciplina']." Masculino</h2>";
+		$cata.="<th>Cantidad</th>";
+		$cata.="<tr><td>".$con['contar']."</td></tr>";
+	}
+	$cata.="</table><br>";
+
+	$reporte.="<table class=tabla-cat id=tabla>";
+	foreach($contar as $con) {
+		$reporte.="<h2>".$con['disciplina']." Masculino</h2>";
+		$reporte.="<th>Cantidad</th>";
+		$reporte.="<tr><td>".$con['contar']."</td></tr>";
+	}
+	$reporte.="</table><br>";
+
 	
 
 
 
+		
 
 	$catalogo = $_SESSION['disc'.$i];
 	$cata.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrar' method='post'>";
-	$cata.="<center><h2>Atletas Masculinos en Cada Disciplina</h2></center>";
+
 	$cata.="<table class=tabla-cat id=tabla>";
 
 	$reporte.="<center><h2>Atletas Masculinos en Cada Disciplina</h2></center>";
@@ -94,21 +113,7 @@ for ($i=0;$i<=$_SESSION['contador'];$i++ ){
 	
 	$reporte.="</table><br>";
 
-	$contar = $_SESSION['cue'.$i];
-
-	$cata.="<table class=tabla-cat id=tabla>";
-	foreach($contar as $con) {
-		$cata.="<tr><th>".$con['disciplina']." Masculino</th>";
-		$cata.="<td>".$con['contar']."</td>";
-	}
-	$cata.="</table><br>";
-
-	$reporte.="<table class=tabla-cat id=tabla>";
-	foreach($contar as $con) {
-		$reporte.="<tr><th>".$con['disciplina']." Masculino</th>";
-		$reporte.="<td>".$con['contar']."</td>";
-	}
-	$reporte.="</table><br>";
+	
 }
 
 	if (empty($_SESSION['discF'.$i])) {
@@ -117,14 +122,29 @@ for ($i=0;$i<=$_SESSION['contador'];$i++ ){
 
 	else {
 
-	
+		$contar = $_SESSION['cueF'.$i];
+
+	$cata.="<table class=tabla-cat id=tabla>";
+	foreach($contar as $con) {
+		$cata.="<h2>".$con['disciplina']." Femenino</h2>";
+		$cata.="<th>Cantidad</th>";
+		$cata.="<tr><td>".$con['contar']."</td></tr>";
+	}
+	$cata.="</table><br>";
+
+	$reporte.="<table class=tabla-cat id=tabla>";
+	foreach($contar as $con) {
+		$reporte.="<tr><th>".$con['disciplina']." Masculino</th>";
+		$reporte.="<td>".$con['contar']."</td>";
+	}
+	$reporte.="</table><br>";
 
 	$catalogo = $_SESSION['discF'.$i];
 	$cata.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrar' method='post'>";
-	$cata.="<center><h2>Atletas Masculinos en Cada Disciplina</h2></center>";
+
 	$cata.="<table class=tabla-cat id=tabla>";
 
-	$reporte.="<center><h2>Atletas Masculinos en Cada Disciplina</h2></center>";
+	$reporte.="<center><h2>Atletas Femeninos en Cada Disciplina</h2></center>";
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
@@ -167,21 +187,7 @@ for ($i=0;$i<=$_SESSION['contador'];$i++ ){
 	
 	$reporte.="</table><br>";
 
-	$contar = $_SESSION['cueF'.$i];
 
-	$cata.="<table class=tabla-cat id=tabla>";
-	foreach($contar as $con) {
-		$cata.="<tr><th>".$con['disciplina']." Masculino</th>";
-		$cata.="<td>".$con['contar']."</td>";
-	}
-	$cata.="</table><br>";
-
-	$reporte.="<table class=tabla-cat id=tabla>";
-	foreach($contar as $con) {
-		$reporte.="<tr><th>".$con['disciplina']." Masculino</th>";
-		$reporte.="<td>".$con['contar']."</td>";
-	}
-	$reporte.="</table><br>";
 
 	}
 
@@ -198,7 +204,7 @@ $_SESSION['reporte']=$reporte;
 
 
 if (empty($_SESSION['hombres'])) {
-	$cata.="No hay atletas registrados";
+	$cata.="";
 }
 
 
