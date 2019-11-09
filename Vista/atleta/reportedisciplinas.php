@@ -43,6 +43,7 @@ for ($i=0;$i<=$_SESSION['contador'];$i++ ){
 
 		$contar = $_SESSION['cue'.$i];
 
+
 	$cata.="<table class=tabla-cat id=tabla>";
 	foreach($contar as $con) {
 		$cata.="<h2>".$con['disciplina']." Masculino</h2>";
@@ -53,12 +54,10 @@ for ($i=0;$i<=$_SESSION['contador'];$i++ ){
 
 	$reporte.="<table class=tabla-cat id=tabla>";
 	foreach($contar as $con) {
-		$reporte.="<h2>".$con['disciplina']." Masculino</h2>";
-		$reporte.="<th>Cantidad</th>";
-		$reporte.="<tr><td>".$con['contar']."</td></tr>";
+		$reporte.="<tr><th>".$con['disciplina']." Masculino</th>";
+		$reporte.="<td>".$con['contar']."</td>";
 	}
 	$reporte.="</table><br>";
-
 	
 
 
