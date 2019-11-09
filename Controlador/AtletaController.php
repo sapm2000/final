@@ -1591,6 +1591,46 @@ case "registrarRegistro_medico":
 				break;
 			}
 
+			case 'reportegeneral':
+				{
+					$_SESSION['atletaunidisciplina']=$atleta->Atletasunidiciplina();
+					
+
+					$d=$atleta->cuentaloshombres();
+					$dd=count($d);
+					$_SESSION['ddd']=$dd;
+					$f=$atleta->cuentalasmujeres();
+					$ff=count($f);
+					$_SESSION['fff']=$ff;
+					$_SESSION['cuentaunitotal']=$_SESSION['fff']+$_SESSION['ddd'];
+
+
+					$s=$atleta->traemulti();
+					$ss=count($s);
+					$_SESSION['multidisciplinas']='';
+
+					$_SESSION['c']=$ss;
+
+					$m=$atleta->traemultihombre();
+					$_SESSION['multihombre']=count($m);
+					$w=$atleta->traemultimujer();
+					$_SESSION['multimujer']=count($w);
+					$_SESSION['multiambos']=$_SESSION['multimujer']+$_SESSION['multihombre'];
+
+
+
+
+
+					for ($i=0;$i<$ss;$i++) {
+						$atleta->setPrimer($s[$i][0]);
+						$_SESSION['multidisciplinas'.$i]=$atleta->detalleAtleta();
+						
+						
+					}
+					header("Location: ../Vista/atleta/reporteglobal.php?accion=actual");
+					break;
+				}
+
 
 }
 ob_end_flush();

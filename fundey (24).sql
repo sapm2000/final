@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-11-2019 a las 15:16:11
+-- Tiempo de generación: 09-11-2019 a las 19:48:59
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.4
 
@@ -58,7 +58,7 @@ CREATE TABLE `atleta` (
 --
 
 INSERT INTO `atleta` (`id`, `nac`, `cedula`, `nombre`, `apellido`, `f_nac`, `tipos`, `estadoc`, `sexo`, `id_nivel`, `correo`, `n_tel`, `n_eme`, `id_municipio`, `id_parroquia`, `direccion`, `activo`, `id_talla`, `id_calzado`, `altura`, `peso`, `mano`) VALUES
-(1, 'V', 30426947, 'FREDDERICK', 'HERNANDEZ', '2004-07-06', 'O+', 'SOLTERO/A', 'M', 1, 'DASDAD@ASDS.COM', '12345678900', '00987654321', 13, 19, 'ASDA', 2, 8, 7, '110', '90.0', 'DIESTRO'),
+(1, 'V', 30426947, 'FREDDERICK', 'HERNANDEZ', '2004-07-06', 'O+', 'SOLTERO/A', 'M', 1, 'DASDAD@ASDS.COM', '12345678900', '00987654321', 13, 19, 'ASDA', 0, 8, 7, '110', '90.0', 'DIESTRO'),
 (2, 'V', 27758852, 'MARYORITH', 'SINGER', '2000-05-05', 'O+', 'SOLTERO/A', 'F', 3, 'MARYORITHSINGER05@GMAIL.COM', '04125084544', '04245222312', 1, 1, 'FINAL CALLE 28 CON 14 AV.', 0, 0, 0, '', '', ''),
 (3, 'V', 26943430, 'SAMUEL', 'PEREZ', '2000-01-06', 'O+', 'SOLTERO/A', 'M', 3, '8@SADSA.COM', '04245222312', '04125084544', 11, 17, '2 AV.', 0, 5, 6, '171', '50.0', 'DIESTRO'),
 (4, 'V', 1234567, 'FSDFS', 'SDFDSFS', '2000-06-12', 'O-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 8, 5, '123', '12', ''),
@@ -715,7 +715,6 @@ CREATE TABLE `puente_disciplina` (
 
 INSERT INTO `puente_disciplina` (`id`, `id_atleta`, `id_disciplina`, `id_modalidad`, `id_estatus`, `becar`) VALUES
 (4, 3, 3, 6, 1, 0),
-(12, 2, 3, 6, 7, 1),
 (13, 3, 4, 1, 1, 1),
 (14, 3, 11, 2, 1, 0),
 (16, 1, 3, 6, 8, 1),
@@ -728,7 +727,7 @@ INSERT INTO `puente_disciplina` (`id`, `id_atleta`, `id_disciplina`, `id_modalid
 (24, 4, 11, 2, 8, 1),
 (25, 10, 11, 2, 1, 1),
 (26, 10, 11, 4, 1, 0),
-(27, 10, 11, 5, 1, 0);
+(27, 10, 4, 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -825,6 +824,18 @@ INSERT INTO `tallas` (`id`, `talla`) VALUES
 (7, 'L'),
 (8, 'X'),
 (9, 'S');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `temporal`
+--
+
+CREATE TABLE `temporal` (
+  `id` int(11) NOT NULL,
+  `id_atleta` int(11) NOT NULL,
+  `id_disciplina` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1058,6 +1069,12 @@ ALTER TABLE `tallas`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `temporal`
+--
+ALTER TABLE `temporal`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `tipo_logros`
 --
 ALTER TABLE `tipo_logros`
@@ -1236,6 +1253,12 @@ ALTER TABLE `representantes`
 --
 ALTER TABLE `tallas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de la tabla `temporal`
+--
+ALTER TABLE `temporal`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_logros`

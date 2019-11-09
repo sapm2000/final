@@ -1076,6 +1076,78 @@ class Atleta extends ClaseBase
 			$trae = $result->fetchAll();
 			return ($trae);
 		}
+
+		public function Atletasunidiciplina()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT *,COUNT(DISTINCT puente_disciplina.id_disciplina) FROM puente_disciplina INNER JOIN atleta on puente_disciplina.id_atleta=atleta.id INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id GROUP BY puente_disciplina.id_atleta HAVING COUNT(DISTINCT puente_disciplina.id_disciplina)<=1 and atleta.activo=0  ORDER BY disciplinas.disciplina,atleta.cedula";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentaloshombres()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT *,COUNT(DISTINCT puente_disciplina.id_disciplina) FROM puente_disciplina INNER JOIN atleta on puente_disciplina.id_atleta=atleta.id INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id GROUP BY puente_disciplina.id_atleta HAVING COUNT(DISTINCT puente_disciplina.id_disciplina)<=1 and atleta.activo=0 AND atleta.sexo='M' ORDER BY disciplinas.disciplina,atleta.cedula";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentalasmujeres()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT *,COUNT(DISTINCT puente_disciplina.id_disciplina) FROM puente_disciplina INNER JOIN atleta on puente_disciplina.id_atleta=atleta.id INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id GROUP BY puente_disciplina.id_atleta HAVING COUNT(DISTINCT puente_disciplina.id_disciplina)<=1 and atleta.activo=0 AND atleta.sexo='F' ORDER BY disciplinas.disciplina,atleta.cedula";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+		
+		public function traemulti()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT puente_disciplina.id_atleta, atleta.activo, COUNT(DISTINCT puente_disciplina.id_disciplina) FROM puente_disciplina INNER JOIN atleta ON puente_disciplina.id_atleta=atleta.id GROUP BY puente_disciplina.id_atleta HAVING COUNT(DISTINCT puente_disciplina.id_disciplina)>1 AND atleta.activo=0 ORDER BY atleta.cedula";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function traemultihombre()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT puente_disciplina.id_atleta, atleta.activo,atleta.sexo, COUNT(DISTINCT puente_disciplina.id_disciplina) FROM puente_disciplina INNER JOIN atleta ON puente_disciplina.id_atleta=atleta.id GROUP BY puente_disciplina.id_atleta HAVING COUNT(DISTINCT puente_disciplina.id_disciplina)>1 AND atleta.activo=0 AND atleta.sexo='M' ORDER BY atleta.cedula";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function traemultimujer()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT puente_disciplina.id_atleta, atleta.activo,atleta.sexo, COUNT(DISTINCT puente_disciplina.id_disciplina) FROM puente_disciplina INNER JOIN atleta ON puente_disciplina.id_atleta=atleta.id GROUP BY puente_disciplina.id_atleta HAVING COUNT(DISTINCT puente_disciplina.id_disciplina)>1 AND atleta.activo=0 AND atleta.sexo='F' ORDER BY atleta.cedula";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function detalleAtleta()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT atleta.nombre,atleta.apellido, atleta.cedula,atleta.nac,disciplinas.disciplina FROM puente_disciplina INNER JOIN atleta ON puente_disciplina.id_atleta=atleta.id INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id WHERE puente_disciplina.id_atleta=$this->primer AND atleta.activo=0 GROUP BY puente_disciplina.id_disciplina";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+
 }
 
 
