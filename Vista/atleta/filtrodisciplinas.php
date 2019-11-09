@@ -24,7 +24,7 @@ $disciplina1.= "</select>";
 
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
-$_SESSION['titulo']='Reporte de Atletas Filtrado por Disciplina';
+$_SESSION['titulo']='Reporte de Atletas Filtrado por Modalidad';
 $form='';
 $cata='';
 $boton='';
@@ -46,7 +46,7 @@ $form.='</form>';
 $diccionario = array 
 (
 	'PERFIL' => $perfil,
-	'TITULO'=>'Atletas',
+	'TITULO'=>'Filtrar Disciplina',
 	'CATALOGO'=>$cata,
 	'BOTONREG'=>$boton,
 	'FORMULARIO'=>$form, 	
