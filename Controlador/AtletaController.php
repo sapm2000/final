@@ -245,17 +245,23 @@ switch($_REQUEST['accion'])
 		$_SESSION['contador']=$t[0][0];
 		for ($i=0;$i<=$t[0][0];$i++) {
 			$atleta->setPrimer($disc[$i][0]);
+			$_SESSION['ertitulo'.$i]=$atleta->getPrimer();
 
 			$_SESSION['disc'.$i]=$atleta->detalledisciplinas();
-			$_SESSION['cue'.$i]=$atleta->cuentapordisciplina();
+			$p=$atleta->cuentapordisciplina();
+			$_SESSION['cue'.$i]=count($p);
+			 echo  $_SESSION['cue'.$i];
 
 		}
 
 		for ($i=0;$i<=$t[0][0];$i++) {
 			$atleta->setPrimer($disc[$i][0]);
+			$_SESSION['ertitulomujer'.$i]=$atleta->getPrimer();
 
 			$_SESSION['discF'.$i]=$atleta->detalledisciplinasmujer();
-			$_SESSION['cueF'.$i]=$atleta->cuentapordisciplinamujer();
+			$o=$atleta->cuentapordisciplinamujer();
+			$_SESSION['cueF'.$i]=count($o);
+			
 
 		}
 
