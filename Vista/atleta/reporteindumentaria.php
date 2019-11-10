@@ -39,51 +39,119 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['indumentaria']))
 
 	$cata.="<table class=tabla-cat id=tabla>";
 
+	$cata.="<h2>Tallas</h2>";
+	$reporte.="<center><h2>Tallas</h2></center>";
+
+	$reporte.="<br><table class=tabla-cat id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla align=center>";
+
 	$tallahombre = $_SESSION['tallashombre'];
-	$cata.="<tr><th>Talla hombre</th><th>total</th>";
+	$reporte.="<tr><th>Tallas de Hombre</th><th>Total</th>";
+	$cata.="<tr><th>Tallas de Hombre</th><th>Total</th>";
 	foreach($tallahombre as $talh) {
 		$cata.="<tr>";	
 		$cata.="<td>".$talh['talla']."</td>";	
 		$cata.="<td>".$talh['total']."</td>";	
 
+		$reporte.="<tr>";	
+		$reporte.="<td>".$talh['talla']."</td>";	
+		$reporte.="<td>".$talh['total']."</td>";	
+
 	}
 
+
+	$reporte.="</table>";
+
+	$reporte.="</table>";
+	
+	$reporte.="</table><br>";
+
+
+
+
+	$reporte.="<br><table class=tabla-cat id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla align=center>";
+
 	$tallamujer = $_SESSION['tallasmujer'];
-	$cata.="<tr><th>Talla Mujer</th><th>total</th>";
+	$reporte.="<tr><th>Tallas de Mujer</th><th>Total</th>";
+	$cata.="<tr><th>Tallas de Mujer</th><th>Total</th>";
 	foreach($tallamujer as $talm) {
 		$cata.="<tr>";	
 		$cata.="<td>".$talm['talla']."</td>";	
 		$cata.="<td>".$talm['total']."</td>";	
 
+		$reporte.="<tr>";	
+		$reporte.="<td>".$talm['talla']."</td>";	
+		$reporte.="<td>".$talm['total']."</td>";	
 	}
 
+	$reporte.="</table>";
+
+	$reporte.="</table>";
+	
+	$reporte.="</table><br>";
+
+	$cata.="<table class=tabla-cat id=tabla>";
+
+	$cata.="<h2>Calzados</h2>";
+	$reporte.="<center><h2>Calzados</h2></center>";
+
+	$reporte.="<br><table class=tabla-cat id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla align=center>";
+
 	$calzadohombre = $_SESSION['calzadohombre'];
-	$cata.="<tr><th>Calzado Hombre</th><th>total</th>";
+	$reporte.="<tr><th>Calzados de Hombre</th><th>Total</th>";
+	$cata.="<tr><th>Calzados de Hombre</th><th>Total</th>";
 	foreach($calzadohombre as $calh) {
 		$cata.="<tr>";	
 		$cata.="<td>".$calh['calzado']."</td>";	
 		$cata.="<td>".$calh['total']."</td>";	
 
+		$reporte.="<tr>";	
+		$reporte.="<td>".$calh['calzado']."</td>";	
+		$reporte.="<td>".$calh['total']."</td>";	
 	}
 
+	$reporte.="</table>";
+
+	$reporte.="</table>";
+	
+	$reporte.="</table><br>";
+
+	$reporte.="<br><table class=tabla-cat id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla align=center>";
+
 	$tallamujer = $_SESSION['calzadomujer'];
-	$cata.="<tr><th>Calzado Mujer</th><th>total</th>";
+	$reporte.="<tr><th>Calzados de Mujer</th><th>Total</th>";
+	$cata.="<tr><th>Calzados de Mujer</th><th>Total</th>";
 	foreach($tallamujer as $calm) {
 		$cata.="<tr>";	
 		$cata.="<td>".$calm['calzado']."</td>";	
 		$cata.="<td>".$calm['total']."</td>";	
 
+		$reporte.="<tr>";	
+		$reporte.="<td>".$calm['calzado']."</td>";	
+		$reporte.="<td>".$calm['total']."</td>";	
+
 	}
 
+	$reporte.="</table>";
+
+	$reporte.="</table>";
+	
+	$reporte.="</table><br>";
 	
 	$cata.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrar' method='post'>";
 	$cata.="<table class=tabla-cat id=tabla>";
 
+	$cata.="<h2>Atletas</h2>";
+	$reporte.="<center><h2>Atletas</h2></center>";
+
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
-	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Peso</th><th>Talla</th><th>Altura</th><th>Calzado</th><th>Mano Hábil</th></tr>";
-	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Peso</th><th>Talla</th><th>Altura</th><th>Calzado</th><th>Mano Hábil</th></tr>";
+	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Peso</th><th>Talla</th><th>Altura</th><th>Calzado</th><th>Mano Hábil</th></tr>";
+	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Peso</th><th>Talla</th><th>Altura</th><th>Calzado</th><th>Mano Hábil</th></tr>";
 
 	foreach($catalogo as $cat)
 	{
@@ -138,7 +206,7 @@ if (empty($_SESSION['indumentaria'])) {
 $diccionario = array 
 (
 	'PERFIL' => $perfil,
-	'TITULO'=>'Atletas',
+	'TITULO'=>'Reporte de Tallas y Calzado',
 	'CATALOGO'=>$cata,
 	'BOTONREG'=>$boton,
 	'FORMULARIO'=>$form, 	
