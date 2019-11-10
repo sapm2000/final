@@ -185,8 +185,57 @@ table.obser td
    text-align: center;
 }
 
+/*Solo para el archivo reporteindumentariapordisciplina*/
+table.tabla-catsalto
+{
+	text-align: center;
+   font-size: 15;
+   font-family: fantasy;
+   page-break-after:always;
+}
+
+table.tabla-catsalto th
+{
+	background-color:#1E90FF;
+   color: white;
+   font-size: 16;
+   font-family: fantasy;
+}
+
+table.tabla-catsalto tr:hover td
+{
+   background-color:#F1F1F1;
+   font-family: fantasy;
+}
 
 
+table.tabla-catsaltop
+{
+	text-align: center;
+   font-size: 12;
+   font-family: fantasy;
+   border: 3px solid #00008B;
+   border-radius: 8px 8px 8px 8px;
+}
+
+table.tabla-catsaltop td 
+{
+  border: 1px solid #D3D3D3;
+}
+
+table.tabla-catsaltop th
+{
+	background-color:#1E90FF;
+   color: white;
+   font-size: 13;
+   font-family: fantasy;
+}
+
+table.tabla-catsaltop tr:hover td
+{
+   background-color:#F1F1F1;
+   font-family: fantasy;
+}
 
 /*Solo para el reportedisciplinas*/
 
