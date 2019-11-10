@@ -182,6 +182,35 @@ $reporte='';
 	
 	$reporte.="</table><br>";
 
+	$cata.="<center><h2>Total General</h2></center>";
+
+	$cata.="<table class=tabla-cat id=tabla>";
+
+	$reporte.="<center><h2>Total General</h2></center>";
+	$reporte.="<table class=tabla-cat id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla align=center>";
+
+	$cata.="<tr><th>Atletas Masculinos</th><th>Atletas Femeninos</th><th>Total</th></tr>";
+
+	$reporte.="<tr><th>Atletas Masculinos</th><th>Atletas Femeninos</th><th>Total</th></tr>";
+	$cata.="<tr>";	
+	$cata.="<td>".$_SESSION['totalhombre']."</td>";	
+	$cata.="<td>".$_SESSION['totalmujer']."</td>";	
+	$cata.="<td>".$_SESSION['totaltotal']."</td>";
+
+	$reporte.="<tr>";	
+	$reporte.="<td>".$_SESSION['totalhombre']."</td>";	
+	$reporte.="<td>".$_SESSION['totalmujer']."</td>";	
+	$reporte.="<td>".$_SESSION['totaltotal']."</td>";
+
+	$cata.="</table><br>";
+
+	$reporte.="</table>";
+
+	$reporte.="</table>";
+	
+	$reporte.="</table><br>";
+
 
 
 
