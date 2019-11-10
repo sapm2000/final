@@ -1617,6 +1617,12 @@ case "registrarRegistro_medico":
 					$_SESSION['multimujer']=count($w);
 					$_SESSION['multiambos']=$_SESSION['multimujer']+$_SESSION['multihombre'];
 
+					$_SESSION['totaltotal']=$_SESSION['multiambos']+$_SESSION['cuentaunitotal'];
+					$_SESSION['totalhombre']=$_SESSION['ddd']+$_SESSION['multihombre'];
+					$_SESSION['totalmujer']=$_SESSION['fff']+$_SESSION['multimujer'];
+
+
+
 
 
 
@@ -1632,6 +1638,54 @@ case "registrarRegistro_medico":
 					header("Location: ../Vista/atleta/reporteglobal.php?accion=actual");
 					break;
 				}
+
+				case 'reportegeneralgloria':
+					{
+						$_SESSION['atletaunidisciplina']=$atleta->Atletasunidiciplinagloria();
+						
+	
+						$d=$atleta->cuentaloshombresgloria();
+						$dd=count($d);
+						$_SESSION['ddd']=$dd;
+						$f=$atleta->cuentalasmujeresgloria();
+						$ff=count($f);
+						$_SESSION['fff']=$ff;
+						$_SESSION['cuentaunitotal']=$_SESSION['fff']+$_SESSION['ddd'];
+	
+	
+						$s=$atleta->traemultigloria();
+						$ss=count($s);
+						$_SESSION['multidisciplinas']='';
+	
+						$_SESSION['c']=$ss;
+	
+						$m=$atleta->traemultihombregloria();
+						$_SESSION['multihombre']=count($m);
+						$w=$atleta->traemultimujergloria();
+						$_SESSION['multimujer']=count($w);
+						$_SESSION['multiambos']=$_SESSION['multimujer']+$_SESSION['multihombre'];
+	
+						$_SESSION['totaltotal']=$_SESSION['multiambos']+$_SESSION['cuentaunitotal'];
+						$_SESSION['totalhombre']=$_SESSION['ddd']+$_SESSION['multihombre'];
+						$_SESSION['totalmujer']=$_SESSION['fff']+$_SESSION['multimujer'];
+	
+	
+	
+	
+	
+	
+	
+						for ($i=0;$i<$ss;$i++) {
+							$atleta->setPrimer($s[$i][0]);
+							$_SESSION['multidisciplinas'.$i]=$atleta->detalleAtletagloria();
+							
+							
+						}
+	
+						$_SESSION['titulo']='Reporte de Global de Atletas Gloriosos';
+						header("Location: ../Vista/atleta/reporteglobal.php?accion=actual");
+						break;
+					}
 
 				case 'indumentariapordisciplina':
 					{
