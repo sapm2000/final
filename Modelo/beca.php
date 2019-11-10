@@ -77,6 +77,16 @@ class Beca extends ClaseBase
 		return $this->disc;
 	}
 
+	public function setGloria($gloria)
+	{
+		$this->gloria = $gloria;
+	}
+
+	public function getGloria()
+	{
+		return $this->gloria;
+	}
+
 
 
 
@@ -126,7 +136,7 @@ class Beca extends ClaseBase
 	public function todosatletasgloriosos()
 	{
 		$cc = Conexion::getInstance();
-		$sql = "SELECT atleta.nombre, atleta.id, atleta.apellido, atleta.cedula, becas.monto,cuenta.nac,cuenta.cedula AS ced , cuenta.numeroc, puente_disciplina.becar,disciplinas.disciplina FROM atleta LEFT OUTER JOIN becas ON atleta.id=becas.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id INNER JOIN puente_disciplina ON atleta.id=puente_disciplina.id_atleta INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id WHERE NOT cuenta.numeroc='' and atleta.activo='2' and becar=1";
+		$sql = "SELECT atleta.nombre, atleta.id, atleta.apellido, atleta.cedula, becas_gloria.monto,cuenta.nac,cuenta.cedula AS ced , cuenta.numeroc, puente_disciplina.becar,disciplinas.disciplina FROM atleta LEFT OUTER JOIN becas_gloria ON atleta.id=becas_gloria.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id INNER JOIN puente_disciplina ON atleta.id=puente_disciplina.id_atleta INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id WHERE NOT cuenta.numeroc='' and atleta.activo='2' and becar=1";
 		$result = $cc->db->prepare($sql);
 		$result->execute();
 		$trae = $result->fetchAll();
@@ -182,7 +192,7 @@ class Beca extends ClaseBase
 	public function guardarRegistro()
 	{
 		$con = Conexion::getInstance();
-		$sql = "INSERT INTO becas_total (id_atleta,monto,fecha,nombre,disc) VALUES ('$this->id_atleta','$this->monto','$this->fecha','$this->nombre','$this->disc')";
+		$sql = "INSERT INTO becas_total (id_atleta,monto,fecha,nombre,disc,gloria) VALUES ('$this->id_atleta','$this->monto','$this->fecha','$this->nombre','$this->disc','$this->gloria')";
 		$result = $con->db->prepare($sql);
 		$insert = $result->execute();
 		return $insert;
@@ -191,7 +201,7 @@ class Beca extends ClaseBase
 	public function guardarDefinitivo()
 	{
 		$con = Conexion::getInstance();
-		$sql = "INSERT INTO becas_mes (fecha,montoT,becados,nombre) VALUES ('$this->fecha','$this->montoT','$this->becados','$this->nombre')";
+		$sql = "INSERT INTO becas_mes (fecha,montoT,becados,nombre,gloria) VALUES ('$this->fecha','$this->montoT','$this->becados','$this->nombre','$this->gloria')";
 		$result = $con->db->prepare($sql);
 		$insert = $result->execute();
 		return $insert;

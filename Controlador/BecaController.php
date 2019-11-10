@@ -299,6 +299,7 @@ switch($_REQUEST['accion'])
 				$beca->setMonto($_POST['pago'.$i]);
 				$beca->setFecha($_POST['fecha']);
 				$beca->setDisc($_POST['disc'.$i]);
+				$beca->setGloria('1');
 				$originalDate = $beca->getFecha();
 				$newDate = date("Ymd", strtotime($originalDate));
 				$_SESSION['fechas']=$newDate;
@@ -331,6 +332,7 @@ switch($_REQUEST['accion'])
 					$temp=$beca->getMonto();
 					$total=$total+$temp;
 					$beca->setNombre($bec);
+					$beca->setGloria('1');
 
 					$beca->guardarPersonagloriosa();
 					$beca->guardarRegistro();
