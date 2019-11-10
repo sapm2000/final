@@ -25,13 +25,13 @@ $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
 $form='';
 $cata='';
 $boton='';
-$form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=filtros">';
+$form.='<form name="beca" method="post" action="../../Controlador/AtletaController.php?accion=filtros">';
 $form.='<table>';
 $form.='<tr>';
 $form.='<hr></hr>';
 
 
-$form.='<td> <a href="#"><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de las Becas" id="" name=""></a></td>';
+$form.='<td> <a href="filtrogeneral.php?accion=actualizar"><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de las Becas" id="" name=""></a></td>';
 $form.='<td><a href="#"><input type="button" value="Reporte Especifico" class="botonmodal" title="Reporte Especifico de las Becas" id="" name=""></a></td>';
 $form.='</tr>';
 $form.='<tr>';

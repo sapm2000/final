@@ -87,6 +87,27 @@ class Beca extends ClaseBase
 		return $this->gloria;
 	}
 
+	public function setPrimer($primer)
+	{
+		$this->primer = $primer;
+	}
+
+	public function getPrimer()
+	{
+		return $this->primer;
+
+	}
+	public function setSegundo($segundo)
+	{
+		$this->segundo = $segundo;
+	}
+
+	public function getSegundo()
+	{
+		return $this->segundo;
+
+	}
+
 
 
 
@@ -288,6 +309,26 @@ class Beca extends ClaseBase
 	{
 		$cc = Conexion::getInstance();
 		$sql = "SELECT COUNT(*) FROM becas_mes";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
+
+	public function becasfiltradas()
+	{
+		$cc = Conexion::getInstance();
+		$sql = "SELECT * FROM becas_mes WHERE becas_mes.gloria=0 AND becas_mes.fecha BETWEEN  '$this->primer' AND '$this->segundo' 	";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
+
+	public function montogeneral()
+	{
+		$cc = Conexion::getInstance();
+		$sql = "SELECT sum(becas_mes.montoT) AS montofinal FROM becas_mes WHERE becas_mes.gloria=0 AND becas_mes.fecha BETWEEN  '$this->primer' AND '$this->segundo' 	";
 		$result = $cc->db->prepare($sql);
 		$result->execute();
 		$trae = $result->fetchAll();
