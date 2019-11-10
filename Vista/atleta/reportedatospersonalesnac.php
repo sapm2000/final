@@ -7,7 +7,7 @@ if(empty($_SESSION['nombre']))
 
 if($_GET['accion']=="actualizar")
 {
-	header("Location: ../../Controlador/AtletaController.php?accion=buscafiltrosbancos");
+	header("Location: ../../Controlador/AtletaController.php?accion=buscafiltros");
 }
 
 if(empty($_REQUEST['accion']))
@@ -32,9 +32,9 @@ $form.='<td> <a href="generarreporte.php?accion=filtroga"><input type="button" c
 $form.='</tr>';
 $form.='</table>';
 
-if($_GET['accion']=="actual"&&!empty($_SESSION['bancos']))
+if($_GET['accion']=="actual"&&!empty($_SESSION['nivel10']))
 {
-	$catalogo = $_SESSION['bancos'];
+	$catalogo = $_SESSION['nivel10'];
 	$reporte='';
 	$cata.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrar' method='post'>";
 	$cata.="<table class=tabla-cat id=tabla>";
@@ -42,70 +42,38 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['bancos']))
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
-	$cata.="<tr><th>Nacionalidad</th><th>Cédula del Atleta</th><th>Nacionalidad</th><th>Cédula del Cuentaviente</th><th>Nombre</th><th>Apellido</th><th>Banco</th><th>Número de Cuenta</th><th>Tipo de Cuenta</th></tr>";
-	$reporte.="<tr><th>Nacionalidad</th><th>Cédula del Atleta</th><th>Nacionalidad</th><th>Cédula del Cuentaviente</th><th>Nombre</th><th>Apellido</th><th>Banco</th><th>Número de Cuenta</th><th>Tipo de Cuenta</th></tr>";
+	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Sexo</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Estado Cívil</th><th>Nivel de Estudio</th><th>Disciplina</th></tr>";
+	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Sexo</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Estado Cívil</th><th>Nivel de Estudio</th><th>Disciplina</th></tr>";
 
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
-		$cata.="<td>".$cat['atlenac']."</td>";	
-		$cata.="<td>".$cat['atlecedula']."</td>";
 		$cata.="<td>".$cat['nac']."</td>";	
 		$cata.="<td>".$cat['cedula']."</td>";	
 		$cata.="<td>".$cat['nombre']."</td>";	
 		$cata.="<td>".$cat['apellido']."</td>";	
-		$cata.="<td>".$cat['banco']."</td>";	
-		$cata.="<td>".$cat['numeroc']."</td>";	
-		$cata.="<td>".$cat['tipo']."</td>";	
+		$cata.="<td>".$cat['sexo']."</td>";	
+		$cata.="<td>".$cat['f_nac']."</td>";	
+		$cata.="<td>".$cat['tipos']."</td>";	
+		$cata.="<td>".$cat['estadoc']."</td>";	
+		$cata.="<td>".$cat['nivel']."</td>";	
+		$cata.="<td>".$cat['disciplina']."</td>";	
 
 
 
+		
 		$reporte.="<tr>";	
-		$reporte.="<td>".$cat['atlenac']."</td>";	
-		$reporte.="<td>".$cat['atlecedula']."</td>";
 		$reporte.="<td>".$cat['nac']."</td>";	
 		$reporte.="<td>".$cat['cedula']."</td>";	
 		$reporte.="<td>".$cat['nombre']."</td>";	
-		$reporte.="<td>".$cat['apellido']."</td>";	
-		$reporte.="<td>".$cat['banco']."</td>";	
-		$reporte.="<td>".$cat['numeroc']."</td>";	
-		$reporte.="<td>".$cat['tipo']."</td>";		
+		$reporte.="<td>".$cat['apellido']."</td>";
+		$reporte.="<td>".$cat['sexo']."</td>";		
+		$reporte.="<td>".$cat['f_nac']."</td>";	
+		$reporte.="<td>".$cat['tipos']."</td>";	
+		$reporte.="<td>".$cat['estadoc']."</td>";	
+		$reporte.="<td>".$cat['nivel']."</td>";	
+		$reporte.="<td>".$cat['disciplina']."</td>";	
 
-
-	}
-	$cata.="</table><br>";
-
-
-	$reporte.="</table>";
-
-	$reporte.="</table>";
-	
-	$reporte.="</table><br>";
-
-	$catalogo = $_SESSION['total'];
-
-	$cata.="<table class=tabla-cat id=tabla>";
-
-	$reporte.="<br><table class=tabla-cat id=tabla>";
-	$reporte.="<table class=tabla-catb id=tabla align=center>";
-	
-	$cata.="<tr><th>Bancos</th><th>Totas de inscritos</th></tr>";
-	$reporte.="<tr><th>Bancos</th><th>Totas de inscritos</th></tr>";
-
-	foreach($catalogo as $cat)
-	{
-		$cata.="<tr>";	
-		
-		$cata.="<td>".$cat['banco']."</td>";	
-		$cata.="<td>".$cat['bancostotal']."</td>";	
-
-		
-
-
-
-		$reporte.="<tr>";	
-		$reporte.="<td>".$cat['banco']."</td>";	
-		$reporte.="<td>".$cat['bancostotal']."</td>";	
 	}
 	$cata.="</table><br>";
 
@@ -119,7 +87,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['bancos']))
 	$_SESSION['reporte']=$reporte;
 
 }
-if (empty($_SESSION['bancos'])) {
+if (empty($_SESSION['nivel10'])) {
 	$cata.="No hay atletas registrados";
 }
 

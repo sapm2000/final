@@ -309,6 +309,17 @@ class Atleta extends ClaseBase
 
 	}
 
+	public function setTercer($tercer)
+	{
+		$this->tercer = $tercer;
+	}
+
+	public function getTercer()
+	{
+		return $this->tercer;
+
+	}
+
 	
 	
 	
@@ -619,7 +630,17 @@ class Atleta extends ClaseBase
 		public function getFechaNac()
 		{
 			$cc = Conexion::getInstance();
-			$sql = "SELECT nac,cedula,nombre,apellido,f_nac,tipos,estadoc,sexo,nivel FROM atleta INNER JOIN nivels on atleta.id_nivel=nivels.id WHERE atleta.activo=0 and atleta.f_nac BETWEEN '$this->primer' AND '$this->segundo'";
+			$sql = "SELECT nac,cedula,nombre,apellido,f_nac,tipos,estadoc,sexo,nivel,disciplinas.disciplina FROM atleta INNER JOIN nivels on atleta.id_nivel=nivels.id INNER JOIN puente_disciplina ON atleta.id=puente_disciplina.id_atleta INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id WHERE atleta.activo=0 and atleta.f_nac BETWEEN '$this->primer' AND '$this->segundo' GROUP BY puente_disciplina.id_disciplina,puente_disciplina.id_atleta ORDER BY disciplinas.disciplina,atleta.cedula";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function getFechaNacdis()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT nac,cedula,nombre,apellido,f_nac,tipos,estadoc,sexo,nivel,disciplinas.disciplina FROM atleta INNER JOIN nivels on atleta.id_nivel=nivels.id INNER JOIN puente_disciplina ON atleta.id=puente_disciplina.id_atleta INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id WHERE atleta.activo=0 and atleta.f_nac BETWEEN '$this->primer' AND '$this->segundo' AND disciplinas.id='$this->tercer' GROUP BY puente_disciplina.id_disciplina,puente_disciplina.id_atleta ORDER BY disciplinas.disciplina,atleta.cedula";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			$trae = $result->fetchAll();
@@ -824,10 +845,29 @@ class Atleta extends ClaseBase
 			return ($trae);
 		}
 
+		public function getBancariototal()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT atleta.cedula AS atlecedula ,atleta.nac AS atlenac,cuenta.nac,cuenta.cedula,cuenta.nombre,cuenta.apellido,bancos.banco,cuenta.numeroc,cuenta.tipo, COUNT(*)AS bancostotal FROM cuenta INNER JOIN atleta ON cuenta.id_atleta=atleta.id INNER JOIN bancos ON cuenta.id_banco=bancos.id WHERE atleta.activo=0 GROUP BY bancos.banco";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
 		public function getBbancos()
 		{
 			$cc = Conexion::getInstance();
 			$sql = "SELECT atleta.cedula AS atlecedula ,atleta.nac AS atlenac,cuenta.nac,cuenta.cedula,cuenta.nombre,cuenta.apellido,bancos.banco,cuenta.numeroc,cuenta.tipo FROM cuenta INNER JOIN atleta ON cuenta.id_atleta=atleta.id INNER JOIN bancos ON cuenta.id_banco=bancos.id WHERE atleta.activo=0 AND bancos.id=$this->primer";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+		public function getBbancostotal()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT atleta.cedula AS atlecedula ,atleta.nac AS atlenac,cuenta.nac,cuenta.cedula,cuenta.nombre,cuenta.apellido,bancos.banco,cuenta.numeroc,cuenta.tipo, COUNT(*)AS bancostotal FROM cuenta INNER JOIN atleta ON cuenta.id_atleta=atleta.id INNER JOIN bancos ON cuenta.id_banco=bancos.id WHERE atleta.activo=0  AND bancos.id=$this->primer GROUP BY bancos.banco";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			$trae = $result->fetchAll();
