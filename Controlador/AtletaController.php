@@ -1692,6 +1692,7 @@ case "registrarRegistro_medico":
 				
 						}
 				
+						$_SESSION['titulo']='Reporte de Indumentaria por Disciplina';
 						header("Location: ../Vista/atleta/reporteindumentariapordisciplinas.php?accion=actual");
 						break;
 					}
