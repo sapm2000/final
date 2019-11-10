@@ -38,8 +38,14 @@ $form.='<table align=center>';
 $form.='<tr>';
 $form.='<td>Desde:<input  type="date" class="date" name="primer" id="fecha1" onblur="valFechasfiltro()" required></td>';
 $form.='<td>Hasta:<input  type="date" class="date"  name="segundo" id="fecha2" onblur="valFechasfiltro()" required></td>';
-$form.='<td>'.$disciplina1.'</td>';
+
 $form.='<td> <input type="submit" class="botonmodal" value="Buscar"> </td>';
+$form.='</tr>';
+$form.='</table>';
+$form.='<table aling=center>';
+$form.='<tr>';
+$form.='<td>Disciplina</td>';
+$form.='<td>'.$disciplina1.'</td>';
 $form.='</tr>';
 $form.='</table>';
 $form.='</form>';
