@@ -36,11 +36,6 @@ $reporte='';
 
 
 
-
-
-
-
-
 		
 
 	$catalogo = $_SESSION['atletaunidisciplina'];
@@ -49,12 +44,15 @@ $reporte='';
 	$cata.="<table class=tabla-cat id=tabla>";
 
 
+	$reporte.="<center><h2>Reporte General de Atletas</h2></center>";
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
-	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Modalidad</th></tr>";
+	$cata.="<center><h2>Reporte General de Atletas</h2></center>";
+	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th></tr>";
 
-	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Modalidad</th></tr>";
+
+	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th></tr>";
 
 	foreach($catalogo as $cat)
 	{
@@ -88,7 +86,15 @@ $reporte='';
 	$reporte.="</table><br>";
 
 	$cata.="<table class=tabla-cat id=tabla>";
-	$cata.="<tr><th>atletas masculinos</th><th>atletas femeninos</th><th>total</th></tr>";
+
+	$reporte.="<center><h2>Total de Atletas</h2></center>";
+	$reporte.="<table class=tabla-cat id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla align=center>";
+
+	$cata.="<center><h2>Total de Atletas</h2></center>";
+	$cata.="<tr><th>Atletas Masculinos</th><th>Atletas Femeninos</th><th>Total</th></tr>";
+	$reporte.="<tr><th>Atletas Masculinos</th><th>Atletas Femeninos</th><th>Total</th></tr>";
+
 	$cata.="<tr>";	
 	$cata.="<td>".$_SESSION['ddd']."</td>";	
 	$cata.="<td>".$_SESSION['fff']."</td>";	
@@ -96,9 +102,29 @@ $reporte='';
 	$cata.="</table><br>";
 
 
+	$reporte.="<tr>";	
+	$reporte.="<td>".$_SESSION['ddd']."</td>";	
+	$reporte.="<td>".$_SESSION['fff']."</td>";	
+	$reporte.="<td>".$_SESSION['cuentaunitotal']."</td>";
+	$reporte.="</table><br>";
+
+
+	$reporte.="</table>";
+
+	$reporte.="</table>";
+	
+	$reporte.="</table><br>";
 
 	$cata.="<table class=tabla-cat id=tabla>";
-	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Modalidad</th></tr>";
+
+	$reporte.="<center><h2>Reporte General de Atletas Multidisciplinas</h2></center>";
+	$reporte.="<br><table class=tabla-cat id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla align=center>";
+	
+	$cata.="<center><h2>Reporte General de Atletas Multidisciplinas</h2></center>";
+	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th></tr>";
+
+	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th></tr>";
 	for($i=0;$i<$_SESSION['c'];$i++) {
 		$catalogo = $_SESSION['multidisciplinas'.$i];
 
@@ -110,21 +136,51 @@ $reporte='';
 			$cata.="<td>".$cat['nombre']."</td>";	
 			$cata.="<td>".$cat['apellido']."</td>";	
 			$cata.="<td>".$cat['disciplina']."</td>";	
+
+			$reporte.="<tr>";
+			$reporte.="<td>".$cat['nac']."</td>";	
+			$reporte.="<td>".$cat['cedula']."</td>";	
+			$reporte.="<td>".$cat['nombre']."</td>";	
+			$reporte.="<td>".$cat['apellido']."</td>";	
+			$reporte.="<td>".$cat['disciplina']."</td>";	
 		}
 
 	}
 	$cata.="</table><br>";
 
+	$reporte.="</table>";
 
+	$reporte.="</table>";
+	
+	$reporte.="</table><br>";
+
+	$cata.="<center><h2>Total de Atletas Multidisciplinas</h2></center>";
 	$cata.="<table class=tabla-cat id=tabla>";
-	$cata.="<tr><th>atletas masculinos</th><th>atletas femeninos</th><th>total</th></tr>";
+
+	$reporte.="<center><h2>Total de Atletas Multidisciplinas</h2></center>";
+	$reporte.="<table class=tabla-cat id=tabla>";
+	$reporte.="<table class=tabla-catb id=tabla align=center>";
+
+	$cata.="<tr><th>Atletas Masculinos</th><th>Atletas Femeninos</th><th>Total</th></tr>";
+
+	$reporte.="<tr><th>Atletas Masculinos</th><th>Atletas Femeninos</th><th>Total</th></tr>";
 	$cata.="<tr>";	
 	$cata.="<td>".$_SESSION['multihombre']."</td>";	
 	$cata.="<td>".$_SESSION['multimujer']."</td>";	
 	$cata.="<td>".$_SESSION['multiambos']."</td>";
+
+	$reporte.="<tr>";	
+	$reporte.="<td>".$_SESSION['multihombre']."</td>";	
+	$reporte.="<td>".$_SESSION['multimujer']."</td>";	
+	$reporte.="<td>".$_SESSION['multiambos']."</td>";
+
 	$cata.="</table><br>";
 
+	$reporte.="</table>";
 
+	$reporte.="</table>";
+	
+	$reporte.="</table><br>";
 
 
 
@@ -140,7 +196,7 @@ if (empty($_SESSION['hombres'])) {
 $diccionario = array 
 (
 	'PERFIL' => $perfil,
-	'TITULO'=>'REPORTE DE '.$titulo,
+	'TITULO'=>'Reporte Global de Atletas',
 	'CATALOGO'=>$cata,
 	'BOTONREG'=>$boton,
 	'FORMULARIO'=>$form, 	
