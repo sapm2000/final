@@ -1627,6 +1627,8 @@ case "registrarRegistro_medico":
 						
 						
 					}
+
+					$_SESSION['titulo']='Reporte de Global de Atletas';
 					header("Location: ../Vista/atleta/reporteglobal.php?accion=actual");
 					break;
 				}
