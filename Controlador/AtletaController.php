@@ -174,6 +174,12 @@ switch($_REQUEST['accion'])
 	{
 		$n = $atleta->getIndumentaria();
 		$_SESSION['indumentaria'] = $n;
+		$_SESSION['tallashombre'] = $atleta->cuentatallasshombre();
+		$_SESSION['tallasmujer'] = $atleta->cuentatallassmujer();
+		$_SESSION['calzadohombre'] = $atleta->cuentacalzadoshombre();
+		$_SESSION['calzadomujer'] = $atleta->cuentacalzadosmujer();
+
+
 		$_SESSION['titulo']='Reporte de Indumentaria de los Atletas';
 		
 		
