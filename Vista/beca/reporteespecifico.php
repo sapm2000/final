@@ -37,8 +37,8 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabecaespecifica']))
 	$cata.="<table class=tabla-cat id=tabla>";
 	$reporte.="<br><table class=tabla-cat id=tabla align=center>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
-	$cata.="<tr><th>nacionalidad</th><th>nombre</th><th>apellido</th><th>disciplina</th><th>Fecha</th><th>Monto Pagado</th></tr>";
-	$reporte.="<tr><th>nacionalidad</th><th>nombre</th><th>apellido</th><th>disciplina</th><th>Fecha</th><th>Monto Pagado</th></tr>";
+	$cata.="<tr><th>Nacionalidad</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Fecha</th><th>Monto Pagado</th></tr>";
+	$reporte.="<tr><th>Nacionalidad</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Fecha</th><th>Monto Pagado</th></tr>";
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
@@ -70,14 +70,14 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabecaespecifica']))
 
 	$cata.="<table class=tabla-cat id=tabla>";
 
-	$reporte.="<center><h2>Monto Total</h2></center>";
+	$reporte.="<center><h2>Monto Total por Disciplinas</h2></center>";
 	$reporte.="<br><table class=tabla-cat id=tabla align=center>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 
 	$total = $_SESSION['montogeneral'];
 
-	$cata.="<tr><th>Desde</th><th>Hasta</th><th>Monto Pagado</th></tr>";
-	$reporte.="<tr><th>Desde</th><th>Hasta</th><th>Monto Pagado</th></tr>";
+	$cata.="<tr><th>Disciplina</th><th>Monto Pagado</th>";
+	$reporte.="<tr><th>Disciplina</th><th>Monto Pagado</th>";
 	foreach($total as $tot){
 		$cata.="<tr>";	
 		$cata.="<td>".$tot['disc']."</td>";	
@@ -102,6 +102,12 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabecaespecifica']))
 
 
 	$cata.="<table class=tabla-cat id=tabla>";
+
+	$reporte.="<center><h2>Monto Total por Fechas</h2></center>";
+	$reporte.="<br><table class=tabla-cat id=tabla align=center>";
+	$reporte.="<table class=tabla-catb id=tabla align=center>";
+
+	$reporte.="<tr><th>Desde</th><th>Hasta</th><th>Monto Pagado</th></tr>";
 	$cata.="<tr><th>Desde</th><th>Hasta</th><th>Monto Pagado</th></tr>";
 	$cata.="<tr>";	
 	$cata.="<td>".$_SESSION['desde']."</td>";	
@@ -109,11 +115,26 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabecaespecifica']))
 	$cata.="<td>".$_SESSION['montoto']."</td>";	
 
 
+	$reporte.="<tr>";	
+	$reporte.="<td>".$_SESSION['desde']."</td>";	
+	$reporte.="<td>".$_SESSION['hasta']."</td>";	
+	$reporte.="<td>".$_SESSION['montoto']."</td>";	
+
 
 	$_SESSION['reportebeca']=$reporte;
 	$cata.="</form>";
 
+	$cata.="</table><br>";
+
+	
+	$reporte.="</table>";
+	
+	$reporte.="</table><br>";
+
 }
+
+
+
 
 else
 {
