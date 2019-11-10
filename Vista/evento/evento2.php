@@ -37,6 +37,9 @@ if($_GET['accion']=="actual" && !empty($_SESSION['cataeven2']))
 
 	$cata.="<form name='catalog' action='../../Controlador/EventoController2.php?accion=registrar' method='post'>";
 	$cata.="<table class=tabla-cat id=tabla>";
+	
+    $reporte.="<center><h1>Reporte de Eventos.</h1></center>";
+
 	$reporte.="<br><table class=tabla-cateve id=tabla>";
 	$reporte.="<table class=tabla-catevento id=tabla>";
 	$cata.="<tr><th>Nombre</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Tipo</th><th>Municipio</th><th>Parroquia</th><th>Cantidad de Participantes Registrados</th><th colspan='2'>Acción</th></tr>";
