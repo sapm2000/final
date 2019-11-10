@@ -36,6 +36,46 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['indumentaria']))
 {
 	$catalogo = $_SESSION['indumentaria'];
 	$reporte='';
+
+	$cata.="<table class=tabla-cat id=tabla>";
+
+	$tallahombre = $_SESSION['tallashombre'];
+	$cata.="<tr><th>Talla hombre</th><th>total</th>";
+	foreach($tallahombre as $talh) {
+		$cata.="<tr>";	
+		$cata.="<td>".$talh['talla']."</td>";	
+		$cata.="<td>".$talh['total']."</td>";	
+
+	}
+
+	$tallamujer = $_SESSION['tallasmujer'];
+	$cata.="<tr><th>Talla Mujer</th><th>total</th>";
+	foreach($tallamujer as $talm) {
+		$cata.="<tr>";	
+		$cata.="<td>".$talm['talla']."</td>";	
+		$cata.="<td>".$talm['total']."</td>";	
+
+	}
+
+	$calzadohombre = $_SESSION['calzadohombre'];
+	$cata.="<tr><th>Calzado Hombre</th><th>total</th>";
+	foreach($calzadohombre as $calh) {
+		$cata.="<tr>";	
+		$cata.="<td>".$calh['calzado']."</td>";	
+		$cata.="<td>".$calh['total']."</td>";	
+
+	}
+
+	$tallamujer = $_SESSION['calzadomujer'];
+	$cata.="<tr><th>Calzado Mujer</th><th>total</th>";
+	foreach($tallamujer as $calm) {
+		$cata.="<tr>";	
+		$cata.="<td>".$calm['calzado']."</td>";	
+		$cata.="<td>".$calm['total']."</td>";	
+
+	}
+
+	
 	$cata.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrar' method='post'>";
 	$cata.="<table class=tabla-cat id=tabla>";
 
@@ -49,7 +89,9 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['indumentaria']))
 	{
 		$cata.="<tr>";	
 		$cata.="<td>".$cat['nac']."</td>";	
-		$cata.="<td>".$cat['cedula']."</td>";	
+		$cata.="<td>".$cat['cedula']."</td>";
+		$cata.="<td>".$cat['nombre']."</td>";	
+		$cata.="<td>".$cat['apellido']."</td>";	
 		$cata.="<td>".$cat['peso']."</td>";	
 		$cata.="<td>".$cat['talla']."</td>";	
 		$cata.="<td>".$cat['altura']."</td>";	
@@ -61,6 +103,8 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['indumentaria']))
 		$reporte.="<tr>";	
 		$reporte.="<td>".$cat['nac']."</td>";	
 		$reporte.="<td>".$cat['cedula']."</td>";	
+		$reporte.="<td>".$cat['nombre']."</td>";	
+		$reporte.="<td>".$cat['apellido']."</td>";	
 		$reporte.="<td>".$cat['peso']."</td>";	
 		$reporte.="<td>".$cat['talla']."</td>";	
 		$reporte.="<td>".$cat['altura']."</td>";	
@@ -77,6 +121,11 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['indumentaria']))
 	$reporte.="</table>";
 	
 	$reporte.="</table><br>";
+
+	
+
+
+
 
 	$_SESSION['reporte']=$reporte;
 

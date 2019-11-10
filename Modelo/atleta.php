@@ -678,7 +678,47 @@ class Atleta extends ClaseBase
 		public function getIndumentaria()
 		{
 			$cc = Conexion::getInstance();
-			$sql = "SELECT cedula,nac,peso,altura,talla,calzado,mano FROM atleta INNER JOIN tallas on atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0";
+			$sql = "SELECT cedula,nac,nombre,apellido,peso,altura,talla,calzado,mano FROM atleta INNER JOIN tallas on atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentatallasshombre()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(tallas.talla) as total, tallas.talla FROM atleta INNER JOIN tallas ON atleta.id_talla=tallas.id WHERE atleta.activo=0 AND atleta.sexo='M' GROUP BY tallas.talla";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentatallassmujer()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(tallas.talla) as total, tallas.talla FROM atleta INNER JOIN tallas ON atleta.id_talla=tallas.id WHERE atleta.activo=0 AND atleta.sexo='F' GROUP BY tallas.talla";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentacalzadoshombre()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(calzados.calzado) as total, calzados.calzado FROM atleta INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.sexo='M' GROUP BY calzados.calzado";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentacalzadosmujer()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(calzados.calzado) as total, calzados.calzado FROM atleta INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.sexo='F' GROUP BY calzados.calzado";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			$trae = $result->fetchAll();
