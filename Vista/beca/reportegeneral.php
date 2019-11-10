@@ -21,9 +21,7 @@ $form.='</tr>';
 $form.='</table>';
 $form.='<table>';
 $form.='<tr>';
-$form.='<td> <a href="generarreporte.php?accion=global"><input type="button" class="botonmodal" value="Generar Reporte" name="activos" title="Generar Reporte"> </a></td>';
-$form.='<td><a href="../beca/becanueva.php?accion=actualizar"><input type="button" class="botonmodal" value="Nueva Beca"></a></td>';
-$form.='<td><a href="../beca/becanuevagloria.php?accion=actualizar"><input type="button" class="botonmodal" value="Nueva Beca Gloriosa"></a></td>';
+$form.='<td> <a href="generarreporteespecial.php?accion=global"><input type="button" class="botonmodal" value="Generar Reporte" name="activos" title="Generar Reporte"> </a></td>';
 $form.='</tr>';
 $form.='</table>';
 
@@ -37,8 +35,8 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabecageneral']))
 	$catalogo = $_SESSION['catabecageneral'];
 	$reporte='';
 	$cata.="<table class=tabla-cat id=tabla>";
-	$reporte.="<br><table class=tabla-cat id=tabla>";
-	$reporte.="<table class=tabla-catb id=tabla>";
+	$reporte.="<br><table class=tabla-cat id=tabla align=center>";
+	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	$cata.="<tr><th>Nombre</th><th>Fecha</th><th>Monto Pagado</th><th>Becados</th><th>Acción</th></tr>";
 	$reporte.="<tr><th>Nombre</th><th>Fecha</th><th>Monto Pagado</th><th>Becados</th></tr>";
 	foreach($catalogo as $cat)
@@ -69,8 +67,11 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabecageneral']))
 	$reporte.="</table><br>";
 
 	$cata.="<table class=tabla-cat id=tabla>";
-	$reporte.="<br><table class=tabla-cat id=tabla>";
-	$reporte.="<table class=tabla-catb id=tabla>";
+
+	$reporte.="<center><h2>Monto Total</h2></center>";
+	$reporte.="<br><table class=tabla-cat id=tabla align=center>";
+	$reporte.="<table class=tabla-catb id=tabla align=center>";
+
 
 	$cata.="<tr><th>Desde</th><th>Hasta</th><th>Monto Pagado</th></tr>";
 	$reporte.="<tr><th>Desde</th><th>Hasta</th><th>Monto Pagado</th></tr>";
