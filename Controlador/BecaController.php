@@ -405,6 +405,22 @@ switch($_REQUEST['accion'])
 		}
 		break;
 	}
+
+	case "filtrogeneral":
+		{
+
+			$beca->setPrimer($_POST['primer']);
+			$_SESSION['desde']=$beca->getPrimer();
+			$beca->setSegundo($_POST['segundo']);
+			$_SESSION['hasta']=$beca->getSegundo();
+			$todos = $beca->becasfiltradas();
+			$_SESSION['catabecageneral'] = $todos;
+			$monto = $beca->montogeneral();
+			$_SESSION['montogeneral']=$monto[0][0];
+
+			header("Location: ../Vista/beca/reportegeneral.php?accion=actual");
+			break;
+		}
 }
 ob_end_flush();
 ?>
