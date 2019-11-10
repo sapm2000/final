@@ -328,7 +328,37 @@ class Beca extends ClaseBase
 	public function montogeneral()
 	{
 		$cc = Conexion::getInstance();
-		$sql = "SELECT sum(becas_mes.montoT) AS montofinal FROM becas_mes WHERE becas_mes.gloria=0 AND becas_mes.fecha BETWEEN  '$this->primer' AND '$this->segundo' 	";
+		$sql = "SELECT sum(becas_mes.montoT) AS montofinal FROM becas_mes WHERE becas_mes.gloria=0 AND becas_mes.fecha BETWEEN  '$this->primer' AND '$this->segundo'";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
+
+	public function becasespecificas()
+	{
+		$cc = Conexion::getInstance();
+		$sql = "SELECT atleta.nac,atleta.cedula,atleta.nombre,atleta.apellido,becas_total.disc,becas_total.fecha,becas_total.monto FROM becas_total INNER JOIN atleta ON becas_total.id_atleta=atleta.id WHERE becas_total.gloria=0 AND becas_total.fecha BETWEEN  '$this->primer' AND '$this->segundo' ORDER BY atleta.cedula, becas_total.fecha";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
+
+	public function montoespecifico()
+	{
+		$cc = Conexion::getInstance();
+		$sql = "SELECT becas_total.disc,becas_total.fecha,becas_total.monto, SUM(becas_total.monto) as totes FROM becas_total  WHERE becas_total.gloria=0  AND becas_total.fecha BETWEEN  '$this->primer' AND '$this->segundo' GROUP BY becas_total.disc";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
+
+	public function montototallll()
+	{
+		$cc = Conexion::getInstance();
+		$sql = "SELECT SUM(becas_total.monto) as totallll FROM becas_total  WHERE becas_total.gloria=0 AND becas_total.fecha BETWEEN  '$this->primer' AND '$this->segundo'";
 		$result = $cc->db->prepare($sql);
 		$result->execute();
 		$trae = $result->fetchAll();
