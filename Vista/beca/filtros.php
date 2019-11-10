@@ -32,7 +32,7 @@ $form.='<hr></hr>';
 
 
 $form.='<td> <a href="filtrogeneral.php?accion=actualizar"><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de las Becas" id="" name=""></a></td>';
-$form.='<td><a href="#"><input type="button" value="Reporte Especifico" class="botonmodal" title="Reporte Especifico de las Becas" id="" name=""></a></td>';
+$form.='<td><a href="filtroespecifico.php?accion=actualizar"><input type="button" value="Reporte Especifico" class="botonmodal" title="Reporte Especifico de las Becas" id="" name=""></a></td>';
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td> <a href="#"><input type="button" value="Reporte General Gloria" class="botonmodal" title="Reporte General de las Becas Gloriosas" id="" name=""></a></td>';
