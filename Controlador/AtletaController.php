@@ -1631,6 +1631,69 @@ case "registrarRegistro_medico":
 					break;
 				}
 
+				case 'indumentariapordisciplina':
+					{
+
+						$disc=$atleta->traeDisciplinas();
+						$cal=$atleta->traecalzado();
+						$tal=$atleta->traetallas();
+						$t=$atleta->cuentaDisciplina();
+						$tcal=$atleta->cuentacalzado();
+						$ttal=$atleta->cuentatallas();
+						$_SESSION['contador']=$t[0][0];
+						$_SESSION['contadorcalzado']=$tcal[0][0];
+						$_SESSION['contadortalla']=$ttal[0][0];
+
+
+						for ($i=0;$i<=$t[0][0];$i++) {
+							$atleta->setPrimer($disc[$i][0]);
+							$_SESSION['ertitulo'.$i]=$atleta->getPrimer();
+							$_SESSION['disc'.$i]=$atleta->detalleindumentaria();
+							for ($h=0;$h<=$tcal[0][0];$h++) {
+								$atleta->setSegundo($cal[$h][0]);
+								$_SESSION['idcalza'.$i.$h]=$atleta->getSegundo();
+								$k=$atleta->detallecalzado();
+								$_SESSION['calza'.$i.$h]=count($k);
+							
+							}
+							for ($h=0;$h<=$ttal[0][0];$h++) {
+								$atleta->setSegundo($tal[$h][0]);
+								$_SESSION['idtal'.$i.$h]=$atleta->getSegundo();
+								$k=$atleta->detalletallas();
+								$_SESSION['tall'.$i.$h]=count($k);
+							
+							}
+					
+						}
+
+					
+				
+						for ($i=0;$i<=$t[0][0];$i++) {
+							$atleta->setPrimer($disc[$i][0]);
+							$_SESSION['ertitulomujer'.$i]=$atleta->getPrimer();
+							$_SESSION['discF'.$i]=$atleta->detalleindumentariamujer();
+							for ($h=0;$h<=$tcal[0][0];$h++) {
+								$atleta->setSegundo($cal[$h][0]);
+								$_SESSION['idcalzaF'.$i.$h]=$atleta->getSegundo();
+								$k=$atleta->detallecalzadomujer();
+								$_SESSION['calzaF'.$i.$h]=count($k);
+							
+							}
+
+							for ($h=0;$h<=$ttal[0][0];$h++) {
+								$atleta->setSegundo($tal[$h][0]);
+								$_SESSION['idtalF'.$i.$h]=$atleta->getSegundo();
+								$k=$atleta->detalletallasmujer();
+								$_SESSION['tallF'.$i.$h]=count($k);
+							
+							}
+				
+						}
+				
+						header("Location: ../Vista/atleta/reporteindumentariapordisciplinas.php?accion=actual");
+						break;
+					}
+
 
 }
 ob_end_flush();
