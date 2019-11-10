@@ -10,7 +10,7 @@ $code="<center><img src='../imagenes1/encabezado.jpg'></center>";
 
 if ($_REQUEST['accion']=="global") {
     $code.=$_SESSION['reporteevento'];
-    $code.="<h1 class=textoeve>Reporte de Eventos.</h1>";
+
     $code.='<link rel="stylesheet" href="../css/pdfreporteeventos.css" type="text/css">';
    $filename= 'Reporte de Eventos.pdf';
 }
