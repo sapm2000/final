@@ -114,8 +114,8 @@ $form.='<h2>Datos de Disciplinas</h2>';
 
 $form.='<td><a href="reportedisciplinas.php?accion=actualizar"><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Disciplinas" id="" name=""></td>';
 $form.='<td><a href="../../Controlador/AtletaController.php?accion=buscadisciplinas"><input type="button" value="Reporte de Modalidades" class="botonmodal" title="Reporte de los Atletas Según La Modalidad" id="" name=""></td>';
-$form.='<td><a href="../../Controlador/AtletaController.php?accion=reportegeneral"><input type="button" value="Reporte global" class="botonmodal" title="Reporte de los Atletas Según su Modalidad" id="" name=""></td>';
-$form.='<td><a href="../../Controlador/AtletaController.php?accion=reportegeneralgloria"><input type="button" value="Reporte global Glorias" class="botonmodal" title="Reporte de los Atletas Según su Modalidad" id="" name=""></td>';
+$form.='<td><a href="../../Controlador/AtletaController.php?accion=reportegeneral"><input type="button" value="Reporte Global" class="botonmodal" title="Reporte Global de los Atletas Según Disciplina" id="" name=""></td>';
+$form.='<td><a href="../../Controlador/AtletaController.php?accion=reportegeneralgloria"><input type="button" value="Reporte Global de Glorias" class="botonmodal" title="Reporte de los Atletas Gloriosos" id="" name=""></td>';
 $form.='</tr>';
 $form.='</table>';
 $form.='</form>';
