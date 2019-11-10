@@ -38,6 +38,7 @@ $form.='<td><a href="filtroultimacedula.php?accion=actualizar"><input type="butt
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td><a href="filtrofechanac.php?accion=actualizar"><input type="button" value="Reporte de Fecha de Nacimiento" class="botonmodal" title="Reporte de los Atletas por Fecha de Nacimiento" id="" name=""></a></td>';
+$form.='<td><a href="../../Controlador/AtletaController.php?accion=buscamelasdisciplinas"><input type="button" value="Reporte de Fecha de Nacimiento por disciplina" class="botonmodal" title="Reporte de los Atletas por Fecha de Nacimiento" id="" name=""></a></td>';
 $form.='<td><a href="filtrotiposanguineo.php?accion=actualizar"><input type="button" value="Reporte de Tipo Sanguíneo" class="botonmodal" title="Reporte de Tipo Sanguíneo de los Atletas" id="" name=""></a></td>';
 $form.='<td><a href="filtroestadocivil.php?accion=actualizar"><input type="button" value="Reporte de Estado Cívil" class="botonmodal" title="Reporte de el Estado Cívil de los Atletas" id="" name=""></a></td>';
 $form.='<td><a href="filtrosexo.php?accion=actualizar"><input type="button" value="Reporte de Genero" class="botonmodal" title="Reporte de Atletas Según su Genero" id="" name=""></td>';

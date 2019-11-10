@@ -235,6 +235,9 @@ switch($_REQUEST['accion'])
 	{
 		$n = $atleta->getBancario();
 		$_SESSION['bancos'] = $n;
+
+		$n = $atleta->getBancariototal();
+		$_SESSION['total'] = $n;	
 		$_SESSION['titulo']='Reporte de Datos Bancarios de los Atletas';
 		
 		
@@ -1337,9 +1340,24 @@ case "registrarRegistro_medico":
 				$n = $atleta->getFechaNac();
 				$_SESSION['nivel10'] = $n;
 				
-				header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
+				header("Location: ../Vista/atleta/reportedatospersonalesnac.php?accion=actual");
 				break;
 			}
+
+			case 'filtrofechanacdis':
+				{
+					$atleta->setPrimer($_POST['primer']);
+					$atleta->setSegundo($_POST['segundo']);
+					$atleta->setTercer($_POST['tercer']);
+
+					
+					
+					$n = $atleta->getFechaNacdis();
+					$_SESSION['nivel10'] = $n;
+					
+					header("Location: ../Vista/atleta/reportedatospersonalesnac.php?accion=actual");
+					break;
+				}
 			case 'filtrotiposanguineo':
 			{
 				$atleta->setPrimer($_POST['primer']);
@@ -1500,6 +1518,18 @@ case "registrarRegistro_medico":
 				break;
 			}
 
+			case 'buscamelasdisciplinas':
+				{
+					$n = $disciplina->getAll($tab);
+					$_SESSION['disciplin'] = $n;
+					
+					
+					
+					
+					header("Location: ../Vista/atleta/filtrofechanacdis.php?accion=actual");
+					break;
+				}
+
 			case 'filtrobancos':
 			{
 				$atleta->setPrimer($_POST['primer']);
@@ -1507,6 +1537,10 @@ case "registrarRegistro_medico":
 				
 				$n = $atleta->getBbancos();
 				$_SESSION['bancos'] = $n;
+
+				
+				$n = $atleta->getBbancostotal();
+				$_SESSION['total'] = $n;	
 				
 				header("Location: ../Vista/atleta/reportebancario.php?accion=actual");
 				break;
