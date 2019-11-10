@@ -159,6 +159,7 @@ for ($i=0;$i<=$_SESSION['contador'];$i++ ){
 	
 	$reporte.="</table><br>";
 
+	$reporte.="<table class=tabla-catsalto></table>";
 	
 }
 
