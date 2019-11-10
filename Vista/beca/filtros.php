@@ -31,8 +31,13 @@ $form.='<tr>';
 $form.='<hr></hr>';
 
 
-$form.='<td> <a href="#"><input type="button" value="Becas Filtradas por Fecha" class="botonmodal" title="Reporte de las Becas Según sus Fechas" id="" name=""></a></td>';
-$form.='<td><a href="#"><input type="button" value="Becas Filtradas por Disciplina" class="botonmodal" title="Reporte de las Becas Según las Disciplinas" id="" name=""></a></td>';
+$form.='<td> <a href="#"><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de las Becas" id="" name=""></a></td>';
+$form.='<td><a href="#"><input type="button" value="Reporte Especifico" class="botonmodal" title="Reporte Especifico de las Becas" id="" name=""></a></td>';
+$form.='</tr>';
+$form.='<tr>';
+$form.='<td> <a href="#"><input type="button" value="Reporte General Gloria" class="botonmodal" title="Reporte General de las Becas Gloriosas" id="" name=""></a></td>';
+$form.='<td><a href="#"><input type="button" value="Reporte Especifico Gloria" class="botonmodal" title="Reporte Especifico de las Becas Gloriosas " id="" name=""></a></td>';
+$form.='</tr>';
 $form.='</table>';
 $form.='</form>';
 
