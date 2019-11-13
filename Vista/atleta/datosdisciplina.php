@@ -16,7 +16,7 @@ $estadocivil='';
 $sexo='';
 $tipo='';
 
-$becar.="<select name='becar' required>";
+$becar.="<select name='becar'>";
 $becar.= "<option value=''>Seleccione si la disciplina sera becada</option>";
 $becar.= "<option value='1'>SI</option>";
 $becar.= "<option value='0'>NO</option>";
