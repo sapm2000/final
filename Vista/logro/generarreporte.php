@@ -10,7 +10,7 @@ $code="<center><img src='../imagenes1/encabezado.jpg'></center>";
     $filename= 'Reporte de Logros del Atleta.pdf';
 
 $code.=$_SESSION['reporte'];
-$code.='<link rel="stylesheet" href="../css/pdfreporte.css" type="text/css">';
+$code.='<link rel="stylesheet" href="../css/pdfreportelogros.css" type="text/css">';
 
 
 
