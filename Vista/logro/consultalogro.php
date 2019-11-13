@@ -34,8 +34,8 @@ if($_GET['accion']=="actual")
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla>";
 
-	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th><th colspan='4'>Acción</th></tr>";
-	$reporte.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th><th colspan='4'>Acción</th></tr>";
+	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th></tr>";
+	$reporte.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th></tr>";
 
 	foreach($encabezado as $enc)
 	{
@@ -76,11 +76,11 @@ if($_GET['accion']=="actual")
 
 
 	$catalogo = $_SESSION['catalogro'];
-	$reporte.="<br><table class=tabla-cat id=tabla>";
-	$reporte.="<table class=tabla-catb id=tabla>";
+	$reporte.="<br><table class=tabla-catdeta id=tabla align=center>";
+	$reporte.="<table class=tabla-catdetalle id=tabla align=center>";
 	$cata.="<table class=tabla-cat id=tabla>";
 	$cata.="<tr><th>Tipo de Logro</th><th>Pais</th><th>Estado</th><th>Ciudad</th><th>Disciplina</th><th>Resultado</th><th>Descripción</th><th>Observación</th><th colspan='3'>Acción</th></tr>";
-	$reporte.="<tr><th>Tipo de Logro</th><th>Pais</th><th>Estado</th><th>Ciudad</th><th>Disciplina</th><th>Resultado</th><th>Descripción</th><th>Observación</th><th colspan='3'>Acción</th></tr>";
+	$reporte.="<tr><th>Tipo de Logro</th><th>Pais</th><th>Estado</th><th>Ciudad</th><th>Disciplina</th><th>Resultado</th><th>Descripción</th><th>Observación</th></tr>";
 
 	foreach($catalogo as $cat)
 	{
