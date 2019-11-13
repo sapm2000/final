@@ -307,7 +307,6 @@ if (empty($_SESSION['hombres'])) {
 	$cata.="";
 }
 
-
 $diccionario = array 
 (
 	'PERFIL' => $perfil,
