@@ -51,7 +51,7 @@ if($_GET['accion']=='ver_detalles') {
 	}
 	$municipio2.= "</select>";
 
-	$todospar1 = $_SESSION['parroquia2'];
+	$todospar1 = $_SESSION['parroquia3'];
 	$parroquia2 = "<select name='id_parroquia1' required>";
 	$parroquia2.= "<option>Seleccione una parroquia</option>";
 	foreach($todospar1 as $tp)

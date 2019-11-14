@@ -17,7 +17,7 @@ $_SESSION['titulo']='Reporte la Ficha del Atleta';
 $form='';
 $cata='';
 $boton='';
-$form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=filtrosprimerdigito">';
+$form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=fichaespecifica">';
 $form.='<table>';
 $form.='<tr>';
 $form.='<td>Ingrese Cédula:</td>';

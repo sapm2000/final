@@ -1792,6 +1792,59 @@ case "registrarRegistro_medico":
 					}
 
 
+					case 'fichaespecifica':
+						{
+							$atleta->setCedula($_POST['primer']);
+							
+							
+							$n = $atleta->traeid();
+							$x = $n[0][0];
+
+							$atleta->setPrimer($x);
+
+							$_SESSION['datospersonales']=$atleta->traedatospersonales();
+							$_SESSION['indumentaria']=$atleta->traeindumentaria();
+							$_SESSION['contacto']=$atleta->traedatoscontacto();
+							$_SESSION['bancario']=$atleta->traedatosbancarios();
+							$_SESSION['representante']=$atleta->traerepresentante();
+							$_SESSION['laboral']=$atleta->datoslaboral();
+							$_SESSION['datosdisciplina']=$atleta->datosdisciplinas();
+							$_SESSION['medicos']=$atleta->datosmedicos();
+							$_SESSION['discapacidad']=$atleta->datosdiscapacidad();
+							$_SESSION['beca']=$atleta->traebeca();
+
+							var_dump($_SESSION['datospersonales']);
+							echo '<br>';
+							var_dump($_SESSION['indumentaria']);
+							echo '<br>';
+							var_dump($_SESSION['datosdisciplina']);
+							echo '<br>';
+							var_dump($_SESSION['contacto']);
+							echo '<br>';
+							var_dump($_SESSION['bancario']);
+							echo '<br>';
+							var_dump($_SESSION['representante']);
+							echo '<br>';
+							var_dump($_SESSION['laboral']);
+							echo '<br>';
+							var_dump($_SESSION['medicos']);
+							echo '<br>';
+							var_dump($_SESSION['discapacidad']);
+							echo '<br>';
+							var_dump($_SESSION['beca']);
+
+
+							
+
+
+
+
+							
+							header("Location: ../Vista/atleta/reporteficha.php?accion=actual");
+							break;
+						}
+
+
 }
 ob_end_flush();
 

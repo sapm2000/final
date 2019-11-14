@@ -1397,6 +1397,117 @@ class Atleta extends ClaseBase
 			return ($trae);
 		}
 
+		public function traeid()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT id FROM atleta where cedula='$this->cedula'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+			
+		}
+
+		public function traedatospersonales()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT atleta.nac,atleta.cedula,atleta.nombre,atleta.apellido,atleta.f_nac,atleta.tipos,atleta.estadoc,atleta.sexo,nivels.nivel FROM atleta INNER JOIN nivels ON atleta.id_nivel=nivels.id WHERE atleta.id='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function traeindumentaria()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT atleta.peso,atleta.altura,atleta.mano,calzados.calzado,tallas.talla FROM atleta INNER JOIN calzados ON atleta.id_calzado=calzados.id INNER JOIN tallas ON atleta.id_talla=tallas.id WHERE atleta.id='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function traedatoscontacto()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT atleta.correo,atleta.n_tel,atleta.n_eme,municipio.descrips,parroquia.descrip,atleta.direccion FROM atleta INNER JOIN municipio ON atleta.id_municipio=municipio.id INNER JOIN parroquia ON atleta.id_parroquia=parroquia.id WHERE atleta.id='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function traedatosbancarios()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cuenta.nac,cuenta.cedula,cuenta.nombre,cuenta.apellido,bancos.banco,cuenta.numeroc,cuenta.tipo FROM cuenta INNER JOIN bancos ON cuenta.id_banco=bancos.id INNER JOIN atleta ON cuenta.id_atleta=atleta.id WHERE atleta.id='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function traerepresentante()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT representantes.cedula,representantes.nombre,representantes.apellido,representantes.correo,representantes.n_tel,parentezcos.parentezco FROM atleta_representante INNER JOIN representantes ON atleta_representante.id_representante=representantes.id INNER JOIN parentezcos ON atleta_representante.id_parentezco=parentezcos.id INNER JOIN atleta ON atleta_representante.id_atleta=atleta.id WHERE atleta.id='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function datoslaboral()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT datoll.correol,datoll.empresa,datoll.direccion1,municipio.descrips,parroquia.descrip FROM datoll INNER JOIN atleta  ON datoll.id_atleta=atleta.id INNER JOIN municipio ON datoll.id_municipio1=municipio.id INNER JOIN parroquia ON datoll.id_parroquia1=parroquia.id WHERE atleta.id='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function datosdisciplinas()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT disciplinas.disciplina,modalidades.modalidad,estatus.estatu FROM puente_disciplina INNER JOIN atleta ON puente_disciplina.id_atleta=atleta.id INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id INNER JOIN modalidades ON puente_disciplina.id_modalidad=modalidades.id INNER JOIN estatus ON puente_disciplina.id_estatus=estatus.id WHERE atleta.id='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function datosmedicos()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT registro_medicos.registro_medico,puente_registro_medico.fecha_medica FROM puente_registro_medico INNER JOIN atleta ON puente_registro_medico.id_atleta=atleta.id INNER JOIN registro_medicos ON puente_registro_medico.id_registro_medico=registro_medicos.id WHERE atleta.id='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function datosdiscapacidad()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT discapacidades.discapacidad FROM puente_discapacidad INNER JOIN atleta ON puente_discapacidad.id_atleta=atleta.id INNER JOIN discapacidades ON puente_discapacidad.id_discapacidad=discapacidades.id WHERE atleta.id='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function traebeca()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT id FROM becas WHERE becas.id_atleta='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
 }
 
 
