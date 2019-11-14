@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-11-2019 a las 16:01:11
+-- Tiempo de generación: 14-11-2019 a las 19:10:01
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.4
 
@@ -58,9 +58,9 @@ CREATE TABLE `atleta` (
 --
 
 INSERT INTO `atleta` (`id`, `nac`, `cedula`, `nombre`, `apellido`, `f_nac`, `tipos`, `estadoc`, `sexo`, `id_nivel`, `correo`, `n_tel`, `n_eme`, `id_municipio`, `id_parroquia`, `direccion`, `activo`, `id_talla`, `id_calzado`, `altura`, `peso`, `mano`) VALUES
-(1, 'V', 30426947, 'FREDDERICK', 'HERNANDEZ', '2004-07-06', 'O+', 'SOLTERO/A', 'M', 1, 'DASDAD@ASDS.COM', '12345678900', '00987654321', 13, 19, 'ASDA', 2, 8, 6, '110', '90.0', 'DIESTRO'),
-(2, 'V', 27758852, 'MARYORITH', 'SINGER', '2000-05-05', 'O+', 'SOLTERO/A', 'F', 3, 'MARYORITHSINGER05@GMAIL.COM', '04125084544', '04245222312', 1, 1, 'FINAL CALLE 28 CON 14 AV.', 2, 0, 0, '', '', ''),
-(3, 'V', 26943430, 'SAMUEL', 'PEREZ', '2000-01-06', 'O+', 'SOLTERO/A', 'M', 3, '8@SADSA.COM', '04245222312', '04125084544', 11, 17, '2 AV.', 2, 5, 6, '171', '50.0', 'DIESTRO'),
+(1, 'V', 30426947, 'FREDDERICK', 'HERNANDEZ', '2004-07-06', 'O+', 'SOLTERO/A', 'M', 1, 'DASDAD@ASDS.COM', '04143012400', '04245222312', 13, 19, 'ASDA', 0, 8, 6, '110', '90.0', 'DIESTRO'),
+(2, 'V', 27758852, 'MARYORITH', 'SINGER', '2000-05-05', 'O+', 'SOLTERO/A', 'F', 3, 'MARYORITHSINGER05@GMAIL.COM', '04125084544', '04245222312', 1, 1, 'FINAL CALLE 28 CON 14 AV.', 0, 0, 0, '', '', ''),
+(3, 'V', 26943430, 'SAMUEL', 'PEREZ', '2000-01-06', 'O+', 'SOLTERO/A', 'M', 3, '8@SADSA.COM', '04245222312', '04125084544', 11, 17, '2 AV.', 0, 5, 6, '171', '50.0', 'DIESTRO'),
 (4, 'V', 1234567, 'FSDFS', 'SDFDSFS', '2000-06-12', 'O-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 8, 5, '123', '12', ''),
 (5, 'E', 7590456, 'ADSAD', 'ASDADAS', '2000-06-01', 'O-', 'SOLTERO/A', 'M', 2, '', '', '', 0, 0, '', 0, 5, 5, '123', '12.5', 'DIESTRO'),
 (6, 'V', 1478558, 'XCZCZXC', 'ZXCZXCZXC', '2019-10-06', 'B-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 5, 5, '', '', ''),
@@ -106,7 +106,8 @@ CREATE TABLE `atleta_representante` (
 --
 
 INSERT INTO `atleta_representante` (`id`, `id_atleta`, `id_representante`, `id_parentezco`) VALUES
-(3, 3, 2, 5);
+(3, 3, 2, 5),
+(4, 1, 2, 9);
 
 -- --------------------------------------------------------
 
@@ -302,9 +303,9 @@ CREATE TABLE `cuenta` (
 --
 
 INSERT INTO `cuenta` (`id`, `nac`, `cedula`, `nombre`, `apellido`, `id_banco`, `numeroc`, `tipo`, `id_atleta`) VALUES
-(1, 'E', '1234567', 'MARITZA', 'HERNANDEZASDA', 14, '12345678900876541111', 'AHORRO', 1),
+(1, 'V', '7590773', 'MARITZA', 'HERNANDEZASDA', 14, '12345678901234567890', 'CORRIENTE', 1),
 (2, 'V', '27328852', 'MARYORITH', 'SINGER', 6, '12345678900876541111', 'CORRIENTE', 2),
-(3, 'V', '1234567', 'ASDADSADS', 'PEREZ', 9, '12345678900876541111', '', 3),
+(3, 'V', '1234567', 'ASDADSADS', 'PEREZ', 9, '01123456789009876543', 'CORRIENTE', 3),
 (4, '', '', '', '', 0, '12345678901234567890', '', 4),
 (5, 'V', '12345678', 'ASDSDA', 'SDADSADA', 14, '12345678998765432112', '', 5),
 (6, '', '', '', '', 0, '', '', 6),
@@ -355,7 +356,7 @@ CREATE TABLE `datoll` (
 INSERT INTO `datoll` (`id`, `correol`, `empresa`, `id_municipio1`, `id_parroquia1`, `direccion1`, `id_atleta`) VALUES
 (1, 'SA@SA.COM', 'SADSAASDA', 8, 9, 'ASDA', 1),
 (2, '', '', 0, 0, '', 2),
-(3, '', '', 0, 0, '', 3),
+(3, 'SA@SA.COM', 'DSDFASF', 8, 9, 'ASDSD', 3),
 (4, '', '', 0, 0, '', 4),
 (5, '', '', 0, 0, '', 5),
 (6, '', '', 0, 0, '', 6),
@@ -711,7 +712,8 @@ CREATE TABLE `puente_discapacidad` (
 
 INSERT INTO `puente_discapacidad` (`id`, `id_atleta`, `id_discapacidad`) VALUES
 (17, 2, 5),
-(20, 1, 5);
+(20, 1, 5),
+(21, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -747,7 +749,8 @@ INSERT INTO `puente_disciplina` (`id`, `id_atleta`, `id_disciplina`, `id_modalid
 (25, 10, 11, 2, 1, 1),
 (26, 10, 11, 4, 1, 0),
 (27, 10, 4, 1, 1, 0),
-(28, 3, 11, 3, 8, 0);
+(28, 3, 11, 3, 8, 0),
+(29, 3, 4, 0, 7, 0);
 
 -- --------------------------------------------------------
 
@@ -774,7 +777,8 @@ INSERT INTO `puente_registro_medico` (`id`, `id_atleta`, `id_registro_medico`, `
 (12, 3, 9, '0000-00-00'),
 (13, 3, 10, '0000-00-00'),
 (14, 3, 1, '2019-10-14'),
-(15, 3, 2, '2019-10-15');
+(15, 3, 2, '2019-10-15'),
+(16, 1, 7, '2010-12-04');
 
 -- --------------------------------------------------------
 
@@ -901,8 +905,8 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `usuario`, `clave`, `n_eme`, `n_tel`, `correo`, `conf_clave`, `tipo`) VALUES
 (30, 'SAMUEL', 'PEREZ', 'SAPM2000', '12345678', '12345678900', '12345678900', '123456789@12345678.COM', '123456789', 'ADMINISTRADOR'),
-(31, 'MARYORITH', 'SINGER', 'MARYO05', '123456', '12345678900', '32112321312', 'ASDASA@ASDA.COM', '123456', 'ADMINISTRADOR'),
-(33, 'SADSADSAD', 'ASDSADSADSA', 'DADADA', '123', '00987654321', '12345678900', 'SDASDAD@ASDSADCP.SDF', '123', 'ADMINISTRADOR');
+(31, 'MARYORITH', 'SINGER', 'MARYO05', '123456', '12345678900', '32112321312', 'ASDASA@ASDA.COM', '123456', 'METODOLOGO'),
+(33, 'SADSADSAD', 'ASDSADSADSA', 'DADADA', '123', '00987654321', '12345678900', 'SDASDAD@ASDSADCP.SDF', '123', 'ASISTENTE ADMINISTRATIVO');
 
 --
 -- Índices para tablas volcadas
@@ -1122,7 +1126,7 @@ ALTER TABLE `atleta`
 -- AUTO_INCREMENT de la tabla `atleta_representante`
 --
 ALTER TABLE `atleta_representante`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `bancos`
@@ -1242,19 +1246,19 @@ ALTER TABLE `parroquia`
 -- AUTO_INCREMENT de la tabla `puente_discapacidad`
 --
 ALTER TABLE `puente_discapacidad`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `puente_disciplina`
 --
 ALTER TABLE `puente_disciplina`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de la tabla `puente_registro_medico`
 --
 ALTER TABLE `puente_registro_medico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `registro_medicos`
