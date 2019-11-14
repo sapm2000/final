@@ -118,7 +118,7 @@ $nac='';
 	$form.='</tr>';
 	$form.='<tr>';
 	$form.='<td>Número de Cuenta:</td>';
-	$form.= " <td> <input type='text' name='cuenta' class='cajasdetexto' value='".$num."' maxlenght='20' onkeypress='return solonumeros(event)' pattern='[0-9]{20,20}' title='Solo 20 digitos' onpaste='return false' required></td>";
+	$form.= " <td> <input type='text' name='cuenta' class='cajasdetexto' value='".$num."' maxlenght='20' onkeypress='return solonumeros(event)' pattern='[0]{1}[1]{1}[0-9]{18}' title='Solo 20 digitos' onpaste='return false' required></td>";
 	$form.='</tr>';
 	$form.='<tr>';
 	$form.='<td>Tipo de Cuenta:</td>';
