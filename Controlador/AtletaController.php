@@ -1832,7 +1832,6 @@ case "registrarRegistro_medico":
 							var_dump($_SESSION['discapacidad']);
 							echo '<br>';
 							var_dump($_SESSION['beca']);
-						break;
 
 
 							
@@ -1841,7 +1840,7 @@ case "registrarRegistro_medico":
 
 
 							
-							header("Location: ../Vista/atleta/reportedisciplinas.php?accion=actual");
+							header("Location: ../Vista/atleta/reporteficha.php?accion=actual");
 							break;
 						}
 
