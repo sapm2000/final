@@ -8,15 +8,15 @@ $code="<center><img src='../imagenes1/encabezado.jpg'></center>";
 
 
 if ($_REQUEST['accion']=="global") {
-    $code.="<h1 class=texto>Reporte Global de Becas.</h1>";
+    $code.="<h1 class=texto>Reporte Especifico de Becas.</h1>";
     $code.=$_SESSION['reportebeca'];
-    $filename= 'Reporte Global de Becas.pdf';
+    $filename= 'Reporte Especifico de Becas.pdf';
 }
 
 if ($_REQUEST['accion']=="detalle") {
-    $code.="<h1 class=texto>Reporte Especifico de una Beca.</h1>";
-    $code.=$_SESSION['reportebecadetalle'];
-    $filename= 'Reporte Especifico de una Beca.pdf';
+    $code.="<h1 class=texto>Reporte General de Becas por Fecha.</h1>";
+    $code.=$_SESSION['reportebeca'];
+    $filename= 'Reporte General de Becas por Fecha.pdf';
 }
 $code.='<link rel="stylesheet" href="../css/pdfreporte.css" type="text/css">';
 

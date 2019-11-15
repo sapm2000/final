@@ -21,7 +21,7 @@ $form.='</tr>';
 $form.='</table>';
 $form.='<table>';
 $form.='<tr>';
-$form.='<td> <a href="generarreporteespecial.php?accion=global"><input type="button" class="botonmodal" value="Generar Reporte" name="activos" title="Generar Reporte"> </a></td>';
+$form.='<td> <a href="generarreporteespecial.php?accion=detalle"><input type="button" class="botonmodal" value="Generar Reporte" name="activos" title="Generar Reporte"> </a></td>';
 $form.='</tr>';
 $form.='</table>';
 

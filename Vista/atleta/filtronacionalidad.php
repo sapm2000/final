@@ -23,7 +23,7 @@ $nacionalidad.= "</select>";
 
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
-$_SESSION['titulo']='Reporte de Atletas Filtrado por Mano Hábil';
+$_SESSION['titulo']='Reporte de Atletas Filtrado por Nacionalidad';
 $form='';
 $cata='';
 $boton='';

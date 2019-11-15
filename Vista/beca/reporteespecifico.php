@@ -37,12 +37,13 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabecaespecifica']))
 	$cata.="<table class=tabla-cat id=tabla>";
 	$reporte.="<br><table class=tabla-cat id=tabla align=center>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
-	$cata.="<tr><th>Nacionalidad</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Fecha</th><th>Monto Pagado</th></tr>";
-	$reporte.="<tr><th>Nacionalidad</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Fecha</th><th>Monto Pagado</th></tr>";
+	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Fecha</th><th>Monto Pagado</th></tr>";
+	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Disciplina</th><th>Fecha</th><th>Monto Pagado</th></tr>";
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
 		$cata.="<td>".$cat['nac']."</td>";	
+		$cata.="<td>".$cat['cedula']."</td>";	
 		$cata.="<td>".$cat['nombre']."</td>";	
 		$cata.="<td>".$cat['apellido']."</td>";	
 		$cata.="<td>".$cat['disc']."</td>";	
@@ -51,6 +52,7 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catabecaespecifica']))
 
 		$reporte.="<tr>";	
 		$reporte.="<td>".$cat['nac']."</td>";	
+		$reporte.="<td>".$cat['cedula']."</td>";
 		$reporte.="<td>".$cat['nombre']."</td>";	
 		$reporte.="<td>".$cat['apellido']."</td>";	
 		$reporte.="<td>".$cat['disc']."</td>";	

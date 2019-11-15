@@ -91,7 +91,7 @@ $form.='<td><input id="letras" type="text" name="apellido" class="cajasdetexto" 
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Fecha de Nacimiento:</td>';
-$form.='<td><input type="date" name="f_nac" class="date" maxlenght="9" id="fnac" onblur="hoyfechas()" required></td>';
+$form.='<td><input type="date" name="f_nac" class="date" maxlenght="9" id="fnac"  max="'.date("Y-m-d").'" value="'.date("Y-m-d").'" required></td>';
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Tipo Sanguíneo:</td>';
@@ -323,7 +323,7 @@ $nac.= "</select>";
 	$form.='</tr>';
 	$form.='<tr>';
 	$form.='<td>Fecha de Nacimiento:</td>';
-	$form.='<td><input id="fnac" type="date" name="f_nac" class="date" maxlenght="9" value="'.$fnac.'" onblur="hoyfecha()" required></td>';
+	$form.='<td><input id="fnac" type="date" name="f_nac" class="date" maxlenght="9" value="'.$fnac.'"  max="'.date("Y-m-d").'" value="'.date("Y-m-d").'" required></td>';
 	$form.='<td><input id="key" type="hidden" name="id_atleta" class="date" maxlenght="9" value="'.$id.'"></td>';
 	$form.='</tr>';
 	$form.='<tr>';

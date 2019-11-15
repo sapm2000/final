@@ -41,7 +41,7 @@ if($_GET['accion']=='ver_detalles') {
 	$form.='<tr>';
 	$form.="<td>Seleccione los registros médicos </td>";
 	$form.='<td>'.$registro_medico.'</td>';
-	$form.='<td> <input type="date"  name="fecha_medica" class="cajasdetexto"> </td>';
+	$form.='<td> <input type="date"  name="fecha_medica" class="cajasdetexto"  max="'.date("Y-m-d").'" value="'.date("Y-m-d").'"> </td>';
 	$form.='<tr>';
 	$form.='<td></td>';
 	$form.='<td><input type="submit" value="Añadir Registro Médico" id="submit" name="BtRegistrar1"></td>';

@@ -24,7 +24,7 @@ $disciplina1.= "</select>";
 
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
-$_SESSION['titulo']='Reporte de Atletas Filtrado por Fecha de Nacimiento';
+$_SESSION['titulo']='Reporte de Atletas Filtrado por Fecha de Nacimiento y Disciplina';
 $form='';
 $cata='';
 $boton='';
@@ -36,8 +36,8 @@ $form.='</tr>';
 $form.='</table>';
 $form.='<table align=center>';
 $form.='<tr>';
-$form.='<td>Desde:<input  type="date" class="date" name="primer" id="fecha1" max="'.date("Y-m-d").'" required></td>';
-$form.='<td>Hasta:<input  type="date" class="date"  name="segundo" id="fecha2" max="'.date("Y-m-d").'" value="'.date("Y-m-d").'" onblur="valFechasfiltro()" required></td>';
+$form.='<td>Desde:<input  type="date" class="date" name="primer" id="fecha1" max="'.date("Y-m-d").'" value="'.date("Y-m-d").'" required></td>';
+$form.='<td>Hasta:<input  type="date" class="date"  name="segundo" id="fecha2" max="'.date("Y-m-d").'" value="'.date("Y-m-d").'" required></td>';
 
 $form.='<td> <input type="submit" class="botonmodal" value="Buscar"> </td>';
 $form.='</tr>';

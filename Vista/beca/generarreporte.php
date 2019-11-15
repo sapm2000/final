@@ -14,9 +14,9 @@ if ($_REQUEST['accion']=="global") {
 }
 
 if ($_REQUEST['accion']=="detalle") {
-    $code.="<h1 class=texto>Reporte Especifico de una Beca.</h1>";
+    $code.="<h1 class=texto>Reporte Global de Becas.</h1>";
     $code.=$_SESSION['reportebecadetalle'];
-    $filename= 'Reporte Especifico de una Beca.pdf';
+    $filename= 'Reporte Global de Becas.pdf';
 }
 $code.='<link rel="stylesheet" href="../css/pdfreportebecas.css" type="text/css">';
 
