@@ -32,6 +32,8 @@ $form.='</table>';
 for ($i=0;$i<=$_SESSION['contador'];$i++) {
 
 
+	
+
 if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales'.$i]))
 {
 	$catalogo = $_SESSION['datospersonales'.$i];
@@ -502,6 +504,8 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales'.$i]))
 	$reporte.="</table>";
 
 	$reporte.="</table>";
+
+	$reporte.="<table class=tabla-catsalto></table>";
 }
 
 	

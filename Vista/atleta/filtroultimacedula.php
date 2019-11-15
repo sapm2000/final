@@ -35,7 +35,7 @@ $form.='</form>';
 $diccionario = array 
 (
 	'PERFIL' => $perfil,
-	'TITULO'=>'Atletas',
+	'TITULO'=>'Filtrar por Último Número de Cédula',
 	'CATALOGO'=>$cata,
 	'BOTONREG'=>$boton,
 	'FORMULARIO'=>$form, 	

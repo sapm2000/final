@@ -40,7 +40,7 @@ $form.='</form>';
 $diccionario = array 
 (
 	'PERFIL' => $perfil,
-	'TITULO'=>'Becas',
+	'TITULO'=>'Filtrar Becas Gloriosas por Fecha',
 	'CATALOGO'=>$cata,
 	'BOTONREG'=>$boton,
 	'FORMULARIO'=>$form, 	
