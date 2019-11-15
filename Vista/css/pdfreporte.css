@@ -107,6 +107,7 @@ table.tabla-cat th
    font-family: fantasy;
 }
 
+
 table.tabla-cat tr:hover td
 {
    background-color:#F1F1F1;
@@ -184,6 +185,80 @@ table.obser td
    font-weight:bold;
    text-align: center;
 }
+
+/*Solo para la Ficha del Atleta*/
+
+table.tabla-catficha
+{
+	text-align: center;
+   font-size: 15;
+   font-family: fantasy;
+
+}
+
+table.tabla-catficha th
+{
+   background-color:#1E90FF;
+   border: 3px white;
+   color: white;
+   font-size: 16;
+   font-family: fantasy;
+}
+
+table.tabla-catficha td
+{
+
+   width: 25%;
+   font-family: fantasy;
+}
+
+
+
+table.tabla-catficha tr:hover td
+{
+   background-color:#F1F1F1;
+   font-family: fantasy;
+}
+
+
+/*Solo para el reporte de la ficha del atleta*/
+
+table.tabla-catfichar
+{
+	text-align: center;
+   font-size: 15;
+   font-family: fantasy;
+   width: 30%;
+   position: absolute;
+   left: 10%;
+   right: 10%;
+}
+
+table.tabla-catfichar th
+{
+   background-color:#1E90FF;
+   border: 3px white;
+   color: white;
+   font-size: 16;
+   font-family: fantasy;
+}
+
+table.tabla-catfichar td
+{
+
+   width: 25%;
+   font-family: fantasy;
+}
+
+
+
+table.tabla-catfichar tr:hover td
+{
+   background-color:#F1F1F1;
+   font-family: fantasy;
+}
+
+
 
 /*Solo para el archivo reporteindumentariapordisciplina*/
 table.tabla-catsalto
