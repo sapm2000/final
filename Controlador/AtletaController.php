@@ -180,7 +180,7 @@ switch($_REQUEST['accion'])
 		$_SESSION['calzadomujer'] = $atleta->cuentacalzadosmujer();
 
 
-		$_SESSION['titulo']='Reporte de Indumentaria de los Atletas';
+		$_SESSION['titulo']='Reporte General de Tallas de los Atletas';
 		
 		
 		header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
@@ -1817,7 +1817,7 @@ case "registrarRegistro_medico":
 				
 						}
 				
-						$_SESSION['titulo']='Reporte de Indumentaria por Disciplina';
+						$_SESSION['titulo']='Reporte General de Tallas por Disciplina';
 						header("Location: ../Vista/atleta/reporteindumentariapordisciplinas.php?accion=actual");
 						break;
 					}

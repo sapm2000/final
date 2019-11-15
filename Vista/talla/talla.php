@@ -23,7 +23,7 @@ $form.='<form name="regtalla" method="post" action="../../Controlador/TallaContr
 $form.='<table>';
 $form.='<tr>';
 $form.='<td>Talla:</td>';
-$form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" id="letra" onkeypress="return soloLetras(event)" onpaste="return false" name="tal" maxlenght="9" pattern="[a-z A-Z]{3}" required></td>';
+$form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" id="letra" onkeypress="return soloLetras(event)" onpaste="return false" name="tal" maxlenght="9" pattern="[a-z A-Z]{1,3}" required></td>';
 $form.='</tr>';
 $form.='</table>';
 $form.='<input type="submit" value="+ Añadir" id="submit" name="BtRegistrar">';
