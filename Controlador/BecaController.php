@@ -72,7 +72,6 @@ switch($_REQUEST['accion'])
 			
 			
 			
-			
 			header("Location: ../Vista/beca/filtrobecadisc.php?accion=actual");
 			break;
 		}
@@ -82,7 +81,7 @@ switch($_REQUEST['accion'])
 				$n = $disciplina->getAll($tab);
 				$_SESSION['disciplin'] = $n;
 				
-				
+
 				
 				
 				header("Location: ../Vista/beca/filtrobecadiscgloria.php?accion=actual");
