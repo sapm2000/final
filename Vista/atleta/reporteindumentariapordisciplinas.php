@@ -310,7 +310,7 @@ if (empty($_SESSION['hombres'])) {
 $diccionario = array 
 (
 	'PERFIL' => $perfil,
-	'TITULO'=>'Reporte De Indumentaria por Disciplina',
+	'TITULO'=>'Reporte General de Tallas por Disciplina',
 	'CATALOGO'=>$cata,
 	'BOTONREG'=>$boton,
 	'FORMULARIO'=>$form, 	

@@ -107,7 +107,7 @@ if($_GET['accion']=='ver_detalles') {
 	$form.='</tr>';
 	$form.="<tr>";
 	$form.='<td>Peso:</td>';
-	$form.='<td><input id="" type="text" name="peso" value="'.$pes.'" class="cajasdetexto" onkeypress="return solonumerosypuntos(event)" onpaste="return false" pattern="[0-9]{2}([.][0-9]{1})" title="ej: 47.5 " required></td>';
+	$form.='<td><input id="" type="text" name="peso" value="'.$pes.'" class="cajasdetexto" onkeypress="return solonumerosypuntos(event)" onpaste="return false" pattern="[0-9]{2}([0-9]{1})" title="ej: 47.5 ó 47 " required></td>';
 	$form.='</tr>';
 	$form.='<tr>';
 	$form.='<td>Altura (la altura se mide por cm):</td>';
