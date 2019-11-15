@@ -13,27 +13,27 @@ if(empty($_REQUEST['accion']))
 }
 
 
-$_SESSION['contar']='';
+$todosala = $_SESSION['disciplin'];
+$disciplina1 = "<select name='primer' required>";
+$disciplina1.= "<option>Seleccione una disciplina</option> required";
 
-
-
-
-
+foreach ($todosala as $tb) {
+	$disciplina1.= "<option value=".$tb['id'].">".$tb['disciplina']."</option>";	
+}
+$disciplina1.= "</select>";
 
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
+$_SESSION['titulo']='Reporte de Atletas Filtrado por Modalidad';
 $form='';
 $cata='';
 $boton='';
-
-$form.='<form name="atleta" method="post" action="#">';
+$form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=fichaespecificadisciplina">';
 $form.='<table>';
 $form.='<tr>';
-$form.='<hr></hr>';
-$form.='<h2>Fichas</h2>';
-
-$form.='<td><a href="fichacedula.php?accion=actualizar"><input type="button" value="Reporte de Ficha Especifica" class="botonmodal" title="Reporte de Ficha Especifica" id="" name=""></a></td>';
-$form.='<td><a href="../../Controlador/AtletaController.php?accion=fichadisciplina"><input type="button" value="Reporte por Ficha por Disciplina" class="botonmodal" title="Reporte por Ficha por Disciplina" id="" name=""></td>';
+$form.='<td>Ingrese la disciplina a buscar</td>';
+$form.='<td>'.$disciplina1.'</td>';
+$form.='<td> <input type="submit" class="botonmodal" value="Buscar"> </td>';
 $form.='</tr>';
 $form.='</table>';
 $form.='</form>';
@@ -42,10 +42,11 @@ $form.='</form>';
 
 
 
+
 $diccionario = array 
 (
 	'PERFIL' => $perfil,
-	'TITULO'=>'Reportes de Atletas con Filtros',
+	'TITULO'=>'Filtrar Disciplina',
 	'CATALOGO'=>$cata,
 	'BOTONREG'=>$boton,
 	'FORMULARIO'=>$form, 	
