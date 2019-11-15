@@ -76,6 +76,14 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 		$cata.="<tr>";
 		$cata.="<th>Nivel Académico</th>";
 		$cata.="<td>".$cat['nivel']."</td>";	
+		$cata.="<th>Becado</th>";
+		if (empty($_SESSION['beca'])) {
+			$cata.="<td>No</td>";	
+		}
+		else {
+			$cata.="<td>Si</td>";	
+		}
+
 			
 
 
@@ -110,6 +118,13 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 		$reporte.="<tr>";
 		$reporte.="<th>Nivel Académico</th>";
 		$reporte.="<td>".$cat['nivel']."</td>";	
+		$reporte.="<th>Becado</th>";
+		if (empty($_SESSION['beca'])) {
+			$reporte.="<td>No</td>";	
+		}
+		else {
+			$reporte.="<td>Si</td>";	
+		}
 
 			
 	}
