@@ -224,7 +224,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 		$reporte.="<th>Número de Telefóno</th>";
 		$reporte.="<td>".$cat['n_tel']."</td>";
 	
-		$catreportea.="<th>Número de Emergencia</th>";
+		$reporte.="<th>Número de Emergencia</th>";
 		$reporte.="<td>".$cat['n_eme']."</td>";
 		$reporte.="</tr>";
 		$reporte.="<tr>";	
