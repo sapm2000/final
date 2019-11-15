@@ -21,7 +21,7 @@ $todostd = $_SESSION['talla'];
 	$talla.= "<option value=''>Seleccione una talla</option>";
 	foreach($todostd as $t)
 	{
-			$talla.= "<option value=".$t['id']." selected>".$t['talla']."</option>";	
+			$talla.= "<option value=".$t['talla']." selected>".$t['talla']."</option>";	
 
 
 	}

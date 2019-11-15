@@ -706,6 +706,116 @@ class Atleta extends ClaseBase
 			return ($trae);
 		}
 
+		public function getIndumentariapeso()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,nombre,apellido,peso,altura,talla,calzado,mano FROM atleta INNER JOIN tallas on atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 and atleta.peso BETWEEN '$this->primer' AND '$this->segundo'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function getIndumentariaaltura()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,nombre,apellido,peso,altura,talla,calzado,mano FROM atleta INNER JOIN tallas on atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 and atleta.altura BETWEEN '$this->primer' AND '$this->segundo'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentatallasshombrealtura()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(tallas.talla) as total, tallas.talla FROM atleta INNER JOIN tallas ON atleta.id_talla=tallas.id WHERE atleta.activo=0 AND atleta.sexo='M' and atleta.altura BETWEEN '$this->primer' AND '$this->segundo' GROUP BY tallas.talla";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentatallassmujeraltura()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(tallas.talla) as total, tallas.talla FROM atleta INNER JOIN tallas ON atleta.id_talla=tallas.id WHERE atleta.activo=0 AND atleta.sexo='F' and atleta.altura BETWEEN '$this->primer' AND '$this->segundo' GROUP BY tallas.talla";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentacalzadoshombrealtura()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(calzados.calzado) as total, calzados.calzado FROM atleta INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.sexo='M' and atleta.altura BETWEEN '$this->primer' AND '$this->segundo' GROUP BY calzados.calzado";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentacalzadosmujeraltura()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(calzados.calzado) as total, calzados.calzado FROM atleta INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.sexo='F' and atleta.altura BETWEEN '$this->primer' AND '$this->segundo' GROUP BY calzados.calzado";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentatallasshombrepeso()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(tallas.talla) as total, tallas.talla FROM atleta INNER JOIN tallas ON atleta.id_talla=tallas.id WHERE atleta.activo=0 AND atleta.sexo='M' and atleta.peso BETWEEN '$this->primer' AND '$this->segundo' GROUP BY tallas.talla";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentatallassmujerpeso()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(tallas.talla) as total, tallas.talla FROM atleta INNER JOIN tallas ON atleta.id_talla=tallas.id WHERE atleta.activo=0 AND atleta.sexo='F' and atleta.peso BETWEEN '$this->primer' AND '$this->segundo' GROUP BY tallas.talla";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentacalzadoshombrepeso()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(calzados.calzado) as total, calzados.calzado FROM atleta INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.sexo='M' and atleta.peso BETWEEN '$this->primer' AND '$this->segundo' GROUP BY calzados.calzado";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentacalzadosmujerpeso()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(calzados.calzado) as total, calzados.calzado FROM atleta INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.sexo='F' and atleta.peso BETWEEN '$this->primer' AND '$this->segundo' GROUP BY calzados.calzado";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function getPpeso()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,peso,altura,talla,calzado,mano FROM atleta INNER JOIN tallas on atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.peso BETWEEN $this->primer AND $this->segundo";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
 		public function cuentatallasshombre()
 		{
 			$cc = Conexion::getInstance();
@@ -740,16 +850,6 @@ class Atleta extends ClaseBase
 		{
 			$cc = Conexion::getInstance();
 			$sql = "SELECT COUNT(calzados.calzado) as total, calzados.calzado FROM atleta INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.sexo='F' GROUP BY calzados.calzado";
-			$result = $cc->db->prepare($sql);
-			$result->execute();
-			$trae = $result->fetchAll();
-			return ($trae);
-		}
-
-		public function getPpeso()
-		{
-			$cc = Conexion::getInstance();
-			$sql = "SELECT cedula,nac,peso,altura,talla,calzado,mano FROM atleta INNER JOIN tallas on atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.peso BETWEEN $this->primer AND $this->segundo";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			$trae = $result->fetchAll();
@@ -799,7 +899,7 @@ class Atleta extends ClaseBase
 		public function getContacto()
 		{
 			$cc = Conexion::getInstance();
-			$sql = "SELECT cedula,nac,correo,n_tel,n_eme,descrip,descrips,direccion FROM atleta INNER JOIN municipio ON atleta.id_municipio=municipio.id INNER JOIN parroquia ON atleta.id_parroquia=parroquia.id WHERE atleta.activo=0";
+			$sql = "SELECT cedula,nac,correo,n_tel,n_eme,descrip,descrips,direccion,nombre,apellido FROM atleta INNER JOIN municipio ON atleta.id_municipio=municipio.id INNER JOIN parroquia ON atleta.id_parroquia=parroquia.id WHERE atleta.activo=0";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			$trae = $result->fetchAll();
@@ -809,7 +909,7 @@ class Atleta extends ClaseBase
 		public function getOperadora()
 		{
 			$cc = Conexion::getInstance();
-			$sql = "SELECT cedula,nac,correo,n_tel,n_eme,descrip,descrips,direccion FROM atleta INNER JOIN municipio ON atleta.id_municipio=municipio.id INNER JOIN parroquia ON atleta.id_parroquia=parroquia.id WHERE atleta.activo=0 and atleta.n_tel like '$this->primer%'";
+			$sql = "SELECT cedula,nac,correo,n_tel,n_eme,descrip,descrips,direccion,nombre,apellido FROM atleta INNER JOIN municipio ON atleta.id_municipio=municipio.id INNER JOIN parroquia ON atleta.id_parroquia=parroquia.id WHERE atleta.activo=0 and atleta.n_tel like '$this->primer%'";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			$trae = $result->fetchAll();
@@ -819,7 +919,7 @@ class Atleta extends ClaseBase
 		public function getMmunicipio()
 		{
 			$cc = Conexion::getInstance();
-			$sql = "SELECT cedula,nac,correo,n_tel,n_eme,descrip,descrips,direccion FROM atleta INNER JOIN municipio ON atleta.id_municipio=municipio.id INNER JOIN parroquia ON atleta.id_parroquia=parroquia.id WHERE atleta.activo=0 and municipio.id=$this->primer";
+			$sql = "SELECT cedula,nac,correo,n_tel,n_eme,descrip,descrips,direccion,nombre,apellido FROM atleta INNER JOIN municipio ON atleta.id_municipio=municipio.id INNER JOIN parroquia ON atleta.id_parroquia=parroquia.id WHERE atleta.activo=0 and municipio.id=$this->primer";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			$trae = $result->fetchAll();
@@ -828,7 +928,7 @@ class Atleta extends ClaseBase
 		public function getPparroquia()
 		{
 			$cc = Conexion::getInstance();
-			$sql = "SELECT cedula,nac,correo,n_tel,n_eme,descrip,descrips,direccion FROM atleta INNER JOIN municipio ON atleta.id_municipio=municipio.id INNER JOIN parroquia ON atleta.id_parroquia=parroquia.id WHERE atleta.activo=0 and municipio.id=$this->id_municipio and parroquia.id=$this->id_parroquia";
+			$sql = "SELECT cedula,nac,correo,n_tel,n_eme,descrip,descrips,direccion,nombre,apellido FROM atleta INNER JOIN municipio ON atleta.id_municipio=municipio.id INNER JOIN parroquia ON atleta.id_parroquia=parroquia.id WHERE atleta.activo=0 and municipio.id=$this->id_municipio and parroquia.id=$this->id_parroquia";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			$trae = $result->fetchAll();
@@ -1502,6 +1602,159 @@ class Atleta extends ClaseBase
 		{
 			$cc = Conexion::getInstance();
 			$sql = "SELECT id FROM becas WHERE becas.id_atleta='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function getIndumentariatalla()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,nombre,apellido,peso,altura,talla,calzado,mano FROM atleta INNER JOIN tallas on atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 and tallas.talla='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentatallasshombretalla()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(tallas.talla) as total, tallas.talla FROM atleta INNER JOIN tallas ON atleta.id_talla=tallas.id WHERE atleta.activo=0 AND atleta.sexo='M' and tallas.talla='$this->primer' GROUP BY tallas.talla";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentatallassmujertalla()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(tallas.talla) as total, tallas.talla FROM atleta INNER JOIN tallas ON atleta.id_talla=tallas.id WHERE atleta.activo=0 AND atleta.sexo='F' and tallas.talla='$this->primer' GROUP BY tallas.talla";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentacalzadoshombretalla()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(calzados.calzado) as total, calzados.calzado FROM atleta INNER JOIN tallas ON atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.sexo='M' and tallas.talla='$this->primer' GROUP BY calzados.calzado";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentacalzadosmujertalla()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(calzados.calzado) as total, calzados.calzado FROM atleta INNER JOIN tallas ON atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.sexo='F' and tallas.talla='$this->primer' GROUP BY calzados.calzado";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+
+		public function getIndumentariacalzado()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,nombre,apellido,peso,altura,talla,calzado,mano FROM atleta INNER JOIN tallas on atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 and calzados.id='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentatallasshombrecalzado()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(tallas.talla) as total, tallas.talla FROM atleta INNER JOIN tallas ON atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.sexo='M' and calzados.id='$this->primer' GROUP BY tallas.talla";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentatallassmujercalzado()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(tallas.talla) as total, tallas.talla FROM atleta INNER JOIN tallas ON atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.sexo='F' and calzados.id='$this->primer' GROUP BY tallas.talla";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentacalzadoshombrecalzado()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(calzados.calzado) as total, calzados.calzado FROM atleta INNER JOIN tallas ON atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.sexo='M' and calzados.id='$this->primer' GROUP BY calzados.calzado";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentacalzadosmujercalzado()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(calzados.calzado) as total, calzados.calzado FROM atleta INNER JOIN tallas ON atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.sexo='F' and calzados.id='$this->primer' GROUP BY calzados.calzado";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+
+		
+		public function getIndumentariamano()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT cedula,nac,nombre,apellido,peso,altura,talla,calzado,mano FROM atleta INNER JOIN tallas on atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 and atleta.mano='$this->primer'";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentatallasshombremano()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(tallas.talla) as total, tallas.talla FROM atleta INNER JOIN tallas ON atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.sexo='M' and atleta.mano='$this->primer' GROUP BY tallas.talla";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentatallassmujermano()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(tallas.talla) as total, tallas.talla FROM atleta INNER JOIN tallas ON atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.sexo='F' and atleta.mano='$this->primer' GROUP BY tallas.talla";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentacalzadoshombremano()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(calzados.calzado) as total, calzados.calzado FROM atleta INNER JOIN tallas ON atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.sexo='M' and atleta.mano='$this->primer' GROUP BY calzados.calzado";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
+		public function cuentacalzadosmujermano()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT COUNT(calzados.calzado) as total, calzados.calzado FROM atleta INNER JOIN tallas ON atleta.id_talla=tallas.id INNER JOIN calzados ON atleta.id_calzado=calzados.id WHERE atleta.activo=0 AND atleta.sexo='F' and atleta.mano='$this->primer' GROUP BY calzados.calzado";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			$trae = $result->fetchAll();

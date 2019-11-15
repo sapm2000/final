@@ -1424,9 +1424,14 @@ case "registrarRegistro_medico":
 				$atleta->setPrimer($_POST['primer']);
 				$atleta->setSegundo($_POST['segundo']);
 				
-				
-				$n = $atleta->getPpeso();
+				$n = $atleta->getIndumentariapeso();
 				$_SESSION['indumentaria'] = $n;
+				$_SESSION['tallashombre'] = $atleta->cuentatallasshombrepeso();
+				$_SESSION['tallasmujer'] = $atleta->cuentatallassmujerpeso();
+				$_SESSION['calzadohombre'] = $atleta->cuentacalzadoshombrepeso();
+				$_SESSION['calzadomujer'] = $atleta->cuentacalzadosmujerpeso();
+				
+
 				
 				header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
 				break;
@@ -1438,8 +1443,13 @@ case "registrarRegistro_medico":
 				$atleta->setSegundo($_POST['segundo']);
 				
 				
-				$n = $atleta->getAaltura();
+				$n = $atleta->getIndumentariaaltura();
 				$_SESSION['indumentaria'] = $n;
+				$_SESSION['tallashombre'] = $atleta->cuentatallasshombrealtura();
+				$_SESSION['tallasmujer'] = $atleta->cuentatallassmujeraltura();
+				$_SESSION['calzadohombre'] = $atleta->cuentacalzadoshombrealtura();
+				$_SESSION['calzadomujer'] = $atleta->cuentacalzadosmujeraltura();
+				
 				
 				header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
 				break;
@@ -1450,8 +1460,16 @@ case "registrarRegistro_medico":
 				$atleta->setPrimer($_POST['primer']);
 				
 				
-				$n = $atleta->getTtalla();
+				$n = $atleta->getIndumentariatalla();
 				$_SESSION['indumentaria'] = $n;
+				$_SESSION['tallashombre'] = $atleta->cuentatallasshombretalla();
+				$_SESSION['tallasmujer'] = $atleta->cuentatallassmujertalla();
+				$_SESSION['calzadohombre'] = $atleta->cuentacalzadoshombretalla();
+				$_SESSION['calzadomujer'] = $atleta->cuentacalzadosmujertalla();
+
+			
+
+				
 				
 				header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
 				break;
@@ -1462,8 +1480,15 @@ case "registrarRegistro_medico":
 				$atleta->setPrimer($_POST['primer']);
 				
 				
-				$n = $atleta->getCcalzado();
+				$n = $atleta->getIndumentariacalzado();
 				$_SESSION['indumentaria'] = $n;
+				$_SESSION['tallashombre'] = $atleta->cuentatallasshombrecalzado();
+				$_SESSION['tallasmujer'] = $atleta->cuentatallassmujercalzado();
+				$_SESSION['calzadohombre'] = $atleta->cuentacalzadoshombrecalzado();
+				$_SESSION['calzadomujer'] = $atleta->cuentacalzadosmujercalzado();
+
+			
+
 				
 				header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
 				break;
@@ -1474,8 +1499,14 @@ case "registrarRegistro_medico":
 				$atleta->setPrimer($_POST['primer']);
 				
 				
-				$n = $atleta->getMmano();
+				$n = $atleta->getIndumentariamano();
 				$_SESSION['indumentaria'] = $n;
+				$_SESSION['tallashombre'] = $atleta->cuentatallasshombremano();
+				$_SESSION['tallasmujer'] = $atleta->cuentatallassmujermano();
+				$_SESSION['calzadohombre'] = $atleta->cuentacalzadoshombremano();
+				$_SESSION['calzadomujer'] = $atleta->cuentacalzadosmujermano();
+
+			
 				
 				header("Location: ../Vista/atleta/reporteindumentaria.php?accion=actual");
 				break;
