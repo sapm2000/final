@@ -112,6 +112,15 @@ switch($_REQUEST['accion'])
 		break;
 	}
 
+	case "fichadisciplina":
+		{
+			$n = $disciplina->getAll($tab);
+			$_SESSION['disciplin'] = $n;
+			
+			header("Location: ../Vista/atleta/fichadisciplina.php?accion=actual");
+			break;
+		}
+
 	case "buscaestatus":
 	{
 		$n = $estatu->getAll($tab);
@@ -1844,27 +1853,6 @@ case "registrarRegistro_medico":
 							$_SESSION['discapacidad']=$atleta->datosdiscapacidad();
 							$_SESSION['beca']=$atleta->traebeca();
 
-							var_dump($_SESSION['datospersonales']);
-							echo '<br>';
-							var_dump($_SESSION['indumentaria']);
-							echo '<br>';
-							var_dump($_SESSION['datosdisciplina']);
-							echo '<br>';
-							var_dump($_SESSION['contacto']);
-							echo '<br>';
-							var_dump($_SESSION['bancario']);
-							echo '<br>';
-							var_dump($_SESSION['representante']);
-							echo '<br>';
-							var_dump($_SESSION['laboral']);
-							echo '<br>';
-							var_dump($_SESSION['medicos']);
-							echo '<br>';
-							var_dump($_SESSION['discapacidad']);
-							echo '<br>';
-							var_dump($_SESSION['beca']);
-
-
 							
 
 
@@ -1874,6 +1862,56 @@ case "registrarRegistro_medico":
 							header("Location: ../Vista/atleta/reporteficha.php?accion=actual");
 							break;
 						}
+
+
+						case 'fichaespecificadisciplina':
+							{
+								
+								
+								
+	
+								$atleta->setPrimer($_POST['primer']);
+								$x=$atleta->traeelid();
+								$contador=count($x);
+								$_SESSION['contador']=$contador;
+
+								for ($i=0;$i<=$contador;$i++) {
+
+									$atleta->setPrimer($x[$i][0]);
+									$_SESSION['datospersonales'.$i]=$atleta->traedatospersonales();
+									$_SESSION['indumentaria'.$i]=$atleta->traeindumentaria();
+									$_SESSION['contacto'.$i]=$atleta->traedatoscontacto();
+									$_SESSION['bancario'.$i]=$atleta->traedatosbancarios();
+									$_SESSION['representante'.$i]=$atleta->traerepresentante();
+									$_SESSION['laboral'.$i]=$atleta->datoslaboral();
+									$_SESSION['datosdisciplina'.$i]=$atleta->datosdisciplinas();
+									$_SESSION['medicos'.$i]=$atleta->datosmedicos();
+									$_SESSION['discapacidad'.$i]=$atleta->datosdiscapacidad();
+									$_SESSION['beca'.$i]=$atleta->traebeca();
+
+									var_dump($_SESSION['datospersonales'.$i]);
+									var_dump($_SESSION['indumentaria'.$i]);
+									var_dump($_SESSION['contacto'.$i]);
+									var_dump($_SESSION['bancario'.$i]);
+									var_dump($_SESSION['representante'.$i]);
+									var_dump($_SESSION['laboral'.$i]);
+									var_dump($_SESSION['medicos'.$i]);
+									var_dump($_SESSION['discapacidad'.$i]);
+									var_dump($_SESSION['beca'.$i]);
+
+								}
+	
+								
+	
+								
+	
+	
+	
+	
+								
+								header("Location: ../Vista/atleta/reportefichadisciplina.php?accion=actual");
+								break;
+							}
 
 
 }

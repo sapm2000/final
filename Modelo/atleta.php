@@ -1761,6 +1761,16 @@ class Atleta extends ClaseBase
 			return ($trae);
 		}
 
+		public function traeelid()
+		{
+			$cc = Conexion::getInstance();
+			$sql = "SELECT puente_disciplina.id_atleta FROM puente_disciplina INNER JOIN atleta ON puente_disciplina.id_atleta=atleta.id WHERE puente_disciplina.id_disciplina=$this->primer AND atleta.activo=0 GROUP BY puente_disciplina.id_atleta";
+			$result = $cc->db->prepare($sql);
+			$result->execute();
+			$trae = $result->fetchAll();
+			return ($trae);
+		}
+
 }
 
 
