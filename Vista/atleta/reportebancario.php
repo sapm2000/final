@@ -42,8 +42,8 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['bancos']))
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
-	$cata.="<tr><th>Nacionalidad</th><th>Cédula del Atleta</th><th>Nacionalidad</th><th>Cédula del Cuentaviente</th><th>Nombre</th><th>Apellido</th><th>Banco</th><th>Número de Cuenta</th><th>Tipo de Cuenta</th></tr>";
-	$reporte.="<tr><th>Nacionalidad</th><th>Cédula del Atleta</th><th>Nacionalidad</th><th>Cédula del Cuentaviente</th><th>Nombre</th><th>Apellido</th><th>Banco</th><th>Número de Cuenta</th><th>Tipo de Cuenta</th></tr>";
+	$cata.="<tr><th>Nacionalidad</th><th>Cédula del Atleta</th><th>Nacionalidad</th><th>Cédula del Cuentahabiente</th><th>Nombre</th><th>Apellido</th><th>Banco</th><th>Número de Cuenta</th><th>Tipo de Cuenta</th></tr>";
+	$reporte.="<tr><th>Nacionalidad</th><th>Cédula del Atleta</th><th>Nacionalidad</th><th>Cédula del Cuentahabiente</th><th>Nombre</th><th>Apellido</th><th>Banco</th><th>Número de Cuenta</th><th>Tipo de Cuenta</th></tr>";
 
 	foreach($catalogo as $cat)
 	{
@@ -89,8 +89,8 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['bancos']))
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
-	$cata.="<tr><th>Bancos</th><th>Totas de inscritos</th></tr>";
-	$reporte.="<tr><th>Bancos</th><th>Totas de inscritos</th></tr>";
+	$cata.="<tr><th>Bancos</th><th>Total de Inscritos</th></tr>";
+	$reporte.="<tr><th>Bancos</th><th>Total de Inscritos</th></tr>";
 
 	foreach($catalogo as $cat)
 	{

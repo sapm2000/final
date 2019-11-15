@@ -13,7 +13,7 @@ if(empty($_REQUEST['accion']))
 }
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
-$_SESSION['titulo']='Reporte de Becas General por Fecha';
+$_SESSION['titulo']='Reporte General por Fecha';
 $form='';
 $cata='';
 $boton='';

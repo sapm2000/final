@@ -42,14 +42,16 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['contacto']))
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
-	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Correo Eléctronico</th><th>Número de Telefóno</th><th>Número de Emergencia</th><th>Municipio</th><th>Parroquia</th><th>Dirección</th></tr>";
-	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Correo Eléctronico</th><th>Número de Telefóno</th><th>Número de Emergencia</th><th>Municipio</th><th>Parroquia</th><th>Dirección</th></tr>";
+	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Correo Eléctronico</th><th>Número de Telefóno</th><th>Número de Emergencia</th><th>Municipio</th><th>Parroquia</th><th>Dirección</th></tr>";
+	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Correo Eléctronico</th><th>Número de Telefóno</th><th>Número de Emergencia</th><th>Municipio</th><th>Parroquia</th><th>Dirección</th></tr>";
 
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
 		$cata.="<td>".$cat['nac']."</td>";	
-		$cata.="<td>".$cat['cedula']."</td>";	
+		$cata.="<td>".$cat['cedula']."</td>";
+		$cata.="<td>".$cat['nombre']."</td>";	
+		$cata.="<td>".$cat['apellido']."</td>";		
 		$cata.="<td>".$cat['correo']."</td>";	
 		$cata.="<td>".$cat['n_tel']."</td>";	
 		$cata.="<td>".$cat['n_eme']."</td>";	
@@ -62,7 +64,9 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['contacto']))
 
 		$reporte.="<tr>";	
 		$reporte.="<td>".$cat['nac']."</td>";	
-		$reporte.="<td>".$cat['cedula']."</td>";	
+		$reporte.="<td>".$cat['cedula']."</td>";
+		$reporte.="<td>".$cat['nombre']."</td>";	
+		$reporte.="<td>".$cat['apellido']."</td>";			
 		$reporte.="<td>".$cat['correo']."</td>";	
 		$reporte.="<td>".$cat['n_tel']."</td>";	
 		$reporte.="<td>".$cat['n_eme']."</td>";	
