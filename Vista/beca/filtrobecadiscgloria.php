@@ -28,7 +28,7 @@ $_SESSION['titulo']='Reporte de Atletas Filtrado por Fecha de Nacimiento y Disci
 $form='';
 $cata='';
 $boton='';
-$form.='<form name="atleta" method="post" action="../../Controlador/BecaController.php?accion=filtroespecificodisciplina">';
+$form.='<form name="atleta" method="post" action="../../Controlador/BecaController.php?accion=filtroespecificodisciplinagloria">';
 $form.='<table>';
 $form.='<tr>';
 $form.='<td>Ingrese el rango de fecha a buscar:</td>';
