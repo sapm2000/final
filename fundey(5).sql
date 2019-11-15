@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-11-2019 a las 19:10:01
+-- Tiempo de generación: 15-11-2019 a las 18:09:03
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.4
 
@@ -844,10 +844,10 @@ CREATE TABLE `tallas` (
 --
 
 INSERT INTO `tallas` (`id`, `talla`) VALUES
-(5, 'M'),
 (7, 'L'),
-(8, 'X'),
-(9, 'S');
+(5, 'M'),
+(9, 'S'),
+(8, 'X');
 
 -- --------------------------------------------------------
 
@@ -963,7 +963,8 @@ ALTER TABLE `becas_total`
 -- Indices de la tabla `calzados`
 --
 ALTER TABLE `calzados`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `calzado` (`calzado`);
 
 --
 -- Indices de la tabla `cuenta`
@@ -1090,7 +1091,8 @@ ALTER TABLE `representantes`
 -- Indices de la tabla `tallas`
 --
 ALTER TABLE `tallas`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `talla` (`talla`);
 
 --
 -- Indices de la tabla `temporal`
