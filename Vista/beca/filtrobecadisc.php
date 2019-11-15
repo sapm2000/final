@@ -24,7 +24,7 @@ $disciplina1.= "</select>";
 
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
-$_SESSION['titulo']='Reporte de Atletas Filtrado por Fecha de Nacimiento y Disciplina';
+$_SESSION['titulo']='Reporte Especifico de Becas por Disciplinas';
 $form='';
 $cata='';
 $boton='';

@@ -7,17 +7,14 @@ require_once("../dompdf/dompdf_config.inc.php");
 $code="<center><img src='../imagenes1/encabezado.jpg'></center>";
 
 
-if ($_REQUEST['accion']=="global") {
-    $code.="<h1 class=texto>Reporte Especifico de Becas.</h1>";
-    $code.=$_SESSION['reportebeca'];
-    $filename= 'Reporte Especifico de Becas.pdf';
-}
 
-if ($_REQUEST['accion']=="detalle") {
-    $code.="<h1 class=texto>Reporte General de Becas por Fecha.</h1>";
+
+    $code.="<h1 class=texto>".$_SESSION['titulo']."</h1>";
     $code.=$_SESSION['reportebeca'];
-    $filename= 'Reporte General de Becas por Fecha.pdf';
-}
+    $filename= $_SESSION['titulo'].'.pdf';
+
+
+
 $code.='<link rel="stylesheet" href="../css/pdfreporte.css" type="text/css">';
 
 
