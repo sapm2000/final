@@ -2,8 +2,14 @@
 session_start();
 ob_start();
 require_once("../Modelo/beca.php");
+require_once("../Modelo/disciplina.php");
+
 $beca = new Beca();
+$disciplina = new Disciplina();
+
 $beca->setTabla("becas");
+$disciplina->setTabla("disciplinas");
+
 switch($_REQUEST['accion'])
 {
 	case "buscatodos":
@@ -58,6 +64,30 @@ switch($_REQUEST['accion'])
 		header("Location: ../Vista/beca/consultaglobal.php?accion=actual");
 		break;
 	}
+
+	case 'buscamelasdisciplinas':
+		{
+			$n = $disciplina->getAll($tab);
+			$_SESSION['disciplin'] = $n;
+			
+			
+			
+			
+			header("Location: ../Vista/beca/filtrobecadisc.php?accion=actual");
+			break;
+		}
+
+		case 'buscamelasdisciplinasgloria':
+			{
+				$n = $disciplina->getAll($tab);
+				$_SESSION['disciplin'] = $n;
+				
+				
+				
+				
+				header("Location: ../Vista/beca/filtrobecadiscgloria.php?accion=actual");
+				break;
+			}
 
 	case "registrarPago":
 	{
@@ -422,6 +452,22 @@ switch($_REQUEST['accion'])
 			break;
 		}
 
+		case "filtrogeneralgloria":
+			{
+	
+				$beca->setPrimer($_POST['primer']);
+				$_SESSION['desde']=$beca->getPrimer();
+				$beca->setSegundo($_POST['segundo']);
+				$_SESSION['hasta']=$beca->getSegundo();
+				$todos = $beca->becasfiltradasgloria();
+				$_SESSION['catabecageneral'] = $todos;
+				$monto = $beca->montogeneralgloria();
+				$_SESSION['montogeneral']=$monto[0][0];
+	
+				header("Location: ../Vista/beca/reportegeneral.php?accion=actual");
+				break;
+			}
+
 		case "filtroespecifico":
 			{
 	
@@ -441,6 +487,74 @@ switch($_REQUEST['accion'])
 				header("Location: ../Vista/beca/reporteespecifico.php?accion=actual");
 				break;
 			}
+
+			case "filtroespecificogloria":
+				{
+		
+					$beca->setPrimer($_POST['primer']);
+					$_SESSION['desde']=$beca->getPrimer();
+					$beca->setSegundo($_POST['segundo']);
+					$_SESSION['hasta']=$beca->getSegundo();
+					$todos = $beca->becasespecificasgloria();
+					$_SESSION['catabecaespecifica'] = $todos;
+					
+					$monto = $beca->montoespecificogloria();
+					$_SESSION['montogeneral']=$monto;
+					
+					$montoto = $beca->montototallllgloria();
+					$_SESSION['montoto']=$montoto[0][0];
+					
+					header("Location: ../Vista/beca/reporteespecifico.php?accion=actual");
+					break;
+				}
+
+			case "filtroespecificodisciplina":
+				{
+		
+					$beca->setPrimer($_POST['primer']);
+					$_SESSION['desde']=$beca->getPrimer();
+					$beca->setSegundo($_POST['segundo']);
+					$_SESSION['hasta']=$beca->getSegundo();
+					$beca->setTercer($_POST['tercer']);
+					$_SESSION['dis']=$beca->getTercer();
+					$todos = $beca->becasespecificasdisciplina();
+					$_SESSION['catabecaespecifica'] = $todos;
+					
+					$monto = $beca->montoespecificodisciplina();
+					$_SESSION['montogeneral']=$monto;
+					
+					$montoto = $beca->montototalllldisciplina();
+					$_SESSION['montoto']=$montoto[0][0];
+
+				
+					
+					header("Location: ../Vista/beca/reporteespecifico.php?accion=actual");
+					break;
+				}
+
+				case "filtroespecificodisciplinagloria":
+					{
+			
+						$beca->setPrimer($_POST['primer']);
+						$_SESSION['desde']=$beca->getPrimer();
+						$beca->setSegundo($_POST['segundo']);
+						$_SESSION['hasta']=$beca->getSegundo();
+						$beca->setTercer($_POST['tercer']);
+						$_SESSION['dis']=$beca->getTercer();
+						$todos = $beca->becasespecificasdisciplinagloria();
+						$_SESSION['catabecaespecifica'] = $todos;
+						
+						$monto = $beca->montoespecificodisciplinagloria();
+						$_SESSION['montogeneral']=$monto;
+						
+						$montoto = $beca->montototalllldisciplinagloria();
+						$_SESSION['montoto']=$montoto[0][0];
+	
+					
+						
+						header("Location: ../Vista/beca/reporteespecifico.php?accion=actual");
+						break;
+					}
 }
 ob_end_flush();
 ?>
