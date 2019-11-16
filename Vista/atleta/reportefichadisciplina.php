@@ -24,12 +24,12 @@ $form.='</tr>';
 $form.='</table>';
 $form.='<table>';
 $form.='<tr>';
-$form.='<td> <a href="generarreporte.php?accion=filtroga"><input type="button" class="botonmodal" value="Generar Reporte" name="filtroga" title="Generar Reporte"> </a></td>';
+$form.='<td> <a href="generarreportefichaespecial.php?accion=filtroga"><input type="button" class="botonmodal" value="Generar Reporte" name="filtroga" title="Generar Reporte"> </a></td>';
 $reporte='';
 
 $form.='</tr>';
 $form.='</table>';
-for ($i=0;$i<=$_SESSION['contador'];$i++) {
+for ($i=0;$i<$_SESSION['contador'];$i++) {
 
 
 	
@@ -45,13 +45,16 @@ if($_GET['accion']=="actual")
 
 	else {
 
+	$cata.="<h2>Atleta #".$i."</h2>";
 	$cata.="<table class=tabla-catficha id=tabla>";
 
+	$reporte.="<center><h2>Atleta #".$i."</h2></center>";
 	$reporte.="<table class=tabla-catfichar id=tabla align=center>";
-	$reporte.="<table class=tabla-catb id=tabla align=center>";
+		$reporte.="<table class=tabla-catb id=tabla align=center>";
+
 
 	$cata.="<th colspan=4>Datos Personales</th>";
-	$reporte.="<tr><th colspan=4>Datos Personales</th>";
+	$reporte.="<tr><th colspan=4>Datos Personales</th></tr>";
 
 	foreach($catalogo as $cat)
 	{
@@ -87,7 +90,7 @@ if($_GET['accion']=="actual")
 		$cata.="<th>Nivel Académico</th>";
 		$cata.="<td>".$cat['nivel']."</td>";	
 		$cata.="<th>Becado</th>";
-		if (empty($_SESSION['beca'])) {
+		if (empty($_SESSION['beca'.$i])) {
 			$cata.="<td>No</td>";	
 		}
 		else {
@@ -129,16 +132,19 @@ if($_GET['accion']=="actual")
 		$reporte.="<th>Nivel Académico</th>";
 		$reporte.="<td>".$cat['nivel']."</td>";	
 		$reporte.="<th>Becado</th>";
-		if (empty($_SESSION['beca'])) {
+		if (empty($_SESSION['beca'.$i])) {
 			$reporte.="<td>No</td>";	
 		}
 		else {
 			$reporte.="<td>Si</td>";	
 		}
+		$reporte.="</tr>";	
+
 
 			
 	}
 	$cata.="</table>";
+
 }
 
 	
@@ -200,8 +206,11 @@ if($_GET['accion']=="actual")
 		$reporte.="<tr>";	
 		$reporte.="<th>Mano Hábil</th>";
 		$reporte.="<td>".$cat['mano']."</td>";
+		$reporte.="</tr>";	
+
 	}
 	$cata.="</table>";
+	
 }
 
 if (empty($_SESSION['contacto'.$i])) {
@@ -262,6 +271,8 @@ else {
 
 		$reporte.="<th>Dirección</th>";
 		$reporte.="<td>".$cat['direccion']."</td>";	
+		$reporte.="</tr>";	
+
 
 		
 	}
@@ -328,6 +339,8 @@ else {
 		$reporte.="<tr>";	
 		$reporte.="<th>Tipo de Cuenta</th>";
 		$reporte.="<td>".$cat['tipo']."</td>";	
+		$reporte.="</tr>";	
+
 
 		
 	}
@@ -393,6 +406,7 @@ else {
 		$reporte.="<td>".$cat['apellido']."</td>";		
 		$reporte.="<th>Parentesco</th>";
 		$reporte.="<td>".$cat['parentezco']."</td>";	
+		$reporte.="</tr>";	
 
 		
 	}
@@ -447,7 +461,9 @@ else {
 		$reporte.="</tr>";
 		$reporte.="<tr>";
 		$reporte.="<th>Dirección</th>";
-		$reporte.="<td>".$cat['direccion1']."</td>";	
+		$reporte.="<td>".$cat['direccion1']."</td>";
+		$reporte.="</tr>";	
+	
 		
 	}
 	$cata.="</table>";
@@ -485,6 +501,8 @@ else {
 		$reporte.="<td colspan=1>".$cat['modalidad']."</td>";	
 	
 		$reporte.="<td colspan=1>".$cat['estatu']."</td>";	
+		$reporte.="</tr>";	
+
 
 
 
@@ -519,6 +537,7 @@ else {
 
 		$reporte.="<td colspan=2>".$cat['registro_medico']."</td>";	
 		$reporte.="<td colspan=2>".$cat['fecha_medica']."</td>";	
+		$reporte.="</tr>";	
 
 
 
@@ -551,6 +570,7 @@ else {
 
 		$reporte.="<td colspan=4>".$cat['discapacidad']."</td>";	
 	
+		$reporte.="</tr>";	
 
 	
 
@@ -558,17 +578,19 @@ else {
 	}
 	$cata.="</table>";
 
-	$reporte.="</table>";
 }
 
+$reporte.="</table>";
 	$reporte.="</table>";
 
 	$reporte.="<table class=tabla-catsalto></table>";
+
 }
 
 	
-	$_SESSION['reporte']=$reporte;
 }
+$_SESSION['reporte']=$reporte;
+
 
 
 

@@ -1875,6 +1875,7 @@ case "registrarRegistro_medico":
 	
 								$atleta->setPrimer($_POST['primer']);
 								$x=$atleta->traeelid();
+								
 								$contador=count($x);
 								$_SESSION['contador']=$contador;
 
@@ -1901,6 +1902,8 @@ case "registrarRegistro_medico":
 									var_dump($_SESSION['medicos'.$i]);
 									var_dump($_SESSION['discapacidad'.$i]);
 									var_dump($_SESSION['beca'.$i]);
+
+									
 
 								}
 
