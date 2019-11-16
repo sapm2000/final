@@ -34,10 +34,16 @@ for ($i=0;$i<=$_SESSION['contador'];$i++) {
 
 	
 
-if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales'.$i]))
+if($_GET['accion']=="actual")
 {
 	$catalogo = $_SESSION['datospersonales'.$i];
 	$cata.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrar' method='post'>";
+	
+	if (empty($_SESSION['datospersonales'.$i])) {
+
+	}
+
+	else {
 
 	$cata.="<table class=tabla-catficha id=tabla>";
 
@@ -133,10 +139,16 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales'.$i]))
 			
 	}
 	$cata.="</table>";
-
+}
 
 	
+	if (empty($_SESSION['indumentaria'.$i])) {
 
+	}
+
+	else {
+
+	
 
 	$catalogo = $_SESSION['indumentaria'.$i];
 
@@ -190,7 +202,13 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales'.$i]))
 		$reporte.="<td>".$cat['mano']."</td>";
 	}
 	$cata.="</table>";
+}
 
+if (empty($_SESSION['contacto'.$i])) {
+
+}
+
+else {
 
 
 	$catalogo = $_SESSION['contacto'.$i];
@@ -248,6 +266,12 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales'.$i]))
 		
 	}
 	$cata.="</table>";
+}
+if (empty($_SESSION['bancario'.$i])) {
+
+}
+
+else {
 
 	$catalogo = $_SESSION['bancario'.$i];
 	$cata.="<table class=tabla-catficha id=tabla width=65%>";
@@ -308,6 +332,12 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales'.$i]))
 		
 	}
 	$cata.="</table>";
+}
+if (empty($_SESSION['representante'.$i])) {
+
+}
+
+else {
 
 	$catalogo = $_SESSION['representante'.$i];
 	$cata.="<table class=tabla-catficha id=tabla width=65%>";
@@ -367,6 +397,13 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales'.$i]))
 		
 	}
 	$cata.="</table>";
+}
+
+if (empty($_SESSION['laboral'.$i])) {
+
+}
+
+else {
 
 	$catalogo = $_SESSION['laboral'.$i];
 	$cata.="<table class=tabla-catficha id=tabla width=65%>";
@@ -414,6 +451,13 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales'.$i]))
 		
 	}
 	$cata.="</table>";
+}
+
+if (empty($_SESSION['datosdisciplina'.$i])) {
+
+}
+
+else {
 
 	$catalogo = $_SESSION['datosdisciplina'.$i];
 	$cata.="<table class=tabla-catficha id=tabla width=65%>";
@@ -447,6 +491,12 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales'.$i]))
 		
 	}
 	$cata.="</table>";
+}
+if (empty($_SESSION['medicos'.$i])) {
+
+}
+
+else {
 
 
 
@@ -475,6 +525,13 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales'.$i]))
 		
 	}
 	$cata.="</table>";
+}
+
+if (empty($_SESSION['discapacidad'.$i])) {
+
+}
+
+else {
 
 	$catalogo = $_SESSION['discapacidad'.$i];
 	$cata.="<table class=tabla-catficha id=tabla width=65%>";
@@ -502,6 +559,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales'.$i]))
 	$cata.="</table>";
 
 	$reporte.="</table>";
+}
 
 	$reporte.="</table>";
 
@@ -511,9 +569,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales'.$i]))
 	
 	$_SESSION['reporte']=$reporte;
 }
-if (empty($_SESSION['datospersonales'])) {
-	$cata.="No hay atletas registrados";
-}
+
 
 
 $diccionario = array 

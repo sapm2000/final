@@ -329,7 +329,7 @@ class Beca extends ClaseBase
 	public function becasfiltradas()
 	{
 		$cc = Conexion::getInstance();
-		$sql = "SELECT * FROM becas_mes WHERE becas_mes.gloria=0 AND becas_mes.fecha BETWEEN  '$this->primer' AND '$this->segundo' 	";
+		$sql = "SELECT * FROM becas_mes WHERE becas_mes.gloria=0 AND becas_mes.fecha BETWEEN  '$this->primer' AND '$this->segundo' order by becas_mes.fecha";
 		$result = $cc->db->prepare($sql);
 		$result->execute();
 		$trae = $result->fetchAll();
@@ -338,7 +338,7 @@ class Beca extends ClaseBase
 	public function becasfiltradasgloria()
 	{
 		$cc = Conexion::getInstance();
-		$sql = "SELECT * FROM becas_mes WHERE becas_mes.gloria=1 AND becas_mes.fecha BETWEEN  '$this->primer' AND '$this->segundo' 	";
+		$sql = "SELECT * FROM becas_mes WHERE becas_mes.gloria=1 AND becas_mes.fecha BETWEEN  '$this->primer' AND '$this->segundo'  order by becas_mes.fecha";
 		$result = $cc->db->prepare($sql);
 		$result->execute();
 		$trae = $result->fetchAll();
