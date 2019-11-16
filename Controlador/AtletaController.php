@@ -1593,6 +1593,9 @@ case "registrarRegistro_medico":
 				
 				$n = $atleta->gettipocuenta();
 				$_SESSION['bancos'] = $n;
+
+				$n = $atleta->getBbancostotaltipo();
+				$_SESSION['total'] = $n;	
 				
 				header("Location: ../Vista/atleta/reportebancario.php?accion=actual");
 				break;
@@ -1875,7 +1878,7 @@ case "registrarRegistro_medico":
 								$contador=count($x);
 								$_SESSION['contador']=$contador;
 
-								for ($i=0;$i<=$contador;$i++) {
+								for ($i=0;$i<$contador;$i++) {
 
 									$atleta->setPrimer($x[$i][0]);
 									$_SESSION['datospersonales'.$i]=$atleta->traedatospersonales();
@@ -1900,7 +1903,7 @@ case "registrarRegistro_medico":
 									var_dump($_SESSION['beca'.$i]);
 
 								}
-	
+
 								
 	
 								
