@@ -210,7 +210,7 @@ if($_GET['accion']=="actual")
 
 	}
 	$cata.="</table>";
-	
+
 }
 
 if (empty($_SESSION['contacto'.$i])) {
@@ -578,6 +578,8 @@ else {
 	}
 	$cata.="</table>";
 
+
+	$reporte.="</table>";
 }
 
 $reporte.="</table>";
@@ -590,6 +592,7 @@ $reporte.="</table>";
 	
 }
 $_SESSION['reporte']=$reporte;
+
 
 
 
