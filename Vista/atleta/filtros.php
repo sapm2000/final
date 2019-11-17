@@ -34,7 +34,7 @@ $form.='<h2>Datos Personales</h2>';
 $form.='<td> <a href="reportedatospersonales.php?accion=actualizar"><input type="button" value="Reporte General" class="botonmodal" title="Reporte de Datos General de los Atletas Según sus Datos Personales" id="" name=""></a></td>';
 $form.='<td><a href="filtronacionalidad.php?accion=actualizar"><input type="button" value="Reporte de Nacionalidad" class="botonmodal" title="Reporte de los Atletas por Nacionalidad" id="" name=""></a></td>';
 $form.='<td><a href="filtroprimercedula.php?accion=actualizar"><input type="button" value="Reporte de Primeros N° de Cédula" class="botonmodal" title="Reporte de los Atleta por sus Primeros N° de Cédula" id="" name=""></a></td>';
-$form.='<td><a href="filtroultimacedula.php?accion=actualizar"><input type="button" value="Reporte de Ultimos N° de Cédula" class="botonmodal" title="Reporte de los Atleta por sus Ultimos N° de Cédula" id="" name=""></a></td>';
+$form.='<td><a href="filtroultimacedula.php?accion=actualizar"><input type="button" value="Reporte de Ultimo N° de Cédula" class="botonmodal" title="Reporte de los Atleta por sus Ultimos N° de Cédula" id="" name=""></a></td>';
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td><a href="filtrofechanac.php?accion=actualizar"><input type="button" value="Reporte de Fecha de Nacimiento" class="botonmodal" title="Reporte de los Atletas por Fecha de Nacimiento" id="" name=""></a></td>';
