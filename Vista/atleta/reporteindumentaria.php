@@ -41,7 +41,13 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['indumentaria']))
 
 	$cata.="<h2>Tallas</h2>";
 	$reporte.="<center><h2>Tallas</h2></center>";
+	if (empty($_SESSION['tallashombre'])) {
 
+	}
+
+	else {
+
+	
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 
@@ -66,9 +72,13 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['indumentaria']))
 	
 	$reporte.="</table><br>";
 
+}
 
+if (empty($_SESSION['tallasmujer'])) {
 
+}
 
+else {
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 
@@ -90,11 +100,19 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['indumentaria']))
 	$reporte.="</table>";
 	
 	$reporte.="</table><br>";
+}
 
 	$cata.="<table class=tabla-cat id=tabla>";
 
 	$cata.="<h2>Calzados</h2>";
 	$reporte.="<center><h2>Calzados</h2></center>";
+	if (empty($_SESSION['calzadohombre'])) {
+
+	}
+	
+	else {
+
+	
 
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
@@ -118,6 +136,15 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['indumentaria']))
 	
 	$reporte.="</table><br>";
 
+}
+
+if (empty($_SESSION['calzadomujer'])) {
+
+}
+
+else {
+
+
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 
@@ -140,6 +167,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['indumentaria']))
 	$reporte.="</table>";
 	
 	$reporte.="</table><br>";
+}
 	
 	$cata.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrar' method='post'>";
 	$cata.="<table class=tabla-cat id=tabla>";
