@@ -53,10 +53,10 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 		$cata.="<td width=25.30%>".$cat['cedula']."</td>";	
 		$cata.="</tr>";	
 		$cata.="<tr>";	
-		$cata.="<th>Nombre</th>";
+		$cata.="<th>Nombres</th>";
 		$cata.="<td>".$cat['nombre']."</td>";	
 		
-		$cata.="<th>Apellido</th>";
+		$cata.="<th>Apellidos</th>";
 		$cata.="<td>".$cat['apellido']."</td>";	
 		$cata.="</tr>";	
 		$cata.="<tr>";
@@ -95,10 +95,10 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 		$reporte.="<td>".$cat['cedula']."</td>";	
 		$reporte.="</tr>";	
 		$reporte.="<tr>";	
-		$reporte.="<th>Nombre</th>";
+		$reporte.="<th>Nombres</th>";
 		$reporte.="<td>".$cat['nombre']."</td>";	
 		
-		$reporte.="<th>Apellido</th>";
+		$reporte.="<th>Apellidos</th>";
 		$reporte.="<td>".$cat['apellido']."</td>";	
 		$reporte.="</tr>";	
 		$reporte.="<tr>";
@@ -205,18 +205,24 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 		$cata.="<td width=25.15%>".$cat['n_eme']."</td>";
 		$cata.="</tr>";
 		$cata.="<tr>";	
-		$cata.="<th>Correo Eléctronico</th>";
-		$cata.="<td>".$cat['correo']."</td>";
+		$cata.="<th>Parroquia</th>";
+		$cata.="<td>".$cat['descrip']."</td>";
 	
 		$cata.="<th>Municipio</th>";
 		$cata.="<td>".$cat['descrips']."</td>";
 		$cata.="</tr>";
 		$cata.="<tr>";		
-		$cata.="<th>Parroquia</th>";
-		$cata.="<td>".$cat['descrip']."</td>";	
 
 		$cata.="<th>Dirección</th>";
-		$cata.="<td>".$cat['direccion']."</td>";	
+		$cata.="<td colspan=3>".$cat['direccion']."</td>";
+
+		$cata.="</tr>";
+		$cata.="<tr>";
+
+		$cata.="<th>Correo Eléctronico</th>";
+		$cata.="<td  colspan=3>".$cat['correo']."</td>";
+
+	
 
 
 
@@ -228,19 +234,22 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 		$reporte.="<td>".$cat['n_eme']."</td>";
 		$reporte.="</tr>";
 		$reporte.="<tr>";	
-		$reporte.="<th>Correo Eléctronico</th>";
-		$reporte.="<td>".$cat['correo']."</td>";
+		$reporte.="<th>Parroquia</th>";
+		$reporte.="<td>".$cat['descrip']."</td>";
 	
 		$reporte.="<th>Municipio</th>";
 		$reporte.="<td>".$cat['descrips']."</td>";
 		$reporte.="</tr>";
 		$reporte.="<tr>";		
-		$reporte.="<th>Parroquia</th>";
-		$reporte.="<td>".$cat['descrip']."</td>";	
 
 		$reporte.="<th>Dirección</th>";
-		$reporte.="<td>".$cat['direccion']."</td>";	
+		$reporte.="<td colspan=3>".$cat['direccion']."</td>";
 
+		$reporte.="</tr>";
+		$reporte.="<tr>";
+
+		$reporte.="<th>Correo Eléctronico</th>";
+		$reporte.="<td  colspan=3>".$cat['correo']."</td>";
 		
 	}
 	$cata.="</table>";
@@ -323,18 +332,20 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 		$cata.="<tr>";	
 		$cata.="<th>Nombre</th>";
 		$cata.="<td>".$cat['nombre']."</td>";	
-		$cata.="<th>Correo Eléctronico</th>";
-		$cata.="<td>".$cat['correo']."</td>";
-	
+		$cata.="<th>Parentesco</th>";
+		$cata.="<td>".$cat['parentezco']."</td>";
 
 		$cata.="</tr>";
 		$cata.="<tr>";	
 
-
 		$cata.="<th>Apellido</th>";
-		$cata.="<td>".$cat['apellido']."</td>";		
-		$cata.="<th>Parentesco</th>";
-		$cata.="<td>".$cat['parentezco']."</td>";	
+		$cata.="<td>".$cat['apellido']."</td>";	
+		$cata.="</tr>";
+		$cata.="<tr>";	
+		$cata.="<th>Correo Eléctronico</th>";
+		$cata.="<td colspan=3>".$cat['correo']."</td>";
+
+
 
 		$reporte.="<tr>";	
 		$reporte.="<th>Cédula</th>";
@@ -347,8 +358,8 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 		$reporte.="<tr>";	
 		$reporte.="<th>Nombre</th>";
 		$reporte.="<td>".$cat['nombre']."</td>";	
-		$reporte.="<th>Correo Eléctronico</th>";
-		$reporte.="<td>".$cat['correo']."</td>";
+		$reporte.="<th>Parentesco</th>";
+		$reporte.="<td>".$cat['parentezco']."</td>";	
 	
 
 		$reporte.="</tr>";
@@ -357,9 +368,11 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 
 		$reporte.="<th>Apellido</th>";
 		$reporte.="<td>".$cat['apellido']."</td>";		
-		$reporte.="<th>Parentesco</th>";
-		$reporte.="<td>".$cat['parentezco']."</td>";	
 
+		$reporte.="</tr>";
+		$reporte.="<tr>";	
+		$reporte.="<th>Correo Eléctronico</th>";
+		$reporte.="<td>".$cat['correo']."</td>";
 		
 	}
 	$cata.="</table>";
@@ -375,39 +388,44 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 		$cata.="<th>Nombre de la Empresa</th>";
 		$cata.="<td>".$cat['empresa']."</td>";	
 
-		$cata.="<th>Correo Eléctonico</th>";
-		$cata.="<td>".$cat['correol']."</td>";	
+		$cata.="<th>Parroquia</th>";
+		$cata.="<td>".$cat['descrip']."</td>";	
 		$cata.="</tr>";
 		$cata.="<tr>";
 		$cata.="<th>Municipio</th>";
 		$cata.="<td>".$cat['descrips']."</td>";	
 
-		$cata.="<th>Parroquia</th>";
-		$cata.="<td>".$cat['descrip']."</td>";	
+
 		$cata.="</tr>";
 		$cata.="<tr>";
 		$cata.="<th>Dirección</th>";
-		$cata.="<td>".$cat['direccion1']."</td>";	
+		$cata.="<td colspan=3>".$cat['direccion1']."</td>";
+		$cata.="</tr>";
+		$cata.="<tr>";
+		$cata.="<th>Correo Eléctonico</th>";
+		$cata.="<td colspan=3>".$cat['correol']."</td>";
 
 
 		$reporte.="<tr>";
 		$reporte.="<th>Nombre de la Empresa</th>";
 		$reporte.="<td>".$cat['empresa']."</td>";	
 
-		$reporte.="<th>Correo Eléctonico</th>";
-		$reporte.="<td>".$cat['correol']."</td>";	
+		$reporte.="<th>Parroquia</th>";
+		$reporte.="<td>".$cat['descrip']."</td>";	
 		$reporte.="</tr>";
 		$reporte.="<tr>";
 		$reporte.="<th>Municipio</th>";
 		$reporte.="<td>".$cat['descrips']."</td>";	
 
-		$reporte.="<th>Parroquia</th>";
-		$reporte.="<td>".$cat['descrip']."</td>";	
+
 		$reporte.="</tr>";
 		$reporte.="<tr>";
 		$reporte.="<th>Dirección</th>";
-		$reporte.="<td>".$cat['direccion1']."</td>";	
-		
+		$reporte.="<td colspan=3>".$cat['direccion1']."</td>";
+		$reporte.="</tr>";
+		$reporte.="<tr>";
+		$reporte.="<th>Correo Eléctonico</th>";
+		$reporte.="<td colspan=3>".$cat['correol']."</td>";
 	}
 	$cata.="</table>";
 
