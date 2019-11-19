@@ -275,14 +275,7 @@ class Beca extends ClaseBase
 		return $insert;
 	}
 
-	public function modificarPersona()
-	{
-		$con = Conexion::getInstance();
-		$sql = "UPDATE $this->tabla SET beca='$this->beca' WHERE id=$this->id";
-		$result = $con->db->prepare($sql);
-		$cambio = $result->execute();
-		return $cambio;
-	}
+	
 
 	public function selexmax()
 	{
