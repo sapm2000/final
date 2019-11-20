@@ -163,6 +163,16 @@ class Usuario extends ClaseBase
 		return $cambio;
 	}
 
+	public function IniciarSesion()
+	{
+		$con = Conexion::getInstance();
+		$sql = "SELECT * FROM usuarios WHERE usuario='$this->usuario' AND clave='$this->clave'";
+		$result = $con->db->prepare($sql);
+		$result->execute();
+		$sesion = $result->fetchAll(); //Acomoda en un arreglo e resultado de la búsqueda
+		return $sesion; //Para que retorne el resultado de la búsqueda
+	} //Función que me permite validar la sesión 
+
 	
 }
 

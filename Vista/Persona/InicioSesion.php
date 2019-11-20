@@ -2,7 +2,7 @@
 	session_start();
 	if(isset($_SESSION['usuario']))
 	{
-		echo "Existe una sesión abierta para el usuario ".$_SESSION['usuario'].", para cerrarla haga click <a href='../../Controlador/SesionController.php?accion=cerrar'>AQUÍ</a>";
+		echo "Existe una sesión abierta para el usuario ".$_SESSION['usuario'].", para cerrarla haga click <a href='../../Controlador/UsuarioController.php?accion=cerrar'>AQUÍ</a>";
 	}//Seguridad por si acceden al index por medio de la URL sin cerrar sesión
 	else
 	{
@@ -24,7 +24,7 @@
                         <div class="background trans">
                             <div class="text">
                                 <div class="background">
-                                        <form name='IS'method='POST' action='../../Controlador/SesionController.php?accion=validar' >
+                                        <form name='IS'method='POST' action='../../Controlador/UsuarioController.php?accion=validar'>
                                                 <table style="margin: 0 auto;">
                                                      <tr>
                                                          <td><font color="white"><center> Usuario</center></font></td>
