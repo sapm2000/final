@@ -139,27 +139,3 @@ hr {
    box-shadow: inset 0 12px 12px -12px SlateGray;
 }
 
-/*ventana menor a 980 píxeles*/
-@media screen and (max-width: 980px){
-
-   #OpenModal{
-       width: 60%;
-       max-width: 1024px;
-   }
-   #menusu{
-       width:30%;
-   }
- }
- 
- /*dispositic¿vos moviles*/
- @media screen and (max-width: 480px){
-   #encabezado{
-       height: auto;
-   }
-   #OpenModal{
-       width: auto;
-   }
-   #menusu{
-       display:none;
-   }
- }

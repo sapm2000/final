@@ -242,7 +242,7 @@ html, body {
   border-radius: 10% 10% 10% 10%;
 }
 
-.modalDialog 
+.modaldialog 
  {
 	position: fixed;
 	font-family: cursive;
@@ -255,12 +255,12 @@ html, body {
   
 }
 
-.modalDialog:target {
+.modaldialog:target {
 	opacity:1;
 	pointer-events: auto;
 }
 
-.modalDialog > div {
+.modaldialog > div {
   font-family: fantasy;
     width: 75%;
     height: 70%;
