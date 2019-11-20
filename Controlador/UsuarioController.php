@@ -149,8 +149,9 @@ switch($_REQUEST['accion'])
 				$usuario->setN_eme($_POST['n_eme']);
 				$usuario->setCorreo($z);
 	
-				$usuario=$usuario->todoslosusuarios();
-				$t= count($usuario);
+				$usua=$usuario->todoslosusuarios();
+				$t= count($usua);
+			
 				$us=$usuario->getUsuario();
 	
 				if ($us==$_SESSION['usuario']) {
@@ -166,7 +167,7 @@ switch($_REQUEST['accion'])
 				}
 	
 				for ($i=0;$i<=$t;$i++) {
-					if ($us==$usuario[$i][0]) {
+					if ($us==$usua[$i][0]) {
 	
 						echo "<script>alert('ese usuario ya esta registrado')</script>";//Mensaje de Sesión no válida
 						echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/menuv/menuv.php?accion=validado'>"; 
@@ -210,6 +211,7 @@ switch($_REQUEST['accion'])
 		$usuario->setId($_SESSION['id']);
 		$datos = $usuario->getById($id);
 		$_SESSION['modiusu3'] = $datos;
+		
 		header("Location: ../Vista/usuario/ver_perfil.php?accion=ver_detalles&id=".$id);	
 		break;	
 	}
