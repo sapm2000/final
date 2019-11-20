@@ -27,7 +27,17 @@ switch($_REQUEST['accion'])
 	case "eliminar":
 	{
 		$patologia_medica->setId($_GET['id']);
-		$patologia_medica->deleteById($id);
+
+		$comprobar=$patologia_medica->comprobarDatos();
+		if (empty($comprobar)) {
+			$patologia_medica->deleteById($id);
+		}
+		else {
+			echo "<script>alert('no se puede eliminar la patologia porque tiene atletas asociados')</script>";//Mensaje de Sesión no válida
+			echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/patologia_medica/patologia_medica.php?accion=actualizar'>"; 
+
+			break ;
+		}
 		header("Location: ../Vista/patologia_medica/patologia_medica.php?accion=actualizar");		
 		break;	
 	}

@@ -209,7 +209,7 @@ class Evento extends ClaseBase
 		public function modificarEvento()
 		{
 			$con = Conexion::getInstance();
-			$sql = "UPDATE $this->tabla SET nombre='$this->nombre', fecha_inicio='$this->fecha_inicio', fecha_cierre='$this->fecha_cierre', descripcion='$this->descripcion', id_disciplina='$this->id_disciplina', id_municipio='$this->id_municipio', id_parroquia='$this->id_parroquia', maxpo='$this->maxpo', canti='$this->canti', parti='$this->parti' WHERE id=$this->id";
+			$sql = "UPDATE $this->tabla SET nombre='$this->nombre', fecha_inicio='$this->fecha_inicio', fecha_cierre='$this->fecha_cierre', descripcion='$this->descripcion', id_municipio='$this->id_municipio', id_parroquia='$this->id_parroquia', maxpo='$this->maxpo', canti='$this->canti', parti='$this->parti' WHERE id=$this->id";
 			$result = $con->db->prepare($sql);
 			$cambio = $result->execute();
 			return $cambio;

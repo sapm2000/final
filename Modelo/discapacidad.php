@@ -34,6 +34,17 @@ class Discapacidad extends ClaseBase
 		$cambio = $result->execute();
 		return $cambio;
 	}
+
+	public function comprobarDatos()
+	{
+		$cc=Conexion::getInstance();
+		//$sql="SELECT a.*, b.descrip AS std FROM parroquia AS a INNER JOIN municipio AS b ON b.id=a.id_municipio ORDER BY std";
+		$sql="SELECT puente_discapacidad.id_discapacidad FROM puente_discapacidad WHERE puente_discapacidad.id_discapacidad=$this->id";
+		$result=$cc->db->prepare($sql);
+		$result->execute();
+		$trae=$result->fetchAll();
+		return ($trae);
+	}
 }
 
 

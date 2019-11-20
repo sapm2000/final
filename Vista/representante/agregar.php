@@ -21,11 +21,11 @@ if($_GET['accion']=="actual")
 
 
 	$algunis = $_SESSION['selectp'];
-	$select = "<select name='parentezco' required>";
+	$select = "<select name='parentesco' required>";
 	$select.= "<option value=''>Seleccione un parentesco</option>";
 	foreach($algunis as $t)
 	{
-		$select.= "<option value=".$t['id'].">".$t['parentezco']."</option>";	
+		$select.= "<option value=".$t['id'].">".$t['parentesco']."</option>";	
 	}
 	$select.= "</select>";
 
@@ -107,7 +107,7 @@ if($_GET['accion']=="actual")
 		$cata.="<td>".$cat['cedula']."</td>";
 		$cata.="<td>".$cat['nombre']."</td>";
 		$cata.="<td>".$cat['apellido']."</td>";
-		$cata.="<td>".$cat['parentezco']."</td>";
+		$cata.="<td>".$cat['parentesco']."</td>";
 		
 		$cata.="<td><a href='../../Controlador/RepresentanteController.php?accion=eliminar1&id=".$cat['id']."&id_repre=".$cat['carajo']."'>";	
 		$cata.="<img src='../Imagenes1/eliminar.png' width='15px' height='15px' title='Eliminar'></a></td>";	
@@ -117,7 +117,7 @@ if($_GET['accion']=="actual")
 		$reporte.="<td>".$cat['cedula']."</td>";
 		$reporte.="<td>".$cat['nombre']."</td>";
 		$reporte.="<td>".$cat['apellido']."</td>";
-		$reporte.="<td>".$cat['parentezco']."</td>";
+		$reporte.="<td>".$cat['parentesco']."</td>";
 	}
 	$cata.="</table><br>";
 

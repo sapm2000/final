@@ -34,6 +34,17 @@ class Nivel extends ClaseBase
 		$cambio = $result->execute();
 		return $cambio;
 	}
+
+	public function comprobarDatos()
+	{
+		$cc=Conexion::getInstance();
+		//$sql="SELECT a.*, b.descrip AS std FROM parroquia AS a INNER JOIN municipio AS b ON b.id=a.id_municipio ORDER BY std";
+		$sql="SELECT atleta.id_nivel FROM atleta WHERE atleta.id_nivel=$this->id";
+		$result=$cc->db->prepare($sql);
+		$result->execute();
+		$trae=$result->fetchAll();
+		return ($trae);
+	}
 }
 
 

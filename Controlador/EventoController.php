@@ -266,7 +266,6 @@ switch($_REQUEST['accion'])
 				$evento->setFecha_Inicio($_POST['fecha_inicio']);
 				$evento->setFecha_Cierre($_POST['fecha_cierre']);
 				$evento->setDescripcion($y);
-				$evento->setId_disciplina($_POST['id_disciplina']);
 				$evento->setId_municipio($_POST['id_municipio']);
 				$evento->setId_parroquia($_POST['id_parroquia']);
 				$evento->setParti($_POST['parti']);

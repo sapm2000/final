@@ -310,7 +310,7 @@ switch($_REQUEST['accion'])
 				$menu.=						'<li><a href="../modalidades/modalidades.php?accion=actualizar">Modalidades</a></li>';
 				$menu.=						'<li><a href="../municipio/MunicipioView.php?accion=actualizar">Municipios</a></li>';
 				$menu.=						'<li><a href="../nivel/nivel.php?accion=actualizar">Nivel Académico</a></li>';
-				$menu.=						'<li><a href="../parentesco/parentezco.php?accion=actualizar">Parentesco</a></li>';
+				$menu.=						'<li><a href="../parentesco/parentesco.php?accion=actualizar">Parentesco</a></li>';
 				$menu.=						'<li><a href="../parroquia/ParroquiaView.php?accion=actualizar">Parroquias</a></li>';
 				$menu.=						'<li><a href="../patologia_medica/patologia_medica.php?accion=actualizar">Patologias Medica</a></li>';
 				$menu.=						'<li><a href="../representante/representante2.php?accion=actualizar">Representante</a></li>';

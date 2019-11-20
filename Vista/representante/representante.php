@@ -20,11 +20,11 @@ $cata='';
 $boton='';
 
 $algunis = $_SESSION['selectp'];
-$select = "<select name='parentezco' required>";
+$select = "<select name='parentesco' required>";
 $select.= "<option value=''>Seleccione un parentesco</option>";
 foreach($algunis as $t)
 {
-	$select.= "<option value=".$t['id'].">".$t['parentezco']."</option>";	
+	$select.= "<option value=".$t['id'].">".$t['parentesco']."</option>";	
 }
 $select.= "</select>";
 
