@@ -8,11 +8,18 @@ switch($_REQUEST['accion'])
 {
 	case "buscatodos":
 	{
-		$todos = $disciplina->getAll($tab);
+		$todos = $disciplina->getallactivas($tab);
 		$_SESSION['catadisci'] = $todos;
 		header("Location: ../Vista/disciplina/disciplina.php?accion=actual");
 		break;
 	}
+	case "buscatodos1":
+		{
+			$todos = $disciplina->getallinactivas($tab);
+			$_SESSION['catadisci1'] = $todos;
+			header("Location: ../Vista/disciplina/disciplina1.php?accion=actual");
+			break;
+		}
 	case "registrar":
 	{
 		if(isset($_REQUEST['BtRegistrar']))
@@ -27,7 +34,9 @@ switch($_REQUEST['accion'])
 	case "eliminar":
 	{
 		$disciplina->setId($_GET['id']);
-		$disciplina->deleteById($id);
+		$disciplina->updatedis();
+		$disciplina->updatemod();
+
 		header("Location: ../Vista/disciplina/disciplina.php?accion=actualizar");		
 		break;	
 	}
@@ -51,6 +60,15 @@ switch($_REQUEST['accion'])
 		}
 		break;
 	}
+
+	case "reactivar1":
+		{
+			$disciplina->setId($_GET['id']);
+			$disciplina->updatedis1();
+	
+			header("Location: ../Vista/disciplina/disciplina1.php?accion=actualizar");		
+			break;	
+		}
 }
 ob_end_flush();
 ?>

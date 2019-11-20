@@ -24,6 +24,16 @@ class Modalidad extends ClaseBase
 		return $this->id_disciplina;
 	}
 
+	public function getallactivas()
+	{
+		$cc=Conexion::getInstance();
+		$sql="SELECT * FROM modalidades WHERE modalidades.activo=0";
+		$result=$cc->db->prepare($sql);
+		$result->execute();
+		$trae=$result->fetchAll();
+		return ($trae);
+	}
+
 	public function RegModalidad()
 	{
 		$cc=Conexion::getInstance();
@@ -37,7 +47,18 @@ class Modalidad extends ClaseBase
 	{
 		$cc=Conexion::getInstance();
 		//$sql="SELECT a.*, b.descrip AS std FROM parroquia AS a INNER JOIN municipio AS b ON b.id=a.id_municipio ORDER BY std";
-		$sql="SELECT modalidades.*,disciplinas.disciplina FROM modalidades INNER JOIN disciplinas ON disciplinas.id=modalidades.id_disciplina";
+		$sql="SELECT modalidades.*,disciplinas.disciplina FROM modalidades INNER JOIN disciplinas ON disciplinas.id=modalidades.id_disciplina where modalidades.activo=0";
+		$result=$cc->db->prepare($sql);
+		$result->execute();
+		$trae=$result->fetchAll();
+		return ($trae);
+	}
+
+	public function consDetModalidad1()
+	{
+		$cc=Conexion::getInstance();
+		//$sql="SELECT a.*, b.descrip AS std FROM parroquia AS a INNER JOIN municipio AS b ON b.id=a.id_municipio ORDER BY std";
+		$sql="SELECT modalidades.*,disciplinas.disciplina FROM modalidades INNER JOIN disciplinas ON disciplinas.id=modalidades.id_disciplina where modalidades.activo=1";
 		$result=$cc->db->prepare($sql);
 		$result->execute();
 		$trae=$result->fetchAll();
@@ -51,6 +72,33 @@ class Modalidad extends ClaseBase
 		$result=$cc->db->prepare($sql);
 		$result->execute();
 		return ($result);
+	}
+
+	public function updatemod()
+	{
+		$con = Conexion::getInstance();
+		$sql = "UPDATE modalidades SET activo=1 WHERE id=$this->id";
+		$result = $con->db->prepare($sql);
+		$cambio = $result->execute();
+		return $cambio;
+	}
+
+	public function updatemod1()
+	{
+		$con = Conexion::getInstance();
+		$sql = "UPDATE modalidades SET activo=0 WHERE id=$this->id";
+		$result = $con->db->prepare($sql);
+		$cambio = $result->execute();
+		return $cambio;
+	}
+
+	public function updatedis1()
+	{
+		$con = Conexion::getInstance();
+		$sql = "UPDATE disciplinas SET activo=0 WHERE id=$this->id_disciplina";
+		$result = $con->db->prepare($sql);
+		$cambio = $result->execute();
+		return $cambio;
 	}
 }
 ?>
