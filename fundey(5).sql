@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-11-2019 a las 18:09:03
+-- Tiempo de generación: 20-11-2019 a las 15:55:27
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.4
 
@@ -58,9 +58,9 @@ CREATE TABLE `atleta` (
 --
 
 INSERT INTO `atleta` (`id`, `nac`, `cedula`, `nombre`, `apellido`, `f_nac`, `tipos`, `estadoc`, `sexo`, `id_nivel`, `correo`, `n_tel`, `n_eme`, `id_municipio`, `id_parroquia`, `direccion`, `activo`, `id_talla`, `id_calzado`, `altura`, `peso`, `mano`) VALUES
-(1, 'V', 30426947, 'FREDDERICK', 'HERNANDEZ', '2004-07-06', 'O+', 'SOLTERO/A', 'M', 1, 'DASDAD@ASDS.COM', '04143012400', '04245222312', 13, 19, 'ASDA', 0, 8, 6, '110', '90.0', 'DIESTRO'),
+(1, 'V', 30426947, 'FREDDERIC', 'HERNANDE', '2004-07-06', 'O+', 'SOLTERO/A', 'M', 1, 'DASDAD@ASDS.COM', '04143012400', '04245222312', 13, 19, 'ASDA', 0, 8, 6, '110', '90.0', 'DIESTRO'),
 (2, 'V', 27758852, 'MARYORITH', 'SINGER', '2000-05-05', 'O+', 'SOLTERO/A', 'F', 3, 'MARYORITHSINGER05@GMAIL.COM', '04125084544', '04245222312', 1, 1, 'FINAL CALLE 28 CON 14 AV.', 0, 0, 0, '', '', ''),
-(3, 'V', 26943430, 'SAMUEL', 'PEREZ', '2000-01-06', 'O+', 'SOLTERO/A', 'M', 3, '8@SADSA.COM', '04245222312', '04125084544', 11, 17, '2 AV.', 0, 5, 6, '171', '50.0', 'DIESTRO'),
+(3, 'V', 26943430, 'SAMUEL', 'PEREZ', '2000-01-06', 'O+', 'SOLTERO/A', 'M', 3, '8@SADSA.COM', '04245222312', '04125084544', 11, 17, '2 AV CON CALLE 2 EDF PORTAL DEL ESTE APT 5B ', 0, 5, 6, '171', '50.0', 'DIESTRO'),
 (4, 'V', 1234567, 'FSDFS', 'SDFDSFS', '2000-06-12', 'O-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 8, 5, '123', '12', ''),
 (5, 'E', 7590456, 'ADSAD', 'ASDADAS', '2000-06-01', 'O-', 'SOLTERO/A', 'M', 2, '', '', '', 0, 0, '', 0, 5, 5, '123', '12.5', 'DIESTRO'),
 (6, 'V', 1478558, 'XCZCZXC', 'ZXCZXCZXC', '2019-10-06', 'B-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 5, 5, '', '', ''),
@@ -98,14 +98,14 @@ CREATE TABLE `atleta_representante` (
   `id` int(11) NOT NULL,
   `id_atleta` int(11) NOT NULL,
   `id_representante` int(11) NOT NULL,
-  `id_parentezco` int(11) NOT NULL
+  `id_parentesco` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `atleta_representante`
 --
 
-INSERT INTO `atleta_representante` (`id`, `id_atleta`, `id_representante`, `id_parentezco`) VALUES
+INSERT INTO `atleta_representante` (`id`, `id_atleta`, `id_representante`, `id_parentesco`) VALUES
 (3, 3, 2, 5),
 (4, 1, 2, 9);
 
@@ -209,7 +209,8 @@ INSERT INTO `becas_mes` (`id`, `fecha`, `montoT`, `becados`, `nombre`, `gloria`)
 (9, '2019-11-11', 3702, 3, 'FSDFS', 0),
 (10, '2019-11-19', 3702, 3, 'ASD', 0),
 (11, '2019-11-12', 89222, 3, 'SSDF', 1),
-(12, '2019-11-05', 1364440, 2, 'AASD', 0);
+(12, '2019-11-05', 1364440, 2, 'AASD', 0),
+(13, '2019-11-19', 1364440, 2, 'C', 0);
 
 -- --------------------------------------------------------
 
@@ -256,7 +257,9 @@ INSERT INTO `becas_total` (`id`, `id_atleta`, `monto`, `fecha`, `nombre`, `disc`
 (24, 2, 34535, '2019-11-12', 'SSDF', 'GIMNASIA', 1),
 (25, 3, 53453, '2019-11-12', 'SSDF', 'BOLAS CRIOLLAS', 1),
 (26, 4, 1232310, '2019-11-05', 'AASD', 'GIMNASIA', 0),
-(27, 5, 132131, '2019-11-05', 'AASD', 'AJEDREZ', 0);
+(27, 5, 132131, '2019-11-05', 'AASD', 'AJEDREZ', 0),
+(28, 4, 1232310, '2019-11-19', 'C', 'GIMNASIA', 0),
+(29, 5, 132131, '2019-11-19', 'C', 'AJEDREZ', 0);
 
 -- --------------------------------------------------------
 
@@ -627,19 +630,19 @@ INSERT INTO `nivels` (`id`, `nivel`, `activo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `parentezcos`
+-- Estructura de tabla para la tabla `parentescos`
 --
 
-CREATE TABLE `parentezcos` (
+CREATE TABLE `parentescos` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `parentezco` varchar(50) NOT NULL
+  `parentesco` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `parentezcos`
+-- Volcado de datos para la tabla `parentescos`
 --
 
-INSERT INTO `parentezcos` (`id`, `parentezco`) VALUES
+INSERT INTO `parentescos` (`id`, `parentesco`) VALUES
 (9, 'ABUELA'),
 (10, 'ABUELO'),
 (5, 'HERMANA'),
@@ -693,6 +696,32 @@ INSERT INTO `parroquia` (`id`, `descrip`, `id_municipio`) VALUES
 (19, 'URACHICHE', 13),
 (20, 'EL GUAYABO', 14),
 (21, 'FARRIAR', 14);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `patologia_medicas`
+--
+
+CREATE TABLE `patologia_medicas` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `patologia_medica` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `patologia_medicas`
+--
+
+INSERT INTO `patologia_medicas` (`id`, `patologia_medica`) VALUES
+(10, 'ANAFILAXIA'),
+(1, 'ASMA'),
+(3, 'CONJUNTIVITIS'),
+(11, 'DDDSA'),
+(4, 'DERMATITIS'),
+(8, 'MEDICAMENTOS'),
+(9, 'PICADURAS DE INSECTOS'),
+(2, 'RINITIS'),
+(5, 'URTICARIA');
 
 -- --------------------------------------------------------
 
@@ -755,22 +784,21 @@ INSERT INTO `puente_disciplina` (`id`, `id_atleta`, `id_disciplina`, `id_modalid
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `puente_registro_medico`
+-- Estructura de tabla para la tabla `puente_patologia_medica`
 --
 
-CREATE TABLE `puente_registro_medico` (
+CREATE TABLE `puente_patologia_medica` (
   `id` int(11) NOT NULL,
   `id_atleta` int(11) NOT NULL,
-  `id_registro_medico` int(11) NOT NULL,
+  `id_patologia_medica` int(11) NOT NULL,
   `fecha_medica` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `puente_registro_medico`
+-- Volcado de datos para la tabla `puente_patologia_medica`
 --
 
-INSERT INTO `puente_registro_medico` (`id`, `id_atleta`, `id_registro_medico`, `fecha_medica`) VALUES
-(1, 1, 1, '0000-00-00'),
+INSERT INTO `puente_patologia_medica` (`id`, `id_atleta`, `id_patologia_medica`, `fecha_medica`) VALUES
 (7, 2, 2, '0000-00-00'),
 (9, 2, 5, '0000-00-00'),
 (11, 3, 3, '0000-00-00'),
@@ -778,33 +806,8 @@ INSERT INTO `puente_registro_medico` (`id`, `id_atleta`, `id_registro_medico`, `
 (13, 3, 10, '0000-00-00'),
 (14, 3, 1, '2019-10-14'),
 (15, 3, 2, '2019-10-15'),
-(16, 1, 7, '2010-12-04');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `registro_medicos`
---
-
-CREATE TABLE `registro_medicos` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `registro_medico` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `registro_medicos`
---
-
-INSERT INTO `registro_medicos` (`id`, `registro_medico`) VALUES
-(7, 'ALIMENTOS'),
-(10, 'ANAFILAXIA'),
-(1, 'ASMA'),
-(3, 'CONJUNTIVITIS'),
-(4, 'DERMATITIS'),
-(8, 'MEDICAMENTOS'),
-(9, 'PICADURAS DE INSECTOS'),
-(2, 'RINITIS'),
-(5, 'URTICARIA');
+(16, 1, 7, '2010-12-04'),
+(17, 1, 10, '2019-11-20');
 
 -- --------------------------------------------------------
 
@@ -905,7 +908,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `usuario`, `clave`, `n_eme`, `n_tel`, `correo`, `conf_clave`, `tipo`) VALUES
 (30, 'SAMUEL', 'PEREZ', 'SAPM2000', '12345678', '12345678900', '12345678900', '123456789@12345678.COM', '123456789', 'ADMINISTRADOR'),
-(31, 'MARYORITH', 'SINGER', 'MARYO05', '123456', '12345678900', '32112321312', 'ASDASA@ASDA.COM', '123456', 'METODOLOGO'),
+(31, 'MARYORITH', 'SINGER', 'MARYO05', '123456', '12345678900', '32112321312', 'ASDASA@ASDA.COM', '123456', 'ASISTENTE ADMINISTRATIVO'),
 (33, 'SADSADSAD', 'ASDSADSADSA', 'DADADA', '123', '00987654321', '12345678900', 'SDASDAD@ASDSADCP.SDF', '123', 'ASISTENTE ADMINISTRATIVO');
 
 --
@@ -1041,11 +1044,11 @@ ALTER TABLE `nivels`
   ADD UNIQUE KEY `nivel` (`nivel`);
 
 --
--- Indices de la tabla `parentezcos`
+-- Indices de la tabla `parentescos`
 --
-ALTER TABLE `parentezcos`
+ALTER TABLE `parentescos`
   ADD UNIQUE KEY `id` (`id`),
-  ADD UNIQUE KEY `parentezco` (`parentezco`);
+  ADD UNIQUE KEY `parentezco` (`parentesco`);
 
 --
 -- Indices de la tabla `parroquia`
@@ -1054,6 +1057,13 @@ ALTER TABLE `parroquia`
   ADD UNIQUE KEY `id` (`id`),
   ADD UNIQUE KEY `descrip` (`descrip`),
   ADD KEY `fdgdf` (`id_municipio`);
+
+--
+-- Indices de la tabla `patologia_medicas`
+--
+ALTER TABLE `patologia_medicas`
+  ADD UNIQUE KEY `id` (`id`),
+  ADD UNIQUE KEY `alergia` (`patologia_medica`);
 
 --
 -- Indices de la tabla `puente_discapacidad`
@@ -1068,17 +1078,10 @@ ALTER TABLE `puente_disciplina`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `puente_registro_medico`
+-- Indices de la tabla `puente_patologia_medica`
 --
-ALTER TABLE `puente_registro_medico`
+ALTER TABLE `puente_patologia_medica`
   ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `registro_medicos`
---
-ALTER TABLE `registro_medicos`
-  ADD UNIQUE KEY `id` (`id`),
-  ADD UNIQUE KEY `alergia` (`registro_medico`);
 
 --
 -- Indices de la tabla `representantes`
@@ -1152,13 +1155,13 @@ ALTER TABLE `becas_gloria`
 -- AUTO_INCREMENT de la tabla `becas_mes`
 --
 ALTER TABLE `becas_mes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `becas_total`
 --
 ALTER TABLE `becas_total`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de la tabla `calzados`
@@ -1233,9 +1236,9 @@ ALTER TABLE `nivels`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `parentezcos`
+-- AUTO_INCREMENT de la tabla `parentescos`
 --
-ALTER TABLE `parentezcos`
+ALTER TABLE `parentescos`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
@@ -1243,6 +1246,12 @@ ALTER TABLE `parentezcos`
 --
 ALTER TABLE `parroquia`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT de la tabla `patologia_medicas`
+--
+ALTER TABLE `patologia_medicas`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `puente_discapacidad`
@@ -1257,16 +1266,10 @@ ALTER TABLE `puente_disciplina`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT de la tabla `puente_registro_medico`
+-- AUTO_INCREMENT de la tabla `puente_patologia_medica`
 --
-ALTER TABLE `puente_registro_medico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT de la tabla `registro_medicos`
---
-ALTER TABLE `registro_medicos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE `puente_patologia_medica`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `representantes`

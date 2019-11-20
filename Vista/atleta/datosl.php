@@ -77,7 +77,7 @@ if($_GET['accion']=='ver_detalles') {
 	$form.='<input type="submit" value="Datos Bancarios" id="datosb" name="DatosB" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Disciplinas" name="Disciplinas" id="d" class="botonmodalsuperior">';
 	$form.='<input type="button" value="Datos Laborales" id="siguiente11" name="BtModificar" class="botonmodalsuperioractual">';
-	$form.='<input type="submit" value="Registro Médico" id="a" name="Registro_medicos" class="botonmodalsuperior">';
+	$form.='<input type="submit" value="Patologia Medica" id="a" name="Patologia_medicas" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Discapacidades" name="Discapacidades" id="d" class="botonmodalsuperior">';
 
 	$form.="<table>";
@@ -115,7 +115,7 @@ if($_GET['accion']=='ver_detalles') {
 	$form.='</table>';
 	$form.='<table align="right">';
 	$form.='<tr>';
-	$form.='<td> <input type="submit" value="Siguiente" id="submit" name="Registro_medicos"> </td>';
+	$form.='<td> <input type="submit" value="Siguiente" id="submit" name="Patologia_medicas"> </td>';
 	$form.='</tr>';
 	$form.='</table>';
 

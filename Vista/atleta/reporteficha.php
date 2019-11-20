@@ -473,24 +473,24 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 
 
 
-	$catalogo = $_SESSION['medicos'];
+	$catalogo = $_SESSION['medicas'];
 	$cata.="<table class=tabla-catficha id=tabla width=65%>";
-	$cata.="<th colspan=2>Registro Médico</th>";
-	$cata.="<tr><th>Registro Médico</th><th>Fecha del Registro Médico</th></tr>";
+	$cata.="<th colspan=2>Patologia Medica</th>";
+	$cata.="<tr><th>Patologia Medica</th><th>Fecha del Patologia Medica</th></tr>";
 
-	$reporte.="<tr><th colspan=4>Registro Médico</th></tr>";
-	$reporte.="<tr><th colspan=2>Registro Médico</th><th colspan=2>Fecha del Registro Médico</th></tr>";
+	$reporte.="<tr><th colspan=4>Patologia Medica</th></tr>";
+	$reporte.="<tr><th colspan=2>Patologia Medica</th><th colspan=2>Fecha del Patologia Medica</th></tr>";
 
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
-		$cata.="<td>".$cat['registro_medico']."</td>";	
+		$cata.="<td>".$cat['patologia_medica']."</td>";	
 		$cata.="<td>".$cat['fecha_medica']."</td>";	
 	
 
 		$reporte.="<tr>";	
 
-		$reporte.="<td colspan=2>".$cat['registro_medico']."</td>";	
+		$reporte.="<td colspan=2>".$cat['patologia_medica']."</td>";	
 		$reporte.="<td colspan=2>".$cat['fecha_medica']."</td>";	
 
 
