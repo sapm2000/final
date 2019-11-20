@@ -34,6 +34,16 @@ switch($_REQUEST['accion'])
 	case "eliminar":
 	{
 		$calzado->setId($_GET['id']);
+		$comprobar=$calzado->comprobarDatos();
+		if (empty($comprobar)) {
+			$calzado->deleteById($id);
+		}
+		else {
+			echo "<script>alert('no se puede eliminar el calzado porque tiene atletas asociados')</script>";//Mensaje de Sesión no válida
+			echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/calzado/calzado.php?accion=actualizar'>"; 
+
+			break ;
+		}
 		$calzado->deleteById($id);
 		header("Location: ../Vista/calzado/calzado.php?accion=actualizar");		
 		break;	

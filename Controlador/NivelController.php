@@ -27,6 +27,16 @@ switch($_REQUEST['accion'])
 	case "eliminar":
 	{
 		$nivel->setId($_GET['id']);
+		$comprobar=$nivel->comprobarDatos();
+		if (empty($comprobar)) {
+			$nivel->deleteById($id);
+		}
+		else {
+			echo "<script>alert('no se puede eliminar el nivel academico porque tiene atletas asociados')</script>";//Mensaje de Sesión no válida
+			echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/nivel/nivel.php?accion=actualizar'>"; 
+
+			break ;
+		}
 		$nivel->deleteById($id);
 		header("Location: ../Vista/nivel/nivel.php?accion=actualizar");		
 		break;	

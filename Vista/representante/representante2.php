@@ -48,7 +48,7 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catarepre2']))
 		$cata.="<td>".$cat['n_tel']."</td>";
 		$cata.="<td>".$cat['correo']."</td>";
 		$cata.="<td>".$cat['atl']."</td>";
-		$cata.="<td>".$cat['parentezco']."</td>";
+		$cata.="<td>".$cat['parentesco']."</td>";
 		$cata.="<td><a href='../../Controlador/RepresentanteController.php?accion=seleccionar&id=".$cat['id']."'>";	
 		$cata.="<img src='../imagenes1/editar.png' width='15px' height='15px' title='Editar'></a></td>";
 		$cata.="<td><a href='../../Controlador/RepresentanteController.php?accion=seleccionar1&id=".$cat['id']."'>";	
@@ -64,7 +64,7 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catarepre2']))
 		$reporte.="<td>".$cat['n_tel']."</td>";
 		$reporte.="<td>".$cat['correo']."</td>";
 		$reporte.="<td>".$cat['atl']."</td>";
-		$reporte.="<td>".$cat['parentezco']."</td>";
+		$reporte.="<td>".$cat['parentesco']."</td>";
 	}
 	$cata.="</table><br>";
 

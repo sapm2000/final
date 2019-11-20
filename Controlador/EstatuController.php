@@ -27,7 +27,16 @@ switch($_REQUEST['accion'])
 	case "eliminar":
 	{
 		$estatu->setId($_GET['id']);
-		$estatu->deleteById($id);
+		$comprobar=$estatu->comprobarDatos();
+		if (empty($comprobar)) {
+			$estatu->deleteById($id);
+		}
+		else {
+			echo "<script>alert('no se puede eliminar este estatus porque tiene atletas asociados')</script>";//Mensaje de Sesión no válida
+			echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/estatu/estatu.php?accion=actualizar'>"; 
+
+			break ;
+		}
 		header("Location: ../Vista/estatu/estatu.php?accion=actualizar");		
 		break;	
 	}

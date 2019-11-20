@@ -27,7 +27,16 @@ switch($_REQUEST['accion'])
 	case "eliminar":
 	{
 		$banco->setId($_GET['id']);
-		$banco->deleteById($id);
+		$comprobar=$banco->comprobarDatos();
+		if (empty($comprobar)) {
+			$banco->deleteById($id);
+		}
+		else {
+			echo "<script>alert('no se puede eliminar el banco porque tiene atletas asociados')</script>";//Mensaje de Sesión no válida
+			echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/banco/banco.php?accion=actualizar'>"; 
+
+			break ;
+		}
 		header("Location: ../Vista/banco/banco.php?accion=actualizar");		
 		break;	
 	}

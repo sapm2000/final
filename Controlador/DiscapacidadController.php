@@ -27,7 +27,16 @@ switch($_REQUEST['accion'])
 	case "eliminar":
 	{
 		$discapacidad->setId($_GET['id']);
-		$discapacidad->deleteById($id);
+		$comprobar=$discapacidad->comprobarDatos();
+		if (empty($comprobar)) {
+			$discapacidad->deleteById($id);
+		}
+		else {
+			echo "<script>alert('no se puede eliminar la discapacidad porque tiene atletas asociados')</script>";//Mensaje de Sesión no válida
+			echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/discapacidad/discapacidad.php?accion=actualizar'>"; 
+
+			break;
+		}
 		header("Location: ../Vista/discapacidad/discapacidad.php?accion=actualizar");		
 		break;	
 	}

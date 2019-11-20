@@ -34,6 +34,16 @@ class Patologia_medica extends ClaseBase
 		$cambio = $result->execute();
 		return $cambio;
 	}
+	public function comprobarDatos()
+	{
+		$cc=Conexion::getInstance();
+		//$sql="SELECT a.*, b.descrip AS std FROM parroquia AS a INNER JOIN municipio AS b ON b.id=a.id_municipio ORDER BY std";
+		$sql="SELECT puente_patologia_medica.id_patologia_medica FROM puente_patologia_medica WHERE puente_patologia_medica.id_patologia_medica=$this->id";
+		$result=$cc->db->prepare($sql);
+		$result->execute();
+		$trae=$result->fetchAll();
+		return ($trae);
+	}
 }
 
 ?>

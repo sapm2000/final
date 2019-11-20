@@ -35,7 +35,16 @@ switch($_REQUEST['accion'])
 	case "eliminar":
 	{
 		$talla->setId($_GET['id']);
-		$talla->deleteById($id);
+		$comprobar=$talla->comprobarDatos();
+		if (empty($comprobar)) {
+			$talla->deleteById($id);
+		}
+		else {
+			echo "<script>alert('no se puede eliminar el banco porque tiene atletas asociados')</script>";//Mensaje de Sesión no válida
+			echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/talla/talla.php?accion=actualizar'>"; 
+
+			break ;
+		}
 		header("Location: ../Vista/talla/talla.php?accion=actualizar");		
 		break;	
 	}
