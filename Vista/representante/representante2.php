@@ -37,8 +37,8 @@ if($_GET['accion']=="actual" && !empty($_SESSION['catarepre2']))
 	$cata.="<table class=tabla-cat id=tabla>";
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla>";
-	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Número de Teléfono</th><th>Correo Electrónico</th><th>Cédula del Representado</th><th>Parentesco</th><th colspan='3'>Acción</th></tr>";
-	$reporte.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Número de Teléfono</th><th>Correo Electrónico</th><th>Cédula del Representado</th><th>Parentesco</th></tr>";
+	$cata.="<tr><th>Documento de Identidad</th><th>Nombre</th><th>Apellido</th><th>Número de Teléfono</th><th>Correo Electrónico</th><th>Cédula del Representado</th><th>Parentesco</th><th colspan='3'>Acción</th></tr>";
+	$reporte.="<tr><th>Documento de Identidad</th><th>Nombre</th><th>Apellido</th><th>Número de Teléfono</th><th>Correo Electrónico</th><th>Cédula del Representado</th><th>Parentesco</th></tr>";
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
@@ -90,7 +90,7 @@ elseif ($_GET['accion']=='ver_detalles')
 	$cata.="<form name='modiform' method='post' action='../../Controlador/RepresentanteController.php?accion=modificar&id=".$id."'>";
 	$cata.="<table>";
 	$cata.="<tr>";
-	$cata.="<td>Cedula:</td>";
+	$cata.="<td>Documento de Identidad:</td>";
 	$cata.="<td><input type='text' id='num1' name='cedula' class='cajasdetexto' maxlenght='9' value='".$ced."' onkeypress='return solonumeros(event)' onpaste='return false' pattern='[0-9]{7,8}' title='Debe tener de 7 u 8 digitos' required></td>";
 	$cata.="</tr>";
 	$cata.="<tr>";

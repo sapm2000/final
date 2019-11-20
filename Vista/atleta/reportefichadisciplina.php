@@ -46,7 +46,7 @@ if($_GET['accion']=="actual")
 	else {
 
 	$cata.="<h2>Atleta #".$i."</h2>";
-	$cata.="<table class=tabla-catficha id=tabla>";
+	$cata.="<table class=tabla-catficha id=tabla width=65%>";
 
 	$reporte.="<center><h2>Atleta #".$i."</h2></center>";
 	$reporte.="<table class=tabla-catfichar id=tabla align=center>";
@@ -62,7 +62,7 @@ if($_GET['accion']=="actual")
 		$cata.="<th width=25.30%>Nacionalidad</th>";
 		$cata.="<td width=25.30%>".$cat['nac']."</td>";
 	
-		$cata.="<th width=25.30%>Cédula</th>";
+		$cata.="<th width=25.30%>Documento de Identidad</th>";
 		$cata.="<td width=25.30%>".$cat['cedula']."</td>";	
 		$cata.="</tr>";	
 		$cata.="<tr>";	
@@ -104,7 +104,7 @@ if($_GET['accion']=="actual")
 		$reporte.="<th>Nacionalidad</th>";
 		$reporte.="<td>".$cat['nac']."</td>";
 	
-		$reporte.="<th>Cédula</th>";
+		$reporte.="<th>Documento de Identidad</th>";
 		$reporte.="<td>".$cat['cedula']."</td>";	
 		$reporte.="</tr>";	
 		$reporte.="<tr>";	
@@ -158,7 +158,7 @@ if($_GET['accion']=="actual")
 
 	$catalogo = $_SESSION['indumentaria'.$i];
 
-	$cata.="<table class=tabla-cat id=tabla>";
+	$cata.="<table class=tabla-cat id=tabla width=65%>";
 
 
 	$cata.="<th colspan=4 >Datos de Indumentaria</th>";
@@ -304,7 +304,7 @@ else {
 		$cata.="<th>Nacionalidad</th>";
 		$cata.="<td>".$cat['nac']."</td>";	
 
-		$cata.="<th>Cédula</th>";
+		$cata.="<th>Documento de Identidad</th>";
 		$cata.="<td>".$cat['cedula']."</td>";	
 		$cata.="</tr>";
 		$cata.="<tr>";	
@@ -329,7 +329,7 @@ else {
 		$reporte.="<th>Nacionalidad</th>";
 		$reporte.="<td>".$cat['nac']."</td>";	
 
-		$reporte.="<th>Cédula</th>";
+		$reporte.="<th>Documento de Identidad</th>";
 		$reporte.="<td>".$cat['cedula']."</td>";	
 		$reporte.="</tr>";
 		$reporte.="<tr>";	
@@ -369,7 +369,7 @@ else {
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
-		$cata.="<th>Cédula</th>";
+		$cata.="<th>Documento de Identidad</th>";
 		$cata.="<td>".$cat['cedula']."</td>";
 		
 		$cata.="<th>Número de Telefóno</th>";
@@ -395,7 +395,7 @@ else {
 
 
 		$reporte.="<tr>";	
-		$reporte.="<th>Cédula</th>";
+		$reporte.="<th>Documento de Identidad</th>";
 		$reporte.="<td>".$cat['cedula']."</td>";
 		
 		$reporte.="<th>Número de Telefóno</th>";
@@ -419,7 +419,7 @@ else {
 		$reporte.="</tr>";
 		$reporte.="<tr>";	
 		$reporte.="<th>Correo Eléctronico</th>";
-		$reporte.="<td>".$cat['correo']."</td>";
+		$reporte.="<td colspan=3>".$cat['correo']."</td>";
 		
 		
 	}
@@ -441,46 +441,53 @@ else {
 	{
 		$cata.="<tr>";
 		$cata.="<th>Nombre de la Empresa</th>";
-		$cata.="<td>".$cat['empresa']."</td>";	
+		$cata.="<td colspan=3>".$cat['empresa']."</td>";	
 
-		$cata.="<th>Parroquia</th>";
-		$cata.="<td>".$cat['descrip']."</td>";	
-		$cata.="</tr>";
-		$cata.="<tr>";
-		$cata.="<th>Municipio</th>";
-		$cata.="<td>".$cat['descrips']."</td>";	
+	
 
-
-		$cata.="</tr>";
-		$cata.="<tr>";
-		$cata.="<th>Dirección</th>";
-		$cata.="<td colspan=3>".$cat['direccion1']."</td>";
 		$cata.="</tr>";
 		$cata.="<tr>";
 		$cata.="<th>Correo Eléctonico</th>";
 		$cata.="<td colspan=3>".$cat['correol']."</td>";
+		$cata.="</tr>";
+		$cata.="<tr>";
+		$cata.="<th>Dirección</th>";
+		$cata.="<td colspan=3>".$cat['direccion1']."</td>";
+
+
+		$cata.="</tr>";
+		$cata.="<tr>";
+				
+		$cata.="<th>Municipio</th>";
+		$cata.="<td>".$cat['descrips']."</td>";
+		$cata.="<th>Parroquia</th>";
+		$cata.="<td>".$cat['descrip']."</td>";	
+
 
 
 		$reporte.="<tr>";
 		$reporte.="<th>Nombre de la Empresa</th>";
-		$reporte.="<td>".$cat['empresa']."</td>";	
+		$reporte.="<td colspan=3>".$cat['empresa']."</td>";	
 
-		$reporte.="<th>Parroquia</th>";
-		$reporte.="<td>".$cat['descrip']."</td>";	
-		$reporte.="</tr>";
-		$reporte.="<tr>";
-		$reporte.="<th>Municipio</th>";
-		$reporte.="<td>".$cat['descrips']."</td>";	
+	
 
-
-		$reporte.="</tr>";
-		$reporte.="<tr>";
-		$reporte.="<th>Dirección</th>";
-		$reporte.="<td colspan=3>".$cat['direccion1']."</td>";
 		$reporte.="</tr>";
 		$reporte.="<tr>";
 		$reporte.="<th>Correo Eléctonico</th>";
 		$reporte.="<td colspan=3>".$cat['correol']."</td>";
+		$reporte.="</tr>";
+		$reporte.="<tr>";
+		$reporte.="<th>Dirección</th>";
+		$reporte.="<td colspan=3>".$cat['direccion1']."</td>";
+
+
+		$reporte.="</tr>";
+		$reporte.="<tr>";
+				
+		$reporte.="<th>Municipio</th>";
+		$reporte.="<td>".$cat['descrips']."</td>";
+		$reporte.="<th>Parroquia</th>";
+		$reporte.="<td>".$cat['descrip']."</td>";	
 	
 		
 	}

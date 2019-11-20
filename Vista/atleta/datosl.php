@@ -102,7 +102,7 @@ if($_GET['accion']=='ver_detalles') {
 	$form.='</tr>';
 	$form.="<tr>";
 	$form.='<td>Dirección:</td>';
-	$form.='<td><input id="" type="text" name="direccion1" value="'.$dir1.'" class="cajasdetexto"></td>';
+	$form.='<td><textarea rows="5" cols="20" name="direccion1" maxlenght="9" value="" class="cajasdetexto">'.$dir1.'</textarea></td>';
 	$form.='</tr>';
 	$form.="<tr>";
 	$form.='<td><input id="" type="hidden" name="id_atleta" value="'.$ida.'" class="cajasdetexto" required></td>';

@@ -38,7 +38,7 @@ if($_GET['accion']=="actual")
 	$form.='<form name="regevento" method="post" action="../../Controlador/RepresentanteController.php?accion=registrar1">';
 	$form.='<table>';
 	$form.='<tr>';
-	$form.='<td>Cédula:</td>';
+	$form.='<td>Documento de Identidad del Representado:</td>';
 	$form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" name="cedula_a" maxlenght="9" pattern="[0-9]{7,8}" title="Debe tener de 7 u 8 digitos" required></td>';
 	$form.='<td> <a href="generarreporte.php?accion=detalle"><input type="button" class="botonmodal" value="Generar Reporte" name="activos" title="Generar Reporte"> </a></td>';
 	$form.='<td><input id="searchTerm" type="hidden" class="cajasdetexto" onkeyup="doSearch()" value="'.$id.'" name="cedula" maxlenght="9" pattern="[0-9]{7,8}" title="Debe tener de 7 u 8 digitos" required></td>';
@@ -63,8 +63,8 @@ if($_GET['accion']=="actual")
 	$reporte.="<br><table class=tabla-cat2 id=tabla>";
 	$reporte.="<table class=tabla-catborde id=tabla>";
 
-	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Correo Electrónico</th><th>Número de Teléfono</th></tr>";
-	$reporte.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Correo Electrónico</th><th>Número de Teléfono</th></tr>";
+	$cata.="<tr><th>Documento de Identidad</th><th>Nombre</th><th>Apellido</th><th>Correo Electrónico</th><th>Número de Teléfono</th></tr>";
+	$reporte.="<tr><th>Documento de Identidad</th><th>Nombre</th><th>Apellido</th><th>Correo Electrónico</th><th>Número de Teléfono</th></tr>";
 
 	foreach($catalogo as $cat)
 	{
@@ -97,9 +97,9 @@ if($_GET['accion']=="actual")
 	$reporte.="<br><table class=tabla-catrepre id=tabla>";
 	$reporte.="<table class=tabla-catrepresenta id=tabla>";
 
-	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Parentesco</th><th>Acción</th></tr>";
+	$cata.="<tr><th>Documento de Identidad</th><th>Nombre</th><th>Apellido</th><th>Parentesco</th><th>Acción</th></tr>";
 	$reporte.="<h1>Representados.</h1>";
-	$reporte.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Parentesco</th></tr>";
+	$reporte.="<tr><th>Documento de Identidad</th><th>Nombre</th><th>Apellido</th><th>Parentesco</th></tr>";
 
 	foreach($machu as $cat)
 	{

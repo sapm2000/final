@@ -61,7 +61,7 @@ $form.='<td>Nombre:</td>';
 $form.='<td><input id="" type="text" class="cajasdetexto" name="nombre" maxlenght="9" onkeypress="return caracteres(event)" required></td>';
 $form.='</tr>';
 $form.='<tr>';
-$form.='<td>Tipo:</td>';
+$form.='<td>Disciplina:</td>';
 $form.='<td>'.$select.'</td>';
 $form.='</tr>';
 $form.='<tr>';
@@ -78,7 +78,7 @@ $form.='<td><input type="date" name="fecha_inicio" class="date" id="fecha1" onbl
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Fecha de Cierre:</td>';
-$form.='<td><input type="date" name="fecha_cierre" class="date" id="fecha2" onblur="valFechas()" value="2020-01-01" required></td>';
+$form.='<td><input type="date" name="fecha_cierre" class="date" id="fecha2" onblur="valFechas()" value="'.date("Y-m-d").'" required></td>';
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Cantidad de Participantes:</td>';

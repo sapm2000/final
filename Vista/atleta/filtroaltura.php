@@ -17,10 +17,10 @@ $_SESSION['titulo']='Reporte de Atletas Filtrado por Altura';
 $form='';
 $cata='';
 $boton='';
-$form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=filtroaltura">'; /*([1-9]{1,2})([0-9]{1})([3-9]{1})([0-9]{1,2})*/
+$form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=filtroaltura">'; 
 $form.='<table>';
 $form.='<tr>';
-$form.='<td>Ingrese el rango de altura a buscar:</td>';
+$form.='<td>Ingrese el rango de altura a buscar (Se mide en cm. ej: 160):</td>';
 $form.='</tr>';
 $form.='</table>';
 $form.='<table align=center>';

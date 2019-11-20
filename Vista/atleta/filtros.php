@@ -33,8 +33,8 @@ $form.='<h2>Datos Personales</h2>';
 
 $form.='<td> <a href="reportedatospersonales.php?accion=actualizar"><input type="button" value="Reporte General" class="botonmodal" title="Reporte de Datos General de los Atletas Según sus Datos Personales" id="" name=""></a></td>';
 $form.='<td><a href="filtronacionalidad.php?accion=actualizar"><input type="button" value="Reporte de Nacionalidad" class="botonmodal" title="Reporte de los Atletas por Nacionalidad" id="" name=""></a></td>';
-$form.='<td><a href="filtroprimercedula.php?accion=actualizar"><input type="button" value="Reporte de Primeros N° de Cédula" class="botonmodal" title="Reporte de los Atleta por sus Primeros N° de Cédula" id="" name=""></a></td>';
-$form.='<td><a href="filtroultimacedula.php?accion=actualizar"><input type="button" value="Reporte de Ultimo N° de Cédula" class="botonmodal" title="Reporte de los Atleta por sus Ultimos N° de Cédula" id="" name=""></a></td>';
+$form.='<td><a href="filtrosexo.php?accion=actualizar"><input type="button" value="Reporte de Genero" class="botonmodal" title="Reporte de Atletas Según su Genero" id="" name=""></td>';
+$form.='<td><a href="../../Controlador/AtletaController.php?accion=buscatodos1"><input type="button" value="Reporte de Nivel de Estudio" class="botonmodal" title="Reporte de Atletas Según su Nivel de Estudio" id="" name=""></td>';
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td><a href="filtrofechanac.php?accion=actualizar"><input type="button" value="Reporte de Fecha de Nacimiento" class="botonmodal" title="Reporte de los Atletas por Fecha de Nacimiento" id="" name=""></a></td>';
@@ -43,9 +43,9 @@ $form.='<td><a href="filtrotiposanguineo.php?accion=actualizar"><input type="but
 $form.='<td><a href="filtroestadocivil.php?accion=actualizar"><input type="button" value="Reporte de Estado Cívil" class="botonmodal" title="Reporte de el Estado Cívil de los Atletas" id="" name=""></a></td>';
 $form.='</tr>';
 $form.='<tr>';
+$form.='<td colspan=2><a href="filtroprimercedula.php?accion=actualizar"><input type="button" value="Reporte de Primeros Dígitos del Documento de Identidad" class="botonmodal" title="Reporte de los Atleta por sus Primeros N° de Cédula" id="" name=""></a></td>';
+$form.='<td colspan=2><a href="filtroultimacedula.php?accion=actualizar"><input type="button" value="Reporte de Ultimo Dígito del Documento de Identidad" class="botonmodal" title="Reporte de los Atleta por sus Ultimos N° de Cédula" id="" name=""></a></td>';
 
-$form.='<td><a href="filtrosexo.php?accion=actualizar"><input type="button" value="Reporte de Genero" class="botonmodal" title="Reporte de Atletas Según su Genero" id="" name=""></td>';
-$form.='<td><a href="../../Controlador/AtletaController.php?accion=buscatodos1"><input type="button" value="Reporte de Nivel de Estudio" class="botonmodal" title="Reporte de Atletas Según su Nivel de Estudio" id="" name=""></td>';
 $form.='</tr>';
 $form.='</table>';
 $form.='</form>';
@@ -60,7 +60,7 @@ $form.='<hr></hr>';
 $form.='<h2>Datos de Indumentaria</h2>';
 
 $form.='<td><a href="reporteindumentaria.php?accion=actualizar"><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según su Indumentaria" id="" name=""></a></td>';
-$form.='<td><a href="../../Controlador/AtletaController.php?accion=indumentariapordisciplina"><input type="button" value="Reporte por disciplina" class="botonmodal" title="Reporte de los Atletas Según su Estatus" id="" name=""></td>';
+$form.='<td><a href="../../Controlador/AtletaController.php?accion=indumentariapordisciplina"><input type="button" value="Reporte por Disciplina" class="botonmodal" title="Reporte de los Atletas Según su Estatus" id="" name=""></td>';
 $form.='<td><a href="filtropeso.php?accion=actualizar"><input type="button" value="Reporte de Peso" class="botonmodal" title="Reporte de los Atletas Según el Peso" id="" name=""></a></td>';
 $form.='<td><a href="filtroaltura.php?accion=actualizar"><input type="button" value="Reporte de Altura" class="botonmodal" title="Reporte de los Atletas Según la Altura" id="" name=""></a></td>';
 $form.='</tr>';

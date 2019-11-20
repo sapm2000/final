@@ -35,7 +35,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 	$reporte='';
 	$cata.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrar' method='post'>";
 
-	$cata.="<table class=tabla-catficha id=tabla>";
+	$cata.="<table class=tabla-catficha id=tabla width=65%>";
 
 	$reporte.="<table class=tabla-catfichar id=tabla align=center>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
@@ -49,7 +49,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 		$cata.="<th width=25.30%>Nacionalidad</th>";
 		$cata.="<td width=25.30%>".$cat['nac']."</td>";
 	
-		$cata.="<th width=25.30%>Cédula</th>";
+		$cata.="<th width=25.30%>Documento de Identidad</th>";
 		$cata.="<td width=25.30%>".$cat['cedula']."</td>";	
 		$cata.="</tr>";	
 		$cata.="<tr>";	
@@ -91,7 +91,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 		$reporte.="<th>Nacionalidad</th>";
 		$reporte.="<td>".$cat['nac']."</td>";
 	
-		$reporte.="<th>Cédula</th>";
+		$reporte.="<th>Documento de Identidad</th>";
 		$reporte.="<td>".$cat['cedula']."</td>";	
 		$reporte.="</tr>";	
 		$reporte.="<tr>";	
@@ -136,7 +136,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 
 	$catalogo = $_SESSION['indumentaria'];
 
-	$cata.="<table class=tabla-cat id=tabla>";
+	$cata.="<table class=tabla-cat id=tabla width=65%>";
 
 
 	$cata.="<th colspan=4 >Datos de Indumentaria</th>";
@@ -204,12 +204,13 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 		$cata.="<th width=25.15%>Número de Emergencia</th>";
 		$cata.="<td width=25.15%>".$cat['n_eme']."</td>";
 		$cata.="</tr>";
-		$cata.="<tr>";	
+		$cata.="<tr>";
+		$cata.="<th>Municipio</th>";
+		$cata.="<td>".$cat['descrips']."</td>";
 		$cata.="<th>Parroquia</th>";
 		$cata.="<td>".$cat['descrip']."</td>";
 	
-		$cata.="<th>Municipio</th>";
-		$cata.="<td>".$cat['descrips']."</td>";
+
 		$cata.="</tr>";
 		$cata.="<tr>";		
 
@@ -233,12 +234,13 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 		$reporte.="<th>Número de Emergencia</th>";
 		$reporte.="<td>".$cat['n_eme']."</td>";
 		$reporte.="</tr>";
-		$reporte.="<tr>";	
+		$reporte.="<tr>";
+		$reporte.="<th>Municipio</th>";
+		$reporte.="<td>".$cat['descrips']."</td>";	
 		$reporte.="<th>Parroquia</th>";
 		$reporte.="<td>".$cat['descrip']."</td>";
 	
-		$reporte.="<th>Municipio</th>";
-		$reporte.="<td>".$cat['descrips']."</td>";
+
 		$reporte.="</tr>";
 		$reporte.="<tr>";		
 
@@ -265,7 +267,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 		$cata.="<th>Nacionalidad</th>";
 		$cata.="<td>".$cat['nac']."</td>";	
 
-		$cata.="<th>Cédula</th>";
+		$cata.="<th>Documento de Identidad</th>";
 		$cata.="<td>".$cat['cedula']."</td>";	
 		$cata.="</tr>";
 		$cata.="<tr>";	
@@ -290,7 +292,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 		$reporte.="<th>Nacionalidad</th>";
 		$reporte.="<td>".$cat['nac']."</td>";	
 
-		$reporte.="<th>Cédula</th>";
+		$reporte.="<th>Documento de Identidad</th>";
 		$reporte.="<td>".$cat['cedula']."</td>";	
 		$reporte.="</tr>";
 		$reporte.="<tr>";	
@@ -322,7 +324,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
-		$cata.="<th>Cédula</th>";
+		$cata.="<th>Documento de Identidad</th>";
 		$cata.="<td>".$cat['cedula']."</td>";
 		
 		$cata.="<th>Número de Telefóno</th>";
@@ -348,7 +350,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 
 
 		$reporte.="<tr>";	
-		$reporte.="<th>Cédula</th>";
+		$reporte.="<th>Documento de identidad</th>";
 		$reporte.="<td>".$cat['cedula']."</td>";
 		
 		$reporte.="<th>Número de Telefóno</th>";
@@ -372,7 +374,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 		$reporte.="</tr>";
 		$reporte.="<tr>";	
 		$reporte.="<th>Correo Eléctronico</th>";
-		$reporte.="<td>".$cat['correo']."</td>";
+		$reporte.="<td colspan=3>".$cat['correo']."</td>";
 		
 	}
 	$cata.="</table>";
@@ -386,46 +388,53 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 	{
 		$cata.="<tr>";
 		$cata.="<th>Nombre de la Empresa</th>";
-		$cata.="<td>".$cat['empresa']."</td>";	
+		$cata.="<td colspan=3>".$cat['empresa']."</td>";	
 
-		$cata.="<th>Parroquia</th>";
-		$cata.="<td>".$cat['descrip']."</td>";	
-		$cata.="</tr>";
-		$cata.="<tr>";
-		$cata.="<th>Municipio</th>";
-		$cata.="<td>".$cat['descrips']."</td>";	
+	
 
-
-		$cata.="</tr>";
-		$cata.="<tr>";
-		$cata.="<th>Dirección</th>";
-		$cata.="<td colspan=3>".$cat['direccion1']."</td>";
 		$cata.="</tr>";
 		$cata.="<tr>";
 		$cata.="<th>Correo Eléctonico</th>";
 		$cata.="<td colspan=3>".$cat['correol']."</td>";
+		$cata.="</tr>";
+		$cata.="<tr>";
+		$cata.="<th>Dirección</th>";
+		$cata.="<td colspan=3>".$cat['direccion1']."</td>";
+
+
+		$cata.="</tr>";
+		$cata.="<tr>";
+				
+		$cata.="<th>Municipio</th>";
+		$cata.="<td>".$cat['descrips']."</td>";
+		$cata.="<th>Parroquia</th>";
+		$cata.="<td>".$cat['descrip']."</td>";	
+
 
 
 		$reporte.="<tr>";
 		$reporte.="<th>Nombre de la Empresa</th>";
-		$reporte.="<td>".$cat['empresa']."</td>";	
+		$reporte.="<td colspan=3>".$cat['empresa']."</td>";	
 
-		$reporte.="<th>Parroquia</th>";
-		$reporte.="<td>".$cat['descrip']."</td>";	
-		$reporte.="</tr>";
-		$reporte.="<tr>";
-		$reporte.="<th>Municipio</th>";
-		$reporte.="<td>".$cat['descrips']."</td>";	
+	
 
-
-		$reporte.="</tr>";
-		$reporte.="<tr>";
-		$reporte.="<th>Dirección</th>";
-		$reporte.="<td colspan=3>".$cat['direccion1']."</td>";
 		$reporte.="</tr>";
 		$reporte.="<tr>";
 		$reporte.="<th>Correo Eléctonico</th>";
 		$reporte.="<td colspan=3>".$cat['correol']."</td>";
+		$reporte.="</tr>";
+		$reporte.="<tr>";
+		$reporte.="<th>Dirección</th>";
+		$reporte.="<td colspan=3>".$cat['direccion1']."</td>";
+
+
+		$reporte.="</tr>";
+		$reporte.="<tr>";
+				
+		$reporte.="<th>Municipio</th>";
+		$reporte.="<td>".$cat['descrips']."</td>";
+		$reporte.="<th>Parroquia</th>";
+		$reporte.="<td>".$cat['descrip']."</td>";	
 	}
 	$cata.="</table>";
 
