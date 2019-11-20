@@ -24,12 +24,9 @@
 		$form.= "<td>Modalidad:</td>";
 		$form.= "<td><input type='text' id='searchTerm' class='cajasdetexto' onkeyup='doSearch()'  name='modalidad' maxlength='50' id='letra' onkeypress='return caracteres(event)' onpaste='return false' required></td>";
 		$form.= "</tr>";
-		$form.= "<tr>";
-		$form.= "<td>Disciplina:</td>";
-		$form.= "</tr>";
 		$form.= "</table>"; 
 		$form.= "<br>";
-		$form.= "<input type='submit' value='Registrar' name='BtRegistrar' id='submit'>";
+		/*$form.= "<input type='submit' value='Registrar' name='BtRegistrar' id='submit'>";*/
 		$form.= "</form>";
 		$cat = "";
 		$cat.= "<table class='tabla-cat' id='tabla'>";
@@ -56,7 +53,7 @@
 		$cat.= "";
 
 
-		$cat.= "<a href='../disciplina/disciplina.php'><input type='button' class='botonmodalmuni' value='Disciplinas'></a>";
+		/*$cat.= "<a href='../disciplina/disciplina.php'><input type='button' class='botonmodalmuni' value='Disciplinas'></a>";*/
 	}
 	
 	if(empty($_SESSION['catamoda1']))

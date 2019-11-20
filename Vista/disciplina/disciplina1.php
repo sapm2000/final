@@ -25,7 +25,7 @@ $form.='<td>Disciplina:</td>';
 $form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" id="caracteres" onkeypress="return caracteres(event)" onpaste="return false" name="disciplina" maxlenght="9" required></td>';
 $form.='</tr>';
 $form.='</table>';
-$form.='<input type="submit" value="+ Añadir" id="submit" name="BtRegistrar">';
+/*$form.='<input type="submit" value="+ Añadir" id="submit" name="BtRegistrar">';*/
 $form.='</form>';
 
 if($_GET['accion']=="actual" && !empty($_SESSION['catadisci1']))
