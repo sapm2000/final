@@ -80,14 +80,14 @@ class Representante extends ClaseBase
 		return $this->id_atleta;
 	}
 
-	public function setId_parentezco($id_parentezco)
+	public function setId_parentesco($id_parentesco)
 	{
-		$this->id_parentezco = $id_parentezco;
+		$this->id_parentesco = $id_parentesco;
 	}
 
-	public function getId_parentezco()
+	public function getId_parentesco()
 	{
-		return $this->id_parentezco;
+		return $this->id_parentesco;
 	}
 
 	public function setId_representante($id_representante)
@@ -105,7 +105,7 @@ class Representante extends ClaseBase
 	public function guardarpuenterepre()
 	{
 		$con = Conexion::getInstance();
-		$sql = "INSERT INTO atleta_representante (id_representante,id_atleta,id_parentezco) VALUES ('$this->id_representante','$this->id_atleta','$this->id_parentezco')";
+		$sql = "INSERT INTO atleta_representante (id_representante,id_atleta,id_parentesco) VALUES ('$this->id_representante','$this->id_atleta','$this->id_parentesco')";
 		$result = $con->db->prepare($sql);
 		$insert = $result->execute();
 		return $insert;
@@ -154,7 +154,7 @@ class Representante extends ClaseBase
 	{
 		$cc=Conexion::getInstance();
 		//$sql="SELECT a.*, b.descrip AS std FROM parroquia AS a INNER JOIN municipio AS b ON b.id=a.id_municipio ORDER BY std";
-		$sql="	SELECT atleta_representante.id, atleta_representante.id_representante AS carajo, atleta.cedula, atleta.nombre, atleta.apellido, parentezcos.parentezco FROM atleta_representante INNER JOIN atleta ON atleta_representante.id_atleta=atleta.id INNER JOIN parentezcos ON atleta_representante.id_parentezco=parentezcos.id WHERE id_representante=$this->id_representante";
+		$sql="	SELECT atleta_representante.id, atleta_representante.id_representante AS carajo, atleta.cedula, atleta.nombre, atleta.apellido, parentescos.parentesco FROM atleta_representante INNER JOIN atleta ON atleta_representante.id_atleta=atleta.id INNER JOIN parentescos ON atleta_representante.id_parentesco=parentescos.id WHERE id_representante=$this->id_representante";
 		$result=$cc->db->prepare($sql);
 		$result->execute();
 		$trae=$result->fetchAll();
@@ -207,7 +207,7 @@ class Representante extends ClaseBase
 	{
 		$cc=Conexion::getInstance();
 		
-		$sql="SELECT representantes.*, atleta.cedula AS atl, parentezcos.parentezco FROM atleta_representante INNER JOIN representantes ON atleta_representante.id_representante=representantes.id INNER JOIN atleta ON atleta_representante.id_atleta=atleta.id INNER JOIN parentezcos ON atleta_representante.id_parentezco=parentezcos.id";
+		$sql="SELECT representantes.*, atleta.cedula AS atl, parentescos.parentesco FROM atleta_representante INNER JOIN representantes ON atleta_representante.id_representante=representantes.id INNER JOIN atleta ON atleta_representante.id_atleta=atleta.id INNER JOIN parentescos ON atleta_representante.id_parentesco=parentescos.id";
 		$result=$cc->db->prepare($sql);
 		$result->execute();
 		$trae=$result->fetchAll();

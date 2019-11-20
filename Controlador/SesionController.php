@@ -100,7 +100,7 @@ switch ($_REQUEST['accion']) //Evaluo los vaores de 'accion' enviado por URL
 				$menu.=						'<li><a href="../nivel/nivel.php?accion=actualizar">Nivel Académico</a></li>';
 				$menu.=						'<li><a href="../parentesco/parentezco.php?accion=actualizar">Parentesco</a></li>';
 				$menu.=						'<li><a href="../parroquia/ParroquiaView.php?accion=actualizar">Parroquias</a></li>';
-				$menu.=						'<li><a href="../registro_medico/registro_medico.php?accion=actualizar">Registros Medico</a></li>';
+				$menu.=						'<li><a href="../patologia_medica/patologia_medica.php?accion=actualizar">Patologias Medica</a></li>';
 				$menu.=						'<li><a href="../representante/representante2.php?accion=actualizar">Representante</a></li>';
 				$menu.=						'<li><a href="../talla/talla.php?accion=actualizar">Tallas</a></li>';
 				$menu.=						'<li><a href="../tipo_logro/tipo_logro.php?accion=actualizar">Tipos de Logros</a></li>';

@@ -2,19 +2,19 @@
 session_start();
 ob_start();
 require_once("../Modelo/representante.php");
-require_once("../Modelo/parentezco.php");
+require_once("../Modelo/parentesco.php");
 
 $representante = new Representante();
-$parentezco = new Parentezco();
+$parentesco = new Parentesco();
 
 $representante->setTabla("representantes");
-$parentezco->setTabla("parentezcos");
+$parentesco->setTabla("parentescos");
 
 switch($_REQUEST['accion'])
 {
 	case "buscatodos":
 	{
-		$algunos = $parentezco->getAll($tab);
+		$algunos = $parentesco->getAll($tab);
 		$_SESSION['selectp'] = $algunos;
 		$todos = $representante->condet($tab);
 		$_SESSION['catarepre'] = $todos;
@@ -59,7 +59,7 @@ switch($_REQUEST['accion'])
 
 
 			$representante->setId_atleta($coño);
-			$representante->setId_parentezco($_POST['parentezco']);
+			$representante->setId_parentesco($_POST['parentesco']);
 
 
 			if(empty($datos[0][0])) {
@@ -119,7 +119,7 @@ switch($_REQUEST['accion'])
 	case "registrar1":
 	{
 		$representante->setCedula_a($_POST['cedula_a']);
-		$representante->setId_parentezco($_POST['parentezco']);
+		$representante->setId_parentesco($_POST['parentesco']);
 
 		$datos=$representante->getByIdAtleta();
 		$coño=$datos[0][0];
@@ -140,7 +140,7 @@ switch($_REQUEST['accion'])
 
 			for ($i=0;$i<=$n;$i++) {
 				if ($coño==$todos[$i][0]) {
-					$algunos = $parentezco->getAll($tab);
+					$algunos = $parentesco->getAll($tab);
 					$_SESSION['selectp'] = $algunos;
 					$par = $representante->condet();
 					$_SESSION['catapar'] = $par;
@@ -170,7 +170,7 @@ switch($_REQUEST['accion'])
 			
 			$representante->guardarpuenterepre();
 
-			$algunos = $parentezco->getAll($tab);
+			$algunos = $parentesco->getAll($tab);
 			$_SESSION['selectp'] = $algunos;
 			$par = $representante->condet();
 			$_SESSION['catapar'] = $par;
@@ -211,7 +211,7 @@ switch($_REQUEST['accion'])
 
 		else {
 			$representante->deleteById1();
-			$algunos = $parentezco->getAll($tab);
+			$algunos = $parentesco->getAll($tab);
 			$_SESSION['selectp'] = $algunos;
 			$par = $representante->condet();
 			$_SESSION['catapar'] = $par;
@@ -236,7 +236,7 @@ switch($_REQUEST['accion'])
 
 	case 'seleccionar1':
 	{
-		$algunos = $parentezco->getAll($tab);
+		$algunos = $parentesco->getAll($tab);
 		$_SESSION['selectp'] = $algunos;
 		$representante->setId($_GET['id']);
 		$representante->setId_representante($_GET['id']);	

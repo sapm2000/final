@@ -164,14 +164,14 @@ class Atleta extends ClaseBase
 		return $this->id_discapacidad;
 	}
 
-	public function setId_registro_medico($id_registro_medico)
+	public function setId_patologia_medica($id_patologia_medica)
 	{
-		$this->id_registro_medico = $id_registro_medico;
+		$this->id_patologia_medica = $id_patologia_medica;
 	}
 
-	public function getId_registro_medico()
+	public function getId_patologia_medica()
 	{
-		return $this->id_registro_medico;
+		return $this->id_patologia_medica;
 	}
 
 	public function setId_disciplina($id_disciplina)
@@ -479,22 +479,22 @@ class Atleta extends ClaseBase
 			return ($result);
 		}
 
-		public function detregistro_medicos()
+		public function detpatologia_medicas()
 		{
 			$cc=Conexion::getInstance();
 			//$sql="SELECT a.*, b.descrip AS std FROM parroquia AS a INNER JOIN municipio AS b ON b.id=a.id_municipio ORDER BY std";
-			$sql="SELECT id_registro_medico FROM puente_registro_medico WHERE id_atleta=$this->id_atleta";
+			$sql="SELECT id_patologia_medica FROM puente_patologia_medica WHERE id_atleta=$this->id_atleta";
 			$result=$cc->db->prepare($sql);
 			$result->execute();
 			$trae=$result->fetchAll();
 			return ($trae);
 		}
 
-		public function consdetRegistro_medico()
+		public function consdetPatologia_medica()
 		{
 			$cc=Conexion::getInstance();
 			//$sql="SELECT a.*, b.descrip AS std FROM parroquia AS a INNER JOIN municipio AS b ON b.id=a.id_municipio ORDER BY std";
-			$sql="SELECT puente_registro_medico.id AS idal, puente_registro_medico.fecha_medica, registro_medicos.registro_medico, atleta.id FROM puente_registro_medico INNER JOIN registro_medicos ON puente_registro_medico.id_registro_medico=registro_medicos.id INNER JOIN atleta ON puente_registro_medico.id_atleta=atleta.id WHERE atleta.id=$this->id_atleta";
+			$sql="SELECT puente_patologia_medica.id AS idal, puente_patologia_medica.fecha_medica, patologia_medicas.patologia_medica, atleta.id FROM puente_patologia_medica INNER JOIN patologia_medicas ON puente_patologia_medica.id_patologia_medica=patologia_medicas.id INNER JOIN atleta ON puente_patologia_medica.id_atleta=atleta.id WHERE atleta.id=$this->id_atleta";
 			$result=$cc->db->prepare($sql);
 			$result->execute();
 			$trae=$result->fetchAll();
@@ -504,16 +504,16 @@ class Atleta extends ClaseBase
 		public function guardarPuente()
 		{
 			$con = Conexion::getInstance();
-			$sql = "INSERT INTO puente_registro_medico (id_atleta,id_registro_medico,fecha_medica) VALUES ('$this->id_atleta','$this->id_registro_medico','$this->fecha_medica')";
+			$sql = "INSERT INTO puente_patologia_medica (id_atleta,id_patologia_medica,fecha_medica) VALUES ('$this->id_atleta','$this->id_patologia_medica','$this->fecha_medica')";
 			$result = $con->db->prepare($sql);
 			$insert = $result->execute();
 			return $insert;
 		}
 
-		public function deleteRegistro_medico()
+		public function deletePatologia_medica()
 		{
 			$cc = Conexion::getInstance();
-			$sql = "DELETE FROM puente_registro_medico WHERE id = $this->id";
+			$sql = "DELETE FROM puente_patologia_medica WHERE id = $this->id";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			return ($result);
@@ -1247,10 +1247,10 @@ class Atleta extends ClaseBase
 			return ($trae);
 		}
 
-		public function getMedico()
+		public function getMedica()
 		{
 			$cc = Conexion::getInstance();
-			$sql = "SELECT atleta.nombre, atleta.apellido,atleta.nac,atleta.cedula, puente_registro_medico.fecha_medica,registro_medicos.registro_medico  from puente_registro_medico INNER JOIN atleta ON puente_registro_medico.id_atleta=atleta.id INNER JOIN registro_medicos ON puente_registro_medico.id_registro_medico=registro_medicos.id WHERE atleta.activo=0 order by atleta.cedula";
+			$sql = "SELECT atleta.nombre, atleta.apellido,atleta.nac,atleta.cedula, puente_patologia_medica.fecha_medica,patologia_medicas.patologia_medica  from puente_patologia_medica INNER JOIN atleta ON puente_patologia_medica.id_atleta=atleta.id INNER JOIN patologia_medicas ON puente_patologia_medica.id_patologia_medica=patologia_medicas.id WHERE atleta.activo=0 order by atleta.cedula";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			$trae = $result->fetchAll();
@@ -1588,10 +1588,10 @@ class Atleta extends ClaseBase
 			return ($trae);
 		}
 
-		public function datosmedicos()
+		public function datosmedicas()
 		{
 			$cc = Conexion::getInstance();
-			$sql = "SELECT registro_medicos.registro_medico,puente_registro_medico.fecha_medica FROM puente_registro_medico INNER JOIN atleta ON puente_registro_medico.id_atleta=atleta.id INNER JOIN registro_medicos ON puente_registro_medico.id_registro_medico=registro_medicos.id WHERE atleta.id='$this->primer'";
+			$sql = "SELECT patologia_medicas.patologia_medica,puente_patologia_medica.fecha_medica FROM puente_patologia_medica INNER JOIN atleta ON puente_patologia_medica.id_atleta=atleta.id INNER JOIN patologia_medicas ON puente_patologia_medica.id_patologia_medica=patologia_medicas.id WHERE atleta.id='$this->primer'";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			$trae = $result->fetchAll();

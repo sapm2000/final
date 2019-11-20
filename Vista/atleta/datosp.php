@@ -69,7 +69,7 @@ $form.='<input type="button" value="Datos de Contacto" id="siguiente11" class="b
 $form.='<input type="button" value="Datos Bancarios" id="datosb" class="botonmodalsuperior">';
 $form.='<input type="submit" value="Disciplinas" name="Disciplinas" id="d" class="botonmodalsuperior">';
 $form.='<input type="button" value="Datos Laborales" id="datosl" class="botonmodalsuperior">';
-$form.='<input type="button" value="Registro Médicos" id="a" class="botonmodalsuperior">';
+$form.='<input type="button" value="Patologia Medicas" id="a" class="botonmodalsuperior">';
 $form.='<input type="button" value="Discapacidades" id="d" class="botonmodalsuperior">';
 
 $form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=registrar">';
@@ -299,7 +299,7 @@ $nac.= "</select>";
 	$form.='<input type="submit" value="Datos Bancarios" id="datosb" name="DatosB" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Disciplinas" name="Disciplinas" id="d" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Datos Laborales" id="datosl" name="DatosL" class="botonmodalsuperior">';
-	$form.='<input type="submit" value="Registro Médico" id="a" name="Registro_medicos" class="botonmodalsuperior">';
+	$form.='<input type="submit" value="Patologia Medica" id="a" name="Patologia_medicas" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Discapacidades" name="Discapacidades" id="d" class="botonmodalsuperior">';
 
 

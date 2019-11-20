@@ -8,7 +8,7 @@ require_once("../Modelo/parroquia.php");
 require_once("../Modelo/banco.php");
 require_once("../Modelo/datosl.php");
 require_once("../Modelo/cuenta.php");
-require_once("../Modelo/registro_medico.php");
+require_once("../Modelo/patologia_medica.php");
 require_once("../Modelo/discapacidad.php");
 require_once("../Modelo/disciplina.php");
 require_once("../Modelo/modalidades.php");
@@ -31,7 +31,7 @@ $parroquia = new Parroquia();
 $datosl = new Datosl();
 $cuenta= new Cuenta();
 $banco= new Banco();
-$registro_medico= new Registro_medico();
+$patologia_medica= new Patologia_medica();
 $discapacidad= new Discapacidad();
 $modalidad= new Modalidad();
 $disciplina= new Disciplina();
@@ -46,7 +46,7 @@ $parroquia->setTabla("parroquia");
 $datosl->setTabla("datoll");
 $cuenta->setTabla("cuenta");
 $banco->setTabla("bancos");
-$registro_medico->setTabla("registro_medicos");
+$patologia_medica->setTabla("patologia_medicas");
 $discapacidad->setTabla("discapacidades");
 $disciplina->setTabla("disciplinas");
 $modalidad->setTabla("modalidades");
@@ -156,19 +156,19 @@ switch($_REQUEST['accion'])
 			header("Location: ../Vista/atleta/datosb.php?accion=ver_detalles&id_atleta=".$id_atleta);
 			}
 
-			if(isset($_REQUEST['Registro_medicos']))
+			if(isset($_REQUEST['Patologia_medicas']))
 			{
-				$ale = $registro_medico->getAll($tab);
-				$_SESSION['registro_medico1'] = $ale;
+				$ale = $patologia_medica->getAll($tab);
+				$_SESSION['patologia_medica1'] = $ale;
 				
 				$atleta->setId_atleta($_POST['id_atleta']);
 				
-				$_SESSION['catregistro_medico1'] = $atleta->consdetRegistro_medico();
+				$_SESSION['catpatologia_medica1'] = $atleta->consdetPatologia_medica();
 				$atleta->setId($_POST['id_atleta']);
 				$datos = $atleta->getById($id);
 				$_SESSION['id_atleta'] = $datos;
 				
-			header("Location: ../Vista/atleta/datosregistro_medico.php?accion=ver_detalles&id=".$id);
+			header("Location: ../Vista/atleta/datospatologia_medica.php?accion=ver_detalles&id=".$id);
 			}
 			if(isset($_REQUEST['Discapacidades']))
 			{

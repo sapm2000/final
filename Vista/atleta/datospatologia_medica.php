@@ -23,28 +23,28 @@ $tipo='';
 
 if($_GET['accion']=='ver_detalles') {
 
-	$todosal = $_SESSION['registro_medico1'];
-	$registro_medico = "<select name='id_registro_medico' required>";
-	$registro_medico.= "<option>Seleccione una registro_medico</option>";
+	$todosal = $_SESSION['patologia_medica1'];
+	$patologia_medica = "<select name='id_patologia_medica' required>";
+	$patologia_medica.= "<option>Seleccione una patologia_medica</option>";
 	
 	foreach ($todosal as $tb) {
-		$registro_medico.= "<option value=".$tb['id'].">".$tb['registro_medico']."</option>";	
+		$patologia_medica.= "<option value=".$tb['id'].">".$tb['patologia_medica']."</option>";	
 	}
-	$registro_medico.= "</select>";
+	$patologia_medica.= "</select>";
 
 
-	$form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=registrarRegistro_medico">';
+	$form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=registrarPatologia_medica">';
 	$form.='<table align="center">';
 	$form.='<tr>';
 	$form.='<td>&nbsp;</td>';
 	$form.='</tr>';
 	$form.='<tr>';
-	$form.="<td>Seleccione los registros médicos </td>";
-	$form.='<td>'.$registro_medico.'</td>';
+	$form.="<td>Seleccione los patologias medicas </td>";
+	$form.='<td>'.$patologia_medica.'</td>';
 	$form.='<td> <input type="date"  name="fecha_medica" class="cajasdetexto"  max="'.date("Y-m-d").'" value="'.date("Y-m-d").'"> </td>';
 	$form.='<tr>';
 	$form.='<td></td>';
-	$form.='<td><input type="submit" value="Añadir Registro Médico" id="submit" name="BtRegistrar1"></td>';
+	$form.='<td><input type="submit" value="Añadir Patologia Medica" id="submit" name="BtRegistrar1"></td>';
 	$form.='</tr>';
 	$datos = $_SESSION['id_atleta'];
 	foreach($datos as $d)
@@ -58,28 +58,28 @@ if($_GET['accion']=='ver_detalles') {
 
 
 
-	$catalogo = $_SESSION['catregistro_medico1'];
-	$form.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrarRegistro_medico' method='post'>";
+	$catalogo = $_SESSION['catpatologia_medica1'];
+	$form.="<form name='catalog' action='../../Controlador/AtletaController.php?accion=registrarPatologia_medica' method='post'>";
 	$form.='<input type="submit" value="Datos Personales" id="siguiente11" name="Personal" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Indumentaria" id="siguiente11" name="Indumentaria" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Datos de Contacto" id="Personales" name="contacto" class="botonmodalsuperior">';	
 	$form.='<input type="submit" value="Datos Bancarios" id="datosb" name="DatosB" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Disciplinas" name="Disciplinas" id="d" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Datos Laborales" id="siguiente11" name="BtModificar" class="botonmodalsuperior">';
-	$form.='<input type="submit" value="Registro Médico" id="a" name="Registro_medicos" class="botonmodalsuperioractual">';
+	$form.='<input type="submit" value="Patologia Medica" id="a" name="Patologia_medicas" class="botonmodalsuperioractual">';
 	$form.='<input type="submit" value="Discapacidades" name="Discapacidades" id="d" class="botonmodalsuperior">';
 
 	$form.="<table class=tabla-cat id=tabla>";
-	$form.="<tr><th>Registros Médico</th><th>Fecha de Registro</th><th>Acción</th></tr>";
+	$form.="<tr><th>Patologias Medica</th><th>Fecha de Patologia</th><th>Acción</th></tr>";
 	foreach($catalogo as $cat)
 	{
 		$form.="<tr>";	
-		$form.="<td>".$cat['registro_medico']."</td>";
+		$form.="<td>".$cat['patologia_medica']."</td>";
 		$form.="<td>".$cat['fecha_medica']."</td>";
 
 
 		
-		$form.="<td><a href='../../Controlador/AtletaController.php?accion=eliminarRegistro_medico&id=".$cat['idal']."&atleta=".$cat['id']."'>";	
+		$form.="<td><a href='../../Controlador/AtletaController.php?accion=eliminarPatologia_medica&id=".$cat['idal']."&atleta=".$cat['id']."'>";	
 		$form.="<img src='../imagenes1/eliminar.png' width='15px' height='15px' title='Eliminar'></a></td>";	
 	
 	}
