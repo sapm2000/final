@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <title>Inicio de Sesión</title>
-    <link rel="stylesheet" href="../CSS/estiloiniciodessesion.css" type="text/css">
+    <link rel="stylesheet" href="../css/estiloiniciodessesion.css" type="text/css">
     <link rel="shortcut icon" type="image/x-icon" href="../imagenes1/logo1.ico">
 
 	<script language="javascript" src="../js/inicio.js"></script>
