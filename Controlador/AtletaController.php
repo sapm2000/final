@@ -87,7 +87,7 @@ switch($_REQUEST['accion'])
 
 	case "buscamunicipios":
 	{
-		$n = $municipio->getAll($tab);
+		$n = $municipio->getAllactivos($tab);
 		$_SESSION['municipio'] = $n;
 		
 		header("Location: ../Vista/atleta/filtromunicipio.php?accion=actual");
@@ -132,9 +132,9 @@ switch($_REQUEST['accion'])
 
 	case "buscaparroquias":
 	{
-		$n = $municipio->getAll($tab);
+		$n = $municipio->getAllactivos($tab);
 		$_SESSION['municipio'] = $n;
-		$d = $parroquia->getAll($tab);
+		$d = $parroquia->getAllactivos($tab);
 		$_SESSION['parroquia'] = $d;
 		
 		header("Location: ../Vista/atleta/filtroparroquia.php?accion=actual");
@@ -503,9 +503,9 @@ switch($_REQUEST['accion'])
 			{
 				$datos1 = $atleta->getById($id);
 				$_SESSION['datosc'] = $datos1;
-				$muni=$municipio->getAll($tab);
+				$muni=$municipio->getAllactivos($tab);
 				$_SESSION['municipio2'] = $muni;	
-				$parr = $parroquia->getAll($tab);
+				$parr = $parroquia->getAllactivos($tab);
 				$_SESSION['parroquia2'] = $parr;
 				header("Location: ../Vista/atleta/datosc.php?accion=ver_detalles&id=".$id);
 
@@ -515,9 +515,9 @@ switch($_REQUEST['accion'])
 				$datosl->setId_atleta($_GET['id']);
 				$datos1 = $datosl->getByIdDatos();
 				$_SESSION['datosl'] = $datos1;
-				$muni=$municipio->getAll($tab);
+				$muni=$municipio->getAllactivos($tab);
 				$_SESSION['municipio3'] = $muni;	
-				$parr = $parroquia->getAll($tab);
+				$parr = $parroquia->getAllactivos($tab);
 				$_SESSION['parroquia3'] = $parr;
 	
 				header("Location: ../Vista/atleta/datosl.php?accion=ver_detalles&id=".$id);
@@ -639,9 +639,9 @@ switch($_REQUEST['accion'])
 				$datosl->setId_atleta($_POST['id_atleta']);
 				$datos1 = $datosl->getByIdDatos();
 				$_SESSION['datosl'] = $datos1;
-				$muni=$municipio->getAll($tab);
+				$muni=$municipio->getAllactivos($tab);
 				$_SESSION['municipio3'] = $muni;	
-				$parr = $parroquia->getAll($tab);
+				$parr = $parroquia->getAllactivos($tab);
 				$_SESSION['parroquia3'] = $parr;
 
 				header("Location: ../Vista/atleta/datosl.php?accion=ver_detalles&id=".$id);
@@ -652,9 +652,9 @@ switch($_REQUEST['accion'])
 				$datosl->setId_atleta($_GET['id']);
 				$datos1 = $datosl->getByIdDatos();
 				$_SESSION['datosl'] = $datos1;
-				$muni=$municipio->getAll($tab);
+				$muni=$municipio->getAllactivos($tab);
 				$_SESSION['municipio3'] = $muni;	
-				$parr = $parroquia->getAll($tab);
+				$parr = $parroquia->getAllactivos($tab);
 				$_SESSION['parroquia3'] = $parr;
 	
 				header("Location: ../Vista/atleta/datosl.php?accion=ver_detalles&id=".$id);
@@ -730,9 +730,9 @@ switch($_REQUEST['accion'])
 				$atleta->setId($_POST['id_atleta']);
 				$datos = $atleta->getById($id);
 				$_SESSION['datosc'] = $datos;
-				$muni=$municipio->getAll($tab);
+				$muni=$municipio->getAllactivos($tab);
 				$_SESSION['municipio2'] = $muni;	
-				$parr = $parroquia->getAll($tab);
+				$parr = $parroquia->getAllactivos($tab);
 				$_SESSION['parroquia2'] = $parr;
 				header("Location: ../Vista/atleta/datosc.php?accion=ver_detalles&id=".$id);
 
@@ -799,9 +799,9 @@ case "registrarPatologia_medica":
 				$datosl->setId_atleta($_POST['id_atleta']);
 				$datos1 = $datosl->getByIdDatos();
 				$_SESSION['datosl'] = $datos1;
-				$muni=$municipio->getAll($tab);
+				$muni=$municipio->getAllactivos($tab);
 				$_SESSION['municipio3'] = $muni;	
-				$parr = $parroquia->getAll($tab);
+				$parr = $parroquia->getAllactivos($tab);
 				$_SESSION['parroquia3'] = $parr;
 
 				header("Location: ../Vista/atleta/datosl.php?accion=ver_detalles&id=".$id);
@@ -812,9 +812,9 @@ case "registrarPatologia_medica":
 				$datosl->setId_atleta($_GET['id']);
 				$datos1 = $datosl->getByIdDatos();
 				$_SESSION['datosl'] = $datos1;
-				$muni=$municipio->getAll($tab);
+				$muni=$municipio->getAllactivos($tab);
 				$_SESSION['municipio3'] = $muni;	
-				$parr = $parroquia->getAll($tab);
+				$parr = $parroquia->getAllactivos($tab);
 				$_SESSION['parroquia3'] = $parr;
 	
 				header("Location: ../Vista/atleta/datosl.php?accion=ver_detalles&id=".$id);
@@ -890,9 +890,9 @@ case "registrarPatologia_medica":
 				$atleta->setId($_POST['id_atleta']);
 				$datos = $atleta->getById($id);
 				$_SESSION['datosc'] = $datos;
-				$muni=$municipio->getAll($tab);
+				$muni=$municipio->getAllactivos($tab);
 				$_SESSION['municipio2'] = $muni;	
-				$parr = $parroquia->getAll($tab);
+				$parr = $parroquia->getAllactivos($tab);
 				$_SESSION['parroquia2'] = $parr;
 				header("Location: ../Vista/atleta/datosc.php?accion=ver_detalles&id=".$id);
 
@@ -966,9 +966,9 @@ case "registrarPatologia_medica":
 				$datosl->setId_atleta($_POST['id_atleta']);
 				$datos1 = $datosl->getByIdDatos();
 				$_SESSION['datosl'] = $datos1;
-				$muni=$municipio->getAll($tab);
+				$muni=$municipio->getAllactivos($tab);
 				$_SESSION['municipio3'] = $muni;	
-				$parr = $parroquia->getAll($tab);
+				$parr = $parroquia->getAllactivos($tab);
 				$_SESSION['parroquia3'] = $parr;
 
 				header("Location: ../Vista/atleta/datosl.php?accion=ver_detalles&id=".$id);
@@ -979,9 +979,9 @@ case "registrarPatologia_medica":
 				$datosl->setId_atleta($_GET['id']);
 				$datos1 = $datosl->getByIdDatos();
 				$_SESSION['datosl'] = $datos1;
-				$muni=$municipio->getAll($tab);
+				$muni=$municipio->getAllactivos($tab);
 				$_SESSION['municipio3'] = $muni;	
-				$parr = $parroquia->getAll($tab);
+				$parr = $parroquia->getAllactivos($tab);
 				$_SESSION['parroquia3'] = $parr;
 	
 				header("Location: ../Vista/atleta/datosl.php?accion=ver_detalles&id=".$id);
@@ -1057,9 +1057,9 @@ case "registrarPatologia_medica":
 				$atleta->setId($_POST['id_atleta']);
 				$datos = $atleta->getById($id);
 				$_SESSION['datosc'] = $datos;
-				$muni=$municipio->getAll($tab);
+				$muni=$municipio->getAllactivos($tab);
 				$_SESSION['municipio2'] = $muni;	
-				$parr = $parroquia->getAll($tab);
+				$parr = $parroquia->getAllactivos($tab);
 				$_SESSION['parroquia2'] = $parr;
 				header("Location: ../Vista/atleta/datosc.php?accion=ver_detalles&id=".$id);
 
@@ -1124,9 +1124,9 @@ case "registrarPatologia_medica":
 					$datosl->setId_atleta($_GET['id']);
 					$datos1 = $datosl->getByIdDatos();
 					$_SESSION['datosl'] = $datos1;
-					$muni=$municipio->getAll($tab);
+					$muni=$municipio->getAllactivos($tab);
 					$_SESSION['municipio3'] = $muni;	
-					$parr = $parroquia->getAll($tab);
+					$parr = $parroquia->getAllactivos($tab);
 					$_SESSION['parroquia3'] = $parr;
 	
 					header("Location: ../Vista/atleta/datosl.php?accion=ver_detalles&id=".$id);
@@ -1230,9 +1230,9 @@ case "registrarPatologia_medica":
 					$datosl->setId_atleta($_GET['id']);
 					$datos1 = $datosl->getByIdDatos();
 					$_SESSION['datosl'] = $datos1;
-					$muni=$municipio->getAll($tab);
+					$muni=$municipio->getAllactivos($tab);
 					$_SESSION['municipio3'] = $muni;	
-					$parr = $parroquia->getAll($tab);
+					$parr = $parroquia->getAllactivos($tab);
 					$_SESSION['parroquia3'] = $parr;
 	
 					header("Location: ../Vista/atleta/datosl.php?accion=ver_detalles&id=".$id);
@@ -1309,9 +1309,9 @@ case "registrarPatologia_medica":
 				$atleta->setId($_POST['id_atleta']);
 				$datos = $atleta->getById($id);
 				$_SESSION['datosc'] = $datos;
-				$muni=$municipio->getAll($tab);
+				$muni=$municipio->getAllactivos($tab);
 				$_SESSION['municipio2'] = $muni;	
-				$parr = $parroquia->getAll($tab);
+				$parr = $parroquia->getAllactivos($tab);
 				$_SESSION['parroquia2'] = $parr;
 				header("Location: ../Vista/atleta/datosc.php?accion=ver_detalles&id=".$id);
 

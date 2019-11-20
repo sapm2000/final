@@ -13,16 +13,34 @@ switch($_REQUEST['accion'])
 		{
 			$rgo = $_GET['reg'];
 			$ini = $_GET['pag']*$rgo-$rgo;
-			$_SESSION['catamuni'] = $std->getAllLimit($ini,$rgo);
+			$_SESSION['catamuni'] = $std->getAllactivos($ini,$rgo);
 			header("Location: ../Vista/municipio/MunicipioView.php?accion=actual&cols=".$cols."&reg=".$rgo);
 		}
 		else
 		{
-			$_SESSION['catamuni'] = $std->getAllLimit(1,10);
+			$_SESSION['catamuni'] = $std->getAllactivos(1,10);
 			header("Location: ../Vista/municipio/MunicipioView.php?accion=actual&cols=0&reg=10");
 		}
 		break;
 	}
+
+	case 'buscatodos1':
+		{
+			$cols = $std->countAll();
+			if($cols>0)
+			{
+				$rgo = $_GET['reg'];
+				$ini = $_GET['pag']*$rgo-$rgo;
+				$_SESSION['catamuni1'] = $std->getAllinactivos($ini,$rgo);
+				header("Location: ../Vista/municipio/MunicipioView1.php?accion=actual&cols=".$cols."&reg=".$rgo);
+			}
+			else
+			{
+				$_SESSION['catamuni1'] = $std->getAllinactivos(1,10);
+				header("Location: ../Vista/municipio/MunicipioView1.php?accion=actual&cols=0&reg=10");
+			}
+			break;
+		}
 
 	case 'registrar':
 	{
@@ -53,9 +71,10 @@ switch($_REQUEST['accion'])
 	case 'eliminar':
 	{
 		$std->setId($_GET['id']);
-		$std->deleteById();
-		echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/municipio/MunicipioView.php?accion=actualizar'>";
-		break;
+		$std->updatemun();
+		$std->updatepar();
+		header('Location: ../Vista/municipio/MunicipioView.php?accion=actualizar');
+	break;
 	}
 
 	case 'buscaid':
@@ -65,6 +84,15 @@ switch($_REQUEST['accion'])
 		header('Location: ../Vista/municipio/MunicipioView.php?accion=ver_detalles');
 		break;
 	}
+
+	case "reactivar1":
+		{
+			$std->setId($_GET['id']);
+			$std->updatemun1();
+	
+			header("Location: ../Vista/municipio/MunicipioView1.php?accion=actualizar");		
+			break;	
+		}
 
 	default:
 	{

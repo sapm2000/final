@@ -33,11 +33,22 @@ class Parroquia extends ClaseBase
 		return ($result);
 	}
 
-	public function consDetParroquia($ini,$rgo)
+	public function consDetParroquia()
 	{
 		$cc=Conexion::getInstance();
 		//$sql="SELECT a.*, b.descrip AS std FROM parroquia AS a INNER JOIN municipio AS b ON b.id=a.id_municipio ORDER BY std";
-		$sql="SELECT parroquia.*,municipio.descrips AS std FROM parroquia INNER JOIN municipio ON municipio.id=parroquia.id_municipio";
+		$sql="SELECT parroquia.*,municipio.descrips AS std FROM parroquia INNER JOIN municipio ON municipio.id=parroquia.id_municipio where parroquia.activo=0";
+		$result=$cc->db->prepare($sql);
+		$result->execute();
+		$trae=$result->fetchAll();
+		return ($trae);
+	}
+
+	public function consDetParroquiai()
+	{
+		$cc=Conexion::getInstance();
+		//$sql="SELECT a.*, b.descrip AS std FROM parroquia AS a INNER JOIN municipio AS b ON b.id=a.id_municipio ORDER BY std";
+		$sql="SELECT parroquia.*,municipio.descrips AS std FROM parroquia INNER JOIN municipio ON municipio.id=parroquia.id_municipio where parroquia.activo=1";
 		$result=$cc->db->prepare($sql);
 		$result->execute();
 		$trae=$result->fetchAll();
@@ -52,5 +63,44 @@ class Parroquia extends ClaseBase
 		$result->execute();
 		return ($result);
 	}
+
+	public function updatepar()
+	{
+		$con = Conexion::getInstance();
+		$sql = "UPDATE parroquia SET activo=1 WHERE id=$this->id";
+		$result = $con->db->prepare($sql);
+		$cambio = $result->execute();
+		return $cambio;
+	}
+
+	public function updatepar1()
+	{
+		$con = Conexion::getInstance();
+		$sql = "UPDATE parroquia SET activo=0 WHERE id=$this->id";
+		$result = $con->db->prepare($sql);
+		$cambio = $result->execute();
+		return $cambio;
+	}
+
+	public function getAllactivos()
+	{
+		$cc = Conexion::getInstance();
+		$sql = "SELECT * FROM parroquia where activo=0";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
+
+	public function updatemun1()
+	{
+		$con = Conexion::getInstance();
+		$sql = "UPDATE municipio SET activo=0 WHERE id=$this->id";
+		$result = $con->db->prepare($sql);
+		$cambio = $result->execute();
+		return $cambio;
+	}
+
+
 }
 ?>
