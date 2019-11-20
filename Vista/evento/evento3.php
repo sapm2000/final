@@ -40,8 +40,8 @@ if ($_GET['accion']=='ver_detalles')
 	$cata.='<form name="regevento" method="post" action="../../Controlador/EventoController.php?accion=registrar1&id='.$id.'">';
 	$cata.='<table>';
 	$cata.='<tr>';
-	$cata.='<td>Cédula:</td>';
-	$cata.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" name="cedula" onkeypress="return solonumeros(event)" onpaste="return false" maxlenght="9" pattern="[0-9]{7,8}" title="Solo 7 u 8 digitos" required></td>';
+	$cata.='<td>Documento de Identidad:</td>';
+	$cata.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" name="cedula" onkeypress="return caracteres(event)" onpaste="return false" maxlenght="9" pattern="[A-z a-z 0-9]{5,}" title="Por favor colocar el formato correcto" required></td>';
 	$cata.='<td>Posición:</td>';
 	$cata.='<td><input id="searchTer" type="text" size="1" class="cajasdetexto" name="posicion" maxlenght="9" onkeypress="return solonumeros(event)" onpaste="return false" pattern="([1-9]{1})([0-9]{1,})*" required></td>';
 	$cata.='<td>Observaciones:</td>';
@@ -111,9 +111,9 @@ $reporte.="<table class=tabla-catdetalle id=tabla>";
 
 $cat1 = $_SESSION['catapart'];
 	$cata.="<table class=tabla-cat id=tabla>";
-	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Posición</th><th>Observacion</th><th>Acción</th></tr>";
+	$cata.="<tr><th>Documento de Identidad</th><th>Nombre</th><th>Apellido</th><th>Posición</th><th>Observacion</th><th>Acción</th></tr>";
 	$reporte.="<h1>Participantes</h1>";
-	$reporte.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Posición</th><th>Observacion</th></tr>";
+	$reporte.="<tr><th>Documento de Identidad</th><th>Nombre</th><th>Apellido</th><th>Posición</th><th>Observacion</th></tr>";
 
 	foreach($cat1 as $cat)
 	{

@@ -13,14 +13,14 @@ if(empty($_REQUEST['accion']))
 }
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
-$_SESSION['titulo']='Reporte de Atletas Filtrado por el Último Dígito de la Cédula';
+$_SESSION['titulo']='Reporte de Atletas Filtrado por el Último Dígito de los Documentos de Identidad';
 $form='';
 $cata='';
 $boton='';
 $form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=filtroultimodigito">';
 $form.='<table>';
 $form.='<tr>';
-$form.='<td>Ingrese el terminal de cédula a buscar:</td>';
+$form.='<td>Ingrese el terminal de los Documentos de Identidad a buscar:</td>';
 $form.='<td><input  type="text" class="cajasdetexto"  name="primer" pattern="[A-Z a-z 0-9]{1}" title="Solo un dígito" onkeypress="return solonumeros(event)" onpaste="return false" required></td>';
 $form.='<td> <input type="submit" class="botonmodal" value="Buscar"> </td>';
 $form.='</tr>';
@@ -35,7 +35,7 @@ $form.='</form>';
 $diccionario = array 
 (
 	'PERFIL' => $perfil,
-	'TITULO'=>'Filtrar por Último Número de Cédula',
+	'TITULO'=>'Filtrar por Último Dígito del Documento de Identidad',
 	'CATALOGO'=>$cata,
 	'BOTONREG'=>$boton,
 	'FORMULARIO'=>$form, 	

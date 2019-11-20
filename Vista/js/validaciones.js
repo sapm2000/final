@@ -61,7 +61,7 @@ function solonumeros(e){
 function soloLetras(e){
     key = e.keyCode || e.which;
     tecla = String.fromCharCode(key).toLowerCase();
-    letras = " abcdefghijklmnñopqrstuvwxyz";
+    letras = " ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz";
     especiales = "8-17-37-39-46";
 
     tecla_especial = false
@@ -80,7 +80,7 @@ function soloLetras(e){
 function caracteres(e){
     key = e.keyCode || e.which;
     tecla = String.fromCharCode(key).toLowerCase();
-    letras = " abcdefghijklmnñopqrstuvwxyz1234567890";
+    letras = " ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz1234567890";
     especiales = "8-37-39-46";
 
     tecla_especial = false

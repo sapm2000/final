@@ -23,7 +23,7 @@ $form.='<form name="regregistro_medico" method="post" action="../../Controlador/
 $form.='<table>';
 $form.='<tr>';
 $form.='<td>Registro Médico:</td>';
-$form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" id="letra" onkeypress="return soloLetras(event)" onpaste="return false" name="registro_medico" maxlenght="9" pattern="[a-z A-Z ñÑ\s]{2,25}" title="máximo de 25 caracteres" required></td>';
+$form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" id="letra" onkeypress="return caracteres(event)" onpaste="return false" name="registro_medico" maxlenght="9" pattern="[a-z A-Z 0-9 ñÑ\s]{2,25}" title="máximo de 25 caracteres" required></td>';
 $form.='</tr>';
 $form.='</table>';
 $form.='<input type="submit" value="+ Añadir" id="submit" name="BtRegistrar">';

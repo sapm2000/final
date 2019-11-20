@@ -70,7 +70,7 @@
 		$cat.= "<table>";
 		$cat.= "<tr>";
 		$cat.= "<td>Municipio:</td>";
-		$cat.= "<td><input type='text' name='municipio' maxlength='50'  id='letra' onkeypress='return soloLetras(event)' onpaste='return false' required value='".$desc."'></td>";
+		$cat.= "<td><input type='text' name='municipio' maxlength='50' class='cajasdetexto' id='letra' onkeypress='return soloLetras(event)' onpaste='return false' required value='".$desc."'></td>";
 		$cat.= "</tr>";
 		$cat.= "</table>";
 		$cat.= "<br>";

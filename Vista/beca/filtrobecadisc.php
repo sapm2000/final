@@ -36,8 +36,8 @@ $form.='</tr>';
 $form.='</table>';
 $form.='<table align=center>';
 $form.='<tr>';
-$form.='<td>Desde:<input  type="date" class="date" name="primer" id="fecha1"  value="'.date("Y-m-d").'" required></td>';
-$form.='<td>Hasta:<input  type="date" class="date"  name="segundo" id="fecha2"  value="'.date("Y-m-d").'" required></td>';
+$form.='<td>Desde:<input  type="date" class="date" name="primer" id="fecha1"  value="2019-11-01" onblur="valFechasfiltro()" required></td>';
+$form.='<td>Hasta:<input  type="date" class="date"  name="segundo" id="fecha2"  value="'.date("Y-m-d").'" onblur="valFechasfiltro()" required></td>';
 
 $form.='<td> <input type="submit" class="botonmodal" value="Buscar"> </td>';
 $form.='</tr>';

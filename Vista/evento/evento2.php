@@ -157,7 +157,7 @@ $parroquia.= "</select>";
 	$cata.="<td><input type='text' id='letras' name='nombre' class='cajasdetexto' onkeypress='return caracteres(event)' maxlenght='9' value='".$nom."' required></td>";
 	$cata.="</tr>";
 	$cata.="<tr>";
-	$cata.="<td>Tipo:</td>";
+	$cata.="<td>Disciplina:</td>";
 	$cata.="<td>$select</td>";
 	$cata.="</tr>";
 	$cata.="<tr>";
@@ -185,7 +185,7 @@ $parroquia.= "</select>";
 	$cata.='<td><input id="" type="text" class="cajasdetexto" name="canti" size="3" value="'.$can.'" onkeypress="return solonumeros(event)" onpaste="return false" required></td>';
 	$cata.='</tr>';
 	$cata.='<tr>';
-	$cata.='<td>N de Participantes por Equipo:</td>';
+	$cata.='<td>N° de Participantes por Equipo:</td>';
 	$cata.='<td><input id="" type="text" class="cajasdetexto" name="parti" size="3" value="'.$par.'" onkeypress="return solonumeros(event)" onpaste="return false" required></td>';
 	$cata.='</tr>';
 	

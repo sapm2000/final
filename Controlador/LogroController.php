@@ -43,13 +43,18 @@ switch($_REQUEST['accion'])
 		if(isset($_REQUEST['BtRegistrar']))
 		{
 			$logro->setTipo($_POST['tipo']);
-			$logro->setPais($_POST['pais']);
-			$logro->setEstado($_POST['estado']);
-			$logro->setCiudad($_POST['ciudad']);
+			$logroo = strtoupper($_POST['pais']);
+			$logro->setPais($logroo);
+			$estadoo = strtoupper($_POST['estado']);
+			$logro->setEstado($estadoo);
+			$ciuda = strtoupper($_POST['ciudad']);
+			$logro->setCiudad($ciuda);
 			$logro->setDisciplina($_POST['disciplina']);
-			$logro->setDescripcion($_POST['descripcion']);
+			$desc = strtoupper($_POST['descripcion']);
+			$logro->setDescripcion($desc);
 			$logro->setResultado($_POST['resultado']);
-			$logro->setObservacion($_POST['observacion']);
+			$obser = strtoupper($_POST['observacion']);
+			$logro->setObservacion($obser);
 			$logro->setId_atleta($_SESSION['logro']);
 			$logro->setModi(1);
 

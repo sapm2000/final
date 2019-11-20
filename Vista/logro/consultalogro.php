@@ -34,8 +34,8 @@ if($_GET['accion']=="actual")
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla>";
 
-	$cata.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th></tr>";
-	$reporte.="<tr><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th></tr>";
+	$cata.="<tr><th>Documento de Identidad</th><th>Nombres</th><th>Apellidos</th><th>Fecha de Nacimiento</th><th>Tipo Sanguíneo</th><th>Mano Hábil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th></tr>";
+	$reporte.="<tr><th>Documento de Identidad</th><th>Nombres</th><th>Apellidos</th><th>Fecha de Nacimiento</th><th>Tipo Sanguíneo</th><th>Mano Hábil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th></tr>";
 
 	foreach($encabezado as $enc)
 	{
@@ -133,7 +133,7 @@ if($_GET['accion']=="actual")
 
 }
 if (empty($_SESSION['catalogro'])) {
-	$cata.="no hay logros registrados";
+	$cata.="No hay logros registrados";
 }
 
 
