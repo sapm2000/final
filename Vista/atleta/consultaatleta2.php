@@ -38,7 +38,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['cataatle2']))
 	
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla>";
-	$cata.="<tr><th>Documento de Identidad</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th><th colspan='1'>Acción</th></tr>";
+	$cata.="<tr><th>Documento de Identidad</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th><th colspan='2'>Acción</th></tr>";
 	$reporte.="<tr><th>Documento de Identidad</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Tipo Sanguineo</th><th>Mano Habil</th><th>Sexo</th><th>Peso</th><th>Altura</th><th>Talla</th><th>Calzado</th><th>Número de Teléfono</th></tr>";
 
 	foreach($catalogo as $cat)
@@ -61,7 +61,8 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['cataatle2']))
 
 		$cata.="<td><a href='../../Controlador/AtletaController.php?accion=reactivar1&id=".$cat['id']."'>";	
 		$cata.="<img src='../imagenes1/activo1.png' width='15px' height='15px' title='reactivar'></a></td>";	
-		$cata.="</tr>";	
+		$cata.="<td><a href='../../Controlador/AtletaController.php?accion=seleccionar&id=".$cat['id']."'>";	
+		$cata.="<img src='../imagenes1/editar.png' width='15px' height='15px' title='Editar'></a></td>";
 
 		
 		$reporte.="<tr>";	
