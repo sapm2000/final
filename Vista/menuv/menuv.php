@@ -7,6 +7,14 @@
 
 	$perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
 
+	$form='';
+	$form.='<table align=center style="color:red">';
+	$form.='<tr>';
+	$form.='<td>NOTA IMPORTANTE:</td>';
+
+	$form.='<td>Este sistema solo debe usarse con una pestaña o ventana abierta, de no ser así puede que los resultados no sean correctos.</td>';
+	$form.='</table>';
+
 
 	$diccionario = array 
 (
@@ -14,7 +22,7 @@
 	'TITULO'=>'BIENVENIDO '.$_SESSION['nombre']." ".$_SESSION['apellido']." (".$_SESSION['tipo'].")",
 	'CATALOGO'=>'',
 	'BOTONREG'=>'',
-	'FORMULARIO'=>'',
+	'FORMULARIO'=>$form,
 	'MENU'=>$_SESSION['menu']
 );
 $template = file_get_contents('../Plantilla/ventanamodal.html');
