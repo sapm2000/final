@@ -80,7 +80,7 @@ $form.='<table>';
 $form.='<tr>';
 $form.='<hr></hr>';
 $form.='<h2>Datos de Contacto</h2>';
-
+$form.='<td><a href="reportecorreo.php?accion=actualizar"><input type="button" value="Reporte de Correos" class="botonmodal" title="Reporte General de los Atletas Según sus Datos de Contacto" id="" name=""></a></td>';
 $form.='<td><a href="reportecontacto.php?accion=actualizar"><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Datos de Contacto" id="" name=""></a></td>';
 $form.='<td><a href="filtrotelefono.php?accion=actualizar"><input type="button" value="Reporte de Operador Telefónico" class="botonmodal" title="Reporte de los Atletas Según el Operador Telefónico" id="" name=""></a></td>';
 $form.='<td><a href="../../Controlador/AtletaController.php?accion=buscamunicipios"><input type="button" value="Reporte de Municipio" class="botonmodal" title="Reporte de los Atletas Según el Municipio" id="" name=""></a></td>';
