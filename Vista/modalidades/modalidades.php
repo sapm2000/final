@@ -34,7 +34,7 @@
 		$form.= "<tr>";
 		$form.= "<td>Disciplina:</td>";
 		$form.= "<td>".$select."</td>";
-		$form.='<td> <a href="modalidades1.php?accion=actualizar"><input type="button" class="botonmodal" value="modalidades Inactivas" title="Atletas Inactivos"> </a></td>';
+		$form.='<td> <a href="modalidades1.php?accion=actualizar"><input type="button" class="botonmodal" value="Modalidades Inactivas" title="Modalidades Inactivas"> </a></td>';
 
 		$form.= "</tr>";
 		$form.= "</table>"; 

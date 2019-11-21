@@ -23,7 +23,7 @@ $form.='<table>';
 $form.='<tr>';
 $form.='<td>Disciplina:</td>';
 $form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" id="caracteres" onkeypress="return caracteres(event)" onpaste="return false" name="disciplina" maxlenght="9" required></td>';
-$form.='<td> <a href="disciplina1.php?accion=actualizar"><input type="button" class="botonmodal" value="disciplinas Inactivas" title="Atletas Inactivos"> </a></td>';
+$form.='<td> <a href="disciplina1.php?accion=actualizar"><input type="button" class="botonmodal" value="Disciplinas Inactivas" title="Disciplinas Inactivos"> </a></td>';
 $form.='</tr>';
 $form.='</table>';
 $form.='<input type="submit" value="+ Añadir" id="submit" name="BtRegistrar">';
