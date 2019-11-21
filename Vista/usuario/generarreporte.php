@@ -4,7 +4,7 @@
 session_start();
 require_once("../dompdf/dompdf_config.inc.php");
 
-$code="<center><img src='../imagenes1/encabezado.jpg'></center>";
+
 $code.="<h1 class=texto>Reporte de Usuarios del Sistema.</h1>";
 $code.=$_SESSION['reporteusuario'];
 $code.='<link rel="stylesheet" href="../css/pdfreporte.css" type="text/css">';

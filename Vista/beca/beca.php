@@ -20,15 +20,15 @@ $form.='<table>';
 $form.='<tr>';
 $form.='<td>Buscador:</td>';
 
-$form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" id="letra" name="Beca" maxlenght="9" onkeypress="return caracteress(event)" onpaste="return false" pattern="[a-z A-Z 0-9 ñÑ\s]{2,25}" title="máximo de 25 caracteres" ></td>';
+$form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" id="letra" name="Beca" maxlenght="9"  ></td>';
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Nombre de la beca</td>';
-$form.='<td><input type="text" name="nombre" class="cajasdetexto" required></td>';
+$form.='<td><input type="text" name="nombre" class="cajasdetexto" onkeypress="return caracteress(event)" onpaste="return false" pattern="[a-z A-Z 0-9 ñÑ\s]{2,25}" title="máximo de 25 caracteres" required></td>';
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Fecha a Pagar:</td>';
-$form.='<td><input type="date" name="fecha" class="cajasdetexto" required></td>';
+$form.='<td><input type="date" name="fecha" class="cajasdetexto" max="'.date("Y-m-d").'" value="'.date("Y-m-d").'" required></td>';
 $form.='</tr>';
 $form.='</table>';
 

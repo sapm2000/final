@@ -24,9 +24,12 @@
 		$form.= "<td>Municipio:</td>";
 		$form.= "<td><input id='searchTerm' type='text' class='cajasdetexto' onkeyup='doSearch()' id='letra' onkeypress='return soloLetras(event)' onpaste='return false' name='municipio' maxlength='50' required></td>";
 		$form.= "</tr>";
-		$form.= "</table>";
-		$form.= "<br>";
-		/*$form.= "<input type='submit' value='Registrar' name='BtRegistrar' id='submit'>";*/
+		$form.= "</table>"; 
+		$form.= "<table align=center>";
+		$form.= "<tr>";
+		$form.= "<td><a href='MunicipioView.php?accion=actualizar'><input type='button' value='Volver' title='Volver a municipios' class='botonmodal' name='' id=''></a></td>";
+		$form.= "</tr>";
+		$form.= "</table>"; 
 		$form.= "</form>";
 		$cat.= "<table class='tabla-cat' id='tabla'>";
 		$cat.= "<thead>";

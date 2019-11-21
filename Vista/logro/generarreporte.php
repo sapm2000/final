@@ -4,9 +4,8 @@
 session_start();
 require_once("../dompdf/dompdf_config.inc.php");
 
-$code="<center><img src='../imagenes1/encabezado.jpg'></center>";
 
-    $code.="<h1 class=texto>Reporte de Atletas Activos.</h1>";
+    $code.="<h1 class=texto>Reporte de Logros del Atleta.</h1>";
     $filename= 'Reporte de Logros del Atleta.pdf';
 
 $code.=$_SESSION['reporte'];

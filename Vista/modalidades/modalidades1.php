@@ -25,8 +25,11 @@
 		$form.= "<td><input type='text' id='searchTerm' class='cajasdetexto' onkeyup='doSearch()'  name='modalidad' maxlength='50' id='letra' onkeypress='return caracteres(event)' onpaste='return false' required></td>";
 		$form.= "</tr>";
 		$form.= "</table>"; 
-		$form.= "<br>";
-		/*$form.= "<input type='submit' value='Registrar' name='BtRegistrar' id='submit'>";*/
+		$form.= "<table align=center>";
+		$form.= "<tr>";
+		$form.= "<td><a href='modalidades.php?accion=actualizar'><input type='button' value='Volver' title='Volver a modalidades' class='botonmodal' name='' id=''></a></td>";
+		$form.= "</tr>";
+		$form.= "</table>"; 
 		$form.= "</form>";
 		$cat = "";
 		$cat.= "<table class='tabla-cat' id='tabla'>";
