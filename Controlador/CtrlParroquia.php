@@ -28,6 +28,25 @@ switch($_REQUEST['accion'])
 		break;
 	}
 
+	case 'buscatodos1':
+		{
+			$cols = $mncp->countAll();
+			$_SESSION['stds'] = $std->getAll();
+			if($cols>0)
+			{
+				$rgo = $_GET['reg'];
+				$ini = $_GET['pag']*$rgo-$rgo;
+				$_SESSION['catapara1'] = $mncp->consDetParroquiai($ini,$rgo);
+				header("Location: ../Vista/parroquia/ParroquiaView1.php?accion=actual&cols=".$cols."&reg=".$rgo);
+			}
+			else
+			{
+				$_SESSION['catapara1'] = $mncp->consDetParroquiai(1,10);
+				header("Location: ../Vista/parroquia/ParroquiaView1.php?accion=actual&cols=0&reg=10");
+			}
+			break;
+		}
+
 	case 'registrar':
 	{
 		if(isset($_REQUEST['BtRegistrar']))
@@ -59,9 +78,9 @@ switch($_REQUEST['accion'])
 	case 'eliminar':
 	{
 		$mncp->setId($_GET['id']);
-		$mncp->deleteById();
-		echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/parroquia/ParroquiaView.php?accion=actualizar'>";
-		break;
+		$mncp->updatepar();
+		header('Location: ../Vista/parroquia/ParroquiaView.php?accion=actualizar');
+	break;
 	}
 
 	case 'buscaid':
@@ -71,6 +90,19 @@ switch($_REQUEST['accion'])
 		header('Location: ../Vista/parroquia/ParroquiaView.php?accion=ver_detalles');
 		break;
 	}
+
+	case "reactivar1":
+		{
+			$mncp->setId($_GET['id']);
+			$mncp->setId_municipio($_GET['id_municipio']);
+
+			$mncp->updatepar1();
+			$mncp->updatemun1();
+
+	
+			header("Location: ../Vista/parroquia/ParroquiaView1.php?accion=actualizar");		
+			break;	
+		}
 
 	default:
 	{

@@ -27,9 +27,9 @@ switch($_REQUEST['accion'])
 		$_SESSION['catalogo'] = $todos;
 		$coño = $disciplinas->getallactivas($tab);
 		$_SESSION['coño'] = $coño;
-		$carajo=$municipio->getAll($tab);
+		$carajo=$municipio->getAllactivos($tab);
 		$_SESSION['municipio'] = $carajo;	
-		$hola = $parroquia->getAll($tab);
+		$hola = $parroquia->getAllactivos($tab);
 		$_SESSION['parroquia'] = $hola;
 		header("Location: ../Vista/evento/evento.php?accion=actual");
 		break;
@@ -40,9 +40,9 @@ switch($_REQUEST['accion'])
 		$_SESSION['cataeven2'] = $evento->consDetdisciplina();
 		$coño = $disciplinas->getAll($tab);
 		$_SESSION['coño'] = $coño;
-		$carajo=$municipio->getAll($tab);
+		$carajo=$municipio->getAllactivos($tab);
 		$_SESSION['municipio'] = $carajo;	
-		$hola = $parroquia->getAll($tab);
+		$hola = $parroquia->getAllactivos($tab);
 		$_SESSION['parroquia'] = $hola;
 
 		header("Location: ../Vista/evento/evento2.php?accion=actual");

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-11-2019 a las 23:00:56
+-- Tiempo de generación: 21-11-2019 a las 00:27:23
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.4
 
@@ -583,28 +583,29 @@ INSERT INTO `modalidades` (`id`, `modalidad`, `id_disciplina`, `activo`) VALUES
 
 CREATE TABLE `municipio` (
   `id` int(11) NOT NULL,
-  `descrips` varchar(50) COLLATE utf8_spanish_ci NOT NULL
+  `descrips` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `activo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `municipio`
 --
 
-INSERT INTO `municipio` (`id`, `descrips`) VALUES
-(1, 'ARISTIDES BASTIDAS'),
-(2, 'BOLIVAR'),
-(3, 'BRUZUAL'),
-(4, 'COCOROTE'),
-(5, 'INDEPENDENCIA'),
-(6, 'JOSE ANTONIO PAEZ'),
-(14, 'JOSE JUAQUIN VEROES'),
-(7, 'LA TRINIDAD'),
-(8, 'MANUEL MONGE'),
-(9, 'NIRGUA'),
-(10, 'PEÃ±A'),
-(11, 'SAN FELIPE'),
-(12, 'SUCRE'),
-(13, 'URACHICHE');
+INSERT INTO `municipio` (`id`, `descrips`, `activo`) VALUES
+(1, 'ARISTIDES BASTIDAS', 1),
+(2, 'BOLIVAR', 1),
+(3, 'BRUZUAL', 1),
+(4, 'COCOROTE', 1),
+(5, 'INDEPENDENCIA', 1),
+(6, 'JOSE ANTONIO PAEZ', 0),
+(7, 'LA TRINIDAD', 0),
+(8, 'MANUEL MONGE', 0),
+(9, 'NIRGUA', 0),
+(10, 'PEÃ±A', 0),
+(11, 'SAN FELIPE', 0),
+(12, 'SUCRE', 0),
+(13, 'URACHICHE', 0),
+(14, 'JOSE JUAQUIN VEROES', 0);
 
 -- --------------------------------------------------------
 
@@ -666,35 +667,36 @@ INSERT INTO `parentescos` (`id`, `parentesco`) VALUES
 CREATE TABLE `parroquia` (
   `id` int(11) NOT NULL,
   `descrip` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `id_municipio` int(11) NOT NULL
+  `id_municipio` int(11) NOT NULL,
+  `activo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `parroquia`
 --
 
-INSERT INTO `parroquia` (`id`, `descrip`, `id_municipio`) VALUES
-(1, 'ARISTIDES BASTIDAS', 1),
-(2, 'BOLIVAR', 2),
-(3, 'CHIVACOA', 3),
-(4, 'CAMPO ELIAS', 3),
-(5, 'COCOROTE', 4),
-(6, 'INDEPENDENCIA', 5),
-(7, 'JOSE ANTONIO PAEZ', 6),
-(8, 'LA TRINIDAD', 7),
-(9, 'MANUEL MONGE', 8),
-(10, 'SALOM', 9),
-(11, 'TEMERLA', 9),
-(12, 'NIRGUA', 9),
-(13, 'SAN ANDRES', 10),
-(14, 'YARITAGUA', 10),
-(15, 'SAN JAVIER', 11),
-(16, 'ALBARICO', 11),
-(17, 'SAN FELIPE', 11),
-(18, 'SUCRE', 12),
-(19, 'URACHICHE', 13),
-(20, 'EL GUAYABO', 14),
-(21, 'FARRIAR', 14);
+INSERT INTO `parroquia` (`id`, `descrip`, `id_municipio`, `activo`) VALUES
+(1, 'ARISTIDES BASTIDAS', 1, 1),
+(2, 'BOLIVAR', 2, 1),
+(3, 'CHIVACOA', 3, 1),
+(4, 'CAMPO ELIAS', 3, 1),
+(5, 'COCOROTE', 4, 1),
+(6, 'INDEPENDENCIA', 5, 1),
+(7, 'JOSE ANTONIO PAEZ', 6, 0),
+(8, 'LA TRINIDAD', 7, 0),
+(9, 'MANUEL MONGE', 8, 0),
+(10, 'SALOM', 9, 0),
+(11, 'TEMERLA', 9, 0),
+(12, 'NIRGUA', 9, 0),
+(13, 'SAN ANDRES', 10, 0),
+(14, 'YARITAGUA', 10, 0),
+(15, 'SAN JAVIER', 11, 0),
+(16, 'ALBARICO', 11, 0),
+(17, 'SAN FELIPE', 11, 0),
+(18, 'SUCRE', 12, 0),
+(19, 'URACHICHE', 13, 0),
+(20, 'EL GUAYABO', 14, 0),
+(21, 'FARRIAR', 14, 0);
 
 -- --------------------------------------------------------
 

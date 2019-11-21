@@ -23,6 +23,7 @@
 		$form.= "<tr>";
 		$form.= "<td>Municipio:</td>";
 		$form.= "<td><input id='searchTerm' type='text' class='cajasdetexto' onkeyup='doSearch()' id='letra' onkeypress='return soloLetras(event)' onpaste='return false' name='municipio' maxlength='50' required></td>";
+		$form.='<td> <a href="MunicipioView1.php?accion=actualizar"><input type="button" class="botonmodal" value="municipios Inactivos" title="Atletas Inactivos"> </a></td>';
 		$form.= "</tr>";
 		$form.= "</table>";
 		$form.= "<br>";
