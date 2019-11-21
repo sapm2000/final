@@ -7,7 +7,7 @@ if(empty($_SESSION['nombre']))
 
 if($_GET['accion']=="actualizar")
 {
-	header("Location: ../../Controlador/AtletaController.php?accion=buscafiltroscontacto");
+	header("Location: ../../Controlador/AtletaController.php?accion=buscafiltroscorreo");
 }
 
 if(empty($_REQUEST['accion']))
@@ -42,8 +42,8 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['contacto']))
 	$reporte.="<br><table class=tabla-cat id=tabla>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 	
-	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Municipio</th><th>Parroquia</th><th>Dirección</th></tr>";
-	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Municipio</th><th>Parroquia</th><th>Dirección</th></tr>";
+	$cata.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Correo Eléctronico</th><th>Número de Telefóno</th><th>Número de Emergencia</th></tr>";
+	$reporte.="<tr><th>Nacionalidad</th><th>Cédula</th><th>Nombre</th><th>Apellido</th><th>Correo Eléctronico</th><th>Número de Telefóno</th><th>Número de Emergencia</th></tr>";
 
 	foreach($catalogo as $cat)
 	{
@@ -52,9 +52,10 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['contacto']))
 		$cata.="<td>".$cat['cedula']."</td>";
 		$cata.="<td>".$cat['nombre']."</td>";	
 		$cata.="<td>".$cat['apellido']."</td>";		
-		$cata.="<td>".$cat['descrip']."</td>";	
-		$cata.="<td>".$cat['descrips']."</td>";	
-		$cata.="<td>".$cat['direccion']."</td>";	
+		$cata.="<td>".$cat['correo']."</td>";	
+		$cata.="<td>".$cat['n_tel']."</td>";	
+		$cata.="<td>".$cat['n_eme']."</td>";	
+			
 
 
 
@@ -64,9 +65,9 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['contacto']))
 		$reporte.="<td>".$cat['cedula']."</td>";
 		$reporte.="<td>".$cat['nombre']."</td>";	
 		$reporte.="<td>".$cat['apellido']."</td>";			
-		$reporte.="<td>".$cat['descrip']."</td>";	
-		$reporte.="<td>".$cat['descrips']."</td>";	
-		$reporte.="<td>".$cat['direccion']."</td>";
+		$reporte.="<td>".$cat['correo']."</td>";	
+		$reporte.="<td>".$cat['n_tel']."</td>";	
+		$reporte.="<td>".$cat['n_eme']."</td>";	
 
 
 	}

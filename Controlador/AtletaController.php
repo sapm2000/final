@@ -239,6 +239,16 @@ switch($_REQUEST['accion'])
 		header("Location: ../Vista/atleta/reportecontacto.php?accion=actual");
 		break;
 	}
+	case "buscafiltroscorreo":
+		{
+			$n = $atleta->getContacto();
+			$_SESSION['contacto'] = $n;
+			$_SESSION['titulo']='Reporte de Contacto de los Atletas';
+			
+			
+			header("Location: ../Vista/atleta/reportecorreo.php?accion=actual");
+			break;
+		}
 
 	case "buscafiltrosbancos":
 	{
