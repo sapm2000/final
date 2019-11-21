@@ -26,7 +26,7 @@
 		$form.= "</tr>";
 		$form.= "</table>";
 		$form.= "<br>";
-		$form.= "<input type='submit' value='Registrar' name='BtRegistrar' id='submit'>";
+		/*$form.= "<input type='submit' value='Registrar' name='BtRegistrar' id='submit'>";*/
 		$form.= "</form>";
 		$cat.= "<table class='tabla-cat' id='tabla'>";
 		$cat.= "<thead>";
@@ -53,7 +53,7 @@
 			$cat.= "<br>";
 		
 
-		$cat.= "<a href='../Parroquia/ParroquiaView.php?accion=actualizar'><input type='button' class='botonmodalmuni' value='Parroquias'></a>";
+		/*$cat.= "<a href='../Parroquia/ParroquiaView.php?accion=actualizar'><input type='button' class='botonmodalmuni' value='Parroquias'></a>";*/
 	}
 	if($_GET['accion']=='ver_detalles')
 	{

@@ -31,13 +31,13 @@
 		$form.= "<td>Parroquia:</td>";
 		$form.= "<td><input type='text' id='searchTerm' class='cajasdetexto' onkeyup='doSearch()'  id='letra' onkeypress='return soloLetras(event)' onpaste='return false' name='parroquia' maxlength='50' required></td>";
 		$form.= "</tr>";
-		$form.= "<tr>";
+		/*$form.= "<tr>";
 		$form.= "<td>Municipio:</td>";
 		$form.= "<td>".$select."</td>";
-		$form.= "</tr>";
+		$form.= "</tr>";*/
 		$form.= "</table>";
 		$form.= "<br>";
-		$form.= "<input type='submit' value='Registrar' name='BtRegistrar' id='submit'>";
+		/*$form.= "<input type='submit' value='Registrar' name='BtRegistrar' id='submit'>";*/
 		$form.= "</form>";
 		$cat = "";
 		$cat.= "<table class='tabla-cat' id='tabla'>";

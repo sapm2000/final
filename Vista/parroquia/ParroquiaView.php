@@ -30,7 +30,7 @@
 		$form.= "<tr>";
 		$form.= "<td>Parroquia:</td>";
 		$form.= "<td><input type='text' id='searchTerm' class='cajasdetexto' onkeyup='doSearch()'  id='letra' onkeypress='return soloLetras(event)' onpaste='return false' name='parroquia' maxlength='50' required></td>";
-		$form.='<td> <a href="ParroquiaView1.php?accion=actualizar"><input type="button" class="botonmodal" value="parroquias Inactivas" title="Atletas Inactivos"> </a></td>';
+		$form.='<td> <a href="ParroquiaView1.php?accion=actualizar"><input type="button" class="botonmodal" value="Parroquias Inactivas" title="Parroquias Inactivos"> </a></td>';
 		$form.= "</tr>";
 		$form.= "<tr>";
 		$form.= "<td>Municipio:</td>";
