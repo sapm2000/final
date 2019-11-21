@@ -3,7 +3,7 @@ ob_start();
 session_start();
 require_once("../dompdf/dompdf_config.inc.php");
 
-$code="<center><img src='../imagenes1/encabezado.png'></center>";
+
 
     $code.="<h1 class=texto>".$_SESSION['titulo']."</h1>";
     $filename= $_SESSION['titulo'].".pdf";

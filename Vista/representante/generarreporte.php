@@ -4,7 +4,7 @@
 session_start();
 require_once("../dompdf/dompdf_config.inc.php");
 
-$code="<center><img src='../imagenes1/encabezado.jpg'></center>";
+
 
 if ($_REQUEST['accion']=="global") {
     $code.="<h1 class=texto>Reporte de Representantes.</h1>";
@@ -25,7 +25,7 @@ if ($_REQUEST['accion']=="detalle") {
 
 $dompdf = new DOMPDF();
 $dompdf->load_html($code);
-$dompdf->set_paper('office','portrait');
+$dompdf->set_paper('office','landscape');
 $dompdf->render(); //este comando renderiza el PDF
 
 $canvas = $dompdf->get_canvas();

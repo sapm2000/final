@@ -4,7 +4,7 @@
 session_start();
 require_once("../dompdf/dompdf_config.inc.php");
 
-$code="<center><img src='../imagenes1/encabezado.jpg'></center>";
+
 
 
 if ($_REQUEST['accion']=="global") {
