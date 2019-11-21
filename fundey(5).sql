@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-11-2019 a las 15:55:27
+-- Tiempo de generación: 20-11-2019 a las 23:00:56
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.4
 
@@ -59,7 +59,7 @@ CREATE TABLE `atleta` (
 
 INSERT INTO `atleta` (`id`, `nac`, `cedula`, `nombre`, `apellido`, `f_nac`, `tipos`, `estadoc`, `sexo`, `id_nivel`, `correo`, `n_tel`, `n_eme`, `id_municipio`, `id_parroquia`, `direccion`, `activo`, `id_talla`, `id_calzado`, `altura`, `peso`, `mano`) VALUES
 (1, 'V', 30426947, 'FREDDERIC', 'HERNANDE', '2004-07-06', 'O+', 'SOLTERO/A', 'M', 1, 'DASDAD@ASDS.COM', '04143012400', '04245222312', 13, 19, 'ASDA', 0, 8, 6, '110', '90.0', 'DIESTRO'),
-(2, 'V', 27758852, 'MARYORITH', 'SINGER', '2000-05-05', 'O+', 'SOLTERO/A', 'F', 3, 'MARYORITHSINGER05@GMAIL.COM', '04125084544', '04245222312', 1, 1, 'FINAL CALLE 28 CON 14 AV.', 0, 0, 0, '', '', ''),
+(2, 'V', 27328852, 'MARYORITH', 'SINGER', '2000-05-05', 'O+', 'SOLTERO/A', 'F', 3, 'MARYORITHSINGER05@GMAIL.COM', '04125084544', '04245222312', 1, 1, 'FINAL CALLE 28 CON 14 AV.', 0, 0, 0, '', '', ''),
 (3, 'V', 26943430, 'SAMUEL', 'PEREZ', '2000-01-06', 'O+', 'SOLTERO/A', 'M', 3, '8@SADSA.COM', '04245222312', '04125084544', 11, 17, '2 AV CON CALLE 2 EDF PORTAL DEL ESTE APT 5B ', 0, 5, 6, '171', '50.0', 'DIESTRO'),
 (4, 'V', 1234567, 'FSDFS', 'SDFDSFS', '2000-06-12', 'O-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 8, 5, '123', '12', ''),
 (5, 'E', 7590456, 'ADSAD', 'ASDADAS', '2000-06-01', 'O-', 'SOLTERO/A', 'M', 2, '', '', '', 0, 0, '', 0, 5, 5, '123', '12.5', 'DIESTRO'),
@@ -106,8 +106,7 @@ CREATE TABLE `atleta_representante` (
 --
 
 INSERT INTO `atleta_representante` (`id`, `id_atleta`, `id_representante`, `id_parentesco`) VALUES
-(3, 3, 2, 5),
-(4, 1, 2, 9);
+(6, 3, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -417,25 +416,26 @@ INSERT INTO `discapacidades` (`id`, `discapacidad`) VALUES
 
 CREATE TABLE `disciplinas` (
   `id` int(11) NOT NULL,
-  `disciplina` varchar(50) NOT NULL
+  `disciplina` varchar(50) NOT NULL,
+  `activo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `disciplinas`
 --
 
-INSERT INTO `disciplinas` (`id`, `disciplina`) VALUES
-(3, 'AJEDREZ'),
-(1, 'BALONCESTO'),
-(2, 'BEISBOL'),
-(4, 'BOLAS CRIOLLAS'),
-(11, 'GIMNASIA'),
-(5, 'JUDO'),
-(6, 'KARATE'),
-(7, 'LEVANTAMIENTO DE PESAS'),
-(9, 'LUCHA'),
-(8, 'NATACION'),
-(10, 'TIRO CON ARCO');
+INSERT INTO `disciplinas` (`id`, `disciplina`, `activo`) VALUES
+(1, 'BALONCESTO', 1),
+(2, 'BEISBOL', 1),
+(3, 'AJEDREZ', 1),
+(4, 'BOLAS CRIOLLAS', 1),
+(5, 'JUDO', 1),
+(6, 'KARATE', 0),
+(7, 'LEVANTAMIENTO DE PESAS', 0),
+(8, 'NATACION', 0),
+(9, 'LUCHA', 0),
+(10, 'TIRO CON ARCO', 0),
+(11, 'GIMNASIA', 0);
 
 -- --------------------------------------------------------
 
@@ -458,8 +458,7 @@ INSERT INTO `estatus` (`id`, `estatu`) VALUES
 (2, 'S E PRE JUVENIL'),
 (6, 'S N ADULTO'),
 (7, 'S N CICLO OLIMPICO'),
-(5, 'S N JUVENIL'),
-(4, 'SE INFANTIL');
+(5, 'S N JUVENIL');
 
 -- --------------------------------------------------------
 
@@ -495,7 +494,8 @@ INSERT INTO `eventos` (`id`, `nombre`, `fecha_inicio`, `fecha_cierre`, `descripc
 (27, 'ADAS', '2000-06-21', '2020-01-01', 'SADASDADAD', 2, 2, 2, 1, 1, 1, 0, ''),
 (28, 'SAD', '2019-10-28', '2020-01-01', 'DASD', 3, 1, 1, 1, 1, 1, 0, 'nacional'),
 (29, '11', '2019-11-12', '2020-01-01', '1', 1, 2, 2, 1, 1, 1, 0, 'mundial'),
-(30, '111111111111', '2019-11-04', '2020-01-01', '111111', 3, 1, 1, 1, 1, 1, 1, 'mundial');
+(30, '111111111111', '2019-11-04', '2020-01-01', '111111', 1, 4, 5, 1, 1, 1, 1, 'mundial'),
+(31, 'ASDA', '2019-11-06', '2019-11-20', 'DD', 3, 2, 2, 1, 1, 1, 0, 'NACIONAL');
 
 -- --------------------------------------------------------
 
@@ -560,20 +560,20 @@ INSERT INTO `logros` (`id`, `tipo`, `pais`, `estado`, `ciudad`, `disciplina`, `d
 CREATE TABLE `modalidades` (
   `id` int(11) NOT NULL,
   `modalidad` varchar(50) NOT NULL,
-  `id_disciplina` int(11) NOT NULL
+  `id_disciplina` int(11) NOT NULL,
+  `activo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `modalidades`
 --
 
-INSERT INTO `modalidades` (`id`, `modalidad`, `id_disciplina`) VALUES
-(1, 'BOCHAS', 4),
-(2, 'RITMICA', 11),
-(3, 'AEROBICA', 11),
-(4, 'ACROBATICA', 11),
-(5, 'ARTISTICA', 11),
-(6, 'AJEDREZ', 3);
+INSERT INTO `modalidades` (`id`, `modalidad`, `id_disciplina`, `activo`) VALUES
+(2, 'RITMICA', 11, 0),
+(3, 'AEROBICA', 11, 0),
+(4, 'ACROBATICA', 11, 0),
+(5, 'ARTISTICA', 11, 1),
+(6, 'AJEDREZ', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -643,7 +643,6 @@ CREATE TABLE `parentescos` (
 --
 
 INSERT INTO `parentescos` (`id`, `parentesco`) VALUES
-(9, 'ABUELA'),
 (10, 'ABUELO'),
 (5, 'HERMANA'),
 (6, 'HERMANO'),
@@ -718,7 +717,6 @@ INSERT INTO `patologia_medicas` (`id`, `patologia_medica`) VALUES
 (3, 'CONJUNTIVITIS'),
 (11, 'DDDSA'),
 (4, 'DERMATITIS'),
-(8, 'MEDICAMENTOS'),
 (9, 'PICADURAS DE INSECTOS'),
 (2, 'RINITIS'),
 (5, 'URTICARIA');
@@ -829,7 +827,7 @@ CREATE TABLE `representantes` (
 --
 
 INSERT INTO `representantes` (`id`, `cedula`, `nombre`, `apellido`, `correo`, `n_tel`) VALUES
-(2, '7590456', 'BLANCA', 'SINGER', 'BLANCA@BLAMCA.COM', '04128504562');
+(3, '7590773', 'LEFKY', 'MORA', 'LMORA2000@HOTMAIL.COM', '04143012400');
 
 -- --------------------------------------------------------
 
@@ -847,7 +845,6 @@ CREATE TABLE `tallas` (
 --
 
 INSERT INTO `tallas` (`id`, `talla`) VALUES
-(7, 'L'),
 (5, 'M'),
 (9, 'S'),
 (8, 'X');
@@ -1131,7 +1128,7 @@ ALTER TABLE `atleta`
 -- AUTO_INCREMENT de la tabla `atleta_representante`
 --
 ALTER TABLE `atleta_representante`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `bancos`
@@ -1203,7 +1200,7 @@ ALTER TABLE `estatus`
 -- AUTO_INCREMENT de la tabla `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de la tabla `evento_participantes`
@@ -1233,7 +1230,7 @@ ALTER TABLE `municipio`
 -- AUTO_INCREMENT de la tabla `nivels`
 --
 ALTER TABLE `nivels`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `parentescos`
@@ -1275,7 +1272,7 @@ ALTER TABLE `puente_patologia_medica`
 -- AUTO_INCREMENT de la tabla `representantes`
 --
 ALTER TABLE `representantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `tallas`

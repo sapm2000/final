@@ -11,7 +11,7 @@ switch($_REQUEST['accion'])
 {
 	case 'buscatodos':
 	{
-		$_SESSION['disciplina'] = $dis->getAll();
+		$_SESSION['disciplina'] = $dis->getallactivas();
 		
 		
 			
@@ -22,6 +22,17 @@ switch($_REQUEST['accion'])
 		
 		break;
 	}
+
+	case 'buscatodos1':
+		{
+			
+				$_SESSION['catamoda1'] = $mod->consDetModalidad1();
+				
+				header("Location: ../Vista/modalidades/modalidades1.php?accion=actual");
+			
+			
+			break;
+		}
 
 	case 'registrar':
 	{
@@ -53,11 +64,10 @@ switch($_REQUEST['accion'])
 
 	case 'eliminar':
 	{
-		echo "<script>confirm('¿Está seguro de eliminar el regitro?')</script>";
 		$mod->setId($_GET['id']);
-		$mod->deleteById();
-		header('Location: ../Vista/modalidades/modalidades.php?accion=actualizar');
+		$mod->updatemod();
 
+		header("Location: ../Vista/modalidades/modalidades.php?accion=actualizar");		
 		break;
 	}
 
@@ -68,6 +78,19 @@ switch($_REQUEST['accion'])
 		header('Location: ../Vista/modalidades/modalidades.php?accion=ver_detalles');
 		break;
 	}
+
+	case "reactivar1":
+		{
+			$mod->setId($_GET['id']);
+			$mod->setId_disciplina($_GET['id_disciplina']);
+
+			$mod->updatedis1();
+			$mod->updatemod1();
+
+	
+			header("Location: ../Vista/modalidades/modalidades1.php?accion=actualizar");		
+			break;	
+		}
 
 	
 }

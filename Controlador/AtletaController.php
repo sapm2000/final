@@ -105,7 +105,7 @@ switch($_REQUEST['accion'])
 
 	case "buscadisciplinas":
 	{
-		$n = $disciplina->getAll($tab);
+		$n = $disciplina->getallactivas($tab);
 		$_SESSION['disciplin'] = $n;
 		
 		header("Location: ../Vista/atleta/filtrodisciplinas.php?accion=actual");
@@ -114,7 +114,7 @@ switch($_REQUEST['accion'])
 
 	case "fichadisciplina":
 		{
-			$n = $disciplina->getAll($tab);
+			$n = $disciplina->getallactivas($tab);
 			$_SESSION['disciplin'] = $n;
 			
 			header("Location: ../Vista/atleta/fichadisciplina.php?accion=actual");
@@ -142,9 +142,9 @@ switch($_REQUEST['accion'])
 	}
 	case "buscamodalidades":
 	{
-		$n = $disciplina->getAll($tab);
+		$n = $disciplina->getallactivas($tab);
 		$_SESSION['disciplin'] = $n;
-		$d = $modalidad->getAll($tab);
+		$d = $modalidad->getallactivas($tab);
 		$_SESSION['modalidad'] = $d;
 		
 		header("Location: ../Vista/atleta/filtromodalidad.php?accion=actual");
@@ -569,9 +569,9 @@ switch($_REQUEST['accion'])
 				$atleta->setId($_GET['id']);
 				$datos = $atleta->getById($id);
 				$_SESSION['modidisciplinas'] = $datos;
-				$mod = $modalidad->getAll($tab);
+				$mod = $modalidad->getallactivas($tab);
 				$_SESSION['modalidad1'] = $mod;
-				$dis = $disciplina->getAll($tab);
+				$dis = $disciplina->getallactivas($tab);
 				$_SESSION['disciplina1'] = $dis;
 				$est = $estatu->getAll($tab);
 				$_SESSION['estatus1'] = $est;
@@ -715,9 +715,9 @@ switch($_REQUEST['accion'])
 				$atleta->setId($_POST['id_atleta']);
 				$datos = $atleta->getById($id);
 				$_SESSION['modidisciplinas'] = $datos;
-				$mod = $modalidad->getAll($tab);
+				$mod = $modalidad->getallactivas($tab);
 				$_SESSION['modalidad1'] = $mod;
-				$dis = $disciplina->getAll($tab);
+				$dis = $disciplina->getallactivas($tab);
 				$_SESSION['disciplina1'] = $dis;
 				$est = $estatu->getAll($tab);
 				$_SESSION['estatus1'] = $est;
@@ -875,9 +875,9 @@ case "registrarPatologia_medica":
 				$atleta->setId($_POST['id_atleta']);
 				$datos = $atleta->getById($id);
 				$_SESSION['modidisciplinas'] = $datos;
-				$mod = $modalidad->getAll($tab);
+				$mod = $modalidad->getallactivas($tab);
 				$_SESSION['modalidad1'] = $mod;
-				$dis = $disciplina->getAll($tab);
+				$dis = $disciplina->getallactivas($tab);
 				$_SESSION['disciplina1'] = $dis;
 				$est = $estatu->getAll($tab);
 				$_SESSION['estatus1'] = $est;
@@ -1042,9 +1042,9 @@ case "registrarPatologia_medica":
 				$atleta->setId($_POST['id_atleta']);
 				$datos = $atleta->getById($id);
 				$_SESSION['modidisciplinas'] = $datos;
-				$mod = $modalidad->getAll($tab);
+				$mod = $modalidad->getallactivas($tab);
 				$_SESSION['modalidad1'] = $mod;
-				$dis = $disciplina->getAll($tab);
+				$dis = $disciplina->getallactivas($tab);
 				$_SESSION['disciplina1'] = $dis;
 				$est = $estatu->getAll($tab);
 				$_SESSION['estatus1'] = $est;
@@ -1187,9 +1187,9 @@ case "registrarPatologia_medica":
 					$atleta->setId($_GET['id']);
 					$datos = $atleta->getById($id);
 					$_SESSION['modidisciplinas'] = $datos;
-					$mod = $modalidad->getAll($tab);
+					$mod = $modalidad->getallactivas($tab);
 					$_SESSION['modalidad1'] = $mod;
-					$dis = $disciplina->getAll($tab);
+					$dis = $disciplina->getallactivas($tab);
 					$_SESSION['disciplina1'] = $dis;
 					$est = $estatu->getAll($tab);
 					$_SESSION['estatus1'] = $est;
@@ -1293,9 +1293,9 @@ case "registrarPatologia_medica":
 					$atleta->setId($_GET['id']);
 					$datos = $atleta->getById($id);
 					$_SESSION['modidisciplinas'] = $datos;
-					$mod = $modalidad->getAll($tab);
+					$mod = $modalidad->getallactivas($tab);
 					$_SESSION['modalidad1'] = $mod;
-					$dis = $disciplina->getAll($tab);
+					$dis = $disciplina->getallactivas($tab);
 					$_SESSION['disciplina1'] = $dis;
 					$est = $estatu->getAll($tab);
 					$_SESSION['estatus1'] = $est;
@@ -1560,7 +1560,7 @@ case "registrarPatologia_medica":
 
 			case 'buscamelasdisciplinas':
 				{
-					$n = $disciplina->getAll($tab);
+					$n = $disciplina->getallactivas($tab);
 					$_SESSION['disciplin'] = $n;
 					
 					

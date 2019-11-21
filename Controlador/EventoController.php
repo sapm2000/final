@@ -25,7 +25,7 @@ switch($_REQUEST['accion'])
 	{
 		$todos = $evento->getAll($tab);
 		$_SESSION['catalogo'] = $todos;
-		$coño = $disciplinas->getAll($tab);
+		$coño = $disciplinas->getallactivas($tab);
 		$_SESSION['coño'] = $coño;
 		$carajo=$municipio->getAll($tab);
 		$_SESSION['municipio'] = $carajo;	

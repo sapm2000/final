@@ -186,6 +186,14 @@ $(document).ready(function(){
 	});
 });
 
+$(document).ready(function(){
+	$("select[name=id_banco1]").ready(function()
+	{
+		j = $("select[name=id_banco1]").val();
+		document.modiform.codbanco1.value = j;
+	});
+});
+
 
 </script>
 <script>

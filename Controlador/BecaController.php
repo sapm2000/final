@@ -67,7 +67,7 @@ switch($_REQUEST['accion'])
 
 	case 'buscamelasdisciplinas':
 		{
-			$n = $disciplina->getAll($tab);
+			$n = $disciplina->getallactivas($tab);
 			$_SESSION['disciplin'] = $n;
 			
 			
@@ -78,7 +78,7 @@ switch($_REQUEST['accion'])
 
 		case 'buscamelasdisciplinasgloria':
 			{
-				$n = $disciplina->getAll($tab);
+				$n = $disciplina->getallactivas($tab);
 				$_SESSION['disciplin'] = $n;
 				
 

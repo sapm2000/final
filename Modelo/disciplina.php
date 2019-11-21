@@ -16,7 +16,26 @@ class Disciplina extends ClaseBase
 	}
 
 
+	public function getallactivas()
+	{
+		$cc=Conexion::getInstance();
+		$sql="SELECT * FROM disciplinas WHERE disciplinas.activo=0";
+		$result=$cc->db->prepare($sql);
+		$result->execute();
+		$trae=$result->fetchAll();
+		return ($trae);
+	}
 	
+	public function getallinactivas()
+	{
+		$cc=Conexion::getInstance();
+		$sql="SELECT * FROM disciplinas WHERE disciplinas.activo=1";
+		$result=$cc->db->prepare($sql);
+		$result->execute();
+		$trae=$result->fetchAll();
+		return ($trae);
+	}
+
 	public function guardarDisciplina()
 	{
 		$con = Conexion::getInstance();
@@ -30,6 +49,33 @@ class Disciplina extends ClaseBase
 	{
 		$con = Conexion::getInstance();
 		$sql = "UPDATE  $this->tabla SET disciplina='$this->disciplina' WHERE id=$this->id";
+		$result = $con->db->prepare($sql);
+		$cambio = $result->execute();
+		return $cambio;
+	}
+
+	public function updatedis()
+	{
+		$con = Conexion::getInstance();
+		$sql = "UPDATE disciplinas SET activo=1 WHERE id=$this->id";
+		$result = $con->db->prepare($sql);
+		$cambio = $result->execute();
+		return $cambio;
+	}
+
+	public function updatedis1()
+	{
+		$con = Conexion::getInstance();
+		$sql = "UPDATE disciplinas SET activo=0 WHERE id=$this->id";
+		$result = $con->db->prepare($sql);
+		$cambio = $result->execute();
+		return $cambio;
+	}
+
+	public function updatemod()
+	{
+		$con = Conexion::getInstance();
+		$sql = "UPDATE modalidades SET activo=1 WHERE id_disciplina=$this->id";
 		$result = $con->db->prepare($sql);
 		$cambio = $result->execute();
 		return $cambio;

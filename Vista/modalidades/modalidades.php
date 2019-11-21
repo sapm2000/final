@@ -34,10 +34,13 @@
 		$form.= "<tr>";
 		$form.= "<td>Disciplina:</td>";
 		$form.= "<td>".$select."</td>";
+		$form.='<td> <a href="modalidades1.php?accion=actualizar"><input type="button" class="botonmodal" value="modalidades Inactivas" title="Atletas Inactivos"> </a></td>';
+
 		$form.= "</tr>";
 		$form.= "</table>"; 
 		$form.= "<br>";
 		$form.= "<input type='submit' value='Registrar' name='BtRegistrar' id='submit'>";
+		
 		$form.= "</form>";
 		$cat = "";
 		$cat.= "<table class='tabla-cat' id='tabla'>";
