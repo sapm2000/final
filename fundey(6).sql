@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-11-2019 a las 00:27:23
+-- Tiempo de generación: 22-11-2019 a las 02:55:52
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.4
 
@@ -59,7 +59,7 @@ CREATE TABLE `atleta` (
 
 INSERT INTO `atleta` (`id`, `nac`, `cedula`, `nombre`, `apellido`, `f_nac`, `tipos`, `estadoc`, `sexo`, `id_nivel`, `correo`, `n_tel`, `n_eme`, `id_municipio`, `id_parroquia`, `direccion`, `activo`, `id_talla`, `id_calzado`, `altura`, `peso`, `mano`) VALUES
 (1, 'V', 30426947, 'FREDDERIC', 'HERNANDE', '2004-07-06', 'O+', 'SOLTERO/A', 'M', 1, 'DASDAD@ASDS.COM', '04143012400', '04245222312', 13, 19, 'ASDA', 0, 8, 6, '110', '90.0', 'DIESTRO'),
-(2, 'V', 27328852, 'MARYORITH', 'SINGER', '2000-05-05', 'O+', 'SOLTERO/A', 'F', 3, 'MARYORITHSINGER05@GMAIL.COM', '04125084544', '04245222312', 1, 1, 'FINAL CALLE 28 CON 14 AV.', 0, 0, 0, '', '', ''),
+(2, 'V', 27328852, 'MARYORITH NAZARETH', 'SINGER MUJICA', '2000-05-05', 'O+', 'SOLTERO/A', 'F', 3, 'MARYORITHSINGER05@GMAIL.COM', '04125084544', '04245222312', 1, 1, 'FINAL CALLE 28 CON 14 AV.', 0, 0, 0, '', '', ''),
 (3, 'V', 26943430, 'SAMUEL', 'PEREZ', '2000-01-06', 'O+', 'SOLTERO/A', 'M', 3, '8@SADSA.COM', '04245222312', '04125084544', 11, 17, '2 AV CON CALLE 2 EDF PORTAL DEL ESTE APT 5B ', 0, 5, 6, '171', '50.0', 'DIESTRO'),
 (4, 'V', 1234567, 'FSDFS', 'SDFDSFS', '2000-06-12', 'O-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 8, 5, '123', '12', ''),
 (5, 'E', 7590456, 'ADSAD', 'ASDADAS', '2000-06-01', 'O-', 'SOLTERO/A', 'M', 2, '', '', '', 0, 0, '', 0, 5, 5, '123', '12.5', 'DIESTRO'),
@@ -154,8 +154,7 @@ CREATE TABLE `becas` (
 --
 
 INSERT INTO `becas` (`id`, `id_atleta`, `monto`, `disc`) VALUES
-(1, 4, 1232313, 'GIMNASIA'),
-(2, 5, 132131, 'AJEDREZ');
+(1, 1, 122121, 'AJEDREZ');
 
 -- --------------------------------------------------------
 
@@ -209,7 +208,10 @@ INSERT INTO `becas_mes` (`id`, `fecha`, `montoT`, `becados`, `nombre`, `gloria`)
 (10, '2019-11-19', 3702, 3, 'ASD', 0),
 (11, '2019-11-12', 89222, 3, 'SSDF', 1),
 (12, '2019-11-05', 1364440, 2, 'AASD', 0),
-(13, '2019-11-19', 1364440, 2, 'C', 0);
+(13, '2019-11-19', 1364440, 2, 'C', 0),
+(14, '2019-11-22', 10000, 1, 'DA', 0),
+(15, '2019-11-22', 122121, 1, 'PRUEBA111', 0),
+(16, '2019-11-22', 122121, 1, 'DSADASD', 0);
 
 -- --------------------------------------------------------
 
@@ -258,7 +260,10 @@ INSERT INTO `becas_total` (`id`, `id_atleta`, `monto`, `fecha`, `nombre`, `disc`
 (26, 4, 1232310, '2019-11-05', 'AASD', 'GIMNASIA', 0),
 (27, 5, 132131, '2019-11-05', 'AASD', 'AJEDREZ', 0),
 (28, 4, 1232310, '2019-11-19', 'C', 'GIMNASIA', 0),
-(29, 5, 132131, '2019-11-19', 'C', 'AJEDREZ', 0);
+(29, 5, 132131, '2019-11-19', 'C', 'AJEDREZ', 0),
+(30, 1, 10000, '2019-11-22', 'DA', 'AJEDREZ', 0),
+(31, 1, 122121, '2019-11-22', 'PRUEBA111', 'AJEDREZ', 0),
+(32, 1, 122121, '2019-11-22', 'DSADASD', 'AJEDREZ', 0);
 
 -- --------------------------------------------------------
 
@@ -1142,7 +1147,7 @@ ALTER TABLE `bancos`
 -- AUTO_INCREMENT de la tabla `becas`
 --
 ALTER TABLE `becas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `becas_gloria`
@@ -1154,13 +1159,13 @@ ALTER TABLE `becas_gloria`
 -- AUTO_INCREMENT de la tabla `becas_mes`
 --
 ALTER TABLE `becas_mes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `becas_total`
 --
 ALTER TABLE `becas_total`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT de la tabla `calzados`
