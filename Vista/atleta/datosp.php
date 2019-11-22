@@ -91,7 +91,7 @@ $form.='<td><input id="letras" type="text" name="apellido" class="cajasdetexto" 
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Fecha de Nacimiento:</td>';
-$form.='<td><input type="date" name="f_nac" class="date" maxlenght="9" id="fnac"  max="'.date("Y-m-d").'" value="'.date("Y-m-d").'" required></td>';
+$form.='<td><input type="text" name="f_nac" class="date" maxlenght="9" id="fnac"   pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))" max="'.date("Y-m-d").'" value="'.date("Y-m-d").'" onkeypress="return solonumerosguion(event)" onpaste="return false" required></td>';
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Tipo Sanguíneo:</td>';

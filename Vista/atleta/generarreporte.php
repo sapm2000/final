@@ -2,6 +2,7 @@
 session_start();
 require_once("../dompdf/dompdf_config.inc.php");
 
+$code.="<center><img src='../imagenes1/encabezado.png'></center>";
 
 if ($_REQUEST['accion']=="activos") {
     $code.="<h1 class=texto>Reporte de Atletas Activos.</h1>";

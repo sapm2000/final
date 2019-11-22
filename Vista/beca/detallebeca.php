@@ -77,14 +77,14 @@ if($_GET['accion']=="actual")
 		$cata.="<td>".$cat['nombre']."</td>";	
 		$cata.="<td>".$cat['apellido']."</td>";	
 		$cata.="<td>".$cat['disc']."</td>";	
-		$cata.="<td> <input type='text' readonly id='b".$cat['id']."' name='pago".$cat['id']."'  value=".$cat['monto']."></td>";
+		$cata.="<td> <input type='text' readonly id='b".$cat['id']."' name='pago".$cat['id']."' class='cajasdetexto' value=".$cat['monto']."></td>";
 		
 		$reporte.="<tr>";	
 		$reporte.="<td>".$cat['cedula']."</td>";	
 		$reporte.="<td>".$cat['nombre']."</td>";	
 		$reporte.="<td>".$cat['apellido']."</td>";
 		$reporte.="<td>".$cat['disc']."</td>";		
-		$reporte.="<td> <input type='text' readonly id='b".$cat['id']."' name='pago".$cat['id']."'  value=".$cat['monto']."></td>";	
+		$reporte.="<td> <input type='text' readonly id='b".$cat['id']."' name='pago".$cat['id']."' class='cajasdetexto' value=".$cat['monto']."></td>";	
 		
 		
 

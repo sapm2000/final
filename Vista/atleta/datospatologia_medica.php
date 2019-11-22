@@ -25,7 +25,7 @@ if($_GET['accion']=='ver_detalles') {
 
 	$todosal = $_SESSION['patologia_medica1'];
 	$patologia_medica = "<select name='id_patologia_medica' required>";
-	$patologia_medica.= "<option>Seleccione una patologia_medica</option>";
+	$patologia_medica.= "<option>Seleccione una patología médica</option>";
 	
 	foreach ($todosal as $tb) {
 		$patologia_medica.= "<option value=".$tb['id'].">".$tb['patologia_medica']."</option>";	
@@ -39,12 +39,12 @@ if($_GET['accion']=='ver_detalles') {
 	$form.='<td>&nbsp;</td>';
 	$form.='</tr>';
 	$form.='<tr>';
-	$form.="<td>Seleccione los patologias medicas </td>";
+	$form.="<td>Seleccione los patologías médicas </td>";
 	$form.='<td>'.$patologia_medica.'</td>';
-	$form.='<td> <input type="date"  name="fecha_medica" class="cajasdetexto"  max="'.date("Y-m-d").'" value="'.date("Y-m-d").'"> </td>';
+	$form.='<td> <input type="text"  name="fecha_medica" class="date"  pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))" max="'.date("Y-m-d").'" value="'.date("Y-m-d").'" onkeypress="return solonumerosguion(event)" onpaste="return false"> </td>';
 	$form.='<tr>';
 	$form.='<td></td>';
-	$form.='<td><input type="submit" value="Añadir Patologia Medica" id="submit" name="BtRegistrar1"></td>';
+	$form.='<td><input type="submit" value="Añadir Patología Médica" id="submit" name="BtRegistrar1"></td>';
 	$form.='</tr>';
 	$datos = $_SESSION['id_atleta'];
 	foreach($datos as $d)
@@ -66,11 +66,11 @@ if($_GET['accion']=='ver_detalles') {
 	$form.='<input type="submit" value="Datos Bancarios" id="datosb" name="DatosB" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Disciplinas" name="Disciplinas" id="d" class="botonmodalsuperior">';
 	$form.='<input type="submit" value="Datos Laborales" id="siguiente11" name="BtModificar" class="botonmodalsuperior">';
-	$form.='<input type="submit" value="Patologia Medica" id="a" name="Patologia_medicas" class="botonmodalsuperioractual">';
+	$form.='<input type="submit" value="Patología Médica" id="a" name="Patologia_medicas" class="botonmodalsuperioractual">';
 	$form.='<input type="submit" value="Discapacidades" name="Discapacidades" id="d" class="botonmodalsuperior">';
 
 	$form.="<table class=tabla-cat id=tabla>";
-	$form.="<tr><th>Patologias Medica</th><th>Fecha de Patologia</th><th>Acción</th></tr>";
+	$form.="<tr><th>Patologías Médica</th><th>Fecha de Patología</th><th>Acción</th></tr>";
 	foreach($catalogo as $cat)
 	{
 		$form.="<tr>";	
