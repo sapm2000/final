@@ -25,7 +25,7 @@ $form.='</tr>';
 $form.='</table>';
 $form.='<table align=center>';
 $form.='<tr>';
-$form.='<td>Desde:<input  type="date" class="date" name="primer" id="fecha1"  max="'.date("Y-m-d").'" value="'.date("Y-m-d").'" required></td>';
+$form.='<td>Desde:<input  type="date" pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))" class="date" name="primer" id="fecha1"  max="'.date("Y-m-d").'" value="'.date("Y-m-d").'" required></td>';
 $form.='<td>Hasta:<input  type="date" class="date"  name="segundo" id="fecha2"  max="'.date("Y-m-d").'" value="'.date("Y-m-d").'" required></td>';
 $form.='<td> <input type="submit" class="botonmodal" value="Buscar"> </td>';
 $form.='</tr>';
