@@ -49,7 +49,6 @@ $tipo = "<select name='tipo' required>";
 $tipo.= "<option>NACIONAL</option>";
 $tipo.= "<option>REGIONAL</option>";
 $tipo.= "<option>INTERNACIONAL</option>";
-$tipo.= "<option>MUNDIAL</option>";
 $tipo.= "</select>";
 
 
