@@ -28,7 +28,7 @@ $form.='<td><input type="text" name="nombre" class="cajasdetexto" onkeypress="re
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Fecha a Pagar:</td>';
-$form.='<td><input type="date" name="fecha" class="cajasdetexto" max="'.date("Y-m-d").'" value="'.date("Y-m-d").'" required></td>';
+$form.='<td><input type="text" name="fecha" class="date"  pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))" max="'.date("Y-m-d").'" value="'.date("Y-m-d").'" onkeypress="return solonumerosguion(event)" onpaste="return false" required></td>';
 $form.='</tr>';
 $form.='</table>';
 

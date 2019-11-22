@@ -37,6 +37,26 @@ function solonumeros(e){
 		return false;
 		}
 		}
+
+		function solonumerosguion(e){
+			key=e.keyCode || e.which;
+			teclado=String.fromCharCode(key);
+			numeros="-0123456789,";
+			especiales="8-17-37-38-46";
+			teclado_especial=false;
+			for(var n in especiales)
+			{
+			if(key==especiales[n])
+			{
+				teclado_especial=true;
+			}
+			
+			}
+			if(numeros.indexOf(teclado)==-1 && !teclado_especial)
+			{
+			return false;
+			}
+			}
 	
 	function solonumerosypuntos(e){
 		key=e.keyCode || e.which;
