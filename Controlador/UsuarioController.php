@@ -483,7 +483,7 @@ switch($_REQUEST['accion'])
 				$menu.=				'<img src="../imagenes1/ayuda1.png" height="40px" width="40px" >  Ayuda';
 				$menu.=				'</a>';
 				$menu.=				'<ul class="submenu"><!-- Segundo nivel desplegable -->';
-				$menu.=					'<li><a href="#">Manual de Usuarios</a></li>';
+				$menu.=					'<li><a href="../Manuales/ManualdeUsuario(FUNDEY).pdf" dow>Manual de Usuarios</a></li>';
 				$menu.=					'<li><a href="#">Manual de Sistema</a></li>';
 				$menu.=				'</ul>';
 				$menu.=			'</li>';
