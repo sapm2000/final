@@ -21,7 +21,7 @@ $form.='<form name="atleta" method="post" action="../../Controlador/AtletaContro
 $form.='<table>';
 $form.='<tr>';
 $form.='<td>Ingrese Documento de Identidad:</td>';
-$form.='<td><input  type="text" class="cajasdetexto"  name="primer" pattern="[A-Z a-z Ññ/s 0-9]{5,}" title="Por favor colocar el formarto correcto" required></td>';
+$form.='<td><input  type="text" class="cajasdetexto"  name="primer" pattern="[0-9]{5,}" title="Por favor colocar el formarto correcto. Si es pasaporte solo colocar los números" required></td>';
 $form.='<td> <input type="submit" class="botonmodal" value="Buscar"> </td>';
 $form.='</tr>';
 $form.='</table>';
