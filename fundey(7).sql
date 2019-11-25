@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-11-2019 a las 02:55:52
+-- Tiempo de generación: 25-11-2019 a las 02:48:04
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.4
 
@@ -53,41 +53,6 @@ CREATE TABLE `atleta` (
   `mano` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `atleta`
---
-
-INSERT INTO `atleta` (`id`, `nac`, `cedula`, `nombre`, `apellido`, `f_nac`, `tipos`, `estadoc`, `sexo`, `id_nivel`, `correo`, `n_tel`, `n_eme`, `id_municipio`, `id_parroquia`, `direccion`, `activo`, `id_talla`, `id_calzado`, `altura`, `peso`, `mano`) VALUES
-(1, 'V', 30426947, 'FREDDERIC', 'HERNANDE', '2004-07-06', 'O+', 'SOLTERO/A', 'M', 1, 'DASDAD@ASDS.COM', '04143012400', '04245222312', 13, 19, 'ASDA', 0, 8, 6, '110', '90.0', 'DIESTRO'),
-(2, 'V', 27328852, 'MARYORITH NAZARETH', 'SINGER MUJICA', '2000-05-05', 'O+', 'SOLTERO/A', 'F', 3, 'MARYORITHSINGER05@GMAIL.COM', '04125084544', '04245222312', 1, 1, 'FINAL CALLE 28 CON 14 AV.', 0, 0, 0, '', '', ''),
-(3, 'V', 26943430, 'SAMUEL', 'PEREZ', '2000-01-06', 'O+', 'SOLTERO/A', 'M', 3, '8@SADSA.COM', '04245222312', '04125084544', 11, 17, '2 AV CON CALLE 2 EDF PORTAL DEL ESTE APT 5B ', 0, 5, 6, '171', '50.0', 'DIESTRO'),
-(4, 'V', 1234567, 'FSDFS', 'SDFDSFS', '2000-06-12', 'O-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 8, 5, '123', '12', ''),
-(5, 'E', 7590456, 'ADSAD', 'ASDADAS', '2000-06-01', 'O-', 'SOLTERO/A', 'M', 2, '', '', '', 0, 0, '', 0, 5, 5, '123', '12.5', 'DIESTRO'),
-(6, 'V', 1478558, 'XCZCZXC', 'ZXCZXCZXC', '2019-10-06', 'B-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 5, 5, '', '', ''),
-(7, 'V', 5145789, 'ASDASD', 'ALVAREZ', '2019-10-13', 'O+', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(8, 'V', 12745678, 'ASD', 'ALVAREZ', '2019-09-30', 'B+', 'SOLTERO/A', 'M', 2, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(9, 'V', 12345685, 'ASASASAS', 'XXXXXX', '2019-10-10', 'B-', 'CASADO/A', 'F', 1, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(10, 'V', 22222222, 'ASAAAA', 'SSS', '2019-10-03', 'O+', 'SOLTERO/A', 'F', 1, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(11, 'V', 22455478, 'J', 'J', '2019-10-06', 'AB+', 'CASADO/A', 'F', 2, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(12, 'V', 2222444, 'MARIA', 'MJ', '2019-10-20', 'B-', 'SOLTERO/A', 'F', 1, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(13, 'V', 2323232, 'AASAA', 'SSSS', '2019-10-13', 'O-', 'SOLTERO/A', 'F', 1, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(14, 'V', 33333333, 'ASWQ', 'SASW', '2019-10-07', 'O-', 'SOLTERO/A', 'F', 1, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(15, 'V', 25487878, 'ASASASAS', 'ASAS', '2019-10-01', 'O+', 'SOLTERO/A', 'F', 1, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(16, 'V', 23156165, 'ASASASASASAS', 'WWWW', '2019-10-15', 'O-', 'SOLTERO/A', 'F', 3, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(17, 'V', 24578964, 'EEEEE', 'EEE', '2019-10-11', 'O-', 'SOLTERO/A', 'M', 2, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(18, 'V', 66666666, 'B', 'V', '2019-09-29', 'B-', 'SOLTERO/A', 'F', 1, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(19, 'V', 21455412, 'SDSDSDSDS', 'SDSDSD', '2019-10-08', 'B-', 'CASADO/A', 'M', 2, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(20, 'V', 23564652, 'AS', 'ASAS', '2019-10-13', 'O-', 'SOLTERO/A', 'M', 2, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(21, 'V', 2221544, 'ASDASDA', 'ASDAS', '2019-10-20', 'AB+', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(22, 'V', 55454545, 'MARIA', 'MJ', '2019-09-30', 'AB+', 'SOLTERO/A', 'F', 3, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(23, 'V', 4561234, 'ASASASAS', 'ALVAREZ', '2019-09-30', 'O+', 'SOLTERO/A', 'F', 1, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(24, 'V', 3254875, 'D', 'MJ', '2019-10-22', 'AB-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(25, 'V', 12345679, 'D', 'D', '2019-09-22', 'O-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(26, 'V', 2457896, 'SADADA', 'ASDASD', '2019-10-09', 'O+', 'SOLTERO/A', 'F', 3, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(27, 'V', 2457887, 'MMMM', 'SSSS', '2019-09-30', 'O-', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(28, 'V', 32548778, 'MASDASASAS', 'ASASASASAS', '2019-10-22', 'AB+', 'SOLTERO/A', 'F', 3, '', '', '', 0, 0, '', 0, 0, 0, '', '', ''),
-(29, 'V', 2144574, 'MARYORITH NAZARETH', 'SINGER MUJICA', '2019-10-13', 'AB+', 'SOLTERO/A', 'F', 2, '', '', '', 0, 0, '', 0, 0, 0, '', '', '');
-
 -- --------------------------------------------------------
 
 --
@@ -100,13 +65,6 @@ CREATE TABLE `atleta_representante` (
   `id_representante` int(11) NOT NULL,
   `id_parentesco` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `atleta_representante`
---
-
-INSERT INTO `atleta_representante` (`id`, `id_atleta`, `id_representante`, `id_parentesco`) VALUES
-(6, 3, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -149,13 +107,6 @@ CREATE TABLE `becas` (
   `disc` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `becas`
---
-
-INSERT INTO `becas` (`id`, `id_atleta`, `monto`, `disc`) VALUES
-(1, 1, 122121, 'AJEDREZ');
-
 -- --------------------------------------------------------
 
 --
@@ -168,15 +119,6 @@ CREATE TABLE `becas_gloria` (
   `monto` double NOT NULL,
   `disc` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `becas_gloria`
---
-
-INSERT INTO `becas_gloria` (`id`, `id_atleta`, `monto`, `disc`) VALUES
-(1, 1, 1234, 'AJEDREZ'),
-(2, 2, 34535, 'GIMNASIA'),
-(3, 3, 53453, 'BOLAS CRIOLLAS');
 
 -- --------------------------------------------------------
 
@@ -193,26 +135,6 @@ CREATE TABLE `becas_mes` (
   `gloria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `becas_mes`
---
-
-INSERT INTO `becas_mes` (`id`, `fecha`, `montoT`, `becados`, `nombre`, `gloria`) VALUES
-(1, '2019-11-09', 17500, 3, 'HOLA', 0),
-(2, '2019-11-12', 89222, 3, 'W', 0),
-(3, '2019-11-12', 89222, 3, '2', 0),
-(4, '2019-11-21', 1000, 1, 'F', 0),
-(7, '2019-11-18', 87988, 2, 'D', 0),
-(8, '2019-11-18', 87988, 2, 'DD', 0),
-(9, '2019-11-11', 3702, 3, 'FSDFS', 0),
-(10, '2019-11-19', 3702, 3, 'ASD', 0),
-(11, '2019-11-12', 89222, 3, 'SSDF', 1),
-(12, '2019-11-05', 1364440, 2, 'AASD', 0),
-(13, '2019-11-19', 1364440, 2, 'C', 0),
-(14, '2019-11-22', 10000, 1, 'DA', 0),
-(15, '2019-11-22', 122121, 1, 'PRUEBA111', 0),
-(16, '2019-11-22', 122121, 1, 'DSADASD', 0);
-
 -- --------------------------------------------------------
 
 --
@@ -228,42 +150,6 @@ CREATE TABLE `becas_total` (
   `disc` varchar(100) NOT NULL,
   `gloria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `becas_total`
---
-
-INSERT INTO `becas_total` (`id`, `id_atleta`, `monto`, `fecha`, `nombre`, `disc`, `gloria`) VALUES
-(1, 1, 2500, '2019-11-09', 'HOLA', 'AJEDREZ', 0),
-(2, 2, 5000, '2019-11-09', 'HOLA', 'AJEDREZ', 0),
-(3, 3, 10000, '2019-11-09', 'HOLA', 'BOLAS CRIOLLAS', 0),
-(4, 1, 1234, '2019-11-12', 'W', 'AJEDREZ', 0),
-(5, 2, 34535, '2019-11-12', 'W', 'AJEDREZ', 0),
-(6, 3, 53453, '2019-11-12', 'W', 'BOLAS CRIOLLAS', 0),
-(7, 1, 1234, '2019-11-12', '2', 'AJEDREZ', 0),
-(8, 2, 34535, '2019-11-12', '2', 'AJEDREZ', 0),
-(9, 3, 53453, '2019-11-12', '2', 'BOLAS CRIOLLAS', 0),
-(10, 1, 1000, '2019-11-21', 'F', 'AJEDREZ', 0),
-(13, 2, 34535, '2019-11-18', 'D', 'AJEDREZ', 0),
-(14, 3, 53453, '2019-11-18', 'D', 'BOLAS CRIOLLAS', 0),
-(15, 2, 34535, '2019-11-18', 'DD', 'AJEDREZ', 0),
-(16, 3, 53453, '2019-11-18', 'DD', 'BOLAS CRIOLLAS', 0),
-(17, 1, 1234, '2019-11-11', 'FSDFS', 'AJEDREZ', 0),
-(18, 2, 1234, '2019-11-11', 'FSDFS', 'GIMNASIA', 0),
-(19, 3, 1234, '2019-11-11', 'FSDFS', 'BOLAS CRIOLLAS', 0),
-(20, 1, 1234, '2019-11-19', 'ASD', 'AJEDREZ', 0),
-(21, 2, 1234, '2019-11-19', 'ASD', 'GIMNASIA', 0),
-(22, 3, 1234, '2019-11-19', 'ASD', 'BOLAS CRIOLLAS', 0),
-(23, 1, 1234, '2019-11-12', 'SSDF', 'AJEDREZ', 1),
-(24, 2, 34535, '2019-11-12', 'SSDF', 'GIMNASIA', 1),
-(25, 3, 53453, '2019-11-12', 'SSDF', 'BOLAS CRIOLLAS', 1),
-(26, 4, 1232310, '2019-11-05', 'AASD', 'GIMNASIA', 0),
-(27, 5, 132131, '2019-11-05', 'AASD', 'AJEDREZ', 0),
-(28, 4, 1232310, '2019-11-19', 'C', 'GIMNASIA', 0),
-(29, 5, 132131, '2019-11-19', 'C', 'AJEDREZ', 0),
-(30, 1, 10000, '2019-11-22', 'DA', 'AJEDREZ', 0),
-(31, 1, 122121, '2019-11-22', 'PRUEBA111', 'AJEDREZ', 0),
-(32, 1, 122121, '2019-11-22', 'DSADASD', 'AJEDREZ', 0);
 
 -- --------------------------------------------------------
 
@@ -305,41 +191,6 @@ CREATE TABLE `cuenta` (
   `id_atleta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `cuenta`
---
-
-INSERT INTO `cuenta` (`id`, `nac`, `cedula`, `nombre`, `apellido`, `id_banco`, `numeroc`, `tipo`, `id_atleta`) VALUES
-(1, 'V', '7590773', 'MARITZA', 'HERNANDEZASDA', 14, '12345678901234567890', 'CORRIENTE', 1),
-(2, 'V', '27328852', 'MARYORITH', 'SINGER', 6, '12345678900876541111', 'CORRIENTE', 2),
-(3, 'V', '1234567', 'ASDADSADS', 'PEREZ', 9, '01123456789009876543', 'CORRIENTE', 3),
-(4, '', '', '', '', 0, '12345678901234567890', '', 4),
-(5, 'V', '12345678', 'ASDSDA', 'SDADSADA', 14, '12345678998765432112', '', 5),
-(6, '', '', '', '', 0, '', '', 6),
-(7, '', '', '', '', 0, '', '', 7),
-(8, '', '', '', '', 0, '', '', 8),
-(9, '', '', '', '', 0, '', '', 9),
-(10, '', '', '', '', 0, '', '', 10),
-(11, '', '', '', '', 0, '', '', 11),
-(12, '', '', '', '', 0, '', '', 12),
-(13, '', '', '', '', 0, '', '', 13),
-(14, '', '', '', '', 0, '', '', 14),
-(15, '', '', '', '', 0, '', '', 15),
-(16, '', '', '', '', 0, '', '', 16),
-(17, '', '', '', '', 0, '', '', 17),
-(18, '', '', '', '', 0, '', '', 18),
-(19, '', '', '', '', 0, '', '', 19),
-(20, '', '', '', '', 0, '', '', 20),
-(21, '', '', '', '', 0, '', '', 21),
-(22, '', '', '', '', 0, '', '', 22),
-(23, '', '', '', '', 0, '', '', 23),
-(24, '', '', '', '', 0, '', '', 24),
-(25, '', '', '', '', 0, '', '', 25),
-(26, '', '', '', '', 0, '', '', 26),
-(27, '', '', '', '', 0, '', '', 27),
-(28, '', '', '', '', 0, '', '', 28),
-(29, '', '', '', '', 0, '', '', 29);
-
 -- --------------------------------------------------------
 
 --
@@ -355,41 +206,6 @@ CREATE TABLE `datoll` (
   `direccion1` varchar(500) NOT NULL,
   `id_atleta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `datoll`
---
-
-INSERT INTO `datoll` (`id`, `correol`, `empresa`, `id_municipio1`, `id_parroquia1`, `direccion1`, `id_atleta`) VALUES
-(1, 'SA@SA.COM', 'SADSAASDA', 8, 9, 'ASDA', 1),
-(2, '', '', 0, 0, '', 2),
-(3, 'SA@SA.COM', 'DSDFASF', 8, 9, 'ASDSD', 3),
-(4, '', '', 0, 0, '', 4),
-(5, '', '', 0, 0, '', 5),
-(6, '', '', 0, 0, '', 6),
-(7, '', '', 0, 0, '', 7),
-(8, '', '', 0, 0, '', 8),
-(9, '', '', 0, 0, '', 9),
-(10, '', '', 0, 0, '', 10),
-(11, '', '', 0, 0, '', 11),
-(12, '', '', 0, 0, '', 12),
-(13, '', '', 0, 0, '', 13),
-(14, '', '', 0, 0, '', 14),
-(15, '', '', 0, 0, '', 15),
-(16, '', '', 0, 0, '', 16),
-(17, '', '', 0, 0, '', 17),
-(18, '', '', 0, 0, '', 18),
-(19, '', '', 0, 0, '', 19),
-(20, '', '', 0, 0, '', 20),
-(21, '', '', 0, 0, '', 21),
-(22, '', '', 0, 0, '', 22),
-(23, '', '', 0, 0, '', 23),
-(24, '', '', 0, 0, '', 24),
-(25, '', '', 0, 0, '', 25),
-(26, '', '', 0, 0, '', 26),
-(27, '', '', 0, 0, '', 27),
-(28, '', '', 0, 0, '', 28),
-(29, '', '', 0, 0, '', 29);
 
 -- --------------------------------------------------------
 
@@ -430,11 +246,11 @@ CREATE TABLE `disciplinas` (
 --
 
 INSERT INTO `disciplinas` (`id`, `disciplina`, `activo`) VALUES
-(1, 'BALONCESTO', 1),
-(2, 'BEISBOL', 1),
-(3, 'AJEDREZ', 1),
-(4, 'BOLAS CRIOLLAS', 1),
-(5, 'JUDO', 1),
+(1, 'BALONCESTO', 0),
+(2, 'BEISBOL', 0),
+(3, 'AJEDREZ', 0),
+(4, 'BOLAS CRIOLLAS', 0),
+(5, 'JUDO', 0),
 (6, 'KARATE', 0),
 (7, 'LEVANTAMIENTO DE PESAS', 0),
 (8, 'NATACION', 0),
@@ -492,15 +308,7 @@ CREATE TABLE `eventos` (
 --
 
 INSERT INTO `eventos` (`id`, `nombre`, `fecha_inicio`, `fecha_cierre`, `descripcion`, `id_disciplina`, `id_municipio`, `id_parroquia`, `maxpo`, `parti`, `canti`, `actual`, `tipo`) VALUES
-(23, 'ADADAS', '2000-06-01', '2020-01-01', 'TORNOE', 2, 1, 1, 11, 4, 44, 0, ''),
-(24, 'FSDFS', '1200-06-01', '2020-01-01', 'C', 3, 1, 1, 10, 1, 10, 0, ''),
-(25, 'CG', '2000-04-05', '2020-01-01', 'D', 1, 1, 1, 1, 3, 2, 0, ''),
-(26, 'DADSADSADASDSADA', '2000-01-06', '2020-01-01', 'D', 3, 1, 1, 2, 2, 4, 0, ''),
-(27, 'ADAS', '2000-06-21', '2020-01-01', 'SADASDADAD', 2, 2, 2, 1, 1, 1, 0, ''),
-(28, 'SAD', '2019-10-28', '2020-01-01', 'DASD', 3, 1, 1, 1, 1, 1, 0, 'nacional'),
-(29, '11', '2019-11-12', '2020-01-01', '1', 1, 2, 2, 1, 1, 1, 0, 'mundial'),
-(30, '111111111111', '2019-11-04', '2020-01-01', '111111', 1, 4, 5, 1, 1, 1, 1, 'mundial'),
-(31, 'ASDA', '2019-11-06', '2019-11-20', 'DD', 3, 2, 2, 1, 1, 1, 0, 'NACIONAL');
+(1, 'TORNEO AJEDREZ MASCULINO', '2019-11-22', '2019-11-24', 'TORNEO DE AJEDREZ MASCULINO SUB 17 CELEBRADO EN LA CONMEMORACION DE LOS 200 AÃ±OS DEL NACIMIENTO DE SIMON BOLIVAR', 3, 11, 15, 1, 1, 1, 1, 'NACIONAL');
 
 -- --------------------------------------------------------
 
@@ -515,15 +323,6 @@ CREATE TABLE `evento_participantes` (
   `posicion` int(11) NOT NULL,
   `observacion` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `evento_participantes`
---
-
-INSERT INTO `evento_participantes` (`id`, `id_evento`, `id_atleta`, `posicion`, `observacion`) VALUES
-(1, 26, 3, 1, ''),
-(2, 26, 2, 2, '2'),
-(3, 30, 3, 1, '');
 
 -- --------------------------------------------------------
 
@@ -546,16 +345,6 @@ CREATE TABLE `logros` (
   `id_evento` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `logros`
---
-
-INSERT INTO `logros` (`id`, `tipo`, `pais`, `estado`, `ciudad`, `disciplina`, `descripcion`, `resultado`, `observacion`, `id_atleta`, `modi`, `id_evento`) VALUES
-(1, 'ADIOS', 'sadsd', 'adasd', 'asdasd', 'AJEDREZ', 'ad', '1', 'd', 3, 1, 0),
-(2, 'estadal', 'venezuela', 'yaracuy', 'ARISTIDES BASTIDAS', 'AJEDREZ', 'D', '1', '', 3, 0, 26),
-(3, 'estadal', 'venezuela', 'yaracuy', 'ARISTIDES BASTIDAS', 'AJEDREZ', 'D', '2', '2', 2, 0, 26),
-(4, 'mundial', 'venezuela', 'yaracuy', 'ARISTIDES BASTIDAS', 'AJEDREZ', '111111', '1', '', 3, 0, 30);
-
 -- --------------------------------------------------------
 
 --
@@ -577,8 +366,8 @@ INSERT INTO `modalidades` (`id`, `modalidad`, `id_disciplina`, `activo`) VALUES
 (2, 'RITMICA', 11, 0),
 (3, 'AEROBICA', 11, 0),
 (4, 'ACROBATICA', 11, 0),
-(5, 'ARTISTICA', 11, 1),
-(6, 'AJEDREZ', 3, 1);
+(5, 'ARTISTICA', 11, 0),
+(6, 'AJEDREZ', 3, 0);
 
 -- --------------------------------------------------------
 
@@ -597,11 +386,11 @@ CREATE TABLE `municipio` (
 --
 
 INSERT INTO `municipio` (`id`, `descrips`, `activo`) VALUES
-(1, 'ARISTIDES BASTIDAS', 1),
-(2, 'BOLIVAR', 1),
-(3, 'BRUZUAL', 1),
-(4, 'COCOROTE', 1),
-(5, 'INDEPENDENCIA', 1),
+(1, 'ARISTIDES BASTIDAS', 0),
+(2, 'BOLIVAR', 0),
+(3, 'BRUZUAL', 0),
+(4, 'COCOROTE', 0),
+(5, 'INDEPENDENCIA', 0),
 (6, 'JOSE ANTONIO PAEZ', 0),
 (7, 'LA TRINIDAD', 0),
 (8, 'MANUEL MONGE', 0),
@@ -681,12 +470,12 @@ CREATE TABLE `parroquia` (
 --
 
 INSERT INTO `parroquia` (`id`, `descrip`, `id_municipio`, `activo`) VALUES
-(1, 'ARISTIDES BASTIDAS', 1, 1),
-(2, 'BOLIVAR', 2, 1),
-(3, 'CHIVACOA', 3, 1),
-(4, 'CAMPO ELIAS', 3, 1),
-(5, 'COCOROTE', 4, 1),
-(6, 'INDEPENDENCIA', 5, 1),
+(1, 'ARISTIDES BASTIDAS', 1, 0),
+(2, 'BOLIVAR', 2, 0),
+(3, 'CHIVACOA', 3, 0),
+(4, 'CAMPO ELIAS', 3, 0),
+(5, 'COCOROTE', 4, 0),
+(6, 'INDEPENDENCIA', 5, 0),
 (7, 'JOSE ANTONIO PAEZ', 6, 0),
 (8, 'LA TRINIDAD', 7, 0),
 (9, 'MANUEL MONGE', 8, 0),
@@ -722,7 +511,6 @@ INSERT INTO `patologia_medicas` (`id`, `patologia_medica`) VALUES
 (10, 'ANAFILAXIA'),
 (1, 'ASMA'),
 (3, 'CONJUNTIVITIS'),
-(11, 'DDDSA'),
 (4, 'DERMATITIS'),
 (9, 'PICADURAS DE INSECTOS'),
 (2, 'RINITIS'),
@@ -740,15 +528,6 @@ CREATE TABLE `puente_discapacidad` (
   `id_discapacidad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `puente_discapacidad`
---
-
-INSERT INTO `puente_discapacidad` (`id`, `id_atleta`, `id_discapacidad`) VALUES
-(17, 2, 5),
-(20, 1, 5),
-(21, 3, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -764,28 +543,6 @@ CREATE TABLE `puente_disciplina` (
   `becar` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `puente_disciplina`
---
-
-INSERT INTO `puente_disciplina` (`id`, `id_atleta`, `id_disciplina`, `id_modalidad`, `id_estatus`, `becar`) VALUES
-(4, 3, 3, 6, 1, 0),
-(13, 3, 4, 1, 1, 1),
-(14, 3, 11, 2, 1, 0),
-(16, 1, 3, 6, 8, 1),
-(18, 1, 4, 1, 1, 0),
-(19, 1, 11, 2, 8, 0),
-(20, 2, 11, 2, 8, 1),
-(21, 2, 11, 3, 6, 0),
-(22, 6, 3, 6, 8, 1),
-(23, 5, 3, 6, 8, 1),
-(24, 4, 11, 2, 8, 1),
-(25, 10, 11, 2, 1, 1),
-(26, 10, 11, 4, 1, 0),
-(27, 10, 4, 1, 1, 0),
-(28, 3, 11, 3, 8, 0),
-(29, 3, 4, 0, 7, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -798,21 +555,6 @@ CREATE TABLE `puente_patologia_medica` (
   `id_patologia_medica` int(11) NOT NULL,
   `fecha_medica` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `puente_patologia_medica`
---
-
-INSERT INTO `puente_patologia_medica` (`id`, `id_atleta`, `id_patologia_medica`, `fecha_medica`) VALUES
-(7, 2, 2, '0000-00-00'),
-(9, 2, 5, '0000-00-00'),
-(11, 3, 3, '0000-00-00'),
-(12, 3, 9, '0000-00-00'),
-(13, 3, 10, '0000-00-00'),
-(14, 3, 1, '2019-10-14'),
-(15, 3, 2, '2019-10-15'),
-(16, 1, 7, '2010-12-04'),
-(17, 1, 10, '2019-11-20');
 
 -- --------------------------------------------------------
 
@@ -828,13 +570,6 @@ CREATE TABLE `representantes` (
   `correo` varchar(50) NOT NULL,
   `n_tel` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `representantes`
---
-
-INSERT INTO `representantes` (`id`, `cedula`, `nombre`, `apellido`, `correo`, `n_tel`) VALUES
-(3, '7590773', 'LEFKY', 'MORA', 'LMORA2000@HOTMAIL.COM', '04143012400');
 
 -- --------------------------------------------------------
 
@@ -884,8 +619,9 @@ CREATE TABLE `tipo_logros` (
 --
 
 INSERT INTO `tipo_logros` (`id`, `tipo_logro`) VALUES
-(2, 'ADIOS'),
-(3, 'HOLAS');
+(1, 'REGIONAL'),
+(2, 'NACIONAL'),
+(3, 'INTERNACIONAL');
 
 -- --------------------------------------------------------
 
@@ -911,9 +647,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `usuario`, `clave`, `n_eme`, `n_tel`, `correo`, `conf_clave`, `tipo`) VALUES
-(30, 'SAMUEL', 'PEREZ', 'SAPM2000', '12345678', '12345678900', '12345678900', '123456789@12345678.COM', '123456789', 'ADMINISTRADOR'),
-(31, 'MARYORITH', 'SINGER', 'MARYO05', '123456', '12345678900', '32112321312', 'ASDASA@ASDA.COM', '123456', 'ASISTENTE ADMINISTRATIVO'),
-(33, 'SADSADSAD', 'ASDSADSADSA', 'DADADA', '123', '00987654321', '12345678900', 'SDASDAD@ASDSADCP.SDF', '123', 'ASISTENTE ADMINISTRATIVO');
+(30, 'SAMUEL ALEJANDRO', 'PEREZ MORA', 'SAPM2000', '12345678', '04125084544', '04245222312', 'SAPM2000@HOTMAIL.COM', '123456789', 'ADMINISTRADOR'),
+(31, 'MARYORITH', 'SINGER', 'MARYO05', '123456', '12345678900', '32112321312', 'ASDASA@ASDA.COM', '123456', 'ASISTENTE ADMINISTRATIVO');
 
 --
 -- Índices para tablas volcadas
@@ -1129,43 +864,43 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `atleta`
 --
 ALTER TABLE `atleta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `atleta_representante`
 --
 ALTER TABLE `atleta_representante`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `bancos`
 --
 ALTER TABLE `bancos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `becas`
 --
 ALTER TABLE `becas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `becas_gloria`
 --
 ALTER TABLE `becas_gloria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `becas_mes`
 --
 ALTER TABLE `becas_mes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `becas_total`
 --
 ALTER TABLE `becas_total`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `calzados`
@@ -1177,13 +912,13 @@ ALTER TABLE `calzados`
 -- AUTO_INCREMENT de la tabla `cuenta`
 --
 ALTER TABLE `cuenta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `datoll`
 --
 ALTER TABLE `datoll`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `discapacidades`
@@ -1207,19 +942,19 @@ ALTER TABLE `estatus`
 -- AUTO_INCREMENT de la tabla `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `evento_participantes`
 --
 ALTER TABLE `evento_participantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `logros`
 --
 ALTER TABLE `logros`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `modalidades`
@@ -1237,7 +972,7 @@ ALTER TABLE `municipio`
 -- AUTO_INCREMENT de la tabla `nivels`
 --
 ALTER TABLE `nivels`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `parentescos`
@@ -1255,31 +990,31 @@ ALTER TABLE `parroquia`
 -- AUTO_INCREMENT de la tabla `patologia_medicas`
 --
 ALTER TABLE `patologia_medicas`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `puente_discapacidad`
 --
 ALTER TABLE `puente_discapacidad`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `puente_disciplina`
 --
 ALTER TABLE `puente_disciplina`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `puente_patologia_medica`
 --
 ALTER TABLE `puente_patologia_medica`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `representantes`
 --
 ALTER TABLE `representantes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `tallas`

@@ -177,8 +177,8 @@ switch($_REQUEST['accion'])
 
 				$evento->setActual($_SESSION['act']);
 				$logro->setTipo($_SESSION['tipologroevento']);
-				$logro->setPais('venezuela');
-				$logro->setEstado('yaracuy');
+				$logro->setPais('VENEZUELA');
+				$logro->setEstado('YARACUY');
 				$logro->setCiudad($_SESSION['ciudad']);
 				$logro->setDisciplina($_SESSION['disciplina']);
 				$logro->setDescripcion($_SESSION['descripcion']);
