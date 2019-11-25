@@ -39,7 +39,7 @@ if($_GET['accion']=="actual")
 	$form.='<table>';
 	$form.='<tr>';
 	$form.='<td>Documento de Identidad del Representado:</td>';
-	$form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" name="cedula_a" maxlenght="9" pattern="[0-9]{7,8}" title="Debe tener de 7 u 8 digitos" required></td>';
+	$form.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" name="cedula_a" maxlenght="9" onkeypress="return caracteress(event)" onpaste="return false"  pattern="[A-Z a-z Ññ/s 0-9]{5,}" title="Debe tener de 7 u 8 digitos" required></td>';
 	$form.='<td> <a href="generarreporte.php?accion=detalle"><input type="button" class="botonmodal" value="Generar Reporte" name="activos" title="Generar Reporte"> </a></td>';
 	$form.='<td><input id="searchTerm" type="hidden" class="cajasdetexto" onkeyup="doSearch()" value="'.$id.'" name="cedula" maxlenght="9" pattern="[0-9]{7,8}" title="Debe tener de 7 u 8 digitos" required></td>';
 	$form.='<tr>';

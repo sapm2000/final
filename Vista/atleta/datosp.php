@@ -311,7 +311,7 @@ $nac.= "</select>";
 	$form.='</tr>';
 	$form.="<tr>";
 	$form.='<td>Documento de Identidad:</td>';
-	$form.='<td>'.$nac.'<input id="" type="text" name="cedula" value="'.$ced.'" class="cajasdetexto" maxlenght="9" onkeypress="return solonumeros(event)" onpaste="return false" pattern="[0-9]{7,8}" title="Solo 7 u 8 digitos" required></td>';
+	$form.='<td>'.$nac.'<input id="" type="text" name="cedula" value="'.$ced.'" class="cajasdetexto" maxlenght="9" onkeypress="return carasteress(event)" onpaste="return false" pattern="[A-Z a-z Ññ/s 0-9]{5,}" title="Solo 7 u 8 digitos" required></td>';
 	$form.='</tr>';
 	$form.='<tr>';
 	$form.='<td>Nombres:</td>';
