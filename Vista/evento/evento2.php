@@ -42,8 +42,8 @@ if($_GET['accion']=="actual" && !empty($_SESSION['cataeven2']))
 
 	$reporte.="<br><table class=tabla-cateve id=tabla>";
 	$reporte.="<table class=tabla-catevento id=tabla>";
-	$cata.="<tr><th>Nombre</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Tipo</th><th>Municipio</th><th>Parroquia</th><th>Cantidad de Participantes Registrados</th><th colspan='2'>Acción</th></tr>";
-	$reporte.="<tr><th>Nombre</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Tipo</th><th>Municipio</th><th>Parroquia</th><th>Cantidad de Participantes Registrados</th></tr>";
+	$cata.="<tr><th>Nombre</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Disciplina</th><th>Municipio</th><th>Parroquia</th><th>Tipo Evento</th><th>Cantidad de Participantes Registrados</th><th colspan='2'>Acción</th></tr>";
+	$reporte.="<tr><th>Nombre</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Disciplina</th><th>Municipio</th><th>Parroquia</th><th>Tipo Evento</th><th>Cantidad de Participantes Registrados</th></tr>";
 	foreach($catalogo as $cat)
 	{
 		$cata.="<tr>";	
@@ -56,6 +56,7 @@ if($_GET['accion']=="actual" && !empty($_SESSION['cataeven2']))
 		$cata.="<td>".$cat['std']."</td>";
 		$cata.="<td>".$cat['descrips']."</td>";
 		$cata.="<td>".$cat['descrip']."</td>";
+		$cata.="<td>".$cat['tipo']."</td>";
 		$cata.="<td>".$cat['actual']."</td>";
 		$cata.="<td><a href='../../Controlador/EventoController.php?accion=seleccionar1&id=".$cat['id']."&max=".$cat['maxpo']."&can=".$cat['canti']."&par=".$cat['parti']."'>";	
 		$cata.="<img src='../imagenes1/participantes.png' width='15px' height='15px' title='Añadir mas participantes'></a></td>";
@@ -72,6 +73,7 @@ if($_GET['accion']=="actual" && !empty($_SESSION['cataeven2']))
 		$reporte.="<td>".$cat['std']."</td>";
 		$reporte.="<td>".$cat['descrips']."</td>";
 		$reporte.="<td>".$cat['descrip']."</td>";
+		$reporte.="<td>".$cat['tipo']."</td>";
 		$reporte.="<td>".$cat['actual']."</td>";	
 	}
 	$cata.="</table><br>";

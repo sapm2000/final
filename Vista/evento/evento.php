@@ -45,10 +45,14 @@ $parroquia.= "<option value=".$t['id']." class='mun".$t['id_municipio']."'>".$t[
 }
 $parroquia.= "</select>";
 
+$todoslo = $_SESSION['tipo_logro'];
 $tipo = "<select name='tipo' required>";
-$tipo.= "<option>NACIONAL</option>";
-$tipo.= "<option>REGIONAL</option>";
-$tipo.= "<option>INTERNACIONAL</option>";
+$tipo.= "<option>Seleccione un tipo de evento</option>";
+foreach($todoslo as $t)
+{
+	$tipo.= "<option value=".$t['tipo_logro'].">".$t['tipo_logro']."</option>";	
+}
+
 $tipo.= "</select>";
 
 
