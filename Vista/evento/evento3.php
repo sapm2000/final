@@ -41,7 +41,7 @@ if ($_GET['accion']=='ver_detalles')
 	$cata.='<table>';
 	$cata.='<tr>';
 	$cata.='<td>Documento de Identidad:</td>';
-	$cata.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" name="cedula" onkeypress="return caracteres(event)" onpaste="return false" maxlenght="9" pattern="[A-z a-z 0-9]{5,}" title="Por favor colocar el formato correcto" required></td>';
+	$cata.='<td><input id="searchTerm" type="text" class="cajasdetexto" onkeyup="doSearch()" name="cedula" onkeypress="return solonumeros(event)" onpaste="return false" maxlenght="9" pattern="[0-9]{5,}" title="Por favor colocar el formato correcto. Si es pasaporte solo colocar los números" required></td>';
 	$cata.='<td>Posición:</td>';
 	$cata.='<td><input id="searchTer" type="text" size="1" class="cajasdetexto" name="posicion" maxlenght="9" onkeypress="return solonumeros(event)" onpaste="return false" pattern="([1-9]{1})([0-9]{1,})*" required></td>';
 	$cata.='<td>Observaciones:</td>';
