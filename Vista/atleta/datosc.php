@@ -86,7 +86,7 @@ if($_GET['accion']=='ver_detalles') {
 	$form.='</tr>';
 	$form.="<tr>";
 	$form.='<td>Correo Electrónico:</td>';
-	$form.='<td><input id="" type="email" name="correo" value="'.$cor.'" class="cajasdetexto" onpaste="return false" required></td>';
+	$form.='<td><input id="" type="email" name="correo" value="'.$cor.'" class="cajasdetexto" onpaste="return false"></td>';
 	$form.='</tr>';
 	$form.='<tr>';
 	$form.='<td>Número de Teléfono:</td>';
