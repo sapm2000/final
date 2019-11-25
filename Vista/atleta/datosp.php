@@ -79,7 +79,7 @@ $form.='<td>&nbsp;</td>';
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Documento de Identidad:</td>';
-$form.='<td>'.$nac.'<input id="" type="text" name="cedula" class="cajasdetexto" maxlenght="9" onkeypress="return caracteres(event)" onpaste="return false" pattern="[A-Z a-z 0-9]{5,}" title="Por favor rellenar con el formato correcto" required></td>';
+$form.='<td>'.$nac.'<input id="" type="text" name="cedula" class="cajasdetexto" maxlenght="9" onkeypress="return caracteres(event)" onpaste="return false" pattern="[A-Z a-z 0-9 Ññ/s]{5,}" title="Por favor rellenar con el formato correcto" required></td>';
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Nombres:</td>';
