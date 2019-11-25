@@ -65,8 +65,8 @@ if ($_GET['accion']=='ver_detalles')
 	$reporte.="<br><table class=tabla-cat id=tabla align=center>";
 	$reporte.="<table class=tabla-catb id=tabla align=center>";
 
-	$cata.="<tr><th>Nombre</th><th>Tipo de Evento</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Tipo</th><th>Municipio</th><th>Parroquia</th><th colspan='2'>Acción</th></tr>";
-	$reporte.="<tr><th>Nombre</th><th>Tipo de Evento</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Tipo</th><th>Municipio</th><th>Parroquia</th></tr>";
+	$cata.="<tr><th>Nombre</th><th>Tipo de Evento</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Disciplina</th><th>Municipio</th><th>Parroquia</th><th colspan='2'>Acción</th></tr>";
+	$reporte.="<tr><th>Nombre</th><th>Tipo de Evento</th><th>Fecha de Inicio</th><th>Fecha de Cierre</th><th>Descripción</th><th>Disciplina</th><th>Municipio</th><th>Parroquia</th></tr>";
 
 	$catalogo = $_SESSION['modieven3'];
 	foreach($catalogo as $cat)

@@ -6,18 +6,23 @@ require_once("../Modelo/municipio.php");
 require_once("../Modelo/disciplina.php");
 require_once("../Modelo/parroquia.php");
 require_once("../Modelo/logro.php");
+require_once("../Modelo/tipo_logro.php");
 
 $evento = new Evento();
 $municipio = new Municipio();
 $disciplinas = new Disciplina();
 $parroquia = new Parroquia();
 $logro = new Logro();
+$tipo_logro = new Tipo_logro();
+
+
 
 $evento->setTabla("eventos");
 $disciplinas->setTabla("disciplinas");
 $municipio->setTabla("municipio");
 $parroquia->setTabla("parroquia");
 $logro->setTabla("logros");
+$tipo_logro->setTabla("tipo_logros");
 
 switch($_REQUEST['accion'])
 {
@@ -31,6 +36,8 @@ switch($_REQUEST['accion'])
 		$_SESSION['municipio'] = $carajo;	
 		$hola = $parroquia->getAllactivos($tab);
 		$_SESSION['parroquia'] = $hola;
+		$tip = $tipo_logro->getAll();
+		$_SESSION['tipo_logro'] = $tip;
 		header("Location: ../Vista/evento/evento.php?accion=actual");
 		break;
 	}
