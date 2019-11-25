@@ -32,7 +32,7 @@ $form.='<form name="regusuario" method="post" action="../../Controlador/Represen
 $form.='<table>';
 $form.='<tr>';
 $form.='<td>Documento de Identidad:</td>';
-$form.='<td><input id="num" type="text" class="cajasdetexto" onkeypress="return solonumeros(event)" onpaste="return false" name="cedula" maxlenght="9" pattern="[0-9]{7,8}" title="Debe tener de 7 u 8 digitos" required></td>';
+$form.='<td><input id="num" type="text" class="cajasdetexto" onkeypress="return caracteress(event)" onpaste="return false" name="cedula" maxlenght="9" pattern="[A-Z a-z Ññ/s 0-9]{5,}" title="Debe tener de 7 u 8 digitos" required></td>';
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Nombre:</td>';
@@ -52,7 +52,7 @@ $form.='<td><input id="id_mail" type="email" name="correo" class="cajasdetexto" 
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Documento de Identidad del Representado:</td>';
-$form.='<td><input id="num2" type="text" name="cedula_a" class="cajasdetexto" onkeypress="return solonumeros(event)" onpaste="return false" pattern="[0-9]{7,8}" title="Debe tener de 7 u 8 digitos" required></td>';
+$form.='<td><input id="num2" type="text" name="cedula_a" class="cajasdetexto" onkeypress="return caracteress(event)" onpaste="return false" pattern="[A-Z a-z Ññ/s 0-9]{5,}" title="Debe tener de 7 u 8 digitos" required></td>';
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Parentesco con el Representado:</td>';

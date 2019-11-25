@@ -31,7 +31,7 @@ $boton='';
 $form.='<form name="atleta" method="post" action="../../Controlador/AtletaController.php?accion=filtrofechanacdis">';
 $form.='<table>';
 $form.='<tr>';
-$form.='<td>Ingrese el rango de fecha a buscar:</td>';
+$form.='<td>Ingrese el rango de fecha a buscar (yyyy-mm-dd):</td>';
 $form.='</tr>';
 $form.='</table>';
 $form.='<table align=center>';
