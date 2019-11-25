@@ -91,7 +91,7 @@ elseif ($_GET['accion']=='ver_detalles')
 	$cata.="<table>";
 	$cata.="<tr>";
 	$cata.="<td>Documento de Identidad:</td>";
-	$cata.="<td><input type='text' id='num1' name='cedula' class='cajasdetexto' maxlenght='9' value='".$ced."' onkeypress='return solonumeros(event)' onpaste='return false' pattern='[0-9]{7,8}' title='Debe tener de 7 u 8 digitos' required></td>";
+	$cata.="<td><input type='text' id='num1' name='cedula' class='cajasdetexto' maxlenght='9' value='".$ced."' onkeypress='return caracteress(event)' onpaste='return false' pattern='[A-Z a-z Ññ/s 0-9]{5,}' title='Debe tener de 7 u 8 digitos' required></td>";
 	$cata.="</tr>";
 	$cata.="<tr>";
 	$cata.="<td>Nombre:</td>";

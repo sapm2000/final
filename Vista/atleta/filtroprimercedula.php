@@ -21,8 +21,8 @@ $form.='<form name="atleta" method="post" action="../../Controlador/AtletaContro
 $form.='<table>';
 $form.='<tr>';
 $form.='<td>Ingrese los primeros dígitos de los Documentos de Identidad a buscar:</td>';
-$form.='<td><input  type="text" class="cajasdetexto"  name="primer" pattern="[A-Z a-z Ññ/s 1-9]{1,2}" title="Solo uno o dos dígitos" onkeypress="return solonumeros(event)" onpaste="return false" required></td>';
-$form.='<td> <input type="submit" class="botonmodal" value="Buscar"> </td>';
+$form.='<td><input  type="text" class="cajasdetexto"  name="primer" pattern="[A-Z a-z Ññ/s 1-9]{1,2}" title="Solo uno o dos dígitos" onkeypress="return caracteress(event)" onpaste="return false" required></td>';
+$form.='<td><input type="submit" class="botonmodal" value="Buscar"> </td>';
 $form.='</tr>';
 $form.='</table>';
 $form.='</form>';
