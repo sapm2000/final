@@ -209,7 +209,7 @@ else {
 	$estadocivil1.= "<option>SOLTERO/A</option>";
 
 }
-if ($est=='CASADO/A<') {
+if ($est=='CASADO/A') {
 	$estadocivil1.= "<option selected>CASADO/A</option>";
 }
 else {

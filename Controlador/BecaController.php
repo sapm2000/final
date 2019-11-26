@@ -133,9 +133,11 @@ switch($_REQUEST['accion'])
 
 			$ladilla=0;
 
-			for ($i=0;$i<$w;$i++) {
+			for ($i=1;$i<=$w;$i++) {
 				$beca->setMonto($_POST['pago'.$i]);
 				$comprobador=$beca->getMonto();
+
+				var_dump($beca);
 
 
 				if (empty($comprobador)) {
