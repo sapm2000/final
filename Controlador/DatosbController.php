@@ -127,7 +127,6 @@ switch($_REQUEST['accion'])
 			$cuenta->setTipo($_POST['tipo1']);
 			$cuenta->setId_atleta($_POST['id_atleta']);
 			
-			var_dump ($cuenta);
 
 			
 			$cuenta->modificarCuenta();

@@ -1335,7 +1335,6 @@ case "registrarPatologia_medica":
 				
 				$n = $atleta->getPrimerdigito();
 				$_SESSION['nivel10'] = $n;
-				var_dump ($n);				
 				header("Location: ../Vista/atleta/reportedatospersonales.php?accion=actual");
 				break;
 			}
@@ -1619,7 +1618,6 @@ case "registrarPatologia_medica":
 
 				
 				$disc=$atleta->traemodalidades();
-				var_dump($disc);
 				$t=$atleta->cuentamodalidadesdefinitivo();
 
 				$_SESSION['contadormod']=$t[0][0];
@@ -1647,7 +1645,6 @@ case "registrarPatologia_medica":
 					$_SESSION['cueF'.$i]=$u[0][0];
 					
 					echo($_SESSION['cueF'.$i]);
-					var_dump ($_SESSION['discF'.$i]);
 
 
 				}
@@ -1902,16 +1899,6 @@ case "registrarPatologia_medica":
 									$_SESSION['medicas'.$i]=$atleta->datosmedicas();
 									$_SESSION['discapacidad'.$i]=$atleta->datosdiscapacidad();
 									$_SESSION['beca'.$i]=$atleta->traebeca();
-
-									var_dump($_SESSION['datospersonales'.$i]);
-									var_dump($_SESSION['indumentaria'.$i]);
-									var_dump($_SESSION['contacto'.$i]);
-									var_dump($_SESSION['bancario'.$i]);
-									var_dump($_SESSION['representante'.$i]);
-									var_dump($_SESSION['laboral'.$i]);
-									var_dump($_SESSION['medicas'.$i]);
-									var_dump($_SESSION['discapacidad'.$i]);
-									var_dump($_SESSION['beca'.$i]);
 
 									
 

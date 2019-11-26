@@ -137,7 +137,6 @@ switch($_REQUEST['accion'])
 				$beca->setMonto($_POST['pago'.$i]);
 				$comprobador=$beca->getMonto();
 
-				var_dump($beca);
 
 
 				if (empty($comprobador)) {
