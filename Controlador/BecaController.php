@@ -127,15 +127,15 @@ switch($_REQUEST['accion'])
 
 			
 
-			$q=$beca->selecid();
+			$q=$beca->selexmax();
 			$w=$q[0][0];
 			
+			$ladilla=1;
 
-			$ladilla=0;
-
-			for ($i=0;$i<$w;$i++) {
+			for ($i=1;$i<=$w;$i++) {
 				$beca->setMonto($_POST['pago'.$i]);
 				$comprobador=$beca->getMonto();
+
 
 
 				if (empty($comprobador)) {
@@ -145,7 +145,9 @@ switch($_REQUEST['accion'])
 
 				}
 			}
+			$w=$w+1;
 
+		
 			if ($w==$ladilla) {
 					echo "<script>alert('no puedes dejar todos los campos vacios')</script>";//Mensaje de Sesión no válida
 					echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/beca/becanueva.php?accion=actual'>"; 
@@ -283,13 +285,13 @@ switch($_REQUEST['accion'])
 			
 			
 
-			$q=$beca->selecid();
+			$q=$beca->selexmax();
 			$w=$q[0][0];
 			
 
-			$ladilla=0;
+			$ladilla=1;
 
-			for ($i=0;$i<$w;$i++) {
+			for ($i=1;$i<=$w;$i++) {
 				$beca->setMonto($_POST['pago'.$i]);
 				$comprobador=$beca->getMonto();
 
@@ -301,10 +303,12 @@ switch($_REQUEST['accion'])
 
 				}
 			}
+			$w=$w+1;
+
 
 			if ($w==$ladilla) {
 					echo "<script>alert('no puedes dejar todos los campos vacios')</script>";//Mensaje de Sesión no válida
-					echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/beca/becanueva.php?accion=actual'>"; 
+					echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/beca/becanuevagloria.php?accion=actual'>"; 
 				break;
 			}
 

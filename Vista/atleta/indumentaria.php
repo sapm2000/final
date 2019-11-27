@@ -1,7 +1,10 @@
 <?php
 session_start();
 
-
+if(empty($_SESSION['nombre']))
+	{
+		header('Location: ../Persona/InicioSesion.php');
+	}
 
 $perfil = $_SESSION['nombre']." ".$_SESSION['apellido'];
 $form='';

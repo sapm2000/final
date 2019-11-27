@@ -1,7 +1,10 @@
 <?php
 session_start();
 
-
+if(empty($_SESSION['nombre']))
+	{
+		header('Location: ../Persona/InicioSesion.php');
+	}
 
 if(empty($_REQUEST['accion']))
 {

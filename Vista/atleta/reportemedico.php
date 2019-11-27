@@ -53,7 +53,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['medica']))
 		$cata.="<td>".$cat['nombre']."</td>";	
 		$cata.="<td>".$cat['apellido']."</td>";	
 		$cata.="<td>".$cat['fecha_medica']."</td>";	
-		$cata.="<td>".$cat['registro_medica']."</td>";	
+		$cata.="<td>".$cat['patologia_medica']."</td>";	
 			
 
 
@@ -64,7 +64,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['medica']))
 		$reporte.="<td>".$cat['nombre']."</td>";	
 		$reporte.="<td>".$cat['apellido']."</td>";	
 		$reporte.="<td>".$cat['fecha_medica']."</td>";	
-		$reporte.="<td>".$cat['registro_medica']."</td>";	
+		$reporte.="<td>".$cat['patologia_medica']."</td>";	
 			
 	}
 	$cata.="</table><br>";

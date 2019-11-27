@@ -1,7 +1,11 @@
 <?php
 session_start();
 
-
+if(empty($_SESSION['nombre']))
+	{
+		header('Location: ../Persona/InicioSesion.php');
+	}
+	
 if(empty($_REQUEST['accion']))
 {
 	header("Location: ../menuv/menuv.php?accion=validado");
@@ -15,7 +19,7 @@ $select='';
 $estadocivil='';
 $sexo='';
 $tipo='';
-
+$becar='';
 $becar.="<select name='becar'>";
 $becar.= "<option value=''>Seleccione si la disciplina sera becada</option>";
 $becar.= "<option value='1'>SI</option>";

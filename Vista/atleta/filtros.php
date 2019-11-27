@@ -146,7 +146,7 @@ $form.='<tr>';
 $form.='<hr></hr>';
 $form.='<h2>Datos de Patologia Medica</h2>';
 
-$form.='<td><a href="reportemedica.php?accion=actualizar"><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Patologias Medicas" id="" name=""></td>';
+$form.='<td><a href="reportemedico.php?accion=actualizar"><input type="button" value="Reporte General" class="botonmodal" title="Reporte General de los Atletas Según sus Patologias Medicas" id="" name=""></td>';
 $form.='</tr>';
 $form.='</table>';
 $form.='</form>';

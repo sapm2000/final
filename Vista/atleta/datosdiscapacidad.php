@@ -1,5 +1,10 @@
 <?php
 session_start();
+if(empty($_SESSION['nombre']))
+	{
+		header('Location: ../Persona/InicioSesion.php');
+	}
+	
 if(!$_GET['accion']=="actualizar")
 {
 	header("Location: ../../Controlador/DatosdiscapacidadController.php?accion=buscatodos");

@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if(empty($_SESSION['nombre']))
+	{
+		header('Location: ../Persona/InicioSesion.php');
+	}
+	
 if($_GET['accion']=="actualizar")
 {
 	header("Location: ../../Controlador/AtletaController.php?accion=buscatodos");
@@ -209,7 +215,7 @@ else {
 	$estadocivil1.= "<option>SOLTERO/A</option>";
 
 }
-if ($est=='CASADO/A<') {
+if ($est=='CASADO/A') {
 	$estadocivil1.= "<option selected>CASADO/A</option>";
 }
 else {
@@ -323,7 +329,7 @@ $nac.= "</select>";
 	$form.='</tr>';
 	$form.='<tr>';
 	$form.='<td>Fecha de Nacimiento (yyyy-mm-dd):</td>';
-	$form.='<td><input id="fnac" type="date" name="f_nac" class="date" maxlenght="9" value="'.$fnac.'"  max="'.date("Y-m-d").'" value="'.date("Y-m-d").'" required></td>';
+	$form.='<td><input id="fnac" type="text" name="f_nac" class="date" maxlenght="9" value="'.$fnac.'"  max="'.date("Y-m-d").'" value="'.date("Y-m-d").'" required></td>';
 	$form.='<td><input id="key" type="hidden" name="id_atleta" class="date" maxlenght="9" value="'.$id.'"></td>';
 	$form.='</tr>';
 	$form.='<tr>';

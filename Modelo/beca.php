@@ -300,7 +300,17 @@ class Beca extends ClaseBase
 	public function selecid()
 	{
 		$cc = Conexion::getInstance();
-		$sql = "SELECT count(*) FROM atleta";
+		$sql = "SELECT COUNT(*) FROM atleta LEFT OUTER JOIN becas ON atleta.id=becas.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id INNER JOIN puente_disciplina ON atleta.id=puente_disciplina.id_atleta INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id WHERE NOT cuenta.numeroc='' and atleta.activo='0' and becar=1";
+		$result = $cc->db->prepare($sql);
+		$result->execute();
+		$trae = $result->fetchAll();
+		return ($trae);
+	}
+
+	public function selecidgloria()
+	{
+		$cc = Conexion::getInstance();
+		$sql = "SELECT COUNT(*) FROM atleta LEFT OUTER JOIN becas ON atleta.id=becas.id_atleta INNER JOIN cuenta ON cuenta.id_atleta=atleta.id INNER JOIN puente_disciplina ON atleta.id=puente_disciplina.id_atleta INNER JOIN disciplinas ON puente_disciplina.id_disciplina=disciplinas.id WHERE NOT cuenta.numeroc='' and atleta.activo='2' and becar=1";
 		$result = $cc->db->prepare($sql);
 		$result->execute();
 		$trae = $result->fetchAll();
