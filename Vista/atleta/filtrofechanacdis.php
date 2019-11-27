@@ -15,10 +15,10 @@ if(empty($_REQUEST['accion']))
 
 $todosala = $_SESSION['disciplin'];
 $disciplina1 = "<select name='tercer' required>";
-$disciplina1.= "<option>Seleccione una disciplina</option> required";
+$disciplina1.= "<option value=''>Seleccione una disciplina</option>";
 
 foreach ($todosala as $tb) {
-	$disciplina1.= "<option value=".$tb['id'].">".$tb['disciplina']."</option>";	
+	$disciplina1.= "<option value=".$tb['id'].">".$tb['disciplina']."</option>required";	
 }
 $disciplina1.= "</select>";
 
