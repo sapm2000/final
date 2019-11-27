@@ -214,7 +214,7 @@ switch($_REQUEST['accion'])
 		$_SESSION['titulo']='Reporte de Patologia Médica de los Atletas';
 		
 		
-		header("Location: ../Vista/atleta/reportemedica.php?accion=actual");
+		header("Location: ../Vista/atleta/reportemedico.php?accion=actual");
 		break;
 	}
 
