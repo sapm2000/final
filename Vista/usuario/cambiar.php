@@ -24,11 +24,11 @@ $form.='<td><input type="password" class="cajasdetexto" name="contra_vieja" requ
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Nueva Contraseña:</td>';
-$form.='<td><input id="contra1" type="password" name="clave" class="cajasdetexto" maxlenght="9" onblur="campodoble()" pattern="[a-z A-Z 0-9 ñÑ\s]{8,30}" title="minimo 8 caracteres maximo 30" required></td>';
+$form.='<td><input id="contra1" type="password" name="clave" class="cajasdetexto" maxlenght="9" onblur="campodoble()" pattern="{8,30}" title="minimo 8 caracteres maximo 30" required></td>';
 $form.='</tr>';
 $form.='<tr>';
 $form.='<td>Confirmar Nueva Contraseña:</td>';
-$form.='<td><input id="contra2" type="password" name="conf_clave" class="cajasdetexto" maxlenght="9" onblur="campodoble()" pattern="[a-z A-Z 0-9 ñÑ\s]{8,30}" title="minimo 8 caracteres maximo 30" required></td>';
+$form.='<td><input id="contra2" type="password" name="conf_clave" class="cajasdetexto" maxlenght="9" onblur="campodoble()" pattern="{8,30}" title="minimo 8 caracteres maximo 30" required></td>';
 $form.='</tr>';
 $form.='</table>';
 $form.=' <input type="submit" value="Registrar" id="submit" name="BtRegistrar">';

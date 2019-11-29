@@ -335,7 +335,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 		$cata.="<th>Nombre</th>";
 		$cata.="<td>".$cat['nombre']."</td>";	
 		$cata.="<th>Parentesco</th>";
-		$cata.="<td>".$cat['parentezco']."</td>";
+		$cata.="<td>".$cat['parentesco']."</td>";
 
 		$cata.="</tr>";
 		$cata.="<tr>";	
@@ -361,7 +361,7 @@ if($_GET['accion']=="actual"&&!empty($_SESSION['datospersonales']))
 		$reporte.="<th>Nombre</th>";
 		$reporte.="<td>".$cat['nombre']."</td>";	
 		$reporte.="<th>Parentesco</th>";
-		$reporte.="<td>".$cat['parentezco']."</td>";	
+		$reporte.="<td>".$cat['parentesco']."</td>";	
 	
 
 		$reporte.="</tr>";

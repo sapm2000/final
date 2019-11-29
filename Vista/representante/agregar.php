@@ -110,7 +110,7 @@ if($_GET['accion']=="actual")
 		$cata.="<td>".$cat['parentesco']."</td>";
 		
 		$cata.="<td><a href='../../Controlador/RepresentanteController.php?accion=eliminar1&id=".$cat['id']."&id_repre=".$cat['carajo']."'>";	
-		$cata.="<img src='../Imagenes1/eliminar.png' width='15px' height='15px' title='Eliminar'></a></td>";	
+		$cata.="<img src='../imagenes1/eliminar.png' width='15px' height='15px' title='Eliminar'></a></td>";	
 		$cata.="</tr>";	
 
 		$reporte.="<tr>";	

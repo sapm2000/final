@@ -1561,7 +1561,7 @@ class Atleta extends ClaseBase
 		public function traerepresentante()
 		{
 			$cc = Conexion::getInstance();
-			$sql = "SELECT representantes.cedula,representantes.nombre,representantes.apellido,representantes.correo,representantes.n_tel,parentezcos.parentezco FROM atleta_representante INNER JOIN representantes ON atleta_representante.id_representante=representantes.id INNER JOIN parentezcos ON atleta_representante.id_parentezco=parentezcos.id INNER JOIN atleta ON atleta_representante.id_atleta=atleta.id WHERE atleta.id='$this->primer'";
+			$sql = "SELECT representantes.cedula,representantes.nombre,representantes.apellido,representantes.correo,representantes.n_tel,parentescos.parentesco FROM atleta_representante INNER JOIN representantes ON atleta_representante.id_representante=representantes.id INNER JOIN parentescos ON atleta_representante.id_parentesco=parentescos.id INNER JOIN atleta ON atleta_representante.id_atleta=atleta.id WHERE atleta.id='$this->primer'";
 			$result = $cc->db->prepare($sql);
 			$result->execute();
 			$trae = $result->fetchAll();

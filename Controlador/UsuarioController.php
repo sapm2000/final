@@ -36,12 +36,12 @@ switch($_REQUEST['accion'])
 
 			if ($clave==$clave1) {
 
-				$usuario=$usuario->todoslosusuarios();
-				$t= count($usuario);
+				$usuario1=$usuario->todoslosusuarios();
+				$t= count($usuario1);
 				$us=$usuario->getUsuario();
 
 				for ($i=0;$i<=$t;$i++) {
-					if ($us==$usuario[$i][0]) {
+					if ($us==$usuario1[$i][0]) {
 						echo "<script>alert('ese usuario ya esta registrado')</script>";//Mensaje de Sesión no válida
 						echo "<META HTTP-EQUIV='refresh' CONTENT='0; URL=../Vista/usuario/usuario2.php?accion=actualizar'>"; 
 
